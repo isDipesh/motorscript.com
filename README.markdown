@@ -1,1 +1,1 @@
-Basic template for hyde.
+Source for http://motorscript.com , created with Hyde.
