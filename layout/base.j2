@@ -44,7 +44,6 @@
 {#                        {{ render_nav(menu, 'main_nav') }}#}
 {#                    {% endblock %}#}
                 </header>
-            <hr>
                 <section class="content">
                     {% block main %}
                     {% endblock main %}
@@ -52,9 +51,8 @@
             </div>
         {% endblock container %}
     </div> <!--! end of #container -->
-    <hr>
     <footer>
-        Powered by <a href="http://ringce.com/hyde">hyde</a>.
+        Powered by <a target="_blank" href="https://github.com/hyde/hyde">hyde</a>.
     </footer>
 {% endblock content %}
 {% block js %}
@@ -63,12 +61,6 @@
 
     {% block scripts %}
     {% endblock scripts %}
-
-
-    <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-  <![endif]-->
 
     {% block analytics %}
         {% include "analytics.j2" %}

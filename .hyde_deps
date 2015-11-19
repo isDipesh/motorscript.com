@@ -1,19 +1,19 @@
-!!python/unicode 'about.html': [macros.j2, base.j2, analytics.j2]
-!!python/unicode 'blog/angry-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'about.html': [base.j2, analytics.j2]
+!!python/unicode 'blog/angry-post.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/another.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/atom.xml': [atom.j2, macros.j2]
+!!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html': [
+  blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/excerpts.xml': [atom.j2, macros.j2]
-!!python/unicode 'blog/happy-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
-!!python/unicode 'blog/index.html': [blog.j2, !!python/unicode 'blog/angry-post.html',
-  listing.j2, !!python/unicode 'blog/sad-post.html', base.j2, analytics.j2, !!python/unicode 'blog/happy-post.html',
-  macros.j2]
-!!python/unicode 'blog/sad-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
-!!python/unicode 'blog/tags/angry.html': [base.j2, macros.j2, analytics.j2, tagged_posts.j2]
-!!python/unicode 'blog/tags/happy.html': [base.j2, macros.j2, analytics.j2, tagged_posts.j2]
-!!python/unicode 'blog/tags/sad.html': [base.j2, macros.j2, analytics.j2, tagged_posts.j2]
-!!python/unicode 'blog/tags/thoughts.html': [base.j2, macros.j2, analytics.j2, tagged_posts.j2]
-!!python/unicode 'index.html': [!!python/unicode 'index.html', listing.j2, base.j2,
-  analytics.j2, macros.j2, !!python/unicode 'index.html', listing.j2, base.j2, analytics.j2,
-  macros.j2]
+!!python/unicode 'blog/happy-post.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/index.html': [listing.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/tags/angry.html': [base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'blog/tags/happy.html': [base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'blog/tags/sad.html': [base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'blog/tags/thoughts.html': [base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'e-mail-this-file-option-in-right-clickcontext-menu.html': []
+!!python/unicode 'index.html': [listing.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'media/css/site.css': []
 !!python/unicode 'media/css/syntax.css': []
 !!python/unicode 'media/js/libs/dd_belatedpng.js': []

@@ -37,13 +37,13 @@ sorter:
         filters:
             source.kind: html
             meta.listable: true
-tagger:
-    sorter: time
-    archives:
-        blog:
-            source: blog
-            target: blog/tags
-            template: tagged_posts.j2
-            archive_extension: html
-            meta:
-                listable: false
+#tagger:
+#    sorter: time
+#    archives:
+#        blog:
+#            source: blog
+#            target: blog/tags
+#            template: tagged_posts.j2
+#            archive_extension: html
+#            meta:
+#                listable: false
