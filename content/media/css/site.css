@@ -1,5 +1,8 @@
 body {
     font-family: "medium-content-sans-serif-font", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1em;
 }
 
 hr {
