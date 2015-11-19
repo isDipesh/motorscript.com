@@ -8,7 +8,7 @@
     {% block starthead %}{% endblock starthead %}
     <meta charset="{{ resource.meta.charset }}">
     <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
-    <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+    <title>{% block title %}{{ resource.meta.title }}{% endblock %} | motorscript.com</title>
     <meta name="description" content="{{ resource.meta.description }}">
     <meta name="author" content="{{ resource.meta.author }}">
     <meta name="viewport" content="{{ resource.meta.viewport }}">
@@ -35,15 +35,16 @@
     <div id="container">
         {% block container %}
             <div id="main" role="main">
-                <header class="banner clearfix">
+                <header>
                     {% block header -%}
-                        <h3>motorscript.com</h3>
+                        <a href="http://motorscript.com"><h3>motorscript.com</h3></a>
                     {%- endblock %}
-                    {% block nav %}
-                        {% from "macros.j2" import render_nav with context %}
-                        {{ render_nav(menu, 'main_nav') }}
-                    {% endblock %}
+{#                    {% block nav %}#}
+{#                        {% from "macros.j2" import render_nav with context %}#}
+{#                        {{ render_nav(menu, 'main_nav') }}#}
+{#                    {% endblock %}#}
                 </header>
+            <hr>
                 <section class="content">
                     {% block main %}
                     {% endblock main %}
@@ -51,6 +52,7 @@
             </div>
         {% endblock container %}
     </div> <!--! end of #container -->
+    <hr>
     <footer>
         Powered by <a href="http://ringce.com/hyde">hyde</a>.
     </footer>
