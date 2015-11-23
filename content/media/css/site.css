@@ -70,3 +70,7 @@ h1.title a:visited {
     word-wrap: break-word;
     margin-top: 1.8em;
 }
+
+img{
+    display: block;
+}
