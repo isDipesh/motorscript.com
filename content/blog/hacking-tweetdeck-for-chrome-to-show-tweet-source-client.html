@@ -1,0 +1,62 @@
+---
+title: Hacking TweetDeck for Chrome to show tweet source/client
+created: !!timestamp '2011-08-23 10:00:00'
+tags:
+    - twitter
+---
+
+**[Note: This hack should be outdated now]**
+
+TweetDeck extension for Chrome doesn’t show the client or source application for each tweet.  
+Here’s a little dirty hack to add this feature on TweetDeck for Chrome.
+
+Go to Chrome/Chromium User Data Directory  
+Refer here to find your Data Directory:  
+[http://www.chromium.org/user-experience/user-data-directory](/web/20150314234322/http://www.chromium.org/user-experience/user-data-directory "http://www.chromium.org/user-experience/user-data-directory")  
+e.g. mine is ~/.config/google-chrome/Default
+
+Change directory to _Extensions/[tweetdeck-extension-id]/_  
+_[tweetdeck-extension-id]_ can be known from Chrome/Chromium -> Tools -> Extensions -> TweetDeck -> ID
+
+Change directory to the only folder inside the current folder which is named after the current version of the extension, ‘_0.9.7.12_0_‘ at the time this is being written.
+
+We are editing the files- _default.js_ inside _scripts_ folder and _status_twitter.ejs_ file inside _EJSTemplates/status/_ folder. Open them on your favorite text editor.
+
+In the _default.js_ file:  
+Find:  
+`this.isFavorite=a.favorited;`  
+Add after it:  
+`this.source=a.source;`
+
+In the same file,  
+Find:  
+`return a.decklyID?a.decklyURL:"http://twitter.com/"+a.user.screenName+"/status/"+a.id};`  
+Add after it:  
+`TD.services.TwitterStatus.prototype.getChirpSource=function(){  
+var p=this.getMainTweet().source.replace('nofollow','url').split('>');  
+if (p.length==1) return p;  
+var c=p[1].split('<')[0];  
+return p[0]+' title="'+c+'">'+c.split(' ')[0]+'</a>';  
+};  
+`  
+Save and close _default.js_
+
+In the _status_twitter.ejs_ file:  
+Find:
+
+```
+</time> </a>
+```
+
+Add after it:
+
+```
+via <%= tweet.getChirpSource() %>
+```
+
+
+Save and close _status_twitter.ejs_
+
+Open or refresh TweetDeck on Chrome. The hack should be now visible.
+
+Thank you.

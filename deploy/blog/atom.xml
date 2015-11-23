@@ -7,10 +7,57 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:53:16Z</updated>
+    <updated>2015-11-23T17:08:29Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Hacking TweetDeck for Chrome to show tweet source/client</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/hacking-tweetdeck-for-chrome-to-show-tweet-source-client.html"/>
+            <updated>2011-08-23T10:00:00Z</updated>
+            <published>2011-08-23T10:00:00Z</published>
+            <id>/blog/hacking-tweetdeck-for-chrome-to-show-tweet-source-client.html</id>
+                        <category   scheme="/blog/tags"
+                        term="twitter"
+                        label="Twitter" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;strong&gt;[Note: This hack should be outdated&amp;nbsp;now]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;TweetDeck extension for Chrome doesn’t show the client or source application for each tweet.&lt;br /&gt;
+Here’s a little dirty hack to add this feature on TweetDeck for&amp;nbsp;Chrome.&lt;/p&gt;
+&lt;p&gt;Go to Chrome/Chromium User Data Directory&lt;br /&gt;
+Refer here to find your Data Directory:&lt;br /&gt;
+&lt;a href=&#34;/web/20150314234322/http://www.chromium.org/user-experience/user-data-directory&#34; title=&#34;http://www.chromium.org/user-experience/user-data-directory&#34;&gt;http://www.chromium.org/user-experience/user-data-directory&lt;/a&gt;&lt;br /&gt;
+e.g. mine is&amp;nbsp;~/.config/google-chrome/Default&lt;/p&gt;
+&lt;p&gt;Change directory to &lt;em&gt;Extensions/[tweetdeck-extension-id]/&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;[tweetdeck-extension-id]&lt;/em&gt; can be known from Chrome/Chromium -&amp;gt; Tools -&amp;gt; Extensions -&amp;gt; TweetDeck -&amp;gt; &lt;span class=&#34;caps&#34;&gt;ID&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Change directory to the only folder inside the current folder which is named after the current version of the extension, ‘&lt;em&gt;0.9.7.12_0&lt;/em&gt;‘ at the time this is being&amp;nbsp;written.&lt;/p&gt;
+&lt;p&gt;We are editing the files- &lt;em&gt;default.js&lt;/em&gt; inside &lt;em&gt;scripts&lt;/em&gt; folder and &lt;em&gt;status_twitter.ejs&lt;/em&gt; file inside &lt;em&gt;EJSTemplates/status/&lt;/em&gt; folder. Open them on your favorite text&amp;nbsp;editor.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;default.js&lt;/em&gt; file:&lt;br /&gt;
+Find:&lt;br /&gt;
+&lt;code&gt;this.isFavorite=a.favorited;&lt;/code&gt;&lt;br /&gt;
+Add after it:&lt;br /&gt;
+&lt;code&gt;this.source=a.source;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the same file,&lt;br /&gt;
+Find:&lt;br /&gt;
+&lt;code&gt;return a.decklyID?a.decklyURL:&#34;http://twitter.com/&#34;+a.user.screenName+&#34;/status/&#34;+a.id};&lt;/code&gt;&lt;br /&gt;
+Add after it:&lt;br /&gt;
+&lt;code&gt;TD.services.TwitterStatus.prototype.getChirpSource=function(){  
+var p=this.getMainTweet().source.replace(&#39;nofollow&#39;,&#39;url&#39;).split(&#39;&amp;gt;&#39;);  
+if (p.length==1) return p;  
+var c=p[1].split(&#39;&amp;lt;&#39;)[0];  
+return p[0]+&#39; title=&#34;&#39;+c+&#39;&#34;&amp;gt;&#39;+c.split(&#39; &#39;)[0]+&#39;&amp;lt;/a&amp;gt;&#39;;  
+};&lt;/code&gt;&lt;br /&gt;
+Save and close &lt;em&gt;default.js&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;status_twitter.ejs&lt;/em&gt; file:&lt;br /&gt;&amp;nbsp;Find:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;/time&amp;gt; &amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add after&amp;nbsp;it:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;via &amp;lt;%= tweet.getChirpSource() %&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Save and close &lt;em&gt;status_twitter.ejs&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Open or refresh TweetDeck on Chrome. The hack should be now&amp;nbsp;visible.&lt;/p&gt;
+&lt;p&gt;Thank&amp;nbsp;you.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Emailspy</title>
             <author><name>Dipesh Acharya</name></author>
