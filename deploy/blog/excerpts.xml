@@ -7,10 +7,25 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:32:24Z</updated>
+    <updated>2015-11-23T16:34:59Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Gnome Shell Extension : Force Quit</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-force-quit.html"/>
+            <updated>2011-08-17T10:00:00Z</updated>
+            <published>2011-08-17T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-force-quit.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">Gnome Shell Extension : Screen Off</title>
             <author><name>Dipesh Acharya</name></author>
@@ -34,8 +49,8 @@
             <published>2011-08-15T10:00:00Z</published>
             <id>/blog/gnome-shell-extension-firefox-profiles.html</id>
                         <category   scheme="/blog/tags"
-                        term="gnome"
-                        label="Gnome" />
+                        term="gnome, firefox"
+                        label="Gnome, Firefox" />
             
             <content type="html">
                 

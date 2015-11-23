@@ -7,10 +7,42 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:32:24Z</updated>
+    <updated>2015-11-23T16:34:59Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Gnome Shell Extension : Force Quit</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-force-quit.html"/>
+            <updated>2011-08-17T10:00:00Z</updated>
+            <published>2011-08-17T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-force-quit.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                                &lt;p&gt;Force Quit is an extension that adds a ‘Force Quit’ button to the top panel of gnome shell, the &lt;span class=&#34;caps&#34;&gt;UI&lt;/span&gt; of Gnome 3. Clicking the ‘x’ icon from the left of the gnome-shell panel changes the cursor into a ‘x’. Then, click over a non-responding application to kill it&amp;nbsp;instantly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Note: This extension isn’t maintained any&amp;nbsp;more.]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This extension employs ‘xkill’ on the&amp;nbsp;backend.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installation:&lt;/strong&gt;&lt;br /&gt;
+From Gnome Shell Extensions Directory:&lt;br /&gt;
+&lt;a href=&#34;https://extensions.gnome.org/extension/102/force-quit/&#34; title=&#34;https://extensions.gnome.org/extension/102/force-quit/&#34;&gt;https://extensions.gnome.org/extension/102/force-quit/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Or&amp;nbsp;Manually:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download:&lt;br /&gt;
+&lt;code&gt;cd ~/.local/share/gnome-shell/extensions  
+git clone https://github.com/xtranophilist/gnome-shell-extension-force-quit.git  
+mv gnome-shell-extension-force-quit/ force-quit@xtranophilist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Restart Gnome:&lt;br /&gt;
+Alt+F2 to open run command prompt&lt;br /&gt;
+Enter&amp;nbsp;r&lt;/p&gt;
+&lt;p&gt;Enable ‘Force Quit Extension’ from Extensions from &lt;code&gt;gnome-tweak-tool&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Git Repo:&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34; title=&#34;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34;&gt;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Superpiffer has created a package for archlinux in &lt;span class=&#34;caps&#34;&gt;AUR&lt;/span&gt; (&lt;a href=&#34;https://aur.archlinux.org/packages.php?ID=55879&#34; title=&#34;https://aur.archlinux.org/packages.php?ID=55879&#34;&gt;https://aur.archlinux.org/packages.php?&lt;span class=&#34;caps&#34;&gt;ID&lt;/span&gt;=55879&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;If it doesn’t work on your system, maybe you don’t have xkill. jjmarin on &lt;span class=&#34;caps&#34;&gt;GSE&lt;/span&gt; says “In fedora you need to install the package xorg-x11-apps in order to get the&amp;nbsp;xkill”.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Gnome Shell Extension : Screen Off</title>
             <author><name>Dipesh Acharya</name></author>
@@ -27,7 +59,7 @@
 ‘xset dpms force off’ is executed in the&amp;nbsp;backend.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[Note: This extension isn’t maintained any&amp;nbsp;more.]&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Source:&lt;br /&gt;
-&lt;a href=&#34;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34; title=&#34;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34;&gt;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34; title=&#34;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34;&gt;https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Installation&amp;nbsp;Instructions:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Download:&lt;br /&gt;
 &lt;code&gt;cd ~/.local/share/gnome-shell/extensions  
@@ -46,8 +78,8 @@ Enter&amp;nbsp;r&lt;/p&gt;
             <published>2011-08-15T10:00:00Z</published>
             <id>/blog/gnome-shell-extension-firefox-profiles.html</id>
                         <category   scheme="/blog/tags"
-                        term="gnome"
-                        label="Gnome" />
+                        term="gnome, firefox"
+                        label="Gnome, Firefox" />
             
             <content type="html">
                                 &lt;p&gt;This is an extension that adds a button to gnome panel which when clicked launches Firefox Profile Manager.
