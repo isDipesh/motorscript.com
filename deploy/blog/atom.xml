@@ -7,20 +7,47 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:29:04Z</updated>
+    <updated>2015-11-23T16:32:24Z</updated>
 
     <id>/blog/atom.xml/</id>
 
             <entry>
+            <title type="html">Gnome Shell Extension : Screen Off</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-screen-turn-off-button.html"/>
+            <updated>2011-08-16T10:00:00Z</updated>
+            <published>2011-08-16T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-screen-turn-off-button.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                                &lt;p&gt;This is an extension that adds a button to gnome panel that when clicked instantly turns off the monitor.&lt;br /&gt;
+‘xset dpms force off’ is executed in the&amp;nbsp;backend.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Note: This extension isn’t maintained any&amp;nbsp;more.]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Source:&lt;br /&gt;
+&lt;a href=&#34;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34; title=&#34;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&#34;&gt;http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installation&amp;nbsp;Instructions:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download:&lt;br /&gt;
+&lt;code&gt;cd ~/.local/share/gnome-shell/extensions  
+git clone https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off.git  
+mv gnome-shell-extension-screen-off/ screen-off@xtranophilist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Restart Gnome:&lt;br /&gt;
+Alt+F2 to open run command prompt&lt;br /&gt;
+Enter&amp;nbsp;r&lt;/p&gt;
+&lt;p&gt;Enable ‘Screen Off Extension’ from Extensions from &lt;code&gt;gnome-tweak-tool&lt;/code&gt;.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
             <title type="html">Gnome Shell Extension : Firefox Profiles</title>
             <author><name>Dipesh Acharya</name></author>
             <link href="/blog/gnome-shell-extension-firefox-profiles.html"/>
-            <updated>2011-08-13T10:00:00Z</updated>
-            <published>2011-08-13T10:00:00Z</published>
+            <updated>2011-08-15T10:00:00Z</updated>
+            <published>2011-08-15T10:00:00Z</published>
             <id>/blog/gnome-shell-extension-firefox-profiles.html</id>
                         <category   scheme="/blog/tags"
-                        term="libreoffice"
-                        label="Libreoffice" />
+                        term="gnome"
+                        label="Gnome" />
             
             <content type="html">
                                 &lt;p&gt;This is an extension that adds a button to gnome panel which when clicked launches Firefox Profile Manager.
@@ -35,7 +62,7 @@ mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist&lt;/co
 Alt+F2 to open run command prompt&lt;br /&gt;
 Enter&amp;nbsp;r&lt;/p&gt;
 &lt;p&gt;Enable ‘Firefox Profiles Chooser Extension’ from Extensions from &lt;code&gt;gnome-tweak-tool&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;The extension is available as &lt;a href=&#34;/web/20150315014058/https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;            </content>
+&lt;p&gt;The extension is available as &lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;            </content>
         </entry>
             <entry>
             <title type="html">Hiding header and footer only in certain pages with LibreOffice Writer</title>

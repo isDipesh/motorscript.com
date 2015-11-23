@@ -7,20 +7,35 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:29:04Z</updated>
+    <updated>2015-11-23T16:32:24Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
             <entry>
+            <title type="html">Gnome Shell Extension : Screen Off</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-screen-turn-off-button.html"/>
+            <updated>2011-08-16T10:00:00Z</updated>
+            <published>2011-08-16T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-screen-turn-off-button.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
+            <entry>
             <title type="html">Gnome Shell Extension : Firefox Profiles</title>
             <author><name>Dipesh Acharya</name></author>
             <link href="/blog/gnome-shell-extension-firefox-profiles.html"/>
-            <updated>2011-08-13T10:00:00Z</updated>
-            <published>2011-08-13T10:00:00Z</published>
+            <updated>2011-08-15T10:00:00Z</updated>
+            <published>2011-08-15T10:00:00Z</published>
             <id>/blog/gnome-shell-extension-firefox-profiles.html</id>
                         <category   scheme="/blog/tags"
-                        term="libreoffice"
-                        label="Libreoffice" />
+                        term="gnome"
+                        label="Gnome" />
             
             <content type="html">
                 

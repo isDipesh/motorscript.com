@@ -7,7 +7,7 @@
 <head>
         <meta charset="">
     <meta http-equiv="X-UA-Compatible" content="">
-    <title>Gnome Shell Extension : Firefox Profiles | motorscript.com</title>
+    <title>Gnome Shell Extension : Screen Off | motorscript.com</title>
     <meta name="description" content="">
     <meta name="author" content="Dipesh Acharya">
     <meta name="viewport" content="">
@@ -22,7 +22,7 @@
     
     </head>
 
-<body id="gnome-shell-extension-firefox-profiles">
+<body id="gnome-shell-extension-screen-turn-off-button">
     <div id="container">
                     <div id="main" role="main">
                 <header>
@@ -34,20 +34,18 @@
 
             <a class="backlink" href="http://motorscript.com">All Posts</a>
 
-                            <a class="prev" title="Gnome Shell Extension : Screen Off"
-                   href="/blog/gnome-shell-extension-screen-turn-off-button.html">Previous</a>
             
-                            <a class="next" title="Hiding header and footer only in certain pages with LibreOffice Writer"
-                   href="/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html">Next</a>
+                            <a class="next" title="Gnome Shell Extension : Firefox Profiles"
+                   href="/blog/gnome-shell-extension-firefox-profiles.html">Next</a>
             
                                                                                                                                                                                             </nav>
         <h1 class="title">
-            <a href="/blog/gnome-shell-extension-firefox-profiles.html">
-                Gnome Shell Extension : Firefox Profiles
+            <a href="/blog/gnome-shell-extension-screen-turn-off-button.html">
+                Gnome Shell Extension : Screen Off
             </a>
         </h1>
-        <time datetime="2011-08-15">
-            Posted: Mon, 15 Aug 2011
+        <time datetime="2011-08-16">
+            Posted: Tue, 16 Aug 2011
         </time>
 
         <div class="tags">
@@ -62,19 +60,20 @@
                     </div>
 
         <div class="post-content">
-            <p>This is an extension that adds a button to gnome panel which when clicked launches Firefox Profile Manager.
-‘firefox -no-remote -profilemanager’ is the command that is actually&nbsp;executed.</p>
-<p>[<strong>Note: This extension isn’t maintained any more.</strong>]</p>
+            <p>This is an extension that adds a button to gnome panel that when clicked instantly turns off the monitor.<br />
+‘xset dpms force off’ is executed in the&nbsp;backend.</p>
+<p><strong>[Note: This extension isn’t maintained any&nbsp;more.]</strong></p>
+<p>Source:<br />
+<a href="http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off" title="http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off">http://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off</a></p>
 <p><strong>Installation&nbsp;Instructions:</strong></p>
-<p>Download:
-<code>cd ~/.local/share/gnome-shell/extensions
-git clone https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles.git
-mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist</code></p>
-<p>Restart Gnome:
+<p>Download:<br />
+<code>cd ~/.local/share/gnome-shell/extensions  
+git clone https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off.git  
+mv gnome-shell-extension-screen-off/ screen-off@xtranophilist</code></p>
+<p>Restart Gnome:<br />
 Alt+F2 to open run command prompt<br />
 Enter&nbsp;r</p>
-<p>Enable ‘Firefox Profiles Chooser Extension’ from Extensions from <code>gnome-tweak-tool</code></p>
-<p>The extension is available as <a href="https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles">github repo</a>.</p>        </div>
+<p>Enable ‘Screen Off Extension’ from Extensions from <code>gnome-tweak-tool</code>.</p>        </div>
     </article>                </section>
             </div>
             </div> <!--! end of #container -->
