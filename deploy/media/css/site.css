@@ -65,18 +65,21 @@ h1.title a:visited {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -0.003em;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     -webkit-font-smoothing: antialiased;
     word-wrap: break-word;
     margin-top: 1.8em;
 }
 
-.post-content img{
+.post-content img {
     display: block;
 }
 
-.post-content code{
+.post-content code {
+    font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace, "courier new";
     display: block;
     color: #dddddd;
     background-color: #222222;
+    white-space: pre;
+    overflow: auto;
 }
