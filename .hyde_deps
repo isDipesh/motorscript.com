@@ -26,6 +26,7 @@
 !!python/unicode 'blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html': [
   blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/index.html': [listing.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/last-fm-widget.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/tags/angry.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/happy.html': [base.j2, tagged_posts.j2, analytics.j2]

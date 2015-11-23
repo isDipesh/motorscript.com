@@ -7,10 +7,40 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T17:08:29Z</updated>
+    <updated>2015-11-23T17:15:13Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Last.fm widget for websites</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/last-fm-widget.html"/>
+            <updated>2011-08-25T10:00:00Z</updated>
+            <published>2011-08-25T10:00:00Z</published>
+            <id>/blog/last-fm-widget.html</id>
+                        <category   scheme="/blog/tags"
+                        term="twitter"
+                        label="Twitter" />
+            
+            <content type="html">
+                                &lt;p&gt;This widget shows last played tracks from last.fm for a user. It also shows ‘Now Playing’ track if&amp;nbsp;available.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Download:&lt;/strong&gt; &lt;a href=&#34;https://github.com/xtranophilist/lastfm-widget/zipball/master&#34; title=&#34;https://github.com/xtranophilist/lastfm-widget/zipball/master&#34;&gt;https://github.com/xtranophilist/lastfm-widget/zipball/master&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Integration:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Insert&lt;/strong&gt;: &lt;code&gt;&amp;lt;table id=&#34;last_fm_tracks&#34;&amp;gt;&amp;lt;/table&amp;gt;&lt;/code&gt; where you want the script to write the track&amp;nbsp;lists.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add&lt;/strong&gt;:  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#34;text/javascript&#34; src=&#34;last_widget.js&#34;&amp;gt;&amp;lt;/script&amp;gt;  
+&amp;lt;script type=&#34;text/javascript&#34;&amp;gt;  
+loadLastFMTracks(&#39;xtranophilist&#39;);  
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;just before the end of the body tag &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; Don’t forget to replace &lt;code&gt;xtranophilist&lt;/code&gt; with your username. If you are using &lt;span class=&#34;caps&#34;&gt;ID&lt;/span&gt; for the &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; other than &lt;code&gt;last_fm_tracks&lt;/code&gt;, make sure you pass the &lt;span class=&#34;caps&#34;&gt;ID&lt;/span&gt; string as the second parameter for the &lt;code&gt;loadLastFMTracks()&lt;/code&gt; method.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Demo:&lt;/strong&gt; &lt;a href=&#34;http://motorscript.com/about&#34; title=&#34;http://motorscript.com/about&#34;&gt;http://motorscript.com/about&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To Do’s:&lt;/strong&gt; 
+        - Use &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;instead of &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;
+        - Better styling
+        - Find a way to get the feed direct from Last.fm (w/o using Yahoo Pipe as Proxy for &lt;span class=&#34;caps&#34;&gt;JSON&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;Fork this from Github : &lt;a href=&#34;https://github.com/xtranophilist/lastfm-widget&#34; title=&#34;https://github.com/xtranophilist/lastfm-widget&#34;&gt;https://github.com/xtranophilist/lastfm-widget&lt;/a&gt;&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Hacking TweetDeck for Chrome to show tweet source/client</title>
             <author><name>Dipesh Acharya</name></author>

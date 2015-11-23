@@ -1,0 +1,34 @@
+---
+title: Last.fm widget for websites
+created: !!timestamp '2011-08-25 10:00:00'
+tags:
+    - twitter
+---
+
+
+
+This widget shows last played tracks from last.fm for a user. It also shows ‘Now Playing’ track if available.
+
+**Download:** [https://github.com/xtranophilist/lastfm-widget/zipball/master](https://github.com/xtranophilist/lastfm-widget/zipball/master "https://github.com/xtranophilist/lastfm-widget/zipball/master")
+
+Integration:
+
+**Insert**: `<table id="last_fm_tracks"></table>` where you want the script to write the track lists.
+
+**Add**:  
+
+    <script type="text/javascript" src="last_widget.js"></script>  
+    <script type="text/javascript">  
+    loadLastFMTracks('xtranophilist');  
+    </script>
+
+just before the end of the body tag `</body>` Don’t forget to replace `xtranophilist` with your username. If you are using ID for the `<table>` other than `last_fm_tracks`, make sure you pass the ID string as the second parameter for the `loadLastFMTracks()` method.
+
+**Demo:** [http://motorscript.com/about](http://motorscript.com/about "http://motorscript.com/about")
+
+**To Do’s:** 
+        - Use `<div>`instead of `<table>`
+        - Better styling
+        - Find a way to get the feed direct from Last.fm (w/o using Yahoo Pipe as Proxy for JSON)
+
+Fork this from Github : [https://github.com/xtranophilist/lastfm-widget](https://github.com/xtranophilist/lastfm-widget "https://github.com/xtranophilist/lastfm-widget")
