@@ -7,10 +7,40 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:34:59Z</updated>
+    <updated>2015-11-23T16:51:19Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Emailspy</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/emailspy.html"/>
+            <updated>2011-08-21T10:00:00Z</updated>
+            <published>2011-08-21T10:00:00Z</published>
+            <id>/blog/emailspy.html</id>
+                        <category   scheme="/blog/tags"
+                        term="userscript"
+                        label="Userscript" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
+            <entry>
+            <title type="html">Gnome Shell Extension : Sensors</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-sensors.html"/>
+            <updated>2011-08-20T10:00:00Z</updated>
+            <published>2011-08-20T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-sensors.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome, sensors"
+                        label="Gnome, Sensors" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">Gnome Shell Extension : Force Quit</title>
             <author><name>Dipesh Acharya</name></author>

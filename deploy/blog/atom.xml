@@ -7,10 +7,124 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:34:59Z</updated>
+    <updated>2015-11-23T16:51:19Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Emailspy</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/emailspy.html"/>
+            <updated>2011-08-21T10:00:00Z</updated>
+            <published>2011-08-21T10:00:00Z</published>
+            <id>/blog/emailspy.html</id>
+                        <category   scheme="/blog/tags"
+                        term="userscript"
+                        label="Userscript" />
+            
+            <content type="html">
+                                &lt;p&gt;Emailspy finds information from Facebook, Myspace, Yahoo Messenger, Google Profiles, Picasa, etc. for all e-mail addresses found in a page and displays them on&amp;nbsp;mouse-over.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Note: This script isn’t maintained any&amp;nbsp;more.]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt;&amp;nbsp;v1.0&lt;/p&gt;
+&lt;p&gt;Displays information about the owner of the e-mail address found in pages. Information includes name, photos, age, sex, address, interests, zodiac, profile links,&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;The mashup is possible by employing Yahoo Pipes and Dapper and &lt;span class=&#34;caps&#34;&gt;AJAX&lt;/span&gt; requests.&lt;br /&gt;
+The information is displayed in a new pop-up division over e-mail addresses in the&amp;nbsp;page.&lt;/p&gt;
+&lt;p&gt;E-mail can be validated with a single click (&lt;span class=&#34;caps&#34;&gt;SMTP&lt;/span&gt; Validation).&lt;br /&gt;
+Hi5 search is to be done manually with a single click because information isn’t visible without logging&amp;nbsp;in.&lt;/p&gt;
+&lt;p&gt;For now, the script looks for information in Facebook, MySpace, Google Profiles, Google Picasa, Yahoo Messenger, Yahoo Profiles(Pulse) and Flickr. Other networks and guessing mechanism will be added on&amp;nbsp;future.&lt;/p&gt;
+&lt;h2&gt;Browser&amp;nbsp;Requirements&lt;/h2&gt;
+&lt;p&gt;Requires &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/&#34; title=&#34;Install Greasemonkey for Firefox!&#34;&gt;Greasemonkey&lt;/a&gt; extension for Firefox&lt;br /&gt;
+Requires &lt;a href=&#34;http://8-p.info/greasekit/&#34; title=&#34;Install Greasekit for Safari!&#34;&gt;Greasekit&lt;/a&gt; extension for Safari&lt;br /&gt;
+Built-in support for Google Chrome and&amp;nbsp;Opera  &lt;/p&gt;
+&lt;h2&gt;Installing&amp;nbsp;EmailSpy&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://userscripts.org/scripts/source/85358.user.js&#34; title=&#34;http://userscripts.org/scripts/source/85358.user.js&#34;&gt;http://userscripts.org/scripts/source/85358.user.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;@userscripts : &lt;a href=&#34;http://userscripts.org/scripts/show/85358&#34; title=&#34;EmailSpy at Userscripts.org&#34;&gt;http://userscripts.org/scripts/show/85358&lt;/a&gt;&lt;br /&gt;
+@github : &lt;a href=&#34;https://github.com/xtranophilist/emailspy&#34; title=&#34;EmailSpy at Github&#34;&gt;https://github.com/xtranophilist/emailspy&lt;/a&gt;&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Gnome Shell Extension : Sensors</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-sensors.html"/>
+            <updated>2011-08-20T10:00:00Z</updated>
+            <published>2011-08-20T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-sensors.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome, sensors"
+                        label="Gnome, Sensors" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;em&gt;gnome-shell-extension-sensors&lt;/em&gt; (previously known as gnome-shell-extension-cpu-temperature)&lt;br /&gt;
+is an extension for displaying &lt;span class=&#34;caps&#34;&gt;CPU&lt;/span&gt; temperature, hard disk temperature, voltage and&lt;br /&gt;
+&lt;span class=&#34;caps&#34;&gt;CPU&lt;/span&gt; fan &lt;span class=&#34;caps&#34;&gt;RPM&lt;/span&gt; in &lt;span class=&#34;caps&#34;&gt;GNOME&lt;/span&gt;&amp;nbsp;Shell.&lt;/p&gt;
+&lt;p&gt;The extension uses &lt;a href=&#34;http://www.lm-sensors.org/&#34;&gt;sensors&lt;/a&gt; from lm_sensors package (lm-sensors for Debian systems)&lt;br /&gt;
+to read temperature for different &lt;span class=&#34;caps&#34;&gt;CPU&lt;/span&gt; cores and adapters, voltage data and fan speed.&lt;br /&gt;
+If lm_sensors is not installed, temperature is read from &lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/blob/master/extension.js#L234&#34;&gt;system files&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Optionally, this extension uses &lt;a href=&#34;https://savannah.nongnu.org/projects/hddtemp/&#34;&gt;hddtemp&lt;/a&gt; to read hard drive temperature&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;**Note: I don’t maintain this extension myself but &lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors.git&#34;&gt;https://github.com/xtranophilist/gnome-shell-extension-sensors&lt;/a&gt; is regularly&amp;nbsp;updated.&lt;/p&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;You can install this extension by visiting the &lt;a href=&#34;https://extensions.gnome.org/extension/82/cpu-temperature-indicator/&#34;&gt;&lt;span class=&#34;caps&#34;&gt;GNOME&lt;/span&gt; extensions&lt;/a&gt; page for this&amp;nbsp;extension.&lt;/p&gt;
+&lt;h2&gt;Installation by package&amp;nbsp;manager&lt;/h2&gt;
+&lt;p&gt;Fedora has packaged this extension. You can install it by&amp;nbsp;running:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum -y install gnome-shell-extension-cpu-temperature&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Manual&amp;nbsp;installation&lt;/h2&gt;
+&lt;p&gt;To install this extension you need to clone the source and build the extension.&lt;br /&gt;
+The build&amp;nbsp;dependenciesare:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;gettext&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;pkg-config&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;git&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;glib2&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;glib2-devel&lt;/em&gt; or &lt;em&gt;libglib2.0-dev&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;zip&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;gnome-common&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;autoconf&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;automake&lt;/em&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;intltool&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To build the extension for gnome-shell 3.10 or newer please run the following&amp;nbsp;commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~ &amp;amp;&amp;amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
+cd ~/gnome-shell-extension-sensors
+./autogen.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To build the extension for gnome-shell 3.8 or older please run the following&amp;nbsp;commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~ &amp;amp;&amp;amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
+cd ~/gnome-shell-extension-sensors
+git checkout gnome-3.8
+./autogen.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can install this extension for your user by&amp;nbsp;executing:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make local-install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or system wide by executing (this requires root&amp;nbsp;permissions):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After installation you need to restart the &lt;span class=&#34;caps&#34;&gt;GNOME&lt;/span&gt;&amp;nbsp;shell:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ALT&lt;/code&gt;+&lt;code&gt;F2&lt;/code&gt; to open the command&amp;nbsp;prompt&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;r&lt;/code&gt; to restart the &lt;span class=&#34;caps&#34;&gt;GNOME&lt;/span&gt;&amp;nbsp;shell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then enable the extension:&lt;br /&gt;
+Open &lt;code&gt;gnome-tweak-tool&lt;/code&gt; -&amp;gt; &lt;code&gt;Shell Extensions&lt;/code&gt; -&amp;gt; &lt;code&gt;Sensors&lt;/code&gt; -&amp;gt;&amp;nbsp;On&lt;/p&gt;
+&lt;h2&gt;Installing&amp;nbsp;dependencies&lt;/h2&gt;
+&lt;p&gt;Installing lm-sensors for Fedora, CentOS and other distros with&amp;nbsp;yum:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum install -y lm_sensors&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu, Debian and other distros with&amp;nbsp;apt-get:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt-get install lm-sensors&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then run &lt;code&gt;sensors-detect&lt;/code&gt; as root as one time detection&amp;nbsp;process.&lt;/p&gt;
+&lt;p&gt;Installing &lt;code&gt;hdd-temp&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum -y install hddtemp&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;This extensions uses the output of &lt;code&gt;sensors&lt;/code&gt;(1) command to obtain the&lt;br /&gt;
+temperature data and sensor labeling. To relabel, hide or correct the&lt;br /&gt;
+output consult the &lt;code&gt;sensors.conf&lt;/code&gt;(5)&amp;nbsp;manual.&lt;/p&gt;
+&lt;p&gt;Authors : &lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/graphs/contributors&#34;&gt;authors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have any issues please, report here:&lt;br /&gt;
+&lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/issues&#34; title=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/issues&#34;&gt;https://github.com/xtranophilist/gnome-shell-extension-sensors/issues&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Contribute:&lt;/strong&gt;&lt;br /&gt;
+Github :&lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/&#34; title=&#34;https://github.com/xtranophilist/gnome-shell-extension-sensors/&#34;&gt;https://github.com/xtranophilist/gnome-shell-extension-sensors/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Screenshot:&lt;/strong&gt;&lt;br /&gt;
+&lt;img alt=&#34;68747470733a2f2f7261772e6769746875622e636f6d2f77696b692f787472616e6f7068696c6973742f676e6f6d652d7368656c6c2d657874656e73696f6e2d73656e736f72732f676e6f6d652d7368656c6c2d657874656e73696f6e2d73656e736f72732e706e67&#34; src=&#34;/web/20150315002355im_/http://motorscript.com/wp-content/uploads/2011/08/68747470733a2f2f7261772e6769746875622e636f6d2f77696b692f787472616e6f7068696c6973742f676e6f6d652d7368656c6c2d657874656e73696f6e2d73656e736f72732f676e6f6d652d7368656c6c2d657874656e73696f6e2d73656e736f72732e706e67.png&#34; /&gt;&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Gnome Shell Extension : Force Quit</title>
             <author><name>Dipesh Acharya</name></author>
@@ -39,7 +153,7 @@ Alt+F2 to open run command prompt&lt;br /&gt;
 Enter&amp;nbsp;r&lt;/p&gt;
 &lt;p&gt;Enable ‘Force Quit Extension’ from Extensions from &lt;code&gt;gnome-tweak-tool&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Git Repo:&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34; title=&#34;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34;&gt;http://github.com/xtranophilist/gnome-shell-extension-force-quit/&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34; title=&#34;https://github.com/xtranophilist/gnome-shell-extension-force-quit/&#34;&gt;https://github.com/xtranophilist/gnome-shell-extension-force-quit/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Superpiffer has created a package for archlinux in &lt;span class=&#34;caps&#34;&gt;AUR&lt;/span&gt; (&lt;a href=&#34;https://aur.archlinux.org/packages.php?ID=55879&#34; title=&#34;https://aur.archlinux.org/packages.php?ID=55879&#34;&gt;https://aur.archlinux.org/packages.php?&lt;span class=&#34;caps&#34;&gt;ID&lt;/span&gt;=55879&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;If it doesn’t work on your system, maybe you don’t have xkill. jjmarin on &lt;span class=&#34;caps&#34;&gt;GSE&lt;/span&gt; says “In fedora you need to install the package xorg-x11-apps in order to get the&amp;nbsp;xkill”.&lt;/p&gt;            </content>
         </entry>

@@ -7,6 +7,7 @@
 !!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html': [
   blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/emailspy.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/enable-root-login-for-linux-systems.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/excerpts.xml': [atom.j2, macros.j2]
@@ -18,6 +19,7 @@
   analytics.j2]
 !!python/unicode 'blog/gnome-shell-extension-screen-turn-off-button.html': [blog.j2,
   base.j2, analytics.j2]
+!!python/unicode 'blog/gnome-shell-extension-sensors.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/happy-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html': [
   blog.j2, base.j2, analytics.j2]
