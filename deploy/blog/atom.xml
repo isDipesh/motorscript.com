@@ -7,10 +7,26 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T17:15:13Z</updated>
+    <updated>2015-11-23T17:20:15Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">What happened to IPv5?</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/what-happened-to-ipv5.html"/>
+            <updated>2011-10-27T12:15:00Z</updated>
+            <published>2011-10-27T12:15:00Z</published>
+            <id>/blog/what-happened-to-ipv5.html</id>
+                        <category   scheme="/blog/tags"
+                        term="ipv5"
+                        label="Ipv5" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version numbers 0,1, 2 and 3 were the development versions for IPv4 used between 1977 and 1979. IPv4 was officially described for the first time in January 1980. It is the most popular version of the internet protocol. The deployment of the next generation &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; – IPv6 has already been initiated. But, very few people know if the intermediate version IPv5 does even&amp;nbsp;exist.&lt;/p&gt;
+&lt;p&gt;IPv4 was globally accepted. It posed many limitations though. Engineers started working on another protocol. It was called Internet Stream(&lt;span class=&#34;caps&#34;&gt;ST&lt;/span&gt;). It provided &lt;strong&gt;Q&lt;/strong&gt;uality &lt;strong&gt;o&lt;/strong&gt;f &lt;strong&gt;S&lt;/strong&gt;ervices for streaming services and provided guaranteed and predictable communication characteristics to the network and was envisioned to succeed to IPv4. Its development led to &lt;span class=&#34;caps&#34;&gt;ST2&lt;/span&gt; by 1990s. Big companies like Apple Computer, &lt;span class=&#34;caps&#34;&gt;IBM&lt;/span&gt;, Sun Microsystems and NeXT implemented this protocol. In &lt;span class=&#34;caps&#34;&gt;RFC&lt;/span&gt; 1819 specification by &lt;span class=&#34;caps&#34;&gt;IETF&lt;/span&gt;, &lt;span class=&#34;caps&#34;&gt;ST2&lt;/span&gt; was described with its packets with its own newer version of Internet Protocol which was called &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version 5 regardless of its popularity. On the other hand, the ideas of Internet Protocol next generation(IPng) were already gaining popularity. &lt;span class=&#34;caps&#34;&gt;ST2&lt;/span&gt; was realized not be a suitable protocol for the future as it was just not a replacement for IPv4 but just a complement. IPng could eliminate the limitations of IPv4. IPng used 128-bit address structures and so vastly increased the available address space and was realized as a compulsory adoption in future as IPv4 addresses were running out. The vast address space allowed easier and better hierarchical addressing models. &lt;span class=&#34;caps&#34;&gt;IETF&lt;/span&gt; decided to standardize this new Internet Protocol. Although, being a successor to IPv4, IPng was called IPv6 because a different thing was already known as &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version 5&amp;nbsp;then.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://tools.ietf.org/html/rfc1819&#34; title=&#34;Internet Stream Protocol Version 2 (ST2) Protocol Specification - Version ST2+&#34;&gt;&lt;span class=&#34;caps&#34;&gt;RFC&lt;/span&gt; 1819&lt;/a&gt; mentions &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version 5 was reserved for the experimental protocol &lt;span class=&#34;caps&#34;&gt;ST2&lt;/span&gt;, which was just a streaming complement to IPv4, never even released for public usage but was an inspiration for some components in IPv6. Like IPv4 uses 0100 (4 in binary) for &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version field (the first four bytes of every &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; packet) and IPv6 uses 0110 (6), &lt;span class=&#34;caps&#34;&gt;ST2&lt;/span&gt; uses 0101 (5) for &lt;span class=&#34;caps&#34;&gt;IP&lt;/span&gt; version&amp;nbsp;field.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Last.fm widget for websites</title>
             <author><name>Dipesh Acharya</name></author>
@@ -19,8 +35,8 @@
             <published>2011-08-25T10:00:00Z</published>
             <id>/blog/last-fm-widget.html</id>
                         <category   scheme="/blog/tags"
-                        term="twitter"
-                        label="Twitter" />
+                        term="lastfm"
+                        label="Lastfm" />
             
             <content type="html">
                                 &lt;p&gt;This widget shows last played tracks from last.fm for a user. It also shows ‘Now Playing’ track if&amp;nbsp;available.&lt;/p&gt;
