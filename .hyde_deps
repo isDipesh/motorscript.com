@@ -2,6 +2,7 @@
 !!python/unicode 'blog/angry-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/another.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/atom.xml': [atom.j2, macros.j2]
+!!python/unicode 'blog/comments-module-for-yii.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/compiling-vlc-for-root-users.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/creating-a-multi-boot-disc.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
@@ -43,6 +44,7 @@
 !!python/unicode 'blog/vbulletin-to-smf-301-permanent-url-redirects.html': [blog.j2,
   base.j2, analytics.j2]
 !!python/unicode 'blog/what-happened-to-ipv5.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'comments-module-for-yii.html': []
 !!python/unicode 'e-mail-this-file-option-in-right-clickcontext-menu.html': []
 !!python/unicode 'index.html': [listing.j2, base.j2, analytics.j2]
 !!python/unicode 'media/css/site.css': []
