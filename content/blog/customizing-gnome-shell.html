@@ -1,0 +1,162 @@
+---
+title: Customizing Gnome Shell
+created: !!timestamp '2011-08-09 10:00:00'
+tags:
+    - gnome
+---
+
+Gnome shell refers to the UI of Gnome 3, the latest incarnation of Gnome desktop environment.
+The first thing a gnome 2 user notices on a gnome shell is the lack of familiar things. Windows on Gnome shell have no minimize and maximize buttons by default, only one lonely close button. The day and current time placed in the middle of the shell panel on top looks awkward. There are no such Applications, Places or System menu.
+Clicking on the Activities button on top left gives you an overview of currently running windows which can also be achieved by pressing the Super/System key (the one with Windows logo) or the Alt+F1 combination. You can click on Applications to reveal applications installed on your system, categories are available on right. I am very much thankful to them for keeping the Alt+F2 (for run command prompt) and Alt+Tab (for switching between applications) functionalities intact.
+
+They have added Looking Glass (https://live.gnome.org/GnomeShell/LookingGlass) which one might use to do simple arithmetic calculations at least if not debugging gnome shell extensions and things.
+
+Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesnt show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesnt switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet : https://live.gnome.org/GnomeShell/CheatSheet
+
+The User Menu exists on the top right of the screen which has the logout etcetera options. "Suspend" turns into "Power Off" as Alt key is pressed.
+
+Here are some gnome shell tips, tricks and customizations that might make you more comfortable with it and help you get adopted:
+
+1\. Restart Gnome Shell
+Incase, gnome is giving problems or if you want to see the changes made:
+Alt+F2 to open run command prompt
+Press r and Enter
+You will be using this to see changes made by any of the following tweaks you would be applying.
+
+2\. Install gnome-tweak-tool
+gnome-tweak-tool allows you to modify various gnome settings and behaviour.
+`yum install gnome-tweak-tool`
+Then, execute `gnome-tweak-tool`.
+Go through the options and tweak Gnome to your feel.
+[E.g. Shell -> Show Date in Clock : ON]
+
+3 . Adding Minimize and Maximize button to the title bar:
+`gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout "menu:minimize,maximize,close"`
+OR
+Alt+F2 to open run command prompt
+`gnome-tweak-tool`
+Select "Shell"
+Arrangement of buttons on the titlebar: All
+Restart Gnome
+
+4\. Get your classic desktop back:
+Alt+F2 to open run command prompt
+`gnome-tweak-tool`
+Select "File Manager"
+Have File Manager Handle the Desktop : ON
+Restart Gnome
+
+5\. Use the following command to add/remove startup items:
+`gnome-session-properties`
+
+6\. Switch to fallback mode
+Fallback mode in gnome shell gives you a UI similar to that of Gnome 2.
+Execute this in terminal:
+gsettings set org.gnome.desktop.session session-name gnome-fallback
+OR System Settings -> System Info -> Graphics -> Forced Fallback Mode : ON
+[Note that this is what you will be using to go back to normal mode with OFF flag]
+[System Settings is available from User Menu on top right]
+
+6\. Get a taskbar
+Gnome shell has no taskbar on regular mode. You need to install a third party application that works as a taskbar. tint2 is a nice light application for this purpose.
+`yum install tint2`
+See next step to set it to start automatically on every login.
+
+7\. Adding applications on login:
+We are setting tint2 to start on login. The technique is same for any other application.
+Execute `gnome-session-properties`
+Add
+Name : tint2
+Command : tint2
+Description : Shows taskbar
+
+8\. Customize the application menu.
+Application called alacarte lets you edit, add or delete menu entries in gnome3.
+`#yum install alacarte`
+Execute:
+`$alacarte`
+
+9\. Make the massive title bar smaller:
+`sed -i "/title_vertical_pad/s/value="[0-9]{1,2}"/value="0"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml`
+Restart Gnome (Alt+F2 -> r)
+
+10\. More power options on user menu [EXTENSION]
+Adds, "Power Off", "Hibernate", etc. options to the User Menu.
+`yum install gnome-shell-extensions-alternative-status-menu`
+OR:
+Download http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+11\. Get sidebar docks for your favorites [EXTENSION]
+If you want dock on gnome install this package - gnome-shell-extensions-dock.
+`yum install gnome-shell-extensions-dock`
+Restart gnome and docks shall appear!
+I prefer the next extension instead of this one, this one just eats extra space.
+
+12\. Add your favorites to top panel like Quick Launch [EXTENSION]
+Download http://www.fpmurphy.com/gnome-shell-extensions/panellaunchers.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+13\. Add Places Menu on Gnome Panel [EXTENSION]
+Adds Places, bookmarks and removable devices on a menu available from the Gnome panel.
+`yum install gnome-shell-extensions-places-menu`
+Restart Gnome
+
+14\. Add Removable Devices Menu on Gnome Panel [EXTENSION]
+`yum -y install gnome-shell-extensions-drive-menu`
+Restart Gnome
+
+15\. Remove username from panel and IM status (Available/Busy) from user menu [EXTENSION]
+`yum -y install gnome-shell-extension-noim`
+Restart Gnome
+
+16\. Add Applications Menu on top panel [EXTENSION]
+Adds Applications menu that reveals categories of applications available.
+Download http://www.fpmurphy.com/gnome-shell-extensions/applicationsbutton.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+17\. Move Clock/Calendar to Right [EXTENSION]
+Download http://www.fpmurphy.com/gnome-shell-extensions/moveclock.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+18\. Moves Clock/Calendar to Right [EXTENSION]
+Download http://www.fpmurphy.com/gnome-shell-extensions/moveclock.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+19\. Remove Universal Access (AllY) from panel status area [EXTENSION]
+`yum -y install gnome-shell-extension-remove-accessibility-icon`
+Restart Gnome
+
+20\. Add Workspace indicator/selector to the status bar on panel [EXTENSION]
+`yum -y install gnome-shell-extension-workspacesmenu`
+Restart Gnome
+
+21\. Add Force Quit Button on Gnome Panel [EXTENSION]
+Double Clicking it and selection a non-responding application would kill that application instantly.
+Download http://github.com/xtranophilist/gnome-shell-extension-force-quit/zipball/master
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart Gnome
+
+22\. Add system monitor applet [EXTENSION]
+Installing this one requires slightly more job than the others, but worth it.
+Run each of the following instructions on terminal, one after another.
+`mkdir ~/git_projects
+cd ~/git_projects
+git clone git://github.com/paradoxxxzero/gnome-shell-system-monitor-applet.git
+scp -r ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx.zero.gmail.com ~/.local/share/gnome-shell/extensions
+sudo cp ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml /usr/share/glib-2.0/schemas
+cd /usr/share/glib-2.0/schemas
+sudo glib-compile-schemas .`
+Dont forget the dot (.) in the last command.
+Restart Gnome
+
+23\. Get CPU tempertature on the panel [EXTENSION]
+This one is my first try with gnome extension development, its now available from Fedora Official Repository too :)
+Install:
+`yum -y install gnome-shell-extension-cpu-temperature`
+Restart Gnome

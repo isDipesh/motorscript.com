@@ -7,10 +7,197 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T12:47:44Z</updated>
+    <updated>2015-11-23T13:05:06Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Customizing Gnome Shell</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/customizing-gnome-shell.html"/>
+            <updated>2011-08-09T10:00:00Z</updated>
+            <published>2011-08-09T10:00:00Z</published>
+            <id>/blog/customizing-gnome-shell.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                                &lt;p&gt;Gnome shell refers to the &lt;span class=&#34;caps&#34;&gt;UI&lt;/span&gt; of Gnome 3, the latest incarnation of Gnome desktop environment.
+The first thing a gnome 2 user notices on a gnome shell is the lack of familiar things. Windows on Gnome shell have no minimize and maximize buttons by default, only one lonely close button. The day and current time placed in the middle of the shell panel on top looks awkward. There are no such Applications, Places or System menu.
+Clicking on the Activities button on top left gives you an overview of currently running windows which can also be achieved by pressing the Super/System key (the one with Windows logo) or the Alt+F1 combination. You can click on Applications to reveal applications installed on your system, categories are available on right. I am very much thankful to them for keeping the Alt+F2 (for run command prompt) and Alt+Tab (for switching between applications) functionalities&amp;nbsp;intact.&lt;/p&gt;
+&lt;p&gt;They have added Looking Glass (https://live.gnome.org/GnomeShell/LookingGlass) which one might use to do simple arithmetic calculations at least if not debugging gnome shell extensions and&amp;nbsp;things.&lt;/p&gt;
+&lt;p&gt;Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesn&amp;#8217;t show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesn&amp;#8217;t switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet :&amp;nbsp;https://live.gnome.org/GnomeShell/CheatSheet&lt;/p&gt;
+&lt;p&gt;The User Menu exists on the top right of the screen which has the logout etcetera options. &amp;#8216;Suspend&amp;#8217; turns into &amp;#8216;Power Off&amp;#8217; as Alt key is&amp;nbsp;pressed.&lt;/p&gt;
+&lt;p&gt;Here are some gnome shell tips, tricks and customizations that might make you more comfortable with it and help you get&amp;nbsp;adopted:&lt;/p&gt;
+&lt;p&gt;1. Restart Gnome Shell
+Incase, gnome is giving problems or if you want to see the changes made:
+Alt+F2 to open run command prompt
+Press r and Enter
+You will be using this to see changes made by any of the following tweaks you would be&amp;nbsp;applying.&lt;/p&gt;
+&lt;p&gt;2. Install gnome-tweak-tool
+gnome-tweak-tool allows you to modify various gnome settings and behaviour.
+&lt;code&gt;yum install gnome-tweak-tool&lt;/code&gt;
+Then, execute &lt;code&gt;gnome-tweak-tool&lt;/code&gt;.
+Go through the options and tweak Gnome to your feel.
+[E.g. Shell -&amp;gt; Show Date in Clock : &lt;span class=&#34;caps&#34;&gt;ON&lt;/span&gt;]&lt;/p&gt;
+&lt;p&gt;3 . Adding Minimize and Maximize button to the title bar:
+&lt;code&gt;gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout &#34;menu:minimize,maximize,close&#34;&lt;/code&gt;
+&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt;
+Alt+F2 to open run command prompt
+&lt;code&gt;gnome-tweak-tool&lt;/code&gt;
+Select &amp;#8216;Shell&amp;#8217;
+Arrangement of buttons on the titlebar: All
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;4. Get your classic desktop back:
+Alt+F2 to open run command prompt
+&lt;code&gt;gnome-tweak-tool&lt;/code&gt;
+Select &amp;#8216;File Manager&amp;#8217;
+Have File Manager Handle the Desktop : &lt;span class=&#34;caps&#34;&gt;ON&lt;/span&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;5. Use the following command to add/remove startup items:
+&lt;code&gt;gnome-session-properties&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;6. Switch to fallback mode
+Fallback mode in gnome shell gives you a &lt;span class=&#34;caps&#34;&gt;UI&lt;/span&gt; similar to that of Gnome 2.
+Execute this in terminal:
+gsettings set org.gnome.desktop.session session-name gnome-fallback
+&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt; System Settings -&amp;gt; System Info -&amp;gt; Graphics -&amp;gt; Forced Fallback Mode : &lt;span class=&#34;caps&#34;&gt;ON&lt;/span&gt;
+[Note that this is what you will be using to go back to normal mode with &lt;span class=&#34;caps&#34;&gt;OFF&lt;/span&gt; flag]
+[System Settings is available from User Menu on top&amp;nbsp;right]&lt;/p&gt;
+&lt;p&gt;6. Get a taskbar
+Gnome shell has no taskbar on regular mode. You need to install a third party application that works as a taskbar. tint2 is a nice light application for this purpose.
+&lt;code&gt;yum install tint2&lt;/code&gt;
+See next step to set it to start automatically on every&amp;nbsp;login.&lt;/p&gt;
+&lt;p&gt;7. Adding applications on login:
+We are setting tint2 to start on login. The technique is same for any other application.
+Execute &lt;code&gt;gnome-session-properties&lt;/code&gt;
+Add
+Name : tint2
+Command : tint2
+Description : Shows&amp;nbsp;taskbar&lt;/p&gt;
+&lt;p&gt;8. Customize the application menu.
+Application called alacarte lets you edit, add or delete menu entries in gnome3.
+&lt;code&gt;#yum install alacarte&lt;/code&gt;
+Execute:
+&lt;code&gt;$alacarte&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;9. Make the massive title bar smaller:
+&lt;code&gt;sed -i &#34;/title_vertical_pad/s/value=\&#34;[0-9]\{1,2\}\&#34;/value=\&#34;0\&#34;/g&#34; /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml&lt;/code&gt;
+Restart Gnome (Alt+F2 -&amp;gt;&amp;nbsp;r)&lt;/p&gt;
+&lt;p&gt;10. More power options on user menu [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Adds, &amp;#8216;Power Off&amp;#8217;, &amp;#8216;Hibernate&amp;#8217;, etc. options to the User Menu.
+&lt;code&gt;yum install gnome-shell-extensions-alternative-status-menu&lt;/code&gt;
+&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt;:
+Download http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;11. Get sidebar docks for your favorites [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+If you want dock on gnome install this package - gnome-shell-extensions-dock.
+&lt;code&gt;yum install gnome-shell-extensions-dock&lt;/code&gt;
+Restart gnome and docks shall appear!
+I prefer the next extension instead of this one, this one just eats extra&amp;nbsp;space.&lt;/p&gt;
+&lt;p&gt;12. Add your favorites to top panel like Quick Launch [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Download http://www.fpmurphy.com/gnome-shell-extensions/panellaunchers.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;13. Add Places Menu on Gnome Panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Adds Places, bookmarks and removable devices on a menu available from the Gnome panel.
+&lt;code&gt;yum install gnome-shell-extensions-places-menu&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;14. Add Removable Devices Menu on Gnome Panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+&lt;code&gt;yum -y install gnome-shell-extensions-drive-menu&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;15. Remove username from panel and &lt;span class=&#34;caps&#34;&gt;IM&lt;/span&gt; status (Available/Busy) from user menu [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+&lt;code&gt;yum -y install gnome-shell-extension-noim&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;16. Add Applications Menu on top panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Adds Applications menu that reveals categories of applications available.
+Download http://www.fpmurphy.com/gnome-shell-extensions/applicationsbutton.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;17. Move Clock/Calendar to Right [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Download http://www.fpmurphy.com/gnome-shell-extensions/moveclock.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;18. Moves Clock/Calendar to Right [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Download http://www.fpmurphy.com/gnome-shell-extensions/moveclock.tar.gz
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;19. Remove Universal Access (AllY) from panel status area [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+&lt;code&gt;yum -y install gnome-shell-extension-remove-accessibility-icon&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;20. Add Workspace indicator/selector to the status bar on panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+&lt;code&gt;yum -y install gnome-shell-extension-workspacesmenu&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;21. Add Force Quit Button on Gnome Panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Double Clicking it and selection a non-responding application would kill that application instantly.
+Download http://github.com/xtranophilist/gnome-shell-extension-force-quit/zipball/master
+Extract its contents to ~/.local/share/gnome-shell/extensions/
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;22. Add system monitor applet [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+Installing this one requires slightly more job than the others, but worth it.
+Run each of the following instructions on terminal, one after another.
+&lt;code&gt;mkdir ~/git_projects
+cd ~/git_projects
+git clone git://github.com/paradoxxxzero/gnome-shell-system-monitor-applet.git
+scp -r ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx.zero.gmail.com ~/.local/share/gnome-shell/extensions
+sudo cp ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml /usr/share/glib-2.0/schemas
+cd /usr/share/glib-2.0/schemas
+sudo glib-compile-schemas .&lt;/code&gt;
+Don&amp;#8217;t forget the dot (.) in the last command.
+Restart&amp;nbsp;Gnome&lt;/p&gt;
+&lt;p&gt;23. Get &lt;span class=&#34;caps&#34;&gt;CPU&lt;/span&gt; tempertature on the panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
+This one is my first try with gnome extension development, its now available from Fedora Official Repository too :)
+Install:
+&lt;code&gt;yum -y install gnome-shell-extension-cpu-temperature&lt;/code&gt;
+Restart&amp;nbsp;Gnome&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Enable root login for Linux systems</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/enable-root-login-for-linux-systems.html"/>
+            <updated>2011-08-07T10:00:00Z</updated>
+            <published>2011-08-07T10:00:00Z</published>
+            <id>/blog/enable-root-login-for-linux-systems.html</id>
+                        <category   scheme="/blog/tags"
+                        term="linux"
+                        label="Linux" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;strong&gt;Enable root login with Graphical&amp;nbsp;Desktop:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Open terminal and switch to the superuser (root):
+&lt;code&gt;$su -&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Enter the root password and you are logged in as root in the&amp;nbsp;terminal.&lt;/p&gt;
+&lt;p&gt;Edit the file /etc/pam.d/gdm with your favorite text editor:
+&lt;code&gt;vi /etc/pam.d/gdm&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt;
+&lt;code&gt;gedit /etc/pam.d/gdm&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Find the following line:
+&lt;code&gt;auth required pam_succeed_if.so user != root quiet&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Comment it to
+&lt;code&gt;#auth required pam_succeed_if.so user != root quiet&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Do the same with the file &lt;em&gt;/etc/pam.d/gdm-password&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;You can login to &lt;span class=&#34;caps&#34;&gt;GDM&lt;/span&gt; as root from the next&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Alternative Technique :&lt;/strong&gt;
+Since it is the &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt; that prevents you to login as root, you can login in run level 3 then start the X Windows system to get root up on Gnome or any other desktop&amp;nbsp;environment.&lt;/p&gt;
+&lt;p&gt;Do this&amp;nbsp;:&lt;/p&gt;
+&lt;p&gt;Modify your bootloader configuration to set system boot into runlevel&amp;nbsp;3.&lt;/p&gt;
+&lt;p&gt;Grub is the default bootloader for most systems. /etc/grub.conf is a soft link to its configuration file which resides on /boot&amp;nbsp;actually.&lt;/p&gt;
+&lt;p&gt;Let us open it with our favorite text editor.
+&lt;code&gt;vi /etc/grub.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt; if you are on &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt; and more if you are comfortable with gedit
+&lt;code&gt;gedit /etc/grub.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Find the block item for your boot target with a kernel&amp;nbsp;entry.&lt;/p&gt;
+&lt;p&gt;Mine happens to be:
+&lt;code&gt;kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Append 3 as another parameter to the end to make it
+&lt;code&gt;kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM 3&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Save and close the&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;The next time you login, you will be presented with login on terminal instead of &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt;.
+Use ‘root’ for login and the root password you set during the system installation for password.
+After you’ve successfully logged in, enter this
+&lt;code&gt;startx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will start the default Graphical Desktop&amp;nbsp;Manager.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Compiling VLC for root users</title>
             <author><name>Dipesh Acharya</name></author>

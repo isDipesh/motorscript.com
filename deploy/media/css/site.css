@@ -74,3 +74,9 @@ h1.title a:visited {
 .post-content img{
     display: block;
 }
+
+.post-content code{
+    display: block;
+    color: #dddddd;
+    background-color: #222222;
+}

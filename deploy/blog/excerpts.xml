@@ -7,10 +7,40 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T12:47:44Z</updated>
+    <updated>2015-11-23T13:05:06Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Customizing Gnome Shell</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/customizing-gnome-shell.html"/>
+            <updated>2011-08-09T10:00:00Z</updated>
+            <published>2011-08-09T10:00:00Z</published>
+            <id>/blog/customizing-gnome-shell.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gnome"
+                        label="Gnome" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
+            <entry>
+            <title type="html">Enable root login for Linux systems</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/enable-root-login-for-linux-systems.html"/>
+            <updated>2011-08-07T10:00:00Z</updated>
+            <published>2011-08-07T10:00:00Z</published>
+            <id>/blog/enable-root-login-for-linux-systems.html</id>
+                        <category   scheme="/blog/tags"
+                        term="linux"
+                        label="Linux" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">Compiling VLC for root users</title>
             <author><name>Dipesh Acharya</name></author>

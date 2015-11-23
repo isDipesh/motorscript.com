@@ -1,0 +1,62 @@
+---
+title: Enable root login for Linux systems
+created: !!timestamp '2011-08-07 10:00:00'
+tags:
+    - linux
+---
+
+**Enable root login with Graphical Desktop:**
+
+Open terminal and switch to the superuser (root):
+`$su -`
+
+Enter the root password and you are logged in as root in the terminal.
+
+Edit the file /etc/pam.d/gdm with your favorite text editor:
+`vi /etc/pam.d/gdm`
+
+OR
+`gedit /etc/pam.d/gdm`
+
+Find the following line:
+`auth required pam_succeed_if.so user != root quiet`
+
+Comment it to
+`#auth required pam_succeed_if.so user != root quiet`
+
+Do the same with the file _/etc/pam.d/gdm-password_
+
+You can login to GDM as root from the next time.
+
+**Alternative Technique :**
+Since it is the GUI that prevents you to login as root, you can login in run level 3 then start the X Windows system to get root up on Gnome or any other desktop environment.
+
+Do this :
+
+Modify your bootloader configuration to set system boot into runlevel 3.
+
+Grub is the default bootloader for most systems. /etc/grub.conf is a soft link to its configuration file which resides on /boot actually.
+
+Let us open it with our favorite text editor.
+`vi /etc/grub.conf`
+
+OR if you are on GUI and more if you are comfortable with gedit
+`gedit /etc/grub.conf`
+
+Find the block item for your boot target with a kernel entry.
+
+Mine happens to be:
+`kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM
+`
+
+Append 3 as another parameter to the end to make it
+`kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM 3`
+
+Save and close the file.
+
+The next time you login, you will be presented with login on terminal instead of GUI.
+Use ‘root’ for login and the root password you set during the system installation for password.
+After you’ve successfully logged in, enter this
+`startx`
+
+This will start the default Graphical Desktop Manager.

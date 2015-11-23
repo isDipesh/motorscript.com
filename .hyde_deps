@@ -4,8 +4,11 @@
 !!python/unicode 'blog/atom.xml': [atom.j2, macros.j2]
 !!python/unicode 'blog/compiling-vlc-for-root-users.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/creating-a-multi-boot-disc.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html': [
   blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/enable-root-login-for-linux-systems.html': [blog.j2, base.j2,
+  analytics.j2]
 !!python/unicode 'blog/excerpts.xml': [atom.j2, macros.j2]
 !!python/unicode 'blog/happy-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/index.html': [listing.j2, base.j2, analytics.j2]
