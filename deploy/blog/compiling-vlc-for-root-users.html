@@ -1,0 +1,100 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+        <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <title>Compiling VLC for root users | motorscript.com</title>
+    <meta name="description" content="">
+    <meta name="author" content="Dipesh Acharya">
+    <meta name="viewport" content="">
+
+            <link rel="shortcut icon" href="/media/images/favicon.ico">
+        <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    
+            <link rel="stylesheet" href="/media/css/site.css">
+        <link rel="stylesheet" href="/media/css/syntax.css">
+    
+            <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+    
+    </head>
+
+<body id="compiling-vlc-for-root-users">
+    <div id="container">
+                    <div id="main" role="main">
+                <header>
+                    <a href="http://motorscript.com"><h3>motorscript.com</h3></a>                </header>
+                <section class="content">
+                    <article class="post">
+
+        <nav class="post_nav">
+
+            <a class="backlink" href="http://motorscript.com">All Posts</a>
+
+            
+                            <a class="next" title="Creating a multi-boot disc - The How-To of happyBoot v3"
+                   href="/blog/creating-a-multi-boot-disc.html">Next</a>
+            
+                                                                                                                                                                                            </nav>
+        <h1 class="title">
+            <a href="/blog/compiling-vlc-for-root-users.html">
+                Compiling VLC for root users
+            </a>
+        </h1>
+        <time datetime="2011-08-06">
+            Posted: Sat, 06 Aug 2011
+        </time>
+
+        <div class="tags">
+                            Tags:
+                <ul class="tags">
+                                            <li>
+                            <a class="small" href="/blog/tags/vlc.html">
+                                vlc</a>
+                        </li>
+                                    </ul>
+                </div>
+                    </div>
+
+        <div class="post-content">
+            <p><strong><span class="caps">VLC</span> media player</strong> binaries are available in repos but <span class="caps">VLC</span> installed from those cannot be run as root. The source code needs to be downloaded, and compiled with certain parameters that will then enable <span class="caps">VLC</span> to be run as root&nbsp;too.</p>
+<p><span class="caps">STEPS</span>:</p>
+<p>1. Download the latest vlc source code tarball from :
+<a href="http://www.videolan.org/vlc/download-sources.html" title="VLC Download Site">http://www.videolan.org/vlc/download-sources.html</a></p>
+<p>2 . Extract it:
+<code>$tar -xvf vlc-x.x.x.tar.bz2</code>
+x.x.x refers to the version you’ve&nbsp;downloaded.</p>
+<p>3. Change directory to the source code root
+<code>$cd vlc-x.x.x</code></p>
+<p>4. Install libraries required to build <span class="caps">VLC</span>
+For Ubuntu and other debian systems with apt-get:
+<code>#apt-get build-dep vlc</code></p>
+<p>On Fedora, <span class="caps">RHEL</span>, Cent <span class="caps">OS</span> and other <span class="caps">RPM</span> based systems with yum:
+<code>#yum-builddep vlc</code></p>
+<p>5. Configure the building parameters and also check no errors exist and all dependencies are fulfilled:
+<code>#./configure --enable-run-as-root --prefix=/opt/vlc</code></p>
+<p>The ‘–enable-run-as-root’ is the tweak that does – hmm, isn’t it obvious already!
+The ‘–prefix’ parameter assigns where the built binaries go, in this case&nbsp;/opt/vlc.</p>
+<p>6. <span class="caps">COMPILE</span> :&nbsp;`#make</p>
+<h1>make&nbsp;install`</h1>
+<p>7. Optionally, clean the files created during compilation.
+<code>#make clean</code></p>
+<p>Configuration and compiling requires some time and&nbsp;patience.</p>
+<p>After all steps are complete, vlc is installed in /opt/vlc.
+You can run vlc by using ‘vlc’ command.
+<code>$vlc</code></p>
+<p>Thank&nbsp;you!</p>        </div>
+    </article>                </section>
+            </div>
+            </div> <!--! end of #container -->
+    <footer>
+        Powered by <a target="_blank" href="https://github.com/hyde/hyde">hyde</a>.
+    </footer>
+        
+        
+                
+</body>
+</html>

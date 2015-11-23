@@ -1,0 +1,48 @@
+---
+title: Compiling VLC for root users
+created: !!timestamp '2011-08-06 10:00:00'
+tags:
+    - vlc
+---
+
+**VLC media player** binaries are available in repos but VLC installed from those cannot be run as root. The source code needs to be downloaded, and compiled with certain parameters that will then enable VLC to be run as root too.
+
+STEPS:
+
+1\. Download the latest vlc source code tarball from :
+[http://www.videolan.org/vlc/download-sources.html](http://www.videolan.org/vlc/download-sources.html "VLC Download Site")
+
+2 . Extract it:
+`$tar -xvf vlc-x.x.x.tar.bz2`
+x.x.x refers to the version you’ve downloaded.
+
+3\. Change directory to the source code root
+`$cd vlc-x.x.x`
+
+4\. Install libraries required to build VLC
+For Ubuntu and other debian systems with apt-get:
+`#apt-get build-dep vlc`
+
+On Fedora, RHEL, Cent OS and other RPM based systems with yum:
+`#yum-builddep vlc`
+
+5\. Configure the building parameters and also check no errors exist and all dependencies are fulfilled:
+`#./configure --enable-run-as-root --prefix=/opt/vlc`
+
+The ‘–enable-run-as-root’ is the tweak that does – hmm, isn’t it obvious already!
+The ‘–prefix’ parameter assigns where the built binaries go, in this case /opt/vlc.
+
+6\. COMPILE :
+`#make
+#make install`
+
+7\. Optionally, clean the files created during compilation.
+`#make clean`
+
+Configuration and compiling requires some time and patience.
+
+After all steps are complete, vlc is installed in /opt/vlc.
+You can run vlc by using ‘vlc’ command.
+`$vlc`
+
+Thank you!

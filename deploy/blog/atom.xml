@@ -7,10 +7,50 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T12:41:26Z</updated>
+    <updated>2015-11-23T12:47:44Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Compiling VLC for root users</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/compiling-vlc-for-root-users.html"/>
+            <updated>2011-08-06T10:00:00Z</updated>
+            <published>2011-08-06T10:00:00Z</published>
+            <id>/blog/compiling-vlc-for-root-users.html</id>
+                        <category   scheme="/blog/tags"
+                        term="vlc"
+                        label="Vlc" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;strong&gt;&lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt; media player&lt;/strong&gt; binaries are available in repos but &lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt; installed from those cannot be run as root. The source code needs to be downloaded, and compiled with certain parameters that will then enable &lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt; to be run as root&amp;nbsp;too.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;STEPS&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;1. Download the latest vlc source code tarball from :
+&lt;a href=&#34;http://www.videolan.org/vlc/download-sources.html&#34; title=&#34;VLC Download Site&#34;&gt;http://www.videolan.org/vlc/download-sources.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2 . Extract it:
+&lt;code&gt;$tar -xvf vlc-x.x.x.tar.bz2&lt;/code&gt;
+x.x.x refers to the version you’ve&amp;nbsp;downloaded.&lt;/p&gt;
+&lt;p&gt;3. Change directory to the source code root
+&lt;code&gt;$cd vlc-x.x.x&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;4. Install libraries required to build &lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt;
+For Ubuntu and other debian systems with apt-get:
+&lt;code&gt;#apt-get build-dep vlc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On Fedora, &lt;span class=&#34;caps&#34;&gt;RHEL&lt;/span&gt;, Cent &lt;span class=&#34;caps&#34;&gt;OS&lt;/span&gt; and other &lt;span class=&#34;caps&#34;&gt;RPM&lt;/span&gt; based systems with yum:
+&lt;code&gt;#yum-builddep vlc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;5. Configure the building parameters and also check no errors exist and all dependencies are fulfilled:
+&lt;code&gt;#./configure --enable-run-as-root --prefix=/opt/vlc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The ‘–enable-run-as-root’ is the tweak that does – hmm, isn’t it obvious already!
+The ‘–prefix’ parameter assigns where the built binaries go, in this case&amp;nbsp;/opt/vlc.&lt;/p&gt;
+&lt;p&gt;6. &lt;span class=&#34;caps&#34;&gt;COMPILE&lt;/span&gt; :&amp;nbsp;`#make&lt;/p&gt;
+&lt;h1&gt;make&amp;nbsp;install`&lt;/h1&gt;
+&lt;p&gt;7. Optionally, clean the files created during compilation.
+&lt;code&gt;#make clean&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Configuration and compiling requires some time and&amp;nbsp;patience.&lt;/p&gt;
+&lt;p&gt;After all steps are complete, vlc is installed in /opt/vlc.
+You can run vlc by using ‘vlc’ command.
+&lt;code&gt;$vlc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Thank&amp;nbsp;you!&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Creating a multi-boot disc - The How-To of happyBoot v3</title>
             <author><name>Dipesh Acharya</name></author>
