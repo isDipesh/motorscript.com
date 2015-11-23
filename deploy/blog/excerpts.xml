@@ -7,10 +7,25 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T13:41:00Z</updated>
+    <updated>2015-11-23T16:24:03Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Hiding header and footer only in certain pages with LibreOffice Writer</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html"/>
+            <updated>2011-08-13T10:00:00Z</updated>
+            <published>2011-08-13T10:00:00Z</published>
+            <id>/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html</id>
+                        <category   scheme="/blog/tags"
+                        term="libreoffice"
+                        label="Libreoffice" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">Fedora 15 post installation customization</title>
             <author><name>Dipesh Acharya</name></author>

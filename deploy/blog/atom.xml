@@ -7,10 +7,38 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T13:41:00Z</updated>
+    <updated>2015-11-23T16:24:03Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Hiding header and footer only in certain pages with LibreOffice Writer</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html"/>
+            <updated>2011-08-13T10:00:00Z</updated>
+            <published>2011-08-13T10:00:00Z</published>
+            <id>/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html</id>
+                        <category   scheme="/blog/tags"
+                        term="libreoffice"
+                        label="Libreoffice" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;strong&gt;If it is the first page of the document&lt;/strong&gt;,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press F11 to open &lt;em&gt;Styles and Formatting&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Click on the fourth icon on the top called &lt;em&gt;Page Styles&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Double-click &lt;em&gt;First Page&lt;/em&gt; from the list to apply the first page style where the headers and footers are&amp;nbsp;hidden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This method works only for the first page of the document. However a little more work makes it work for any&amp;nbsp;page.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For pages other than the&amp;nbsp;first,&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the last line of the page that precedes the page where you want to hide headers and footers.
+  (Go to last line of page 3, if you want headers and footers not to be shown in page&amp;nbsp;4).&lt;/li&gt;
+&lt;li&gt;From the menu bar, select &lt;em&gt;Insert -&amp;gt; Manual&amp;nbsp;Break&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;In the dialog, select &lt;em&gt;Page Break&lt;/em&gt; check-box from &lt;em&gt;Type&lt;/em&gt; and &lt;em&gt;First Page&lt;/em&gt; from &lt;em&gt;Style&lt;/em&gt; pull-down&amp;nbsp;list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The headers and footers are then hidden for the page that follows the manually inserted page&amp;nbsp;break.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Fedora 15 post installation customization</title>
             <author><name>Dipesh Acharya</name></author>
