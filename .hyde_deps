@@ -33,6 +33,8 @@
 !!python/unicode 'blog/tags/happy.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/sad.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/thoughts.html': [base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'blog/vbulletin-to-smf-301-permanent-url-redirects.html': [blog.j2,
+  base.j2, analytics.j2]
 !!python/unicode 'blog/what-happened-to-ipv5.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'e-mail-this-file-option-in-right-clickcontext-menu.html': []
 !!python/unicode 'index.html': [listing.j2, base.j2, analytics.j2]
