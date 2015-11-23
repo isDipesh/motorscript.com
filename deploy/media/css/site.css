@@ -75,7 +75,7 @@ h1.title a:visited {
     display: block;
 }
 
-.post-content code {
+.post-content code, .post-content pre {
     font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace, "courier new";
     display: block;
     color: #dddddd;

@@ -7,10 +7,67 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T13:05:06Z</updated>
+    <updated>2015-11-23T13:41:00Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Fedora 15 post installation customization</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/fedora-15-post-install-customization.html"/>
+            <updated>2011-08-11T10:00:00Z</updated>
+            <published>2011-08-11T10:00:00Z</published>
+            <id>/blog/fedora-15-post-install-customization.html</id>
+                        <category   scheme="/blog/tags"
+                        term="fedora"
+                        label="Fedora" />
+            
+            <content type="html">
+                                &lt;p&gt;The installation is pretty smooth as is always with Anaconda. You get to choose which packages to install. Gnome, &lt;span class=&#34;caps&#34;&gt;KDE&lt;/span&gt;, &lt;span class=&#34;caps&#34;&gt;LXDE&lt;/span&gt;, &lt;span class=&#34;caps&#34;&gt;XFCE&lt;/span&gt;, etc. are the desktop environment options available and I chose to install all. Installing more than 2000 packages from the &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; media didn’t take&amp;nbsp;long!&lt;/p&gt;
+&lt;p&gt;After the one time post-installation configuration, I logged into Gnome 3. I was very much disappointed to loose those features of Gnome 2 I was used to. More about the Gnome 3 interface, tips, customizations and extensions here in this separate post&amp;nbsp;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://motorscript.com/customizing-gnome-shell/&#34;&gt;http://motorscript.com/customizing-gnome-shell/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Firefox 4.0.1 comes with the distribution as the default web browser.
+Empathy is the default &lt;span class=&#34;caps&#34;&gt;IM&lt;/span&gt; client, so Pidgin lovers like me have to go through one more yum install command.
+Also, banshee isn’t integrated, but Amarok and RhythmBox are&amp;nbsp;available!&lt;/p&gt;
+&lt;p&gt;Dialogs in windows pop out of the title bar which isn’t a bad&amp;nbsp;effect.&lt;/p&gt;
+&lt;p&gt;The system is very much stable, haven’t experience a single crash or bug problem yet. The system boots up pretty fast and resuming from hibernation is very very fast. The only disaapointment may be the change of &lt;span class=&#34;caps&#34;&gt;UI&lt;/span&gt; in gnome 3, Fedora 15 is perfect&amp;nbsp;otherwise.&lt;/p&gt;
+&lt;p&gt;Installing the&amp;nbsp;essentials:&lt;/p&gt;
+&lt;p&gt;The commands listed in this thread are supposed to be run by a privileged user like the ‘root’ user.
+I use Fedora as root user, not recommended though. But this is how you login as root:
+&lt;a href=&#34;http://motorscript.com/enable-root-login-for-linux-systems/&#34; title=&#34;http://motorscript.com/enable-root-login-for-linux-systems/&#34;&gt;http://motorscript.com/enable-root-login-for-linux-systems/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Or if you feel insecure having all those powers, you may want to add yourself to the sudoers list and preceed all the commands that require super user permissions with ‘sudo ‘.&amp;nbsp;Exercise!&lt;/p&gt;
+&lt;p&gt;Since Fedora is free, non-free packages like mp3 codecs and flash-player plugins are not be shipped with the distribution, which have to installed&amp;nbsp;manually.&lt;/p&gt;
+&lt;p&gt;“&lt;span class=&#34;caps&#34;&gt;RPM&lt;/span&gt; Fusion provides software that the Fedora Project or Red Hat doesn’t want to ship. That software is provided as precompiled RPMs for all current Fedora versions and Red Hat Enterprise Linux 5; you can use the &lt;span class=&#34;caps&#34;&gt;RPM&lt;/span&gt; Fusion repositories with tools like yum and&amp;nbsp;PackageKit.”&lt;/p&gt;
+&lt;p&gt;Install free and non-free repository from with:
+&lt;code&gt;yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install fastestmirror plugin for yum. Makes yum install packages from the fastest mirror.
+&lt;code&gt;yum install yum-fastestmirror&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install mp3 and other codecs:
+Multimedia:
+&lt;code&gt;yum -y install gstreamer-plugins-bad gstreamer-plugins-ugly xine-lib-extras-nonfree gstreamer-ffmpeg xmms xmms-mp3 xine xine-lib libdvdcss&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt;:
+yum -y install vlc
+If you want &lt;span class=&#34;caps&#34;&gt;VLC&lt;/span&gt; to run as root, see this thread :
+&lt;a href=&#34;http://motorscript.com/compiling-vlc-for-root-users/&#34; title=&#34;http://motorscript.com/compiling-vlc-for-root-users/&#34;&gt;http://motorscript.com/compiling-vlc-for-root-users/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install flash player and plugin for browsers:
+&lt;code&gt;yum -y install gnash gnash-plugin&lt;/code&gt;
+&lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt; if the non-free/properietary Adobe Flash player is to be installed:
+&lt;code&gt;yum localinstall --nogpgcheck http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm -y
+yum install flash-plugin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install 7zip and &lt;span class=&#34;caps&#34;&gt;RAR&lt;/span&gt; plugins and executables
+&lt;code&gt;yum -y install p7zip p7zip-plugins unrar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Most probably your wireless device is supported out of the box.
+If it isn’t and if yours is a Broadcom &lt;span class=&#34;caps&#34;&gt;WLAN&lt;/span&gt; device, follow this:
+&lt;code&gt;yum install kmod-wl
+service NetworkManager restart
+service network restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;MySQL and phpmyadmin:
+Follow these on terminal:
+&lt;code&gt;yum install -y mysql phpmyadmin
+chkconfig mysqld on
+mysql_secure_installation
+service mysqld restart&lt;/code&gt;&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Customizing Gnome Shell</title>
             <author><name>Dipesh Acharya</name></author>
@@ -27,8 +84,8 @@
 The first thing a gnome 2 user notices on a gnome shell is the lack of familiar things. Windows on Gnome shell have no minimize and maximize buttons by default, only one lonely close button. The day and current time placed in the middle of the shell panel on top looks awkward. There are no such Applications, Places or System menu.
 Clicking on the Activities button on top left gives you an overview of currently running windows which can also be achieved by pressing the Super/System key (the one with Windows logo) or the Alt+F1 combination. You can click on Applications to reveal applications installed on your system, categories are available on right. I am very much thankful to them for keeping the Alt+F2 (for run command prompt) and Alt+Tab (for switching between applications) functionalities&amp;nbsp;intact.&lt;/p&gt;
 &lt;p&gt;They have added Looking Glass (https://live.gnome.org/GnomeShell/LookingGlass) which one might use to do simple arithmetic calculations at least if not debugging gnome shell extensions and&amp;nbsp;things.&lt;/p&gt;
-&lt;p&gt;Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesn&amp;#8217;t show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesn&amp;#8217;t switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet :&amp;nbsp;https://live.gnome.org/GnomeShell/CheatSheet&lt;/p&gt;
-&lt;p&gt;The User Menu exists on the top right of the screen which has the logout etcetera options. &amp;#8216;Suspend&amp;#8217; turns into &amp;#8216;Power Off&amp;#8217; as Alt key is&amp;nbsp;pressed.&lt;/p&gt;
+&lt;p&gt;Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesnt show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesnt switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet :&amp;nbsp;https://live.gnome.org/GnomeShell/CheatSheet&lt;/p&gt;
+&lt;p&gt;The User Menu exists on the top right of the screen which has the logout etcetera options. &amp;#8220;Suspend&amp;#8221; turns into &amp;#8220;Power Off&amp;#8221; as Alt key is&amp;nbsp;pressed.&lt;/p&gt;
 &lt;p&gt;Here are some gnome shell tips, tricks and customizations that might make you more comfortable with it and help you get&amp;nbsp;adopted:&lt;/p&gt;
 &lt;p&gt;1. Restart Gnome Shell
 Incase, gnome is giving problems or if you want to see the changes made:
@@ -46,13 +103,13 @@ Go through the options and tweak Gnome to your feel.
 &lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt;
 Alt+F2 to open run command prompt
 &lt;code&gt;gnome-tweak-tool&lt;/code&gt;
-Select &amp;#8216;Shell&amp;#8217;
+Select &amp;#8220;Shell&amp;#8221;
 Arrangement of buttons on the titlebar: All
 Restart&amp;nbsp;Gnome&lt;/p&gt;
 &lt;p&gt;4. Get your classic desktop back:
 Alt+F2 to open run command prompt
 &lt;code&gt;gnome-tweak-tool&lt;/code&gt;
-Select &amp;#8216;File Manager&amp;#8217;
+Select &amp;#8220;File Manager&amp;#8221;
 Have File Manager Handle the Desktop : &lt;span class=&#34;caps&#34;&gt;ON&lt;/span&gt;
 Restart&amp;nbsp;Gnome&lt;/p&gt;
 &lt;p&gt;5. Use the following command to add/remove startup items:
@@ -81,10 +138,10 @@ Application called alacarte lets you edit, add or delete menu entries in gnome3.
 Execute:
 &lt;code&gt;$alacarte&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;9. Make the massive title bar smaller:
-&lt;code&gt;sed -i &#34;/title_vertical_pad/s/value=\&#34;[0-9]\{1,2\}\&#34;/value=\&#34;0\&#34;/g&#34; /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml&lt;/code&gt;
+&lt;code&gt;sed -i &#34;/title_vertical_pad/s/value=&#34;[0-9]{1,2}&#34;/value=&#34;0&#34;/g&#34; /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml&lt;/code&gt;
 Restart Gnome (Alt+F2 -&amp;gt;&amp;nbsp;r)&lt;/p&gt;
 &lt;p&gt;10. More power options on user menu [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
-Adds, &amp;#8216;Power Off&amp;#8217;, &amp;#8216;Hibernate&amp;#8217;, etc. options to the User Menu.
+Adds, &amp;#8220;Power Off&amp;#8221;, &amp;#8220;Hibernate&amp;#8221;, etc. options to the User Menu.
 &lt;code&gt;yum install gnome-shell-extensions-alternative-status-menu&lt;/code&gt;
 &lt;span class=&#34;caps&#34;&gt;OR&lt;/span&gt;:
 Download http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
@@ -143,7 +200,7 @@ scp -r ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx
 sudo cp ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml /usr/share/glib-2.0/schemas
 cd /usr/share/glib-2.0/schemas
 sudo glib-compile-schemas .&lt;/code&gt;
-Don&amp;#8217;t forget the dot (.) in the last command.
+Dont forget the dot (.) in the last command.
 Restart&amp;nbsp;Gnome&lt;/p&gt;
 &lt;p&gt;23. Get &lt;span class=&#34;caps&#34;&gt;CPU&lt;/span&gt; tempertature on the panel [&lt;span class=&#34;caps&#34;&gt;EXTENSION&lt;/span&gt;]
 This one is my first try with gnome extension development, its now available from Fedora Official Repository too :)

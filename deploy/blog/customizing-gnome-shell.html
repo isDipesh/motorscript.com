@@ -34,6 +34,8 @@
 
             <a class="backlink" href="http://motorscript.com">All Posts</a>
 
+                            <a class="prev" title="Fedora 15 post installation customization"
+                   href="/blog/fedora-15-post-install-customization.html">Previous</a>
             
                             <a class="next" title="Enable root login for Linux systems"
                    href="/blog/enable-root-login-for-linux-systems.html">Next</a>
@@ -64,8 +66,8 @@
 The first thing a gnome 2 user notices on a gnome shell is the lack of familiar things. Windows on Gnome shell have no minimize and maximize buttons by default, only one lonely close button. The day and current time placed in the middle of the shell panel on top looks awkward. There are no such Applications, Places or System menu.
 Clicking on the Activities button on top left gives you an overview of currently running windows which can also be achieved by pressing the Super/System key (the one with Windows logo) or the Alt+F1 combination. You can click on Applications to reveal applications installed on your system, categories are available on right. I am very much thankful to them for keeping the Alt+F2 (for run command prompt) and Alt+Tab (for switching between applications) functionalities&nbsp;intact.</p>
 <p>They have added Looking Glass (https://live.gnome.org/GnomeShell/LookingGlass) which one might use to do simple arithmetic calculations at least if not debugging gnome shell extensions and&nbsp;things.</p>
-<p>Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesn&#8217;t show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesn&#8217;t switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet :&nbsp;https://live.gnome.org/GnomeShell/CheatSheet</p>
-<p>The User Menu exists on the top right of the screen which has the logout etcetera options. &#8216;Suspend&#8217; turns into &#8216;Power Off&#8217; as Alt key is&nbsp;pressed.</p>
+<p>Double clicking on the titlebar maximizes the window. On a default system, minimizing is possible only with a right click on the title bar. The concept of minimizing has gone with Gnome 3, Windows are hidden instead. Ctrl+Alt+D doesnt show you your desktop, wait, there is no such traditional desktop folder in this environment. Ctrl+Alt+(Left/Right) doesnt switch workspaces as in Gnome 2, Ctrl+Alt+(Up/Down) does. More on keyboard shortcuts and components of the shell are documented here in the official cheat-sheet :&nbsp;https://live.gnome.org/GnomeShell/CheatSheet</p>
+<p>The User Menu exists on the top right of the screen which has the logout etcetera options. &#8220;Suspend&#8221; turns into &#8220;Power Off&#8221; as Alt key is&nbsp;pressed.</p>
 <p>Here are some gnome shell tips, tricks and customizations that might make you more comfortable with it and help you get&nbsp;adopted:</p>
 <p>1. Restart Gnome Shell
 Incase, gnome is giving problems or if you want to see the changes made:
@@ -83,13 +85,13 @@ Go through the options and tweak Gnome to your feel.
 <span class="caps">OR</span>
 Alt+F2 to open run command prompt
 <code>gnome-tweak-tool</code>
-Select &#8216;Shell&#8217;
+Select &#8220;Shell&#8221;
 Arrangement of buttons on the titlebar: All
 Restart&nbsp;Gnome</p>
 <p>4. Get your classic desktop back:
 Alt+F2 to open run command prompt
 <code>gnome-tweak-tool</code>
-Select &#8216;File Manager&#8217;
+Select &#8220;File Manager&#8221;
 Have File Manager Handle the Desktop : <span class="caps">ON</span>
 Restart&nbsp;Gnome</p>
 <p>5. Use the following command to add/remove startup items:
@@ -118,10 +120,10 @@ Application called alacarte lets you edit, add or delete menu entries in gnome3.
 Execute:
 <code>$alacarte</code></p>
 <p>9. Make the massive title bar smaller:
-<code>sed -i "/title_vertical_pad/s/value=\"[0-9]\{1,2\}\"/value=\"0\"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code>
+<code>sed -i "/title_vertical_pad/s/value="[0-9]{1,2}"/value="0"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code>
 Restart Gnome (Alt+F2 -&gt;&nbsp;r)</p>
 <p>10. More power options on user menu [<span class="caps">EXTENSION</span>]
-Adds, &#8216;Power Off&#8217;, &#8216;Hibernate&#8217;, etc. options to the User Menu.
+Adds, &#8220;Power Off&#8221;, &#8220;Hibernate&#8221;, etc. options to the User Menu.
 <code>yum install gnome-shell-extensions-alternative-status-menu</code>
 <span class="caps">OR</span>:
 Download http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
@@ -180,7 +182,7 @@ scp -r ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx
 sudo cp ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml /usr/share/glib-2.0/schemas
 cd /usr/share/glib-2.0/schemas
 sudo glib-compile-schemas .</code>
-Don&#8217;t forget the dot (.) in the last command.
+Dont forget the dot (.) in the last command.
 Restart&nbsp;Gnome</p>
 <p>23. Get <span class="caps">CPU</span> tempertature on the panel [<span class="caps">EXTENSION</span>]
 This one is my first try with gnome extension development, its now available from Fedora Official Repository too :)

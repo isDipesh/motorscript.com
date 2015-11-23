@@ -10,6 +10,8 @@
 !!python/unicode 'blog/enable-root-login-for-linux-systems.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/excerpts.xml': [atom.j2, macros.j2]
+!!python/unicode 'blog/fedora-15-post-install-customization.html': [blog.j2, base.j2,
+  analytics.j2]
 !!python/unicode 'blog/happy-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/index.html': [listing.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
