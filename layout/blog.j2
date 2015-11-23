@@ -56,11 +56,15 @@
                 </ul>
                 </div>
             {% endif %}
-        {% filter markdown|typogrify -%}
-            {% mark post -%}
-                {% block post -%}{%- endblock %}
-            {%- endmark %}
-        {%- endfilter %}
+        </div>
+
+        <div class="post-content">
+            {% filter markdown|typogrify -%}
+                {% mark post -%}
+                    {% block post -%}{%- endblock %}
+                {%- endmark %}
+            {%- endfilter %}
+        </div>
     </article>
 
 {%- endblock %}

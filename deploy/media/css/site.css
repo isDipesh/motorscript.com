@@ -19,42 +19,54 @@ nav.post_nav {
     float: right;
 }
 
-nav.post_nav a+a {
+nav.post_nav a + a {
     padding-left: 0.3em;
     border-left: 1px solid #000;
 }
 
-footer{
-    margin:3em 0;
-    padding:1em 0;
+footer {
+    margin: 3em 0;
+    padding: 1em 0;
     border-top: 1px dashed #888;
 }
 
-time{
+time {
     opacity: 0.6;
     font-size: smaller;
 }
 
-div.tags{
+div.tags {
     opacity: 0.7;
 }
 
-ul.tags{
+ul.tags {
     display: inline;
     padding: 0;
 }
 
-ul.tags li{
+ul.tags li {
     display: inline;
     list-style: none;
 }
 
-h1.title a{
+h1.title a {
     font-size: 1.5em;
     text-decoration: none;
     color: #222;
 }
 
-h1.title a:visited{
- color: #222;
+h1.title a:visited {
+    color: #222;
+}
+
+.post-content {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -0.003em;
+    color: rgba(0,0,0,0.8);
+    -webkit-font-smoothing: antialiased;
+    word-wrap: break-word;
+    margin-top: 1.8em;
 }
