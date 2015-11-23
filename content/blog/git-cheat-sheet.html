@@ -1,0 +1,117 @@
+---
+title: "git Cheat-sheet"
+created: !!timestamp '2012-05-30 10:19:28'
+tags:
+    - git
+---
+
+
+**BASICS**
+
+First time set-up:
+`git config --global user.name "Dipesh Acharya"`
+`git config --global user.email x@gmail.com`
+`ssh-keygen`
+More [here](/web/20150314234842/http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup)
+
+Push a branch
+`git push -u origin master`
+-u to set automatic tracking
+
+Pulling a new branch from a remote repository
+`git fetch origin [remote-branch]:[new-local-branch]`
+
+See all changes
+`git log --oneline`
+
+* * *
+
+**BRANCHING/MERGING**
+
+Create new branch
+`git branch [new-branch-name]`
+
+View branches
+`git branch`
+
+Switch to a branch
+`git checkout [branch-name]`
+
+Merging from another branch
+`git merge [another-branch-name]`
+
+Merging from another branch creating a commit object for the merge and preventing fast-fowarding
+`git merge --no-ff [another-branch-name]`
+
+Delete a branch
+`git branch -d [branch-name]`
+
+* * *
+
+**UNDO/REDO:**
+
+Undo everything since last commit
+`git reset --hard`
+
+Undo all changes on [file] since last commit
+`git checkout [file]`
+
+Edit last commit message
+`git commit --amend`
+
+Restoring a deleted file from Git Repo:
+`git rev-list -n 1 HEAD -- [file_path]`
+`git checkout [deleting_commit-id]^ -- [file_path]`
+
+Ignore file permission/mode changes:
+`git config core.filemode false`
+
+Roll back to an older commit
+`git reset --hard <tag/branch/commit id>`
+
+* * *
+
+**TAGS**
+
+Tagging commits
+`git tag v1.9b`
+Tags can be used to refer to commits instead of commit id.
+
+Tagging commits with message
+`git tag -a v1.4 -m 'message here'`
+
+Pushing tags
+`git push --tags`
+
+* * *
+
+**HACKS**
+
+Creating git alias
+`git config --global alias.ci 'commit -v'`
+`git ci`
+
+Find out which branch contains a change
+`git branch --contains [commit-id]`
+
+Configure git to rebase automatically after pulls
+`git config branch.autosetuprebase always`
+
+Ignoring change in a file without deleting it from repo
+`git update-index --assume-unchanged <file>`
+
+* * *
+
+**Useful Links:**
+
+[Git shortcuts like you’ve never seen before:](/web/20150314234842/http://madebynathan.com/2011/10/18/git-shortcuts-like-youve-never-seen-before/ "Git shortcuts like you've never seen before")
+
+[My bash aliases](/web/20150314234842/https://gist.github.com/2775965 "My bash aliases")
+
+[Hub teaches git about GitHub](/web/20150314234842/http://defunkt.io/hub/ "Hub teaches git about GitHub")
+
+[Git cheat sheets by Github](/web/20150314234842/http://help.github.com/git-cheat-sheets/)
+
+[How to Handle a Pull Request from GitHub](/web/20150314234842/http://markosullivan.ca/how-to-handle-a-pull-request-from-github/ "How to Handle a Pull Request from GitHub")
+
+[A successful Git branching model](/web/20150314234842/http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model")
