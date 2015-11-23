@@ -29,6 +29,8 @@
 !!python/unicode 'blog/index.html': [listing.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/last-fm-widget.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/setting-up-a-remote-git-repo-on-shared-server-like-hostgator.html': [
+  blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/tags/angry.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/happy.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/sad.html': [base.j2, tagged_posts.j2, analytics.j2]

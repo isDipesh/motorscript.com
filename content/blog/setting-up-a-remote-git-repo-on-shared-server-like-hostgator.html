@@ -1,0 +1,39 @@
+---
+title: Setting up a remote git repo on a shared server like Hostgator
+created: !!timestamp '2012-05-08 04:45:29'
+tags:
+    - git
+---
+
+
+This tutorial shows how remote git repo can be setup at and used in shared servers with only ssh access. It worked for me with Hostgator server which only gives me jailshell and it should work with any other server with ssh access and git already installed. With this you get all the advantages of git plus faster code uploads as git only pushes the differences unlike FTP or Cpanel uploads. Also, you get your own private repo that services like Github don’t provide. This tutorial is for *nix users. Press Ctrl+W to see the Windows version of this tutorial.
+
+1\. **Setup Automatic SSH login**:
+With automatic SSH login, we need not enter the password everytime we are pushing via git. If you have the file `~/.ssh/id_rsa.pub` (or `id_dsa.pub` if you have DSA encrypted key), you already have public ssh key, otherwise you can
+`$ssh-keygen`
+
+Login to server via SSH:
+`$ssh -p 2222 cpanel-username@domain-name`
+The above works for Hostgator, things may not be same for your server.
+Append your local public key (~/.ssh/id_rsa.pub or ~/.ssh/id_dsa.pub from your local computer) to the file `~/.ssh/authorized_keys` **in the server**. Create new **authorized_keys** file if it doesn’t exist and add contents.
+Now you can SSH to the server without having to enter password everytime.
+
+2\. **Initialize git repo on server**:
+Create a directory or move to the one which is to be setup as **remote git repo**. In my case, the directory is `~/www/lab`.
+`$git init`
+`$git checkout -b dummy`
+This enables us to push to the master branch and prevent the error “_error: refusing to update checked out branch: refs/heads/master.._”
+
+3\. **Set git repo on your local server**:
+Setup git on your local machine if you haven’t done already. Follow this: [http://book.git-scm.com/2_setup_and_initialization.html](http://book.git-scm.com/2_setup_and_initialization.html "http://book.git-scm.com/2_setup_and_initialization.html")
+
+Create a directory or move to the one which is to be setup as your **local git repo**.
+`$git init`
+Add the remote location
+`$git remote add server ssh://nepzilla@nepzilla.com:2222/~/www/lab`
+
+Now you can push your commits with
+`$git push server master`
+
+**BONUS**:
+Use [Gitphp](http://www.gitphp.org/ "http://www.gitphp.org/") if you want a git frontend for your server to see commits easily without having to login via ssh. Gitphp is very easy to install and use.
