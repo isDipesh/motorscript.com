@@ -12,6 +12,8 @@
 !!python/unicode 'blog/excerpts.xml': [atom.j2, macros.j2]
 !!python/unicode 'blog/fedora-15-post-install-customization.html': [blog.j2, base.j2,
   analytics.j2]
+!!python/unicode 'blog/gnome-shell-extension-firefox-profiles.html': [blog.j2, base.j2,
+  analytics.j2]
 !!python/unicode 'blog/happy-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html': [
   blog.j2, base.j2, analytics.j2]

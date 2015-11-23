@@ -7,10 +7,25 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T16:24:03Z</updated>
+    <updated>2015-11-23T16:29:04Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Gnome Shell Extension : Firefox Profiles</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/gnome-shell-extension-firefox-profiles.html"/>
+            <updated>2011-08-13T10:00:00Z</updated>
+            <published>2011-08-13T10:00:00Z</published>
+            <id>/blog/gnome-shell-extension-firefox-profiles.html</id>
+                        <category   scheme="/blog/tags"
+                        term="libreoffice"
+                        label="Libreoffice" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">Hiding header and footer only in certain pages with LibreOffice Writer</title>
             <author><name>Dipesh Acharya</name></author>

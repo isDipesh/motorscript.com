@@ -7,7 +7,7 @@
 <head>
         <meta charset="">
     <meta http-equiv="X-UA-Compatible" content="">
-    <title>Hiding header and footer only in certain pages with LibreOffice Writer | motorscript.com</title>
+    <title>Gnome Shell Extension : Firefox Profiles | motorscript.com</title>
     <meta name="description" content="">
     <meta name="author" content="Dipesh Acharya">
     <meta name="viewport" content="">
@@ -22,7 +22,7 @@
     
     </head>
 
-<body id="hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer">
+<body id="gnome-shell-extension-firefox-profiles">
     <div id="container">
                     <div id="main" role="main">
                 <header>
@@ -34,16 +34,14 @@
 
             <a class="backlink" href="http://motorscript.com">All Posts</a>
 
-                            <a class="prev" title="Gnome Shell Extension : Firefox Profiles"
-                   href="/blog/gnome-shell-extension-firefox-profiles.html">Previous</a>
             
-                            <a class="next" title="Fedora 15 post installation customization"
-                   href="/blog/fedora-15-post-install-customization.html">Next</a>
+                            <a class="next" title="Hiding header and footer only in certain pages with LibreOffice Writer"
+                   href="/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html">Next</a>
             
                                                                                                                                                                                             </nav>
         <h1 class="title">
-            <a href="/blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html">
-                Hiding header and footer only in certain pages with LibreOffice Writer
+            <a href="/blog/gnome-shell-extension-firefox-profiles.html">
+                Gnome Shell Extension : Firefox Profiles
             </a>
         </h1>
         <time datetime="2011-08-13">
@@ -62,21 +60,19 @@
                     </div>
 
         <div class="post-content">
-            <p><strong>If it is the first page of the document</strong>,</p>
-<ul>
-<li>Press F11 to open <em>Styles and Formatting</em>.</li>
-<li>Click on the fourth icon on the top called <em>Page Styles</em>.</li>
-<li>Double-click <em>First Page</em> from the list to apply the first page style where the headers and footers are&nbsp;hidden.</li>
-</ul>
-<p>This method works only for the first page of the document. However a little more work makes it work for any&nbsp;page.</p>
-<p><strong>For pages other than the&nbsp;first,</strong></p>
-<ul>
-<li>Go to the last line of the page that precedes the page where you want to hide headers and footers.
-  (Go to last line of page 3, if you want headers and footers not to be shown in page&nbsp;4).</li>
-<li>From the menu bar, select <em>Insert -&gt; Manual&nbsp;Break</em></li>
-<li>In the dialog, select <em>Page Break</em> check-box from <em>Type</em> and <em>First Page</em> from <em>Style</em> pull-down&nbsp;list.</li>
-</ul>
-<p>The headers and footers are then hidden for the page that follows the manually inserted page&nbsp;break.</p>        </div>
+            <p>This is an extension that adds a button to gnome panel which when clicked launches Firefox Profile Manager.
+‘firefox -no-remote -profilemanager’ is the command that is actually&nbsp;executed.</p>
+<p>[<strong>Note: This extension isn’t maintained any more.</strong>]</p>
+<p><strong>Installation&nbsp;Instructions:</strong></p>
+<p>Download:
+<code>cd ~/.local/share/gnome-shell/extensions
+git clone https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles.git
+mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist</code></p>
+<p>Restart Gnome:
+Alt+F2 to open run command prompt<br />
+Enter&nbsp;r</p>
+<p>Enable ‘Firefox Profiles Chooser Extension’ from Extensions from <code>gnome-tweak-tool</code></p>
+<p>The extension is available as <a href="/web/20150315014058/https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles">github repo</a>.</p>        </div>
     </article>                </section>
             </div>
             </div> <!--! end of #container -->
