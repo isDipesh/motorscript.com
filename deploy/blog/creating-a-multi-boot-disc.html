@@ -1,0 +1,144 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+        <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <title>Creating a multi-boot disc - The How-To of happyBoot v3 | motorscript.com</title>
+    <meta name="description" content="">
+    <meta name="author" content="Dipesh Acharya">
+    <meta name="viewport" content="">
+
+            <link rel="shortcut icon" href="/media/images/favicon.ico">
+        <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    
+            <link rel="stylesheet" href="/media/css/site.css">
+        <link rel="stylesheet" href="/media/css/syntax.css">
+    
+            <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+    
+    </head>
+
+<body id="creating-a-multi-boot-disc">
+    <div id="container">
+                    <div id="main" role="main">
+                <header>
+                    <a href="http://motorscript.com"><h3>motorscript.com</h3></a>                </header>
+                <section class="content">
+                    <article class="post">
+
+        <nav class="post_nav">
+
+            <a class="backlink" href="http://motorscript.com">All Posts</a>
+
+            
+                            <a class="next" title="“E-mail this file” option in right-click/context menu for Nautilus"
+                   href="/blog/e-mail-this-file-option-in-right-clickcontext-menu.html">Next</a>
+            
+                                                                                                                                                                                            </nav>
+        <h1 class="title">
+            <a href="/blog/creating-a-multi-boot-disc.html">
+                Creating a multi-boot disc - The How-To of happyBoot v3
+            </a>
+        </h1>
+        <time datetime="2011-08-05">
+            Posted: Fri, 05 Aug 2011
+        </time>
+
+        <div class="tags">
+                            Tags:
+                <ul class="tags">
+                                            <li>
+                            <a class="small" href="/blog/tags/isolinux.html">
+                                isolinux</a>
+                        </li>
+                                    </ul>
+                </div>
+                    </div>
+
+        <div class="post-content">
+            <p><img alt="happyBoot Logo" src="http://i51.tinypic.com/53cc8.jpg" />
+This how-to is created during the course of documentation of happyBoot v3.0.5 Beta released during the grand celebration of Software Freedom Day 2010 by <span class="caps">NOSK</span>.</p>
+<p>Let us start with creating a directory where the content and image shall be built.
+Inside the folder you have created, create another directory ‘root’ to represent the root of the <span class="caps">DVD</span> we are building. This directory is our working&nbsp;directory.</p>
+<p>Download the latest syslinux source tar file from kernel.org:
+<a href="http://www.kernel.org/pub/linux/utils/boot/syslinux/" title="Download syslinux!">http://www.kernel.org/pub/linux/utils/boot/syslinux/</a></p>
+<p>Inside our working directory, create /boot folder.
+/boot shall hold files related to booting, i.e. the boot menus, kernels, initial ramdisks, etc.
+/boot/isolinux shall hold isolinux&nbsp;files.</p>
+<p>Extract the downloaded syslinux archive, find the following files. and copy them to /boot/isolinux.
+chain.c32
+isolinux.bin
+memdisk
+menu.c32
+vesamenu.c32&nbsp;reboot.c32</p>
+<p>isolinux.bin is the boot loader file. menu.c32 is required only if we are creating the menu in normal mode where background images and other graphical options are not possible. vesamenu.c32 provides support for background images and other graphical options and we are using this type of menu. memdisk can emulate disk images as disks. It can be used to boot the system off floppy images and even smaller <span class="caps">CD</span> ISOs. syslinux has many other files <span class="caps">COM32</span> images with .c32 extensions which are used after booting for various purposes. reboot.c32 is used to reboot the machine. There are other files like gfxboot.c32 which we are not including here. gfxboot supports more advanced, powerful and high-graphics menu but requires complex scripting and needs them to be archived, so it’s little difficult creating and testing multi-boot <span class="caps">DVD</span>.</p>
+<p>mkiso.sh script included here is the script for generating <span class="caps">ISO</span> image. It uses mkisofs for image creation.
+Edit it with your favorite text-editor to specify the location of the output image after -o switch and the root location of the <span class="caps">CD</span> (where /boot/ is located) at the end of the line.
+Save the scrpt in system path (e.g. /usr/bin) with executable permission.
+This will save our time. When we execute ‘mkiso’ new image will be created at the specified location using boot/isolinux/isolinux.bin as the eltorito boot&nbsp;image.</p>
+<p>Also. for testing purposes, we set up a virtual machine. VirtualBox or Qemu should be the best&nbsp;option.</p>
+<p>The setup is done by now.
+The major work lies in integration of the&nbsp;distributions.</p>
+<p>Our first job while integrating an <span class="caps">OS</span> into our mult-boot <span class="caps">DVD</span> is to understand its boot loader.
+Almost all linux distributions use <span class="caps">ISOLINUX</span> as the bootloader. <span class="caps">ISOLINUX</span> files are generally located at /isolinux/ or /boot/isolinux in the boot media.
+I would recommend you to read the online and offline syslinux and isolinux documentation and references before continuing. The offline source should be the documents inside the syslinux archive which you have just&nbsp;downloaded.</p>
+<p>Let’s start our integration with <span class="caps">DSL</span> (Damn Small Linux). We mount it’s <span class="caps">ISO</span> image and browse to the root of its <span class="caps">CD</span> image. We see isolinux is located in /boot/isolinux. We copy everything else into our working root except the boot folder because /boot/isolinux would conflict with ours. So, we create /boot/<span class="caps">DSL</span> in our location where we copy the contents of /boot/isolinux from <span class="caps">DSL</span> image. Since, we have changed the location of <span class="caps">DSL</span> boot configuration files, we have to edit isolinux.cfg in /boot/<span class="caps">DSL</span> and add /boot/<span class="caps">DSL</span> to every file location. Otherwise <span class="caps">ISOLINUX</span> would search it in /boot/isolinux instead. So lines like ‘<span class="caps">DISPLAY</span> boot.msg’ is edited to ‘<span class="caps">DISPLAY</span> /boot/dsl/boot.msg’, ‘<span class="caps">KERNEL</span> linux24’ to ‘<span class="caps">KERNEL</span> /boot/dsl/linux24’, ‘<span class="caps">KERNEL</span> memtest’ to ‘<span class="caps">KERNEL</span> /boot/dsl/memtest’. Also, we have to edit ‘initrd=minitr24.gz’ to ‘initrd=/boot/dsl/minitr24.gz’ in the <span class="caps">APPEND</span>&nbsp;lines.</p>
+<p>Now, we are going to add an entry of Damn Small Linux in our mult-boot menu. The configuration file for multi-boot menu is /boot/isolinux/isolinux.cfg.
+See the file menu.txt for help and reference on <span class="caps">ISOLINUX</span> menu configuration inside the ‘doc’ folder of syslinux archive.
+The following lines have to be used.
+<span class="caps">LABEL</span> dsl
+<span class="caps">MENU</span> <span class="caps">LABEL</span> ^1. Damn Small Linux v4.4.10
+<span class="caps">KERNEL</span> vesamenu.c32
+<span class="caps">APPEND</span> /boot/dsl/isolinux.cfg
+<span class="caps">TEXT</span> <span class="caps">HELP</span>
+A 50 <span class="caps">MB</span> near complete Operating System for Personal Computers.
+Includes system utilities, multimedia, office and gaming and other goodies.
+<span class="caps">ENDTEXT</span></p>
+<p>‘<span class="caps">MENU</span> <span class="caps">LABEL</span> ‘ would show in the menu while booting.
+Text between <span class="caps">TEXT</span> <span class="caps">HELP</span> and <span class="caps">EXNDTEXT</span> would be shown as help text in the bottom.
+This entry loads vesamenu.c32 <span class="caps">COM32</span> Image with /boot/dsl/isolinux.cfg as parameter. This infact means load another <span class="caps">ISOLINUX</span> menu (sub-menu).
+Now, we can create the image with mkiso and test if it boots <span class="caps">OK</span> in VirtualBox. It should.
+The ‘^’ key before ‘1’, sets ‘1’ as the hotkey for selection of this menu. Use it before any character to make the character the&nbsp;hot-key.</p>
+<p>Similar should have been the ways of integration for most OSes. But, unfortunately different techniques are used by different OSes making our job difficult. Ubuntu Desktop Edition and openSUSE use gfxboot which I couldn’t load directly from vesamenu.c32 (Error setting up gfxboot, or something like that was returned as error, there has to be a way). So, we need to create submenus for them ( not a difficult job, if you are good with <span class="caps">GRUB</span> or any other bootloader) and create entries for them in the main menu. Boot files of Ubuntu were copied to /boot/ubuntu. The boot files of openSUSE exist in /boot/i386/loader which was let in its own location. isolinux.cfg was edited to and absolute path of file names were written. This step is necessary with every distro integration because our bootloader searches the files in its own folder&nbsp;otherwise.</p>
+<p>Fedora has its boot configuration in /isolinux but kernel on /<span class="caps">EFI</span> (the kernel and memtest in /isolinux are 0 bytes). So, all files except kernel and memtest were copied to /<span class="caps">EFI</span>. isolinux.cfg was edited accordingly and pointed in /boot/isolinux/isolinux.cfg like done for <span class="caps">DSL</span>. Fedora kernel won’t find the live file system unless we specify the append <span class="caps">CD</span> label to the kernel. We need to edit all <span class="caps">APPEND</span> lines in /<span class="caps">EFI</span>/isolinux.cfg and use “root=live:happyBootv3” parameter (without quotes). We are assuming ‘happyBootv3’ is the <span class="caps">CD</span>/<span class="caps">DVD</span> label name. You can change it in mkiso&nbsp;script.</p>
+<p>Integrating <span class="caps">UBCD</span> is easy. We just need to point the sub-menu to&nbsp;/ubcd/menus/isolinux/main.cfg.</p>
+<p><span class="caps">UBCD</span> has Parted Magic inside it. If you need to integrate Parted Magic by yourself because you don’t want <span class="caps">UBCD</span> or if you want the latest version, then you can copy /boot/isolinux from Parted Magic <span class="caps">ISO</span> to /boot/pmagic, similar to what we did with <span class="caps">DSL</span>. Copy other contents into our working directory (pmagic is the only other folder). Edit the /boot/pmagic/isolinux.cfg file like we did for <span class="caps">DSL</span> and then point to this menu from /boot/isolinux/isolinux.cfg. We can also edit the <span class="caps">UBCD</span> menu to link to the updated Parted&nbsp;Magic.</p>
+<p>GeexBox is a wonderful under 20 <span class="caps">MB</span> complete multimedia <span class="caps">OS</span>. Its <span class="caps">ISO</span> has only folder /<span class="caps">GEEXBOX</span> in it. Copy it into our multi-boot <span class="caps">DVD</span> root. Its isolinux configuration files are located in /<span class="caps">GEEXBOX</span>/boot. We edit /<span class="caps">GEEXBOX</span>/boot/isolinux.cfg to use absolute path for kernel and initrd files. We also add it into our menu&nbsp;/boot/isolinux/isolinux.cfg.</p>
+<p>Finally, we customize the boot menu looks.
+We will look after each entry used.
+<span class="caps">MENU</span> <span class="caps">BACKGROUND</span> /boot/isolinux/main.jpg
+This makes <span class="caps">ISOLINUX</span> load main.jpg as the background. You can use any image, provided it is 640×480 <span class="caps">JPG</span> or <span class="caps">PNG</span>.
+<span class="caps">MENU</span> <span class="caps">TITLE</span> happyBoot v3.0b <span class="caps">SFD10</span> Release
+This sets the title.
+<span class="caps">MENU</span> <span class="caps">COLOR</span> title 1;36;44 #ffff0000 #00000000 std
+Sets title foreground color to blue.
+<span class="caps">MENU</span> <span class="caps">ROWS</span> 14
+Uses 14 rows for menu options.
+F1 /boot/docs/help.txt
+Displays help file when F1 is&nbsp;hit.</p>
+<p>See menu.txt inside doc folder in syslinux archive for more&nbsp;references.</p>
+<p>Make the changes, execute mkiso and boot the&nbsp;image.</p>
+<p>If you aren’t using mkiso script, take care:
+“mkisofs -U” solves ubuntu problem of ‘unable to find live file system’ error.
+“mkisofs -U -R” solves the problem with <span class="caps">DSL</span> – can’t find <span class="caps">KNOPPIX</span> filesystem&nbsp;problem.</p>
+<p>This document has not been written to deep details and therefore may not be useful to beginners. Also, this job has no huge complexibility that it requires an advanced user. As already told, this how-to was written as a part of documentation for the <span class="caps">DVD</span> release of happyBoot v3 done in Software Freedom Day 2010 organised by Nepal Open Source&nbsp;Klub.</p>
+<p><strong>Screenshots:</strong>
+The main menu:
+<img alt="happyBoot Main Menu" src="http://i53.tinypic.com/o05g07.jpg" /></p>
+<p>One of the sub-menus (Parted Magic):
+<img alt="happyBoot sub-menu - Parted Magic" src="http://i53.tinypic.com/30ka77l.jpg" /></p>        </div>
+    </article>                </section>
+            </div>
+            </div> <!--! end of #container -->
+    <footer>
+        Powered by <a target="_blank" href="https://github.com/hyde/hyde">hyde</a>.
+    </footer>
+        
+        
+                
+</body>
+</html>

@@ -7,10 +7,94 @@
         <link href="/"/>
     
         
-    <updated>2015-11-23T12:05:21Z</updated>
+    <updated>2015-11-23T12:41:26Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Creating a multi-boot disc - The How-To of happyBoot v3</title>
+            <author><name>Dipesh Acharya</name></author>
+            <link href="/blog/creating-a-multi-boot-disc.html"/>
+            <updated>2011-08-05T10:00:00Z</updated>
+            <published>2011-08-05T10:00:00Z</published>
+            <id>/blog/creating-a-multi-boot-disc.html</id>
+                        <category   scheme="/blog/tags"
+                        term="isolinux"
+                        label="Isolinux" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;img alt=&#34;happyBoot Logo&#34; src=&#34;http://i51.tinypic.com/53cc8.jpg&#34; /&gt;
+This how-to is created during the course of documentation of happyBoot v3.0.5 Beta released during the grand celebration of Software Freedom Day 2010 by &lt;span class=&#34;caps&#34;&gt;NOSK&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Let us start with creating a directory where the content and image shall be built.
+Inside the folder you have created, create another directory ‘root’ to represent the root of the &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; we are building. This directory is our working&amp;nbsp;directory.&lt;/p&gt;
+&lt;p&gt;Download the latest syslinux source tar file from kernel.org:
+&lt;a href=&#34;http://www.kernel.org/pub/linux/utils/boot/syslinux/&#34; title=&#34;Download syslinux!&#34;&gt;http://www.kernel.org/pub/linux/utils/boot/syslinux/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Inside our working directory, create /boot folder.
+/boot shall hold files related to booting, i.e. the boot menus, kernels, initial ramdisks, etc.
+/boot/isolinux shall hold isolinux&amp;nbsp;files.&lt;/p&gt;
+&lt;p&gt;Extract the downloaded syslinux archive, find the following files. and copy them to /boot/isolinux.
+chain.c32
+isolinux.bin
+memdisk
+menu.c32
+vesamenu.c32&amp;nbsp;reboot.c32&lt;/p&gt;
+&lt;p&gt;isolinux.bin is the boot loader file. menu.c32 is required only if we are creating the menu in normal mode where background images and other graphical options are not possible. vesamenu.c32 provides support for background images and other graphical options and we are using this type of menu. memdisk can emulate disk images as disks. It can be used to boot the system off floppy images and even smaller &lt;span class=&#34;caps&#34;&gt;CD&lt;/span&gt; ISOs. syslinux has many other files &lt;span class=&#34;caps&#34;&gt;COM32&lt;/span&gt; images with .c32 extensions which are used after booting for various purposes. reboot.c32 is used to reboot the machine. There are other files like gfxboot.c32 which we are not including here. gfxboot supports more advanced, powerful and high-graphics menu but requires complex scripting and needs them to be archived, so it’s little difficult creating and testing multi-boot &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;mkiso.sh script included here is the script for generating &lt;span class=&#34;caps&#34;&gt;ISO&lt;/span&gt; image. It uses mkisofs for image creation.
+Edit it with your favorite text-editor to specify the location of the output image after -o switch and the root location of the &lt;span class=&#34;caps&#34;&gt;CD&lt;/span&gt; (where /boot/ is located) at the end of the line.
+Save the scrpt in system path (e.g. /usr/bin) with executable permission.
+This will save our time. When we execute ‘mkiso’ new image will be created at the specified location using boot/isolinux/isolinux.bin as the eltorito boot&amp;nbsp;image.&lt;/p&gt;
+&lt;p&gt;Also. for testing purposes, we set up a virtual machine. VirtualBox or Qemu should be the best&amp;nbsp;option.&lt;/p&gt;
+&lt;p&gt;The setup is done by now.
+The major work lies in integration of the&amp;nbsp;distributions.&lt;/p&gt;
+&lt;p&gt;Our first job while integrating an &lt;span class=&#34;caps&#34;&gt;OS&lt;/span&gt; into our mult-boot &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; is to understand its boot loader.
+Almost all linux distributions use &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; as the bootloader. &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; files are generally located at /isolinux/ or /boot/isolinux in the boot media.
+I would recommend you to read the online and offline syslinux and isolinux documentation and references before continuing. The offline source should be the documents inside the syslinux archive which you have just&amp;nbsp;downloaded.&lt;/p&gt;
+&lt;p&gt;Let’s start our integration with &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; (Damn Small Linux). We mount it’s &lt;span class=&#34;caps&#34;&gt;ISO&lt;/span&gt; image and browse to the root of its &lt;span class=&#34;caps&#34;&gt;CD&lt;/span&gt; image. We see isolinux is located in /boot/isolinux. We copy everything else into our working root except the boot folder because /boot/isolinux would conflict with ours. So, we create /boot/&lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; in our location where we copy the contents of /boot/isolinux from &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; image. Since, we have changed the location of &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; boot configuration files, we have to edit isolinux.cfg in /boot/&lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; and add /boot/&lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; to every file location. Otherwise &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; would search it in /boot/isolinux instead. So lines like ‘&lt;span class=&#34;caps&#34;&gt;DISPLAY&lt;/span&gt; boot.msg’ is edited to ‘&lt;span class=&#34;caps&#34;&gt;DISPLAY&lt;/span&gt; /boot/dsl/boot.msg’, ‘&lt;span class=&#34;caps&#34;&gt;KERNEL&lt;/span&gt; linux24’ to ‘&lt;span class=&#34;caps&#34;&gt;KERNEL&lt;/span&gt; /boot/dsl/linux24’, ‘&lt;span class=&#34;caps&#34;&gt;KERNEL&lt;/span&gt; memtest’ to ‘&lt;span class=&#34;caps&#34;&gt;KERNEL&lt;/span&gt; /boot/dsl/memtest’. Also, we have to edit ‘initrd=minitr24.gz’ to ‘initrd=/boot/dsl/minitr24.gz’ in the &lt;span class=&#34;caps&#34;&gt;APPEND&lt;/span&gt;&amp;nbsp;lines.&lt;/p&gt;
+&lt;p&gt;Now, we are going to add an entry of Damn Small Linux in our mult-boot menu. The configuration file for multi-boot menu is /boot/isolinux/isolinux.cfg.
+See the file menu.txt for help and reference on &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; menu configuration inside the ‘doc’ folder of syslinux archive.
+The following lines have to be used.
+&lt;span class=&#34;caps&#34;&gt;LABEL&lt;/span&gt; dsl
+&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;LABEL&lt;/span&gt; ^1. Damn Small Linux v4.4.10
+&lt;span class=&#34;caps&#34;&gt;KERNEL&lt;/span&gt; vesamenu.c32
+&lt;span class=&#34;caps&#34;&gt;APPEND&lt;/span&gt; /boot/dsl/isolinux.cfg
+&lt;span class=&#34;caps&#34;&gt;TEXT&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;HELP&lt;/span&gt;
+A 50 &lt;span class=&#34;caps&#34;&gt;MB&lt;/span&gt; near complete Operating System for Personal Computers.
+Includes system utilities, multimedia, office and gaming and other goodies.
+&lt;span class=&#34;caps&#34;&gt;ENDTEXT&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;‘&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;LABEL&lt;/span&gt; ‘ would show in the menu while booting.
+Text between &lt;span class=&#34;caps&#34;&gt;TEXT&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;HELP&lt;/span&gt; and &lt;span class=&#34;caps&#34;&gt;EXNDTEXT&lt;/span&gt; would be shown as help text in the bottom.
+This entry loads vesamenu.c32 &lt;span class=&#34;caps&#34;&gt;COM32&lt;/span&gt; Image with /boot/dsl/isolinux.cfg as parameter. This infact means load another &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; menu (sub-menu).
+Now, we can create the image with mkiso and test if it boots &lt;span class=&#34;caps&#34;&gt;OK&lt;/span&gt; in VirtualBox. It should.
+The ‘^’ key before ‘1’, sets ‘1’ as the hotkey for selection of this menu. Use it before any character to make the character the&amp;nbsp;hot-key.&lt;/p&gt;
+&lt;p&gt;Similar should have been the ways of integration for most OSes. But, unfortunately different techniques are used by different OSes making our job difficult. Ubuntu Desktop Edition and openSUSE use gfxboot which I couldn’t load directly from vesamenu.c32 (Error setting up gfxboot, or something like that was returned as error, there has to be a way). So, we need to create submenus for them ( not a difficult job, if you are good with &lt;span class=&#34;caps&#34;&gt;GRUB&lt;/span&gt; or any other bootloader) and create entries for them in the main menu. Boot files of Ubuntu were copied to /boot/ubuntu. The boot files of openSUSE exist in /boot/i386/loader which was let in its own location. isolinux.cfg was edited to and absolute path of file names were written. This step is necessary with every distro integration because our bootloader searches the files in its own folder&amp;nbsp;otherwise.&lt;/p&gt;
+&lt;p&gt;Fedora has its boot configuration in /isolinux but kernel on /&lt;span class=&#34;caps&#34;&gt;EFI&lt;/span&gt; (the kernel and memtest in /isolinux are 0 bytes). So, all files except kernel and memtest were copied to /&lt;span class=&#34;caps&#34;&gt;EFI&lt;/span&gt;. isolinux.cfg was edited accordingly and pointed in /boot/isolinux/isolinux.cfg like done for &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt;. Fedora kernel won’t find the live file system unless we specify the append &lt;span class=&#34;caps&#34;&gt;CD&lt;/span&gt; label to the kernel. We need to edit all &lt;span class=&#34;caps&#34;&gt;APPEND&lt;/span&gt; lines in /&lt;span class=&#34;caps&#34;&gt;EFI&lt;/span&gt;/isolinux.cfg and use “root=live:happyBootv3” parameter (without quotes). We are assuming ‘happyBootv3’ is the &lt;span class=&#34;caps&#34;&gt;CD&lt;/span&gt;/&lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; label name. You can change it in mkiso&amp;nbsp;script.&lt;/p&gt;
+&lt;p&gt;Integrating &lt;span class=&#34;caps&#34;&gt;UBCD&lt;/span&gt; is easy. We just need to point the sub-menu to&amp;nbsp;/ubcd/menus/isolinux/main.cfg.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;UBCD&lt;/span&gt; has Parted Magic inside it. If you need to integrate Parted Magic by yourself because you don’t want &lt;span class=&#34;caps&#34;&gt;UBCD&lt;/span&gt; or if you want the latest version, then you can copy /boot/isolinux from Parted Magic &lt;span class=&#34;caps&#34;&gt;ISO&lt;/span&gt; to /boot/pmagic, similar to what we did with &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt;. Copy other contents into our working directory (pmagic is the only other folder). Edit the /boot/pmagic/isolinux.cfg file like we did for &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; and then point to this menu from /boot/isolinux/isolinux.cfg. We can also edit the &lt;span class=&#34;caps&#34;&gt;UBCD&lt;/span&gt; menu to link to the updated Parted&amp;nbsp;Magic.&lt;/p&gt;
+&lt;p&gt;GeexBox is a wonderful under 20 &lt;span class=&#34;caps&#34;&gt;MB&lt;/span&gt; complete multimedia &lt;span class=&#34;caps&#34;&gt;OS&lt;/span&gt;. Its &lt;span class=&#34;caps&#34;&gt;ISO&lt;/span&gt; has only folder /&lt;span class=&#34;caps&#34;&gt;GEEXBOX&lt;/span&gt; in it. Copy it into our multi-boot &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; root. Its isolinux configuration files are located in /&lt;span class=&#34;caps&#34;&gt;GEEXBOX&lt;/span&gt;/boot. We edit /&lt;span class=&#34;caps&#34;&gt;GEEXBOX&lt;/span&gt;/boot/isolinux.cfg to use absolute path for kernel and initrd files. We also add it into our menu&amp;nbsp;/boot/isolinux/isolinux.cfg.&lt;/p&gt;
+&lt;p&gt;Finally, we customize the boot menu looks.
+We will look after each entry used.
+&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;BACKGROUND&lt;/span&gt; /boot/isolinux/main.jpg
+This makes &lt;span class=&#34;caps&#34;&gt;ISOLINUX&lt;/span&gt; load main.jpg as the background. You can use any image, provided it is 640×480 &lt;span class=&#34;caps&#34;&gt;JPG&lt;/span&gt; or &lt;span class=&#34;caps&#34;&gt;PNG&lt;/span&gt;.
+&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;TITLE&lt;/span&gt; happyBoot v3.0b &lt;span class=&#34;caps&#34;&gt;SFD10&lt;/span&gt; Release
+This sets the title.
+&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;COLOR&lt;/span&gt; title 1;36;44 #ffff0000 #00000000 std
+Sets title foreground color to blue.
+&lt;span class=&#34;caps&#34;&gt;MENU&lt;/span&gt; &lt;span class=&#34;caps&#34;&gt;ROWS&lt;/span&gt; 14
+Uses 14 rows for menu options.
+F1 /boot/docs/help.txt
+Displays help file when F1 is&amp;nbsp;hit.&lt;/p&gt;
+&lt;p&gt;See menu.txt inside doc folder in syslinux archive for more&amp;nbsp;references.&lt;/p&gt;
+&lt;p&gt;Make the changes, execute mkiso and boot the&amp;nbsp;image.&lt;/p&gt;
+&lt;p&gt;If you aren’t using mkiso script, take care:
+“mkisofs -U” solves ubuntu problem of ‘unable to find live file system’ error.
+“mkisofs -U -R” solves the problem with &lt;span class=&#34;caps&#34;&gt;DSL&lt;/span&gt; – can’t find &lt;span class=&#34;caps&#34;&gt;KNOPPIX&lt;/span&gt; filesystem&amp;nbsp;problem.&lt;/p&gt;
+&lt;p&gt;This document has not been written to deep details and therefore may not be useful to beginners. Also, this job has no huge complexibility that it requires an advanced user. As already told, this how-to was written as a part of documentation for the &lt;span class=&#34;caps&#34;&gt;DVD&lt;/span&gt; release of happyBoot v3 done in Software Freedom Day 2010 organised by Nepal Open Source&amp;nbsp;Klub.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Screenshots:&lt;/strong&gt;
+The main menu:
+&lt;img alt=&#34;happyBoot Main Menu&#34; src=&#34;http://i53.tinypic.com/o05g07.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;One of the sub-menus (Parted Magic):
+&lt;img alt=&#34;happyBoot sub-menu - Parted Magic&#34; src=&#34;http://i53.tinypic.com/30ka77l.jpg&#34; /&gt;&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">“E-mail this file” option in right-click/context menu for Nautilus</title>
             <author><name>Dipesh Acharya</name></author>
@@ -23,7 +107,8 @@
                         label="Nautilus" />
             
             <content type="html">
-                                &lt;p&gt;This should work for all Linux users with &lt;strong&gt;Nautilus&lt;/strong&gt; file&amp;nbsp;manager.&lt;/p&gt;
+                                &lt;p&gt;&lt;strong&gt;[ Outdated with new versions of Nautilus&amp;nbsp;]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This should work for all Linux users with &lt;strong&gt;Nautilus&lt;/strong&gt; file&amp;nbsp;manager.&lt;/p&gt;
 &lt;p&gt;First install the package – “&lt;em&gt;nautilus-actions&lt;/em&gt;“.&lt;/p&gt;
 &lt;p&gt;For Fedora, &lt;span class=&#34;caps&#34;&gt;RHEL&lt;/span&gt;, Cent &lt;span class=&#34;caps&#34;&gt;OS&lt;/span&gt; and other &lt;span class=&#34;caps&#34;&gt;RPM&lt;/span&gt; based distributions
 &lt;code&gt;yum install nautilus-actions&lt;/code&gt;&lt;/p&gt;
