@@ -1,0 +1,56 @@
+---
+title: Menu Management for Yii Framework
+created: !!timestamp '2013-06-17 04:29:58'
+tags:
+    - yii
+---
+
+This ‘menu’ module for Yii allows you to create and edit themeable menus with nested/sortable items.  
+This work is inspired from menu management in WordPress and tries to provide a similar interface to drag and drop items for setting its order and depth.
+
+**[Note: This extension isn’t maintained any more.]**
+
+The module utilizes [nestedSortable](http://mjsarfatti.com/sandbox/nestedSortable/) jQuery plugin for drag-drop sorting of menu items in backend.  
+Free CSS dropdown menu from [http://www.lwis.net/free-css-drop-down-menu/](http://www.lwis.net/free-css-drop-down-menu/) is used for menu styles and themes.
+
+The code for menu rendering is borrowed from [emenu](http://www.yiiframework.com/extension/emenu) extension.  
+The code for implementing nestedSortable is borrowed from the dead project at [http://code.google.com/p/at-menu](http://code.google.com/p/at-menu)
+
+## Installation
+
+Download from [https://github.com/xtranophilist/yii-menu/zipball/master](https://github.com/xtranophilist/yii-menu/zipball/master)
+
+Extract the contents of the archive to menu folder inside modules.
+
+Acknowledge Yii about this module by including it into list of modules in `config/main.php`
+
+            'modules' => array(
+                    ...
+                    'menu',
+                ),
+
+Add the components and models required to your imports section
+
+            'import' => array(
+                ...
+                'application.modules.menu.models.*',
+                'application.modules.menu.components.*',
+                ),
+
+Add Metadata class to components
+
+    'components'=>array(
+    ...
+            'metadata' => array('class' => 'Metadata'),
+    ...
+    ),
+
+Import menu.sql to install the database schema.
+
+## Usage
+
+Browse to /menu to create menu and menu items.  
+Click on ‘Get Code’ link to get code for any menu.  
+Insert the code into any layout or view file.
+
+Git Repo: [https://github.com/xtranophilist/yii-menu](https://github.com/xtranophilist/yii-menu)
