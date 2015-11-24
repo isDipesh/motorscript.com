@@ -35,6 +35,7 @@
 !!python/unicode 'blog/last-fm-widget.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/my-fedora-post-installation-cheatsheet.html': [blog.j2, base.j2,
   analytics.j2]
+!!python/unicode 'blog/mythtv-without-tv-tuner-card.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/setting-up-a-remote-git-repo-on-shared-server-like-hostgator.html': [
   blog.j2, base.j2, analytics.j2]
