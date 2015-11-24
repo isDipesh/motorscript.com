@@ -1,0 +1,231 @@
+.banner {
+    border-bottom: 1px solid;
+    margin: 0;
+    padding: 0;
+}
+
+.column{
+    width: 29%;
+    float:left;
+    padding: 1.25em;
+}
+
+#second_column{
+    width: 30%;
+}
+
+div#content{
+    width:auto !important;
+    line-height: 1em;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color : #666666;
+    margin-top: 0;
+    padding-bottom: 0.625em;
+    text-align: center;
+}
+
+h1 a{
+    color : #666666;
+}
+
+table{
+    border: none;
+}
+
+td, th, tr {
+    padding: 0;
+    vertical-align: inherit;
+}
+
+a{
+    color: #4183C4;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#B47BC2;
+}
+
+h1 a:visited{
+    color:#000000;
+}
+
+.ghb_badge_header{
+    display: none;
+}
+
+#github{
+    height: 38.125em;
+}
+
+#github_badge{
+    margin-top :0.625em;
+}
+
+#linkedin{
+    height:12em;
+    overflow:hidden;
+}
+
+#foursquare{
+    height: 27em;
+    overflow : hidden;
+}
+
+.loading{
+    line-height: 8.75em;
+    text-align: center;
+    color : #AAAAAA;
+    margin: 0 auto;
+}
+
+
+.block{
+    /*    padding:1px;
+        margin:10px;
+        overflow: auto;
+        box-shadow: 1px 1px 2px rgba(200, 200, 201, 0.25);
+        width:90%;
+        background: #FFFFFF;
+    */
+    margin: 0.625em;
+    float: left;
+    position: relative;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0.625em;
+    width : 100%;
+}
+
+.side_block{
+    padding:1px;
+    margin-top:0.625em;
+}
+
+.more{
+    float:right;
+}
+
+.last_time{
+    color: #AAA;
+    font-size: small;
+    font-style: normal;
+}
+
+#pinboard {
+    height:23.2em;
+}
+
+#pinboard_holder{
+    overflow: auto;
+    height: 20.75em;
+    padding-right: 0.5em;
+}
+
+#lastfm {
+    height: 27em;
+    overflow: hidden;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+
+    #wrap {
+        width: 94%;
+    }
+    #first_column {
+        width: 41%;
+        padding: 1% 4%;
+    }
+    #second_column {
+        width: 41%;
+        padding: 1% 4%;
+        margin: 0px 0px 5px 5px;
+        float: right;
+    }
+
+    #third_column {
+        clear: both;
+        padding: 1% 4%;
+        width: auto;
+        float: none;
+    }
+
+}
+
+/* for 800px or less
+@media screen and (max-width: 800px) {
+
+        #pagewrap {
+                width: 94%;
+        }
+        #first_column {
+                width: 49%;
+        }
+        #second_column {
+                width: 49%;
+                margin: 0px 0px 5px 0px;
+                float: right;
+        }
+
+        #third_column {
+                clear: both;
+                width: auto;
+                float: none;
+        }
+
+}
+*/
+
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+
+    #first_column {
+        width: auto;
+        float: none;
+    }
+
+    #second_column {
+        width: auto;
+        float: none;
+        margin-left: 0px;
+    }
+
+    #third_column {
+        width: auto;
+        float: none;
+    }
+
+}
+
+.twitter-timeline{
+    padding: 0 0 0 0.625em;
+}
+
+.block#twitter h1{
+    padding: 0;
+}
+
+.pin-description { display: none; }
+.pin-tag { display: none; }
+
+#twitter{
+    height: 23.2em;
+}
+
+.pin-item p{
+    margin-top: 0;
+}
+
+footer{
+        float: none;
+        width: 100%;
+    }
