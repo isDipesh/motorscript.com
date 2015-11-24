@@ -8,6 +8,28 @@ tags:
     - knockoutjs
 ---
 
+{% block endhead %}
+<link rel="stylesheet" href="{{ media_url('css/libs/selectize.default.css') }}">
+<link rel="stylesheet" href="{{ media_url('css/libs/tabs.css') }}">
+<script src="{{ media_url('js/libs/jquery.js') }}"></script>
+<script src="{{ media_url('js/libs/knockout.js') }}"></script>
+<script src="{{ media_url('js/libs/ko_lib.js') }}"></script>
+<script src="{{ media_url('js/libs/selectize.js') }}"></script>
+<script src="{{ media_url('js/libs/base_selectize.js') }}"></script>
+<script>
+$(document).ready(function(){
+$('.tabs .tab-links a').on('click', function(e)  {
+    var currentAttrValue = $(this).attr('href');
+    // Show/Hide Tabs
+    $('.tabs ' + currentAttrValue).show().siblings().hide();
+    // Change/remove current tab to active
+    $(this).parent('li').addClass('active').siblings().removeClass('active');
+    e.preventDefault();
+});
+});
+</script>
+{% endblock %}
+
 This is a custom binding for using Selectize.js with your Knockout.js powered application.
 <br>
 
@@ -70,9 +92,7 @@ The dropdown is created with all objects from <code>items</code> observable arra
 <select data-bind="selectize: items, value: item_id"></select>
 <h4>Debug</h4>
 
-items = <span data-bind="text: ko.toJSON(items)"></span>
-
-
+items = <span data-bind="text: ko.toJSON(items)"></span><br/>  
 item_id = <span data-bind="text: item_id"></span>
 
 </div>
@@ -99,10 +119,10 @@ The <code>selectize</code> binding provides optional <code>object</code> paramet
 <select data-bind="selectize: items, value: my_item_id, object: my_item"></select>
 <h4>Debug</h4>
 
-items = <span data-bind="text: ko.toJSON(items)"></span>
+items = <span data-bind="text: ko.toJSON(items)"></span><br/>
 
 
-my_item_id = <span data-bind="text: my_item_id"></span>
+my_item_id = <span data-bind="text: my_item_id"></span><br/>
 
 
 my_item = <span data-bind="text: ko.toJSON(my_item)"></span>
@@ -128,7 +148,7 @@ my_item = <span data-bind="text: ko.toJSON(my_item)"></span>
 <select data-bind="selectize: items, selectedOptions: selected_items" multiple></select>
 <h4>Debug</h4>
 
-items = <span data-bind="text: ko.toJSON(items)"></span>
+items = <span data-bind="text: ko.toJSON(items)"></span><br/>
 
 
 selected_items = <span data-bind="text: selected_items"></span>
@@ -157,7 +177,7 @@ See <a href="https://github.com/brianreavis/selectize.js/blob/master/docs/usage.
 <select data-bind="selectize: items, selectedOptions: selected_items2, options: {plugins: ['remove_button']}" multiple></select>
 <h4>Debug</h4>
 
-items = <span data-bind="text: ko.toJSON(items)"></span>
+items = <span data-bind="text: ko.toJSON(items)"></span><br/>
 
 
 selected_items2 = <span data-bind="text: selected_items2"></span>
