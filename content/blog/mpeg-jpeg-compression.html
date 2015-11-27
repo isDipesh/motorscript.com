@@ -38,14 +38,14 @@ $('#toc').tocify({
 <p>There are different forms of DCT, which are listed below. Here x,<sub>0</sub>, &#8230;, x<sub>N-1</sub> are the spatial coordinates whereas X<sub>0</sub> , &#8230;, X<sub>N-1</sub> are the frequency coordinates. Both are the sequences of real numbers.</p>
 <h3>DCT-I</h3>
 <p>DCT-I of N is given by<br />
-<img class="aligncenter size-medium wp-image-560" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/99db2c8c49465a6e2b28163abcab5be3.png" alt="DCT-1" width="610" height="51" /><br />
+![DCT-I](/media/images/mpeg/dct1.png)
 where N is a real number greater than or equal to 2,<br />
 x<sub>n</sub> are real and even numbers around n=0 and n=N-1,<br />
 k = 0,1,2,&#8230;,N-1 and<br />
 X<sub>k</sub> are real and even numbers around k=0 and k=N-1.</p>
 <h3>DCT-II</h3>
 <p>DCT-II is given by<br />
-<img class="aligncenter size-medium wp-image-561" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/9b912066d54e929387a28251790b9c4e.png" alt="DCT-II Formula" width="458" height="50" /><br />
+![DCT-II Formula](/media/images/mpeg/dct2.png)
 where N is a positive real number ( can be less than 2, unlike in DCT-I)<br />
 x<sub>n</sub> are real and even numbers around n=-1/2 and n=N-1/2,<br />
 k = 0,1,2,&#8230;,N-1 and<br />
@@ -54,7 +54,7 @@ X<sub>k</sub> are real and even numbers around k=0 and k=N.</p>
 <p>An example transformation is demonstrated on <a href="#figure_transform">this figure.</a></p>
 <h3>DCT-III</h3>
 <p>DCT-III is given by<br />
-<img class="aligncenter size-medium wp-image-562" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/e0186125d4115a3883a6a20871bd8eda.png" alt="DCT-III Formula" width="512" height="51" /><br />
+![DCT-III Formula](/media/images/mpeg/dct3.png)
 where N is a real number,<br />
 x<sub>n</sub> are real and even numbers around n=0 and n=N,<br />
 k = 0,1,2,&#8230;,N-1 and<br />
@@ -62,13 +62,13 @@ X<sub>k</sub> are real and even numbers around k=-1/2 and k=N-1/2.</p>
 <p>DCT-III can be scaled to get the inverse of DCT-II and therefore is also known as Inverse Direct Cosine Transform (IDCT), since DCT simply refers to DCT-II.</p>
 <h3>DCT-IV</h3>
 <p>DCT-IV is given by<br />
-<img class="aligncenter size-medium wp-image-563" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/29902cf6803b837ae2a87e41ca48d31f.png" alt="DCT-IV" width="520" height="50" /><br />
+![DCT-IV Formula](/media/images/mpeg/dct4.png)
 where N is a real number,<br />
 x<sub>n</sub> are real and even numbers around n=-1/2 and odd numbers around n=N-1/2,<br />
 k = 0,1,2,&#8230;,N-1 and<br />
 X<sub>k</sub> are real and even numbers around n=-1/2 and odd numbers around n=N-1/2.</p>
 <p><center><br />
-<img src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/merged.png" alt="DCT Coefficient" width="660" height="250" class="aligncenter size-medium wp-image-608" /><br />
+![Image and its DCT coefficients](/media/images/mpeg/dct-diff1.png)
 <b>Figure 1.1 : Image and its DCT coefficients</b></center>The coefficients retrieved i.e. X<sub>k</sub> represents the contribution of combination of the spatial repetitions in two horizontal and vertical dimensions of the picture block. DC (Discrete Cosine) Coefficient is the coefficient relating to zero frequency indices on both the dimensions. Quantization and Variable Length Coding follow DCT to reduce further number of bits.</p>
 <h2>Quantization</h2>
 <p>Quantization is the process of converting a continuous range of infinitely many values into a finite discrete set of all possible values. The quantization process generally approximates the input set into preferably smaller set. The advantage of quantization is that it reduces the number of bits required for storing and transmitting the data. Quantization can be of two types – scalar quantization and vector quantization.</p>
@@ -91,9 +91,11 @@ M'[i,j]= M<sub>q</sub>[i,j] * Q[i,j]</p>
 Quantization Error = M<sub>q</sub>[i,j] – M&#8217;<sub>q</sub>[i,j]</p>
 <p>An example:<br />
 Matrix of DCT coefficients, M[i,j]=</p>
-<p><img class="aligncenter size-medium wp-image-567" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/m1.png" alt="m1" width="421" height="192" /><br />
+<p>
+    ![Matrix of DCT Coefficients](/media/images/mpeg/matrix-dct.png)
+    <br />
 Quantizer Matrix, Q[i,j] =<br />
-<a href="/web/20150315014035/http://motorscript.com/wp-content/uploads/2014/06/m2.png"><img class="aligncenter size-medium wp-image-568" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/m2.png" alt="m2" width="325" height="192" /></a></p>
+![Quantizer Matrix](/media/images/mpeg/m2.png)</p>
 <p>Now dividing each elements from M matrix with corresponding elements (from same row i and same column j) from Q matrix like</p>
 <p>M<sub>q</sub>[1,1] = round( M[1,1] / Q[1,1] )<br />
 = round ( &#8211; 415 / 16)<br />
@@ -101,7 +103,8 @@ Quantizer Matrix, Q[i,j] =<br />
 = -26</p>
 <p>and so on, we get<br />
 Quantized Matrix M<sub>q</sub>[i,j] =<br />
-<a href="/web/20150315014035/http://motorscript.com/wp-content/uploads/2014/06/m3.png"><img class="aligncenter size-medium wp-image-569" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/m3-300x185.png" alt="m3" width="300" height="185" /></a></p>
+![Quantized Matrix](/media/images/mpeg/m3-300x185.png)</p>
+</p>
 <p>The matrix thus obtained is processed through other techniques like zigzag scanning, entropy encoding etc.</p>
 <h2>Entropy Coding</h2>
 <p>Entropy literally refers to the lack of predictability or order. In the context of information theory and engineering, entropy is the measurement of the uncertainty of a variable. Entropy also gives the measure of similarity of dispersion of basic units. Lower is the entropy, higher is the compression. Techniques like statistical forecasting can reduce entropy.</p>
@@ -110,9 +113,11 @@ Quantized Matrix M<sub>q</sub>[i,j] =<br />
 <p>The most AC values in a quantized matrix are zero. Zigzag scan can be used to gather more number of zeros together. Bringing zeroes together increases the optimality of the encoding process that follows. Zigzag scanning groups the low frequency coefficients before the high frequency coefficients. This processes serializes the matrix into a string.</p>
 <p>The 8 x 8 matrix is mapped into a one-dimensional array of 1 x 64 vector. Grouping zeros enables us to encode the bitstream in the pair of &#8216;skip and value&#8217;. Here, &#8216;skip&#8217; means the number of occurrences of zero and &#8216;value&#8217; means the occurrence of next non-zero component in the sequence.</p>
 <p><center><br />
-<img class="aligncenter size-medium wp-image-570" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/7-300x252.jpg" alt="Zigzag Scan" width="300" height="252" /><br />
+![Zigzag Scan](/media/images/mpeg/zigzag.jpg)
+    <br />
 <b>Figure 1.2 Zigzag Scan</b></center>In the above diagram, the first index is zero, so the first row is row 0 and the last row is row 7, similar with the columns. The scanning proceeds like this &#8211; DC, AC01, AC10, AC20, AC11, &#8230; , AC57, AC67, AC76, AC77.</p>
-<p><center><img class="aligncenter size-medium wp-image-571" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/8.jpg" alt="Serialization of coefficients with zigzag scanning" width="471" height="176" /><br />
+<center>
+![Serialization of coefficients with zigzag scanning](/media/images/mpeg/zigzag2.jpg)<br />
 <b>Figure 1.3: Serialization of coefficients with zigzag scanning</b></center></p>
 <h3>Variable Length Coding (VLC)</h3>
 <p>VLC is the major part of entropy encoding. VLC is the process of mapping the input symbols into codes of variable lengths. This enables us to compress the the symbols without any error. This means the compression is lossless and decompressing the symbols one by one gives us the same original input. Compression level close to its entropy can be arbitrarily achieved if the right coding strategy is chosen. Also, identically distributed as independent source needs to be selected. Unlike fixed-length coding techniques, VLC can be used for compression of small blocks of data too, with less probability of failure.<br />
@@ -158,7 +163,7 @@ In 4-bit code representation, the run length encoding is:<br />
 <h2>Chroma subsampling</h2>
 <p>In the early years of television broadcasting, same bandwidth were provided for color components and brightness. Soon it was realized that the human perception is more sensitive to intensity than to colors. So, reduction of the resolution of colors or chroma by keeping the brightness or luma intact didn&#8217;t alter the picture quality. And then the television broadcasting companies started saving bandwidth by propagating only half the amount of chroma than luma. This methodology they implemented is called <b>chroma subsampling</b>. This is demonstrated in the figure below :</p>
 <p><center><br />
-<img class="aligncenter size-medium wp-image-572" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/9.jpg" alt="Color Subsampling" width="470" height="632" /><br />
+![Color Subsampling](/media/images/mpeg/9.jpg)<br />
 <b>Figure 1.5: Demonstration of color subsampling</b></center>The RGB color model uses the basic Red (R), Green (G) and Blue (B) colors to get wide range of other colors by adding them up, and therefore, RGB color space is called additive color space. The RGB color space can also be transformed to luminance-chrominance. The advantage of expressing them independently into the components luma and chroma is that different bandwidth can be assigned for each component thus promoting compression.</p>
 <p><b>Luma</b>, in imaging and video technology refers to the intensity or brightness of the image. It is sometimes called &#8216;Luminance&#8217; but by convention, the term &#8216;Luma&#8217; is to be used in video technology and &#8216;Luminance&#8217; in general color science. Luminance is the weighted sum of the RGB components of image whereas Luma considers the gamma-compressed components- R&#8217;G&#8217;B&#8217;. If Luminance is represented as Y, Luma is represented as Y&#8217;, read as Y prime, where the prime (&#8216;) symbol stands for gamma-compression. The weighted sum is calculated by using coefficients that have recommended. Rec. 709 specifies the following expression for computation of luma:</p>
 <p>Y&#8217; = 0.212671 * R&#8217; + 0.715160 * G&#8217; + 0.072169 * B&#8217;</p>
@@ -168,7 +173,7 @@ V = R&#8217; – Y&#8217; (Gamma-compressed Red – Luma)</p>
 <p>The Y&#8217;UV or YUV color space was used for analog color television systems. For modern digital imaging and video broadcasting the <b>YC<sub>b</sub>C<sub>r</sub></b> family of color spaces are used. C<sub>b</sub> stands for blue chrominance and C<sub>r</sub> stands for red chrominance. YC<sub>b</sub>C<sub>r</sub> color space is not an absolute or basic color space but is an encoding of the RGB color space. Also, like YUV should not be confused with YC<sub>b</sub>C<sub>r</sub> , C<sub>b</sub> does not correspond to U and C<sub>b</sub> does not correspond to V.</p>
 <p>Almost all digital video formats today use YC<sub>b</sub>C<sub>r</sub> but they vary by the <b>subsampling ratio</b>. The subsampling ratio is generally expressed in the format <b>p:q:r</b>. Popular explanations use j:a:b or H:V:T symbols for the ratio but the bottom-line of all the explanations is the same. The values &#8216;p&#8217;, &#8216;q&#8217; and &#8216;r&#8217; are always integers. The first value &#8216;p&#8217; gives the horizontal width of the sample region or the number of pixels in the row of consideration. It is usually &#8216;4&#8217; until recently Sony used the 3:1:1 ratio. 4 is used for p for its traditional references and also because being multiple of 2, dividing it for other factors in the ratio becomes easy. So, it&#8217;s generally 4:q:r. The second value &#8216;q&#8217; gives the count of chroma samples in the first row of &#8216;p&#8217; pixels. So, 4:4:r means there are four chroma samples for a row of four pixels, which implies no subsampling. 4:2:r means there are two chroma samples for a row of four pixels which means the image has been subsampled by the factor of 2. 4:1:r means there is a single chroma sample used for four pixels of the row and thus the image is subsampled by the factor of 4. The third value in the ratio, &#8216;r&#8217; says only if vertical subsampling has been done. If &#8216;r&#8217; is equal to &#8216;q&#8217;, vertical subsampling is absent that is same chroma samples haven&#8217;t been forced for vertical pixels. If &#8216;r&#8217; is zero, vertical subsampling has been done for the image.</p>
 <p><center><br />
-<img class="aligncenter size-medium wp-image-573" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/10-300x198.jpg" alt="Components in different sub-sample ratios" width="300" height="198" /><br />
+![Components in different sub-sample rations](/media/images/mpeg/subsample_ratios.jpg)<br />
 <b>Figure 1.6: Components in different sub-sample ratios</b></center>Subsampled videos are always required to be stored using even dimensions in order to prevent &#8216;ghosts&#8217; effect due to chroma mismatch. This occurs as shadows are seen because some colors appear to be ahead of or behind the rest of the image frame.</p>
 <p>Since pictures and videos are the basic types of multi-media, we now look into popular<br />
 encoding formats of each kind, JPEG and MPEG.</p>
@@ -192,7 +197,7 @@ encoding formats of each kind, JPEG and MPEG.</p>
 <p>Block preparation is the first step of the compression. Blocks of 8 x 8 pixels are segmented. A block then can be represented in a 8 x 8 matrix. The spatial variation of pixels in each matrix is converted into frequency variations using two dimensional Discrete Cosine Transform.<br />
 <a name="figure_transform"></a><br />
 <center><br />
-<img class="aligncenter size-medium wp-image-574" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/11.jpg" alt="Transformation of 8 x 8 picture matrix to DCT coefficients" width="576" height="364" /><br />
+![Transformation of 8 x 8 picture matrix to DCT coefficients](/media/images/mpeg/8x8.jpg)
 <b>Figure 2.1 : Transformation of 8 x 8 picture matrix to DCT coefficients</b></center>The above example shows transformation of 8 x 8 matrix. The transformed matrix is known as matrix of DCT coefficients. DCT coefficients are of two kinds – DC (Direct Current) coefficients and AC (Alternate Current) coefficients. DC coefficient is the one which has zero frequency across both the horizontal and vertical dimension. A 8 x 8 matrix of DCT coefficients has 64 elements, one of them is DC coefficient and the rest 63 are AC coefficients. In the above example, 239 ( element from first row and first column of the matrix of DCT coefficients) is the DC coefficient. The rest of the elements in the matrix are AC coefficients.</p>
 <p>Wavelet Transformation may also be employed as a substitute to DCT, although it is more widely used in the JPEG 2000 standard. DCT is always lossless whereas wavelet may be lossy. Quantization is performed over the retrieved transformation coefficients to convert higher frequency coefficients into zero. Some insignificant amount of information is lost during this process. The quantized matrix then entropy coded. The DC component of the matrix is encoded using DPCM (Differential Pulse-Code Modulation) which is a derivation of the PCM (Pulse Code Modulation) technique. DPCM uses the differential value among the sample nodes for coding. Whereas for the AC coefficients, zigzag scanning is done to align zeroes on one corner. Since zeroes are accumulated at the end, End of Block (EOB) marker can be used to replace the final run of zeroes, which further reduces the bit-size. Run length Encoding (RLE) is applied to reduce the redundancy. Then, Huffman Coding or Arithmetic coding is to be done to get smaller array of data. Although JPEG standard recommends any of these two Variable-Length Coding (VLC) to be used, Huffman Coding is preferred for its better compression. VLC is the last step during encoding and first step during decoding of JPEG images.</p>
 <h3>Decoding of JPEG</h3>
@@ -424,7 +429,8 @@ degradation of quality.</p>
 <p><b>Frame rate</b> is the frequency in which consecutive still images appear in a video. It is measured in fps ( frames per second).</p>
 <p>An <b>interlaced video</b> is a video with interwoven frames. Frames are interwoven with fields. Each frame has two fields (or half-frames) – odd fields and even fields.</p>
 <p><center><br />
-&lt;img class=&#8221;aligncenter size-medium wp-image-575&#8243; src=&#8221;http://motorscript.com/wp-content/uploads/2014/06/13.jpg&#8221; alt=&#8221;Frame and its fields&#8221; width=&#8221;388&#8243; height=112&#8243; /><br />
+![Frame and its fields](/media/images/mpeg/13.jpg)
+    <br />
 <b>Figure 3.2 : Frame and its fields</b></center>A <b>progressive video</b> or a non-interlaced video has its each pixel refreshed starting from left top, one column by another. NTSC (National Television Systems Committee), PAL (Phase Alternating Line), SECAM (Séquentiel couleur à mémoire) are the most common analog television color encoding systems. PAL videos use YUV color model. Videos of bit-rate 6 Mbit/s is recognized to be best for terrestrial video broadcasting systems considering both the compression and quality factors.</p>
 <p><b>Video Object (VO)</b><br />
 A video object is any arbitrarily shaped object, a rectangular frame or the background scene of a video. A video object can be accessed and manipulated by the user. A user can browse or seek the video objects while accessing the video and cut or paste the video objects while manipulating it.</p>
@@ -449,13 +455,13 @@ A Video Object Layer is the representation of video objects in single or multipl
 <p>Since P-frames and B-frames only store the changed information relative to the other<br />
 frames, they are also known as delta frames.</p>
 <p><center><br />
-<img class="aligncenter size-medium wp-image-576" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/14.jpg" alt="Frame Sequence" width="576" height="109" /><br />
+![An example frame sequence in videos](/media/images/mpeg/sequence.jpg)
 <b>Figure 3.3: An example frame sequence in videos</b></center><b>GOP (Group of Pictures)</b><br />
 A Group of Pictures is a collection of frames. A GOP (contains at least one I-frame. In an averagely compressed NTSC video, usually every 15 th or so frames are I-frames although the MPEG standard isn&#8217;t strict about this. A GOP may look like IBBPBBPBBPBB, where I stands for I-frames, B for B-frames and P for P-frames. The arrangement of frames determines the GOP structure which is ultimately one of the factors for determining the compression ratio.</p>
 <p><b>Open GOPs and Closed GOPs</b><br />
 Open GOPs are the GOPs which contain frames that can refer to the frames from preceding or following GOPs. I contrast, delta frames in closed GOPs can only refer to its own I-frames. Among open and closed GOPs of same number of frames, open provides a little more compression since open GOPs contain one less P-frame and one more B-frame than closed GOPs. However open GOPs aren&#8217;t applicable to all MPEG streams like mixed-angle or multi-angle DVDs.</p>
 <p><center><br />
-<img src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/zopfli_L0006_IBBP.png" alt="Open and Closed GOPs" width="470" height="206" class="aligncenter size-medium wp-image-607" /><br />
+![Open and Closed GOPs](/media/images/mpeg/gop.png)
 <b>Figure 3.4: Comparison of Open and Closed GOPs</b></center></p>
 <h2>Macroblock</h2>
 <p>A macroblock (MB) is a segment or component of frame. 16&#215;16 blocks of pixels are usually taken as a macroblock where as 8 by 8 pixels for advanced prediction mode. A still image or video frame contains several non-overlapping macroblocks. Macroblocks are the basic units of consideration in motion estimation and compensation. They are also used used for motion vectors for predictive coding of frames, that is for finding the difference between two frames. A series of macroblocks forms a <b>slice</b>.</p>
@@ -496,7 +502,7 @@ functional variations.</p>
 <h3>Codecs</h3>
 <p>Most televisions, multimedia players have support for decoding MPEG. Several codecs are available for different operating systems. A codec (compressor-decompressor) is a software or hardware that can encode/compress and/or decode/decompress digital stream of data. A software codec may not be a stand-alone program but just a library or module. Xvid is an example of codec which is the open-source codec that implements the MPEG-4 standard. FFmpeg is one of the most popular projects for producing free audio/video codec libraries for MPEG. Interestingly, FFmpeg uses this zigzag pattern used for entropy encoding of MPEG videos in their logo.</p>
 <p><center><br />
-<img class="aligncenter size-full wp-image-578" src="/web/20150315014035im_/http://motorscript.com/wp-content/uploads/2014/06/ffmeg.jpg" alt="FFmeg Zigzag Logo" width="253" height="64" /><br />
+![FFmpeg Logo showing zigzag pattern](/media/images/mpeg/ffmpeg.jpg)
 <b>Figure 3.5: FFmpeg Logo showing zigzag pattern</b></center></p>
 <h3>MP3</h3>
 <p>MP3 is a popular name for MPEG-1 and MPEG-2 Audio Layer III. It is the most widely used audio encoding format. MP3 standard was finalized in 1992 and released in 1993. MP3 is a lossy format. It supports both CBR (Constant Bit Rate) and VBR (Variable Bit Rate) encoding. MP3 files usually have &#8216;.mp3&#8242; file extension and their standard MIME type is &#8216;audio/mpeg&#8217;. MP3 has support for ID3 and other kinds of tags for storing metadata and DRM information of the audio file. The MP3 encoding format is patented. MP3 is the most popular audio file format and is used for music tracks, online streaming, audio recording, etc.</p>
