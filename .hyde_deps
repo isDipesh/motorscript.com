@@ -8,6 +8,7 @@
 !!python/unicode 'blog/creating-a-multi-boot-disc.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/dbf2sql.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/django-froala-editor.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html': [
   blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/emailspy.html': [blog.j2, base.j2, analytics.j2]
