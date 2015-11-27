@@ -9,6 +9,7 @@
     max-height: 90%;
     overflow: auto;
     position: fixed;
+    max-width: 170px;
 }
 
 /* The Table of Contents is composed of multiple nested unordered lists.  These styles remove the default styling of an unordered list because it is ugly. */
@@ -56,14 +57,20 @@
     padding: 5px;
 }
 
-.tocify-focus{
+.tocify-focus {
     background: #AAA;
 }
 
-.tocify-focus a{
+.tocify-focus a {
     color: #FFFFFF;
 }
 
-.tocify h2{
+.tocify h2 {
     text-align: center;
+}
+
+@media screen and (max-width: 1325px) {
+    #toc {
+        display: none;
+    }
 }

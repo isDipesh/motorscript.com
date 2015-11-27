@@ -83,3 +83,9 @@ h1.title a:visited {
     white-space: pre;
     overflow: auto;
 }
+
+.tocify {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+}
