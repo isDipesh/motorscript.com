@@ -1,0 +1,20 @@
+---
+title: Install Preeti Font in Fedora Linux
+created: !!timestamp '2014-09-12 08:18:07'
+tags:
+    - linux
+    - nepali
+---
+
+
+Script to download and install Preeti font on your Fedora Linux system:
+
+<pre>
+#!/usr/bin/bash
+wget http://www.nba.org.np/Misc/Preeti_0.ttf
+mkdir /usr/share/fonts/myfonts
+mv Preeti_0.ttf /usr/share/fonts/myfonts/
+fc-cache -f -v
+</pre>
+
+<p>Installing it in Windows is even easier. Just press Ctrl+W and wait for two minutes.</p>
