@@ -18,6 +18,8 @@
 !!python/unicode 'blog/fedora-15-post-install-customization.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/git-cheat-sheet.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/git-pre-commit-hook-python-code-quality-flake8-virtualenv.html': [
+  blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/gnome-shell-extension-firefox-profiles.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/gnome-shell-extension-force-quit.html': [blog.j2, base.j2,

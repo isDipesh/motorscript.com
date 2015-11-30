@@ -1,0 +1,19 @@
+---
+title: Git pre-commit hook for checking python code quality using flake8 inside virtualenv
+created: !!timestamp '2014-10-16 08:48:55'
+tags:
+    - git
+    - python
+---
+
+This git pre-commit hook checks your Python code quality and prevents bad code from checking it into your git repo.
+
+Install this hook directly using the following commands:
+
+<pre><code>pip install flake8
+wget https://gist.github.com/xtranophilist/eca5acae1a33b0baad33/raw/pre-commit.py -O .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+</code></pre>
+
+Content of the hook:
+<script src="https://gist.github.com/xtranophilist/eca5acae1a33b0baad33.js"></script>
