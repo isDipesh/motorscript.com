@@ -85,17 +85,36 @@ h1.title a:visited {
 }
 
 .tocify {
-  position: absolute;
-  top: 5px;
-  right: 1px;
+    position: absolute;
+    top: 5px;
+    right: 1px;
 }
 
-#index h3 a{
+#index h3 a {
     color: #444;
     text-decoration: none;
 }
 
-#index h3 a:hover{
+#index h3 a:hover {
     color: #111111;
     text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+td:hover {
+  background: #cccccc;
 }
