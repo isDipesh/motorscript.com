@@ -7,7 +7,7 @@ tags:
 ---
 
 
-<p>django-froala-editor package helps integrate <a href="/web/20150314233038/http://editor.froala.com/">Froala WYSIWYG editor</a> with Django.</p>
+<p>django-froala-editor package helps integrate <a href="http://editor.froala.com/">Froala WYSIWYG editor</a> with Django.</p>
 <h2>Getting started</h2>
 <ol>
 <li>Install the package:
@@ -54,7 +54,7 @@ class PageForm(forms.ModelForm):
 &lt;script type="text/javascript" src="&#123;{STATIC_URL}}froala_editor/js/froala_editor.min.js"&gt;&lt;/script&gt;
 </code></pre>
 <h1>Options</h1>
-<p>Froala Editor provides several options for customizing the editor. See <a href="/web/20150314233038/http://editor.froala.com/docs">http://editor.froala.com/docs</a> for all available options. You can provide a dictionary of these options as FROALA_EDITOR_OPTIONS setting in settings.py. These options would then be used for all instances of the WYSIWYG editor in the project.</p>
+<p>Froala Editor provides several options for customizing the editor. See <a href="http://editor.froala.com/docs">http://editor.froala.com/docs</a> for all available options. You can provide a dictionary of these options as FROALA_EDITOR_OPTIONS setting in settings.py. These options would then be used for all instances of the WYSIWYG editor in the project.</p>
 <p>Options for individual field can also be provided via FroalaField or FroalEditor class. This overrides any options set via FROALA_EDITOR_OPTIONS.:</p>
 <pre><code class="sourceCode python">from django.db import models
 from froala_editor.fields import FroalaField
@@ -74,4 +74,4 @@ class PageForm(forms.ModelForm):
 </code></pre>
 <p>You can use <code>FROALA_UPLOAD_PATH</code> setting in <code>settings.py</code> to change the path where uploaded files are stored within the <code>MEDIA_ROOT</code>. By default, <code>uploads/froala_editor/images</code> is used for storing uploaded images.</p>
 <h1>License</h1>
-<p>This package is available under BSD License. However, Froala editor is free only for non-commercial projects. For other uses, see <a href="/web/20150314233038/http://editor.froala.com/download">http://editor.froala.com/download</a> for licensing.</p>
+<p>This package is available under BSD License. However, Froala editor is free only for non-commercial projects. For other uses, see <a href="http://editor.froala.com/download">http://editor.froala.com/download</a> for licensing.</p>
