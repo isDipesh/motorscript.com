@@ -89,3 +89,13 @@ h1.title a:visited {
   top: 5px;
   right: 1px;
 }
+
+#index h3 a{
+    color: #444;
+    text-decoration: none;
+}
+
+#index h3 a:hover{
+    color: #111111;
+    text-decoration: underline;
+}
