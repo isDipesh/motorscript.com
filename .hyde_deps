@@ -6,6 +6,8 @@
 !!python/unicode 'blog/comments-module-for-yii.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/compiling-vlc-for-root-users.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/creating-a-multi-boot-disc.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/crop-to-selection-keyboard-shortcut-gimp.html': [blog.j2, base.j2,
+  analytics.j2]
 !!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/dbf2sql.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/django-deployment-cheatsheet.html': [blog.j2, base.j2, analytics.j2]
