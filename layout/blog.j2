@@ -48,8 +48,7 @@
                 <ul class="tags">
                     {% for tag in resource.meta.tags %}
                         <li>
-                            <a class="small" href="{{ content_url('blog/tags/'~tag~'.html') }}">
-                                {{ tag }}</a>{% if not loop.last %},{% endif %}
+                            {{ tag }}{% if not loop.last %},{% endif %}
 
                         </li>
                     {% endfor %}
