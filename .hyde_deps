@@ -1,29 +1,16 @@
 !!python/unicode 'about.html': [base.j2, analytics.j2]
 !!python/unicode 'blog/angry-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/another.html': [blog.j2, base.j2, analytics.j2]
-!!python/unicode 'blog/atom.xml': [!!python/unicode 'blog/last-fm-widget.html', !!python/unicode 'blog/selectize-js-binding-knockout-js.html',
-  !!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html',
-  !!python/unicode 'blog/what-happened-to-ipv5.html', !!python/unicode 'blog/creating-a-multi-boot-disc.html',
-  !!python/unicode 'blog/enable-root-login-for-linux-systems.html', macros.j2, !!python/unicode 'blog/gnome-shell-extension-screen-turn-off-button.html',
-  !!python/unicode 'blog/gnome-shell-extension-sensors.html', !!python/unicode 'blog/guake-patch-to-fix-focus-on-gnome.html',
-  !!python/unicode 'blog/git-cheat-sheet.html', !!python/unicode 'blog/compiling-vlc-for-root-users.html',
-  base.j2, analytics.j2, atom.j2, !!python/unicode 'blog/my-fedora-post-installation-cheatsheet.html',
-  !!python/unicode 'blog/hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer.html',
-  blog.j2, !!python/unicode 'blog/awegen-code-generator-for-yii.html', !!python/unicode 'blog/gnome-shell-extension-force-quit.html',
-  !!python/unicode 'blog/dbf2sql.html', !!python/unicode 'blog/comments-module-for-yii.html',
-  !!python/unicode 'blog/gnome-shell-extension-firefox-profiles.html', !!python/unicode 'blog/fedora-15-post-install-customization.html',
-  !!python/unicode 'blog/mpeg-jpeg-compression.html', !!python/unicode 'blog/setting-up-a-remote-git-repo-on-shared-server-like-hostgator.html',
-  !!python/unicode 'blog/vbulletin-to-smf-301-permanent-url-redirects.html', !!python/unicode 'blog/install-preeti-font-linux.html',
-  !!python/unicode 'blog/django-froala-editor.html', !!python/unicode 'blog/emailspy.html',
-  !!python/unicode 'blog/customizing-gnome-shell.html', !!python/unicode 'blog/mythtv-without-tv-tuner-card.html',
-  !!python/unicode 'blog/hacking-tweetdeck-for-chrome-to-show-tweet-source-client.html',
-  !!python/unicode 'blog/menu-management-for-yii-framework.html']
+!!python/unicode 'blog/atom.xml': [atom.j2, macros.j2]
 !!python/unicode 'blog/awegen-code-generator-for-yii.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/comments-module-for-yii.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/compiling-vlc-for-root-users.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/creating-a-multi-boot-disc.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/crop-to-selection-keyboard-shortcut-gimp.html': [blog.j2, base.j2,
+  analytics.j2]
 !!python/unicode 'blog/customizing-gnome-shell.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/dbf2sql.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/django-deployment-cheatsheet.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/django-froala-editor.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/e-mail-this-file-option-in-right-clickcontext-menu.html': [
   blog.j2, base.j2, analytics.j2]
@@ -34,6 +21,8 @@
 !!python/unicode 'blog/fedora-15-post-install-customization.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/git-cheat-sheet.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/git-pre-commit-hook-python-code-quality-flake8-virtualenv.html': [
+  blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/gnome-shell-extension-firefox-profiles.html': [blog.j2, base.j2,
   analytics.j2]
 !!python/unicode 'blog/gnome-shell-extension-force-quit.html': [blog.j2, base.j2,
@@ -50,6 +39,7 @@
   blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/index.html': [listing.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/install-preeti-font-linux.html': [blog.j2, base.j2, analytics.j2]
+!!python/unicode 'blog/installing-sublime-text-3-linux.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/last-fm-widget.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/menu-management-for-yii-framework.html': [blog.j2, base.j2,
   analytics.j2]
@@ -60,6 +50,8 @@
 !!python/unicode 'blog/sad-post.html': [blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/selectize-js-binding-knockout-js.html': [blog.j2, base.j2,
   analytics.j2]
+!!python/unicode 'blog/setting-remote-git-repo-website-deployment.html': [blog.j2,
+  base.j2, analytics.j2]
 !!python/unicode 'blog/setting-up-a-remote-git-repo-on-shared-server-like-hostgator.html': [
   blog.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/tags/angry.html': [base.j2, tagged_posts.j2, analytics.j2]
