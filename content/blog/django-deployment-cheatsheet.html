@@ -2,65 +2,75 @@
 title: My Django Deployment Cheatsheet
 created: !!timestamp '2014-11-23 04:12:10'
 tags:
-    - python
-    - virtualenv
-    - django
-    - postgresql
-    - gunicorn
-    - supervisor
-    - nginx
+- python
+- virtualenv
+- django
+- postgresql
+- gunicorn
+- supervisor
+- nginx
 ---
 
 <h1>Setting up the environment</h1>
 
-<h2>Installing Python and Tools</h2>
+<h2>Installing Development Tools</h2>
 
-<code>sudo yum -y install vim git links #install vim and git and links text browser</code>
-<a href="https://gist.github.com/stantonk/4082043">Installing Python2.7 in CentOS</a>
+<pre>
+<span class="prefix-su">yum -y install vim git links #install vim and git and links text browser</span>
+<span class="prefix-su">yum group install "Development Tools"</span>
+<span class="prefix-su">yum install libtiff-devel libjpeg-devel libzip-devel freetype-devel lcms2-devel libwebp-devel tcl-devel tk-devel</span></pre>
 
-<pre><code>yum install -y python-devel
-wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py #get pip installer
-python2.7 get-pip.py #run pip installer
-pip install virtualenv #installs virtual Python environment manager
-</code></pre>
+
+<a href="https://gist.github.com/stantonk/4082043" target="_blank">Installing Python2.7 in CentOS</a>
+
+<pre>
+<span class="prefix-su">yum install -y python-devel</span>
+<span class="prefix-su">wget https://bootstrap.pypa.io/get-pip.py #get pip installer</span>
+<span class="prefix-su">python2.7 get-pip.py #run pip installer</span>
+<span class="prefix-su">pip install virtualenv #installs virtual Python environment manager</span>
+</pre>
 
 <h2>Installation and Initialization of Postgres</h2>
 
-<a href="http://www.if-not-true-then-false.com/2012/install-postgresql-on-fedora-centos-red-hat-rhel/">Installing Postgresql 9.2</a>
+<a href="http://www.if-not-true-then-false.com/2012/install-postgresql-on-fedora-centos-red-hat-rhel/">Installing Postgresql
+    9.2</a>
 
-<pre><code>yum -y install python-psycopg2 postgresql-devel postgresql-libs postgresql postgresql-server postgresql-contrib
-su - postgres
-cd
-initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
-vi /var/lib/postgres/data/pg_hba.conf #Ensure METHOD is trust
-service postgresql restart
-su - postgres
-psql template1
-ALTER USER postgres with encrypted password 'your_password';
-exit()
-vi /var/lib/pgsql/data/pg_hba.conf #Ensure METHOD is md5
-service postgresql restart
-</code></pre>
+<pre>
+<span class="prefix-su">yum -y install python-psycopg2 postgresql-devel postgresql-libs postgresql postgresql-server postgresql-contrib</span>
+<span class="prefix-su">su - postgres</span>
+<span class="prefix">cd</span>
+<span class="prefix">initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/pgsql/data'</span>
+<span class="prefix">exit</span>
+<span class="prefix-su">vi /var/lib/pgsql/data/pg_hba.conf #Ensure METHOD is trust</span>
+<span class="prefix-su">service postgresql restart</span>
+<span class="prefix-su">su - postgres</span>
+<span class="prefix">psql template1</span>
+<span class="prefix-shell">ALTER USER postgres with encrypted password 'your_password';</span>
+<span class="prefix-shell">\q</span>
+<span class="prefix">exit</span>
+<span class="prefix-su">vi /var/lib/pgsql/data/pg_hba.conf #Ensure METHOD is md5</span>
+<span class="prefix-su">service postgresql restart</span>
+</pre>
 
 <h3>Creating DB user</h3>
 
-<pre><code>sudo su postgres #switch as system postgres user
-cd
-createdb db_name #create db named 'db_name'
-psql db_name #launch sql console for 'db_name' db
-CREATE ROLE user_name WITH SUPERUSER LOGIN PASSWORD 'password';
-</code></pre>
+<pre>
+<span class="prefix-su">su postgres #switch as system postgres user</span>
+<span class="prefix">cd</span>
+<span class="prefix">createdb db_name #create db named 'db_name'</span>
+<span class="prefix">psql db_name #launch sql console for 'db_name' db</span>
+<span class="prefix-shell">CREATE ROLE user_name WITH SUPERUSER LOGIN PASSWORD 'password';</span>
+<span class="prefix-shell">\q</span>
+<span class="prefix">exit</span>
+</pre>
 
 <h2>Nginx</h2>
 
-<code>yum install nginx</code>
+<code class="prefix-su">yum install nginx</code>
 
-Alternative ways:<br />
-Download from: http://nginx.org/en/linux_packages.html<br />
-OR<br />
-<code>yum localinstall http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm</code><br />
-OR<br />
-Write the following contents to <code>/etc/yum.repos.d/nginx.repo</code>
+
+OR<br/>
+Write the following contents to <code class="prefix-su">vi /etc/yum.repos.d/nginx.repo</code>
 
 <pre><code>[nginx]
 name=nginx repo
@@ -69,29 +79,30 @@ gpgcheck=0
 enabled=1
 </code></pre>
 
-Then:<br />
-<code>yum -y install nginx</code>
+Then:<br/>
+<code class="prefix-su">yum -y install nginx</code>
 
 Set nginx to autostart:
 
-<pre><code>chkconfig --add nginx
-chkconfig --levels 235 nginx on
-</code></pre>
+<pre>
+<span class="prefix-su">chkconfig --add nginx</span>
+<span class="prefix-su">chkconfig --levels 235 nginx on</span>
+</pre>
 
 <h2>Supervisord</h2>
 
-Install supervisor<br />
-<code>pip install supervisor</code>
+Install supervisor<br/>
+<code class="prefix-su">pip install supervisor</code>
 
-Create a sample config file with<br />
-<code>echo_supervisord_conf &gt; /etc/supervisord.conf</code>
+Create a sample config file with<br/>
+<code class="prefix-su">echo_supervisord_conf &gt; /etc/supervisord.conf</code>
 and edit it.
 
-Or create yourself one<br />
-<code>vi /etc/supervisord.conf</code>
+Or create yourself one<br/>
+<code class="prefix-su">vi /etc/supervisord.conf</code>
 
 <pre><code>[program:appname]
-command = /home/user/env/bin/gunicorn app.wsgi:application -c /home/user/gunicorn.conf.py
+command = /home/user/env/bin/gunicorn app.wsgi:application -c /home/user/conf/gunicorn.conf.py
 directory = /home/user/app/
 user = user
 environment=PATH= /home/user/env/bin
@@ -121,62 +132,66 @@ files = /etc/supervisor/conf.d/*.conf
 </code></pre>
 
 Create supervisord conf directory
+<code class="prefix-su">mkdir -p /etc/supervisor/conf.d/</code>
 
-<pre><code>mkdir /etc/supervisor/
-mkdir /etc/supervisor/conf.d/
-</code></pre>
 
-Download and save supervisord init script:<br />
-<code>wget -O /etc/init.d/supervisord https://bitbucket.org/kencochrane/django-gunicorn-nginx-supervisord-bootstrap/raw/695880c118c60a17b90f6a4a654d2d16fcc2ee12/server/init.d/supervisord</code>
+Download and save supervisord init script:<br/>
+<code class="prefix-su">wget -O /etc/init.d/supervisord
+    https://bitbucket.org/kencochrane/django-gunicorn-nginx-supervisord-bootstrap/raw/695880c118c60a17b90f6a4a654d2d16fcc2ee12/server/init.d/supervisord</code>
 
-Add executable permission<br />
-<code>chmod a+x /etc/init.d/supervisord</code>
+Add executable permission<br/>
+<code class="prefix-su">chmod a+x /etc/init.d/supervisord</code>
 
-Start supervisord service<br />
-<code>service supervisord start</code>
+Start supervisord service<br/>
+<code class="prefix-su">service supervisord start</code>
 
 Set it to autostart
 
-<pre><code>chkconfig --add supervisord
-chkconfig supervisord on
-</code></pre>
+<pre>
+<span class="prefix-su">chkconfig --add supervisord</span>
+<span class="prefix-su">chkconfig supervisord on</span>
+</pre>
 
-<hr />
+<hr/>
 
 <h1>The Application</h1>
 
 <h2>The Application Environment</h2>
 
-<pre><code>cd #goto user home directory
-virtualenv env #Creates new virtual environment
-source env/bin/activate #Enter the virtual environment
-</code></pre>
+<pre>
+<span class="prefix">cd #goto user home directory</span>
+<span class="prefix">virtualenv env #Creates new virtual environment</span>
+<span class="prefix">source env/bin/activate #Enter the virtual environment</span>
+</pre>
 
 <h2>Installing Application and its Dependencies</h2>
 
-<pre><code>cd #goto user home directory
-source env/bin/activate # Enter the virtual environment
-git clone git@github.com:username/reponame.git app # git clone the repo
-cd app # cd to project dir
-pip install -r requirements/production.txt # install required Python packages
-python manage.py migrate # run migrations
-python manage.py collectstatic
-</code></pre>
+<pre>
+<span class="prefix">cd #goto user home directory</span>
+<span class="prefix">source env/bin/activate # Enter the virtual environment</span>
+<span class="prefix">git clone git@github.com:username/reponame.git app # git clone the repo</span>
+<span class="prefix">cd app # cd to project dir</span>
+<span class="prefix">pip install -r requirements/production.txt # install required Python packages</span>
+<span class="prefix">python manage.py migrate # run migrations</span>
+<span class="prefix">python manage.py collectstatic</span>
+</pre>
 
 You might want to add the last three commands in your post receive hook.
 
 <h3>Configuring and Testing Application</h3>
 
-<pre><code>./manage.py runserver # Test application
-links http://127.0.0.1:8000 # Test run from browser
-</code></pre>
+<pre>
+<span class="prefix">./manage.py runserver # Test application</span>
+<span class="prefix">links http://127.0.0.1:8000 # Test run from browser</span>
+</pre>
 
 <h2>Gunicorn</h2>
 
-If gunicorn isn't already installed inside the virtual environment:<br />
-<code>pip install gunicorn</code>
+If gunicorn isn't already installed inside the virtual environment:<br/>
+<code class="prefix">pip install gunicorn</code>
 
-Create a gunicorn config <code>gunicorn.conf.py</code> file, maybe in conf directory in your home:
+Create gunicorn config file
+<code class="prefix">vi /home/user/conf/gunicorn.conf.py</code>
 
 <pre><code>import multiprocessing
 
@@ -188,14 +203,13 @@ errorlog = '/home/user/logs/gunicorn.error.log'
 proc_name = 'gunicorn_appname'
 </code></pre>
 
-From the app directory, you may test if it runs successfully with:<br />
-<code>gunicorn app.wsgi:application -c /home/user/conf/gunicorn.conf.py</code>
+From the app directory, you may test if it runs successfully with:<br/>
+<code class="prefix">gunicorn app.wsgi:application -c /home/user/conf/gunicorn.conf.py</code>
 
 <h2>Nginx</h2>
 
-Nginx Config file:<br />
-$<code>vi /home/user/conf/nginx.conf</code>
-#<code>ln -s /home/user/conf/nginx.conf /etc/nginx/conf.d/app_name.conf</code>
+Nginx Config file:<br/>
+<code class="prefix">vi /home/user/conf/nginx.conf</code>
 
 <pre><code>upstream app_name{
     server unix:/home/user/conf/gunicorn.sock;
@@ -243,12 +257,15 @@ location ~ /\. { access_log off; log_not_found off; deny all; }
 }
 </code></pre>
 
-Restart nginx:<br />
-<code>service nginx restart</code>
+Soft link the configuration to nginx conf dir:
+<code class="prefix-su">ln -s /home/user/conf/nginx.conf /etc/nginx/conf.d/app_name.conf</code>
+
+Restart nginx:<br/>
+<code class="prefix-su">service nginx restart</code>
 
 <h2>Supervisord</h2>
 
-<code>vi /home/user/conf/supervisor.conf</code>
+<code class="prefix">vi /home/user/conf/supervisor.conf</code>
 
 <pre><code>[program:app_name]
 command = /home/user/env/bin/gunicorn app_name.wsgi:application -c /home/user/conf/gunicorn.conf.py
@@ -257,11 +274,11 @@ user = user
 environment=PATH= /home/user/env/bin
 </code></pre>
 
-<code>cd /etc/supervisor/conf.d/</code>
-<code>ln -s /home/user/conf/supervisor.conf app_name.conf</code>
+Soft link to supervisord conf dir:
+<code class="prefix-su">ln -s /home/user/conf/supervisor.conf /etc/supervisor/conf.d/app_name.conf</code>
 
 Allow users to control the process with sudo
-<code>visudo</code><br />
+<code class="prefix-su">visudo</code><br/>
 and Append
 
 <pre><code>user ALL = (root) NOPASSWD:/usr/bin/supervisorctl start app_name
@@ -270,13 +287,13 @@ user ALL = (root) NOPASSWD:/usr/bin/supervisorctl restart app_name
 user ALL = (root) NOPASSWD:/usr/bin/supervisorctl status app_name
 </code></pre>
 
-<pre><code>supervisorctl reload
-</code></pre>
+<code class="prefix-su">supervisorctl reload</code>
 
-Now you can control your program with <code>supervisorctl</code>
+Now you can control your program with <code class="prefix-su">supervisorctl</code>
 
-<pre><code>sudo supervisorctl start appname
-sudo supervisorctl status appname
-sudo supervisorctl stop appname
-sudo supervisorctl restart appname
-</code></pre>
+<pre>
+<span class="prefix">sudo supervisorctl start appname</span>
+<span class="prefix">sudo supervisorctl status appname</span>
+<span class="prefix">sudo supervisorctl stop appname</span>
+<span class="prefix">sudo supervisorctl restart appname</span>
+</pre>

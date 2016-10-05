@@ -77,11 +77,14 @@ h1.title a:visited {
 
 .post-content code, .post-content pre {
     font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace, "courier new";
-    /*display: block;*/
-    color: #dddddd;
-    background-color: #222222;
+    display: block;
+    /*color: #dddddd;*/
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 3px;
     white-space: pre;
     overflow: auto;
+    word-wrap: normal;
+    padding: 12px;
 }
 
 .tocify {
@@ -112,9 +115,24 @@ th, td {
 }
 
 tbody tr:nth-child(odd) {
-  background: #eee;
+    background: #eee;
 }
 
 td:hover {
-  background: #cccccc;
+    background: #cccccc;
+}
+
+.prefix:before{
+    content: '$ ';
+    opacity: 0.5;
+}
+
+.prefix-su:before{
+    content: '# ';
+    opacity: 0.5;
+}
+
+.prefix-shell:before{
+    content: '> ';
+    opacity: 0.5;
 }
