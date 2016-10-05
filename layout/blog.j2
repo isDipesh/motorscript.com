@@ -14,7 +14,7 @@
 
             {% if resource.next_by_time %}
                 <a class="next" title="{{ resource.next_by_time.meta.title }}"
-                   href="{{ content_url(resource.next_by_time.url)|replace('/blog/','')|replace('.html','') }}/">Next</a>
+                   href="/{{ content_url(resource.next_by_time.url)|replace('/blog/','')|replace('.html','') }}/">Next</a>
             {% endif %}
 
             {#<div id="twitter_share">#}
