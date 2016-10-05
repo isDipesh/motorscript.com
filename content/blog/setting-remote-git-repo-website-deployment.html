@@ -2,34 +2,36 @@
 title: Setting up remote git repo for website deployment
 created: !!timestamp '2014-10-12 11:55:48'
 tags:
-    - git
-    - deploy
+- git
+- deploy
 ---
 
 <h2>SSH into the server</h2>
 
-<pre><code>cd
-mkdir repo.git app conf logs media static
-cd repo.git
-git init --bare
-git --bare update-server-info
-git config core.bare false
-git config receive.denycurrentbranch ignore
-git config core.worktree /home/user/app/
+<pre>
+<span class="prefix">cd</span>
+<span class="prefix">mkdir repo.git app conf logs media static</span>
+<span class="prefix">cd repo.git</span>
+<span class="prefix">git init --bare</span>
+<span class="prefix">git --bare update-server-info</span>
+<span class="prefix">git config core.bare false</span>
+<span class="prefix">git config receive.denycurrentbranch ignore</span>
+<span class="prefix">git config core.worktree /home/user/app/</span>
 
-cat &gt; hooks/post-receive &lt;&lt;EOF
+<span class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/sh
 git checkout -f
-EOF
+EOF</span>
 
-chmod +x hooks/post-receive
+<span class="prefix">chmod +x hooks/post-receive</span>
 
-exit
-</code></pre>
+<span class="prefix">exit</span>
+</pre>
 
 <h2>On the client</h2>
 
-<pre><code>git remote add server user@awecode.com:/home/user/repo.git/
-ssh-copy-id user@awecode.com
-git push server --all
-</code></pre>
+<pre>
+<span class="prefix">git remote add server user@awecode.com:/home/user/repo.git/</span>
+<span class="prefix">ssh-copy-id user@awecode.com</span>
+<span class="prefix">git push server --all</span>
+</pre>
