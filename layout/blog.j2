@@ -9,7 +9,7 @@
 
             {% if resource.prev_by_time %}
                 <a class="prev" title="{{ resource.prev_by_time.meta.title }}"
-                   href="{{ content_url(resource.prev_by_time.url)|replace('/blog/','')|replace('.html','') }}/">Previous</a>
+                   href="/{{ content_url(resource.prev_by_time.url)|replace('/blog/','')|replace('.html','') }}/">Previous</a>
             {% endif %}
 
             {% if resource.next_by_time %}
