@@ -33,3 +33,4 @@ DEFAULT_PAGINATION = 30
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+THEME = 'theme'
