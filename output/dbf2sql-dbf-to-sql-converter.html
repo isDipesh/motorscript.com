@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>dbf2sql – dbf to sql converter</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Dipesh Acharya's technical blog </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/dbf2sql-dbf-to-sql-converter.html" rel="bookmark"
+           title="Permalink to dbf2sql – dbf to sql converter">dbf2sql – dbf to sql converter</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-11-03T01:10:00+05:45">
+                Published: Thu 03 November 2011
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dipesh-acharya.html">Dipesh Acharya</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <p><strong>Version</strong> : 0.99</p>
+<p>It converts dBase files to sql scripts that can be imported into MySQL Database. It runs on console.</p>
+<p><strong>Usage:</strong></p>
+<p>Extract files from the `dbf2sql package.<br>
+Open terminal.<br>
+Change directory to where you have extracted the files.<br>
+Execute</p>
+<div class="highlight"><pre><span></span>php dbf2sql.php input.dbf tablename output.sql
+</pre></div>
+
+
+<p>where <code>input.dbf</code> is the dbf file to be converted, <code>tablename</code> is the name of the table that the generated SQL script should insert rows into.<br>
+<code>output.sql</code> is the output SQL script to be generated.  </p>
+<p>Only the input file argument is mandatory. The script is able to predict the table name and the output filename.</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight"><pre><span></span>php dbf2sql.php input.dbf myData
+</pre></div>
+
+
+<p>Since, output file name isn’t given, ‘myData.sql’ would be generated.</p>
+<div class="highlight"><pre><span></span>php dbf2sql.php data.dbf
+</pre></div>
+
+
+<p>This would create ‘data.sql’ script that would create a table named ‘data’.</p>
+<div class="highlight"><pre><span></span>php dbf2sql.php --bulk` OR `php dbf2sql.php --all
+</pre></div>
+
+
+<p>Converts all dbf files on current directory to sql scripts.</p>
+<p><strong>Download:</strong><br>
+<a href="https://github.com/xtranophilist/dbf2sql/zipball/master" target="_blank">https://github.com/xtranophilist/dbf2sql/zipball/master</a></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
