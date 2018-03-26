@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <h1 class="title">
-        motorscript
+        motorscript.com
       </h1>
       <h2 class="subtitle">
         Dipesh Acharya's technical blog
