@@ -1,34 +1,22 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        motorscript.com
-      </h1>
-      <h2 class="subtitle">
-        Dipesh Acharya's technical blog
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+    <ul class="posts">
+        <li>
+            <router-link to="/what-happened-to-ipv5/">What happened to IPv5?</router-link>
+        </li>
+    </ul>
 </template>
 
 <script>
 
-export default {
-  components: {
+  export default {
+    components: {}
   }
-}
 </script>
 
-<style>
-
+<style lang="scss">
+    .posts {
+        a {
+            color: inherit;
+        }
+    }
 </style>
