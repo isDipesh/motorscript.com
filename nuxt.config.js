@@ -1,7 +1,4 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'motorscript',
     meta: [
@@ -20,6 +17,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+  css: [
+    'assets/main.scss'
+  ],
   build: {
     /*
     ** Run ESLint on save
