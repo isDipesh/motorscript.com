@@ -2,6 +2,8 @@
     <div>
         
         <h1 class="title">What happened to IPv5?</h1>
+        
+        <time itemprop="datePublished">27 Oct 2011</time>
 
         <div class="content">
             <p><span class="caps">IP</span>

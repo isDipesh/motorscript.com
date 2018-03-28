@@ -5,7 +5,7 @@
                     <router-link to="/">motorscript.com</router-link>
                 </h1>
             </header>
-            <section class="body">
+            <section class="main">
                 <nuxt/>
             </section>
             <footer>
@@ -19,9 +19,3 @@
             </footer>
         </div>
 </template>
-
-<style>
-    .body {
-        padding: 2rem;
-    }
-</style>
