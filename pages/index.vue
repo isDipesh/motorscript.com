@@ -13,16 +13,7 @@
 </template>
 
 <script>
-
   export default {
-    components: {}
+    layout: 'index',
   }
 </script>
-
-<style lang="scss">
-    .posts {
-        a {
-            color: inherit;
-        }
-    }
-</style>

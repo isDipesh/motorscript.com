@@ -1,9 +1,6 @@
 <template>
     <div>
-
-        <h1 class="title">What happened to IPv5?</h1>
-
-        <time itemprop="datePublished">04 Feb 2014</time>
+        <BlogTitle title="Hiding header and footer only in certain pages with LibreOffice Writer" published="04 Feb 2014"/>
 
         <div class="content" itemprop="articleBody">
 
@@ -28,8 +25,16 @@
                 </li>
             </ul>
             <p>The headers and footers are then hidden for the page that follows the manually inserted page break.</p>
-            
+
         </div>
 
     </div>
 </template> 
+
+<script>
+  import BlogTitle from '../components/BlogTitle.vue';
+  export default {
+    mixins: [BlogTitle],
+    components: {BlogTitle},
+  }
+</script>

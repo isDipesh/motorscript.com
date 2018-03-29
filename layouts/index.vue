@@ -14,8 +14,21 @@
   import BlogFooter from "./BlogFooter.vue"
 
   export default {
+    data() {
+      return {
+        title: 'Recent Posts',
+      }
+    },
     components: {
       BlogHeader, BlogFooter
     },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          {hid: 'description', name: 'description', content: 'My custom description'}
+        ]
+      }
+    }
   }
 </script>

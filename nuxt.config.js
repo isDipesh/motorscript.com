@@ -1,10 +1,10 @@
 module.exports = {
   head: {
-    title: 'motorscript',
+    titleTemplate: '%s - motorscript',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Dipesh Acharya&apos;s technical blog' }
+      { hid: 'description', name: 'description', content: "Dipesh Acharya's technical blog" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

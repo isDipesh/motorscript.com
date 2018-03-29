@@ -1,9 +1,6 @@
 <template>
     <div>
-        
-        <h1 class="title">What happened to IPv5?</h1>
-        
-        <time itemprop="datePublished">27 Oct 2011</time>
+        <BlogTitle title="What happened to IPv6?" published="27 Oct 2011"/>
 
         <div class="content">
             <p><span class="caps">IP</span>
@@ -32,7 +29,15 @@
                     class="caps">IP</span> version field (the first four bytes of every <span class="caps">IP</span>
                 packet) and IPv6 uses 0110 (6), <span class="caps">ST2</span> uses 0101 (5) for <span class="caps">IP</span>
                 version&nbsp;field.</p>
-        </div>
 
+        </div>
     </div>
 </template>
+
+<script>
+  import BlogTitle from '../components/BlogTitle.vue';
+  export default {
+    mixins: [BlogTitle],
+    components: {BlogTitle},
+  }
+</script>
