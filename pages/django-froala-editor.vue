@@ -16,11 +16,13 @@
             <ol>
                 <li><p>Install the package:</p>
 
-                    <p><code>pip install django-froala-editor</code></p>
+                    <p><code><span class="prefix">pip install django-froala-editor</span></code></p>
 
-                    <p>if not update in pypi use this</p>
+                    <p>if not updated in pypi use this</p>
 
-                    <p><code>pip install https://github.com/froala/django-froala-editor/archive/master.zip</code></p></li>
+                    <p><code><span
+                            class="prefix">pip install https://github.com/froala/django-froala-editor/archive/master.zip</span></code>
+                    </p></li>
             </ol>
 
             <p>OR</p>

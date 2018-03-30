@@ -13,6 +13,7 @@
         <li><router-link to="/selectize-js-binding-knockout-js/">Selectize.js binding for Knockout.js</router-link></li>
         <li><router-link to="/dbf2sql/">dbf2sql – dbf to sql converter</router-link></li>
         <li><router-link to="/django-froala-editor/">Django package for Froala WYSIWYG Editor</router-link></li>
+        <li><router-link to="/gnome-shell-extension-sensors/">Gnome Shell Extension : Sensors</router-link></li>
     </ul>
 </template>
 
