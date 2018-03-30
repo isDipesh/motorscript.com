@@ -11,6 +11,7 @@
         </li>
         <li><router-link to="/setting-remote-git-repo-website-deployment/">Using git to deploy to server</router-link></li>
         <li><router-link to="/selectize-js-binding-knockout-js/">Selectize.js binding for Knockout.js</router-link></li>
+        <li><router-link to="/dbf2sql/">dbf2sql – dbf to sql converter</router-link></li>
     </ul>
 </template>
 

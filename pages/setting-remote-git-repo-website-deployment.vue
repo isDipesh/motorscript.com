@@ -4,7 +4,7 @@
 
         <div class="content" itemprop="articleBody">
 
-            <div class="variables">
+            <div class="block">
                 This cheatsheet will push your repo to the <i class="hl">app</i>
                 directory inside a user home directory in the remote server.
                 <ul>

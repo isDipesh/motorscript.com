@@ -43,6 +43,7 @@ header {
 }
 
 footer {
+  margin-top: 1rem;
   border-top: 1px solid $border-color;
   padding: 1rem;
   div {
@@ -81,7 +82,7 @@ time {
   border-radius: 5%;
 }
 
-.hl, pre {
+.hl, pre,code {
   background: #eee;
 }
 
@@ -92,8 +93,14 @@ pre{
   line-height: 1.2rem;
 }
 
+code{
+  padding: .2rem .5rem;
+  opacity: 0.8;
+}
+
 .content {
   margin-top: 1rem;
+  line-height: 1.4rem;
 }
 
 .prefix:before {
@@ -101,7 +108,7 @@ pre{
     opacity: .5;
 }
 
-.variables {
+.block {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
