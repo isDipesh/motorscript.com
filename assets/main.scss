@@ -77,8 +77,25 @@ time {
 }
 
 .hl {
-  background: #eee;
   padding: 0 .3rem;
   border-radius: 5%;
+}
 
+.hl, pre {
+  background: #eee;
+}
+
+pre{
+  padding: 1rem;
+  opacity: 0.8;
+  margin: 1rem;
+}
+
+.content {
+  margin-top: 1rem;
+}
+
+.prefix:before {
+    content: "$ ";
+    opacity: .5;
 }

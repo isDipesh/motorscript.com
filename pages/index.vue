@@ -9,6 +9,12 @@
             </router-link>
 
         </li>
+        <li>
+            <router-link to="/setting-remote-git-repo-website-deployment/">
+                Using git to deploy to server
+            </router-link>
+
+        </li>
     </ul>
 </template>
 
