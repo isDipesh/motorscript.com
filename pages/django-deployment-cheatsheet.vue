@@ -6,19 +6,21 @@
 
             <div class="block">
                 <ul>
-                    <div class="right btn small" @click="download">Download form data</div>
-                    <li>Remote/Server (domain name or IP): <input v-model="remote"></li>
-                    <li>User on Server : <input v-model="user"></li>
-                    <li>User Password : <input v-model="user_password">
-                        <a class="l1 small" href="#" @click="regenerate_user">Regenerate</a>
-                    </li>
-                    <li>SSH Port : <input v-model="ssh_port"></li>
-                    <li>Django Project Name : <input v-model="django_project"></li>
-                    <li>Database Name : <input v-model="db_name"></li>
-                    <li>Database User : <input v-model="db_user"></li>
-                    <li>Database Password : <input v-model="db_password">
-                        <a class="l1 small" href="#" @click="regenerate_db">Regenerate</a>
-                    </li>
+                    <form id="django-form">
+                        <div class="right btn small" @click="download">Download form data</div>
+                        <li>Remote/Server (domain name or IP): <input name="remote" v-model="remote"></li>
+                        <li>User on Server : <input name="user" v-model="user"></li>
+                        <li>User Password : <input name="user_password" v-model="user_password">
+                            <a class="l1 small" href="#" @click="regenerate_user">Regenerate</a>
+                        </li>
+                        <li>SSH Port : <input name="ssh_port" v-model="ssh_port"></li>
+                        <li>Django Project Name : <input name="django_project" v-model="django_project"></li>
+                        <li>Database Name : <input name="db_name" v-model="db_name"></li>
+                        <li>Database User : <input name="db_user" v-model="db_user"></li>
+                        <li>Database Password : <input name="db_password" v-model="db_password">
+                            <a class="l1 small" href="#" @click="regenerate_db">Regenerate</a>
+                        </li>
+                    </form>
                 </ul>
             </div>
 
@@ -159,13 +161,30 @@ PYTHONPATH=/home/{{user}}/app/
 
   // https://stackoverflow.com/questions/1497481/javascript-password-generator/1497512#1497512
   function generatePassword() {
-    var length = 15,
+    let length = 15,
       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
       retVal = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
+    for (let i = 0, n = charset.length; i < length; ++i) {
       retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
+  }
+
+  // https://codepen.io/gabrieleromanato/pen/LpLVeQ
+  function toJSONString(form) {
+    let obj = {};
+    let elements = form.querySelectorAll("input, select, textarea");
+    for (let i = 0; i < elements.length; ++i) {
+      let element = elements[i];
+      let name = element.name;
+      let value = element.value;
+
+      if (name) {
+        obj[name] = value;
+      }
+    }
+
+    return JSON.stringify(obj);
   }
 
   export default {
@@ -193,16 +212,15 @@ PYTHONPATH=/home/{{user}}/app/
       regenerate_db() {
         this.db_password = generatePassword();
       },
+      // https://jsfiddle.net/ourcodeworld/rce6nn3z/2
       download() {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('haha'));
-        element.setAttribute('download', 'a.txt');
-
+        const element = document.createElement('a');
+        let content = toJSONString(document.getElementById('django-form'));
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+        element.setAttribute('download', this.django_project + '.json');
         element.style.display = 'none';
         document.body.appendChild(element);
-
         element.click();
-
         document.body.removeChild(element);
       }
     },
