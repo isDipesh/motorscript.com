@@ -126,6 +126,8 @@ EOT
             <pre>
 [watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.esx) {{django_project}}.wsgi.application
+#cmd=chaussette --fd $(circus.sockets.esx) --backend gevent {{django_project}}.wsgi.application
+#cmd=chaussette --fd $(circus.sockets.esx) --backend meinheld {{django_project}}.wsgi.application
 uid = {{user}}
 endpoint_owner = {{user}}
 use_sockets = True
@@ -148,6 +150,26 @@ path = /tmp/{{django_project}}.sock
 family = AF_UNIX
 
 [env:{{django_project}}]
+PYTHONPATH=/home/{{user}}/app/
+
+# For django-q
+[watcher:{{django_project}}_q]
+cmd = python manage.py qcluster
+numprocesses = 1
+working_dir = /home/{{user}}/app/
+virtualenv = /home/{{user}}/env/
+copy_env = True
+copy_path = True
+stdout_stream.class = FileStream
+stdout_stream.filename = /home/{{user}}/logs/webapp_q.log
+stdout_stream.max_bytes = 1073741824
+stdout_stream.backup_count = 3
+stderr_stream.class = FileStream
+stderr_stream.filename = /home/{{user}}/logs/webapp_q_err.log
+stderr_stream.max_bytes = 1073741824
+stderr_stream.backup_count = 3
+
+[env:{{django_project}}_q]
 PYTHONPATH=/home/{{user}}/app/
 </pre>
 
