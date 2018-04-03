@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlogTitle title="Simple Django Deployment Cheat-sheet" published="23 Nov 2014"/>
+        <BlogTitle title="Simple Django Deployment Cheat-sheet" published="23 Nov 2014" updated="Apr 3, 2018"/>
 
         <div class="content" itemprop="articleBody">
 
@@ -11,14 +11,14 @@
                         <li>Domain Name: <input name="remote" v-model="remote"></li>
                         <li>User on Server : <input name="user" v-model="user"></li>
                         <li>User Password : <input name="user_password" v-model="user_password">
-                            <a class="l1 small" href="#" @click="regenerate_user">Regenerate</a>
+                            <a class="l1 small" href="#" @click.prevent="regenerate_user">Regenerate</a>
                         </li>
                         <li>SSH Port : <input name="ssh_port" v-model="ssh_port"></li>
                         <li>Django Project Name : <input name="django_project" v-model="django_project"></li>
                         <li>Database Name : <input name="db_name" v-model="db_name"></li>
                         <li>Database User : <input name="db_user" v-model="db_user"></li>
                         <li>Database Password : <input name="db_password" v-model="db_password">
-                            <a class="l1 small" href="#" @click="regenerate_db">Regenerate</a>
+                            <a class="l1 small" href="#" @click.prevent="regenerate_db">Regenerate</a>
                         </li>
                     </form>
                 </ul>
@@ -161,11 +161,11 @@ PYTHONPATH=/home/{{user}}/app/
             <pre><span class="su">apt install redis-server</span>
 <span class="su">systemctl enable redis</span>
 <span class="su">systemctl start redis</span></pre>
-            
+
             <h3>Install nginx</h3>
             <pre><span class="su">apt install nginx</span>
 <span class="su">systemctl enable nginx</span></pre>
-            
+
             <h3>Configure nginx with security headers</h3>
             <pre>
 upstream django {
@@ -221,7 +221,20 @@ server {
     location ~ /\. { access_log off; log_not_found off; deny all; }
 }
 </pre>
-            
+
+            <h3>Obtain SSL certificate with Certbot</h3>
+            <pre><span class="su">apt-get install software-properties-common</span>
+<span class="su">add-apt-repository ppa:certbot/certbot</span>
+<span class="su">apt-get update</span>
+<span class="su">apt-get install python-certbot-nginx</span>
+<span class="su">apt-get install python-certbot-nginx</span>
+<span class="su">certbot --nginx</span>
+</pre>
+
+            <h4>Check configuration and restart nginx</h4>
+            <pre><span class="su">nginx -t</span>
+<span class="su">systemctl restart nginx</span></pre>
+
 
         </div>
     </div>
