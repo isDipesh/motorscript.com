@@ -8,7 +8,7 @@
                 <ul>
                     <form id="django-form">
                         <div class="right btn small" @click="download">Download form data</div>
-                        <li>Remote/Server (domain name or IP): <input name="remote" v-model="remote"></li>
+                        <li>Domain Name: <input name="remote" v-model="remote"></li>
                         <li>User on Server : <input name="user" v-model="user"></li>
                         <li>User Password : <input name="user_password" v-model="user_password">
                             <a class="l1 small" href="#" @click="regenerate_user">Regenerate</a>
@@ -151,6 +151,77 @@ port=9999
 [env:{{user}}]
 PYTHONPATH=/home/{{user}}/app/
 </pre>
+
+            <h4>Soft-link our configuration to circus <span class="hl">conf.d</span> directory</h4>
+
+            <pre><span class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/</span>
+<span class="prefix">circusctl reloadconfig</span></pre>
+
+            <h3>Install redis</h3>
+            <pre><span class="su">apt install redis-server</span>
+<span class="su">systemctl enable redis</span>
+<span class="su">systemctl start redis</span></pre>
+            
+            <h3>Install nginx</h3>
+            <pre><span class="su">apt install nginx</span>
+<span class="su">systemctl enable nginx</span></pre>
+            
+            <h3>Configure nginx with security headers</h3>
+            <pre>
+upstream django {
+    server 127.0.0.1:9999;
+}
+
+# Redirect www.{{remote}} to {{remote}}
+server {
+    listen 80;
+    server_name  www.{{remote}};
+    return       301 https://{{remote}}$request_uri;
+}
+
+server {
+    listen 80;
+    server_name {{remote}};
+
+    #access_log /home/{{user}}/logs/nginx.access.log;
+    error_log /home/{{user}}/logs/nginx.error.log;
+
+    limit_conn conn_limit_per_ip 100;
+    limit_req zone=req_limit_per_ip burst=100 nodelay;
+
+    location /robots.txt {
+        alias /home/{{user}}/static/robots.txt;
+    }
+    
+    location /favicon.ico {
+        alias /home/{{user}}/static/img/favicon.ico;
+    }
+    
+    location ~ ^/(media|static)/  {
+        root    /home/{{user}}/;
+        expires 30d;
+    }
+
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+        proxy_pass http://django;
+        client_max_body_size 50m;
+        add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options nosniff;
+        add_header X-XSS-Protection "1; mode=block";
+        add_header X-Frame-Options SAMEORIGIN;
+        # CSP allowing popular third party integrations
+        add_header Content-Security-Policy "default-src 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' adservice.google.com adservice.google.com.np pagead2.googlesyndication.com cdn.awecode.com d31qbv1cthcecs.cloudfront.net www.google-analytics.com cdn.ravenjs.com connect.facebook.net platform.twitter.com apis.google.com www.google.com www.gstatic.com maps.googleapis.com; connect-src 'self' cdn.awecode.com googleads.g.doubleclick.net fonts.gstatic.com wss: cdn.awecode.com securepubads.g.doubleclick.net d5nxst8fruw4z.cloudfront.net sentry.io maps.gstatic.com www.google-analytics.com certify.alexametrics.com; img-src 'self' data: certify.alexametrics.com maps.gstatic.com maps.googleapis.com d5nxst8fruw4z.cloudfront.net cdn.awecode.com www.google-analytics.com stats.g.doubleclick.net ssl.gstatic.com csi.gstatic.com www.facebook.com syndication.twitter.com www.gravatar.com pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.awecode.com; font-src 'self' data: cdn.awecode.com fonts.gstatic.com; frame-src googleads.g.doubleclick.net www.youtube.com accounts.google.com content.googleapis.com www.facebook.com staticxx.facebook.com platform.twitter.com; manifest-src 'self'; worker-src 'self' fonts.gstatic.com";
+    }
+    
+    # Prevent hidden files (beginning with a period) from being served
+    location ~ /\. { access_log off; log_not_found off; deny all; }
+}
+</pre>
+            
 
         </div>
     </div>
