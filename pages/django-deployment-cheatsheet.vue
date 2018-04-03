@@ -124,7 +124,7 @@ EOT
 <span class="prefix">vim conf/circus.ini</span></pre>
 
             <pre>
-[watcher:{{user}}]
+[watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.esx) {{django_project}}.wsgi.application
 uid = {{user}}
 endpoint_owner = {{user}}
@@ -141,14 +141,13 @@ stdout_stream.max_bytes = 1073741824
 stdout_stream.backup_count = 3
 stderr_stream.max_bytes = 1073741824
 stderr_stream.backup_count = 3
-send_hup = True
 working_dir = /home/{{user}}/app/
 
-[socket:{{user}}]
-host=127.0.0.1
-port=9999
+[socket:{{django_project}}]
+path = /tmp/{{django_project}}.sock
+family = AF_UNIX
 
-[env:{{user}}]
+[env:{{django_project}}]
 PYTHONPATH=/home/{{user}}/app/
 </pre>
 
@@ -169,7 +168,7 @@ PYTHONPATH=/home/{{user}}/app/
             <h3>Configure nginx with security headers</h3>
             <pre>
 upstream django {
-    server 127.0.0.1:9999;
+    server unix:/tmp/{{django_project}};
 }
 
 # Redirect www.{{remote}} to {{remote}}
