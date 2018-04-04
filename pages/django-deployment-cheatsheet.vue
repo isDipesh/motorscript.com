@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlogTitle title="Simple Django Deployment Cheat-sheet" published="23 Nov 2014" updated="Apr 3, 2018"/>
+        <BlogTitle title="Simple Django Deployment Cheat-sheet" published="23 Nov 2014" updated="03 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
 
