@@ -3,9 +3,8 @@
 [![\../](https://travis-ci.org/xtranophilist/motorscript.com.svg?branch=nuxt)](https://travis-ci.org/xtranophilist/motorscript.com)
 
 
-> Dipesh Acharya's weblog of cheatsheets.
+> Dipesh Acharya's weblog of cheat-sheets. [![\\../](https://motorscript.com/favicon.ico "\\../")](https://motorscript.com)
 
-![\../](https://motorscript.com/favicon.ico "\../")
 
 ## Build Setup
 
