@@ -8,17 +8,19 @@
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build
-$ npm start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ npm run generate
+$ yarn generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+Powered by [Nuxt.js](https://github.com/nuxt/nuxt.js)   
+Built using [Travis CI](https://travis-ci.org)  
+Hosted on [Github](https://pages.github.com)  
