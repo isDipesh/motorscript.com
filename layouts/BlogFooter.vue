@@ -5,7 +5,7 @@
         </div>
         <div class="center">
             Powered by <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a> |
-            Hosted on <a target="_blank" href="https://pages.github.com/" rel="noreferrer noopener">Github</a>
+            Hosted on <a target="_blank" href="https://github.com/xtranophilist/motorscript/" rel="noreferrer noopener">Github</a> |
         </div>
     </footer>
 </template>
