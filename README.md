@@ -1,6 +1,8 @@
 # motorscript
 
-> Dipesh Acharya's technical blog
+> Dipesh Acharya's weblog of cheatsheets.
+
+[![Build Status](https://travis-ci.org/xtranophilist/motorscript.com.svg?branch=nuxt)](https://travis-ci.org/xtranophilist/motorscript.com)
 
 ## Build Setup
 
