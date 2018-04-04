@@ -1,8 +1,11 @@
 # motorscript
 
+[![\../](https://travis-ci.org/xtranophilist/motorscript.com.svg?branch=nuxt)](https://travis-ci.org/xtranophilist/motorscript.com)
+
+
 > Dipesh Acharya's weblog of cheatsheets.
 
-[![Build Status](https://travis-ci.org/xtranophilist/motorscript.com.svg?branch=nuxt)](https://travis-ci.org/xtranophilist/motorscript.com)
+![\../](https://motorscript.com/favicon.ico "\../")
 
 ## Build Setup
 

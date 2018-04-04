@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="center">
-            Dipesh Acharya's cheat-blog
+            Dipesh Acharya's weblog of cheat-sheets
         </div>
         <div class="center">
             Powered by <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a> |
