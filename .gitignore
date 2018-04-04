@@ -2,3 +2,7 @@
 *~
 *.pyc
 deploy
+.nuxt
+node_modules
+*.log
+dist
