@@ -1,5 +1,6 @@
 <template>
     <ul class="posts">
+        <li><router-link to="https-for-zoho-mail-custom-domain/">HTTPS for Zoho Mail Custom Domain</router-link></li>
         <li><router-link to="django-deployment-cheatsheet/">Simple Django Deployment Cheat-sheet</router-link></li>
         <li><router-link to="selectize-js-binding-knockout-js/">Selectize.js binding for Knockout.js</router-link></li>
         <li><router-link to="setting-remote-git-repo-website-deployment/">Using git to deploy to server</router-link></li>
