@@ -41,8 +41,7 @@
             Create database and role:
             <pre><span class="prefix">createdb {{db_name}}</span>
 <span class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</span>
-<span class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</span>
-<span class="su">su - postgres</span></pre>
+<span class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</span></pre>
 
 
             <h3>Setup pushing via Git</h3>
