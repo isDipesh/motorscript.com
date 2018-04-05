@@ -126,7 +126,7 @@
         const element = document.createElement('a');
         let content = toJSONString(document.getElementById('django-form'));
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-        element.setAttribute('download', this.django_project + '.json');
+        element.setAttribute('download', this.bucket_name + '.json');
         element.style.display = 'none';
         document.body.appendChild(element);
         element.click();
