@@ -1,6 +1,6 @@
 <template>
     <ul class="posts">
-        <li><router-link to="continuous-postgres-backup-with-wale/">Continuous PostgreSQL Backup with Wal-e</router-link></li>
+        <li><router-link to="automatic-continuous-postgres-backup-with-wale/">Automatic Continuous PostgreSQL Backup with Wal-e</router-link></li>
         <li><router-link to="https-for-zoho-mail-custom-domain/">HTTPS for Zoho Mail Custom Domain</router-link></li>
         <li><router-link to="django-deployment-cheatsheet/">Simple Django Deployment Cheat-sheet</router-link></li>
         <li><router-link to="selectize-js-binding-knockout-js/">Selectize.js binding for Knockout.js</router-link></li>

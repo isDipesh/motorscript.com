@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlogTitle title="Continuous PostgreSQL Backup with Wal-e" published="04 Apr 2018"/>
+        <BlogTitle title="Automatic Continuous PostgreSQL Backup with Wal-e" published="04 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
 
