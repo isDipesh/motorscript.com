@@ -41,11 +41,12 @@
                 Note: wal-e doesn't work with Python 3.6 as of now. [<a href="https://github.com/wal-e/wal-e/issues/322"
                                                                         target="_blank" rel="noopener noreferrer">Issue</a>] 
             </div>
-            Also install <span class="hl">pip</span> if necessary.
+            Install <span class="hl">pip</span> if necessary.
             <pre><span class="prefix">wget https://bootstrap.pypa.io/get-pip.py</span>
-<span class="prefix">sudo python3 get-pip.py</span>
-<span class="prefix">sudo pip3 install 'wal-e[aws]'</span>
-<span class="prefix">sudo apt install daemontools lzop pv</span></pre>
+<span class="prefix">sudo python3 get-pip.py</span></pre>
+            Install wal-e
+<pre><span class="prefix">sudo apt install daemontools lzop pv</span>
+<span class="prefix">sudo pip3 install 'wal-e[aws]'</span></pre>
 
             <h3>Configure backing up of WAL segments</h3>
             <pre><span class="prefix">sudo mkdir -p /etc/wal-e.d/env</span>
