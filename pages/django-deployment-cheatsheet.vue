@@ -12,6 +12,7 @@
                         <li>User on Server : <input name="user" v-model="user"></li>
                         <li>User Password : <input name="user_password" v-model="user_password">
                             <a class="l1 small" href="#" @click.prevent="regenerate_user">Regenerate</a>
+                            <a class="l1 small" href="#" @click.prevent="copy_user">Copy</a>
                         </li>
                         <li>SSH Port : <input name="ssh_port" v-model="ssh_port"></li>
                         <li>Django Project Name : <input name="django_project" v-model="django_project"></li>
@@ -19,6 +20,7 @@
                         <li>Database User : <input name="db_user" v-model="db_user"></li>
                         <li>Database Password : <input name="db_password" v-model="db_password">
                             <a class="l1 small" href="#" @click.prevent="regenerate_db">Regenerate</a>
+                            <a class="l1 small" href="#" @click.prevent="copy_db">Copy</a>
                         </li>
                     </form>
                 </ul>
@@ -291,6 +293,12 @@ server {
     return JSON.stringify(obj);
   }
 
+  function copyText(el) {
+    el.focus();
+    el.select();
+    document.execCommand('copy');
+  }
+
   export default {
     mixins: [BlogTitle],
     components: {BlogTitle},
@@ -315,6 +323,12 @@ server {
       },
       regenerate_db() {
         this.db_password = generatePassword();
+      },
+      copy_user() {
+        copyText(document.getElementsByName('user_password')[0]);
+      },
+      copy_db() {
+        copyText(document.getElementsByName('db_password')[0]);
       },
       // https://jsfiddle.net/ourcodeworld/rce6nn3z/2
       download() {
