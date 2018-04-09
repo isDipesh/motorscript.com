@@ -10,6 +10,12 @@
                     Install Selenium Server from AUR
                     <pre><span class="prefix">pacaur -S selenium-server-standalone</span></pre>
                 </li>
+                
+                <li>
+                    Install Gecko and Chrome Webdrivers
+                    <pre><span class="prefix">pacaur -S geckodriver</span>
+                    <span class="prefix">pacaur -S chromedriver</span></pre>
+                </li>
 
                 <li>
                     Change Java environment to Java 8
