@@ -14,7 +14,7 @@
                 <li>
                     Install Gecko and Chrome Webdrivers
                     <pre><span class="prefix">pacaur -S geckodriver</span>
-                    <span class="prefix">pacaur -S chromedriver</span></pre>
+<span class="prefix">pacaur -S chromedriver</span></pre>
                 </li>
 
                 <li>
