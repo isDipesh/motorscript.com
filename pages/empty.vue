@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlogTitle title="" published=""/>
+        <BlogTitle title="" published="01 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
         </div>
