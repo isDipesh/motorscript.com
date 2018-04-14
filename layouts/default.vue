@@ -3,7 +3,7 @@
         <BlogHeader/>
         <main itemscope itemtype="https://schema.org/Blog">
             <nuxt/>
-            <div id="disqus_thread"></div>
+            <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div>
             <script>
               var disqus_config = function () {
               };
