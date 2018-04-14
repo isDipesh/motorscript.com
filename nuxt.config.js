@@ -7,6 +7,7 @@ module.exports = {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {name: 'author', content: 'Dipesh Acharya'},
       {hid: 'description', name: 'description', content: "Dipesh Acharya's technical blog"}
     ],
     link: [
@@ -14,7 +15,7 @@ module.exports = {
     ],
     bodyAttrs: {
       itemscope: '',
-      itemtype: 'https://schema.org/Blog'
+      itemtype: 'https://schema.org/BlogPosting'
     }
   },
   /*

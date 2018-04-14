@@ -45,7 +45,7 @@
             <pre><span class="prefix">wget https://bootstrap.pypa.io/get-pip.py</span>
 <span class="prefix">sudo python3 get-pip.py</span></pre>
             Install wal-e
-<pre><span class="prefix">sudo apt install daemontools lzop pv</span>
+            <pre><span class="prefix">sudo apt install daemontools lzop pv</span>
 <span class="prefix">sudo pip3 install 'wal-e[aws]'</span></pre>
 
             <h3>Configure backing up of WAL segments</h3>

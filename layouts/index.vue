@@ -27,7 +27,11 @@
         title: this.title,
         meta: [
           {hid: 'description', name: 'description', content: 'Dipesh Acharya\'s technical blog.'}
-        ]
+        ],
+        bodyAttrs: {
+          itemscope: '',
+          itemtype: 'https://schema.org/CollectionPage'
+        }
       }
     }
   }
