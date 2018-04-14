@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="" published="01 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

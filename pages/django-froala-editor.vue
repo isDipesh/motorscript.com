@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Django package for Froala WYSIWYG Editor" published="14 Jul 2014"/>
 
         <div class="content" itemprop="articleBody">
@@ -197,7 +197,7 @@ FROALAEDITOROPTIONS = {
   # ...
 }</pre>
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

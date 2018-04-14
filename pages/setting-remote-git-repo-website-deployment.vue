@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Using git to push websites to server" published="12 Oct 2014"/>
 
         <div class="content" itemprop="articleBody">
@@ -50,7 +50,7 @@ EOF</span>
 
         </div>
 
-    </div>
+    </article>
 </template>
 
 <script>

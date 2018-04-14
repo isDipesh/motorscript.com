@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Gnome Shell Extension : Sensors" published="20 Aug 2011"/>
 
         <div class="content" itemprop="articleBody">
@@ -121,7 +121,7 @@ output consult the <code>sensors.conf</code>(5) manual.</p>
 
 <p>Authors : <a target="_blank" rel="noopener noreferrer" href="https://github.com/xtranophilist/gnome-shell-extension-sensors/graphs/contributors">authors</a></p>
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

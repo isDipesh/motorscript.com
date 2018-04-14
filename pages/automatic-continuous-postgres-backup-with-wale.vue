@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Automatic Continuous PostgreSQL Backup with Wal-e" published="04 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
@@ -85,7 +85,7 @@
 <span class="prefix">sudo systemctl start potgresql</span></pre>
 
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

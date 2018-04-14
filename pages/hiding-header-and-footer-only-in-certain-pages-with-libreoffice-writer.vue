@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Hiding header and footer only in certain pages with LibreOffice Writer" published="04 Feb 2014"/>
 
         <div class="content" itemprop="articleBody">
@@ -28,7 +28,7 @@
 
         </div>
 
-    </div>
+    </article>
 </template> 
 
 <script>

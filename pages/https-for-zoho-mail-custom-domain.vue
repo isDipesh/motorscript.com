@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="HTTPS for Zoho Mail Custom Domain" published="04 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
@@ -45,7 +45,7 @@ server {
             
         </div>
 
-    </div>
+    </article>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="dbf2sql – dbf to sql converter" published="03 Nov 2011"/>
 
         <div class="content" itemprop="articleBody">
@@ -49,7 +49,7 @@
                 <a href="https://github.com/xtranophilist/dbf2sql/zipball/master">https://github.com/xtranophilist/dbf2sql/zipball/master</a>
             </div>
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

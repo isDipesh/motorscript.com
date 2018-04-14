@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Simple Django Deployment Cheat-sheet" published="23 Nov 2014" updated="03 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
@@ -259,7 +259,7 @@ server {
 
 
         </div>
-    </div>
+    </article>
 </template>
 
 <script>

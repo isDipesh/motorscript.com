@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="What happened to IPv6?" published="27 Oct 2011"/>
 
         <div class="content" itemprop="articleBody">
@@ -31,11 +31,12 @@
                 version&nbsp;field.</p>
 
         </div>
-    </div>
+    </article>
 </template>
 
 <script>
   import BlogTitle from '../components/BlogTitle.vue';
+
   export default {
     mixins: [BlogTitle],
     components: {BlogTitle},

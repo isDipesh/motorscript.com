@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Selectize.js binding for Knockout.js" published="04 Feb 2015"/>
 
         <div class="content" itemprop="articleBody">
@@ -82,7 +82,7 @@
 &lt;select data-bind="selectize: items, value: selected_items2, options: {plugins: ['remove_button']}"
         multiple&gt;&lt;/select&gt;</pre>
         </div>
-    </div>
+    </article>
 
 </template>
 
