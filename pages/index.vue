@@ -43,5 +43,10 @@
 <script>
   export default {
     layout: 'index',
+    head: {
+      link: [
+        {rel: 'canonical', href: 'https://motorscript.com'}
+      ],
+    }
   }
 </script>
