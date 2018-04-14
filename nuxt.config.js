@@ -24,6 +24,9 @@ module.exports = {
   css: [
     'assets/main.scss'
   ],
+  modules: [
+   '@nuxtjs/sitemap'
+  ],
   build: {
     /*
     ** Run ESLint on save
@@ -38,5 +41,10 @@ module.exports = {
         })
       }
     }
+  },
+   sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://motorscript.com',
+    generate: true,
   }
-}
+};
