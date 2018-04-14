@@ -26,7 +26,7 @@
       return {
         title: this.title,
         meta: [
-          {hid: 'description', name: 'description', content: 'My custom description'}
+          {hid: 'description', name: 'description', content: 'Dipesh Acharya\'s technical blog.'}
         ]
       }
     }

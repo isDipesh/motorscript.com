@@ -1,6 +1,9 @@
 module.exports = {
   head: {
     titleTemplate: '%s - motorscript',
+    htmlAttrs: {
+      lang: 'en',
+    },
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -25,7 +28,7 @@ module.exports = {
     'assets/main.scss'
   ],
   modules: [
-   '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap'
   ],
   build: {
     /*
@@ -42,7 +45,7 @@ module.exports = {
       }
     }
   },
-   sitemap: {
+  sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://motorscript.com',
     generate: true,
