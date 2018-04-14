@@ -15,7 +15,7 @@ module.exports = {
     ],
     bodyAttrs: {
       itemscope: '',
-      itemtype: 'https://schema.org/BlogPosting'
+      itemtype: 'https://schema.org/WebPage'
     }
   },
   /*

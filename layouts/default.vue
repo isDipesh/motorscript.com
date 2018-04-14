@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <BlogHeader/>
-        <section class="main">
+        <main itemscope itemtype="https://schema.org/Blog">
             <nuxt/>
             <div id="disqus_thread"></div>
             <script>
@@ -14,7 +14,7 @@
                 (d.head || d.body).appendChild(s);
               })();
             </script>
-        </section>
+        </main>
         <BlogFooter/>
     </div>
 </template>
