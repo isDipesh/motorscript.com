@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import BlogTitle from './components/BlogTitle.vue';
+  import BlogTitle from '../components/BlogTitle.vue';
 
   export default {
     mixins: [BlogTitle],
