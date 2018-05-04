@@ -1,6 +1,9 @@
 <template>
     <ul class="posts">
         <li>
+            <router-link to="lazy-loading-google-maps/">Lazy Loading Google Maps</router-link>
+        </li>
+        <li>
             <router-link to="install-selenium-arch-linux/">Installing Selenium Standalone Server on Arch Linux
             </router-link>
         </li>
