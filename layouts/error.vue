@@ -25,7 +25,7 @@
     layout: 'index',
     head() {
       return {
-        title: Error
+        title: 'Error'
       }
     },
     data() {

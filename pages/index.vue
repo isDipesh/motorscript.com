@@ -1,10 +1,6 @@
 <template>
     <ul class="posts">
         <li>
-            <router-link to="smoothscroll-nuxtjs/">Smooth-scroll for nuxt.js
-            </router-link>
-        </li>
-        <li>
             <router-link to="install-selenium-arch-linux/">Installing Selenium Standalone Server on Arch Linux
             </router-link>
         </li>
