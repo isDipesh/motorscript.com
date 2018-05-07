@@ -30,6 +30,9 @@ module.exports = {
   modules: [
     '@nuxtjs/sitemap'
   ],
+  generate: {
+    routes: ['404']
+  },
   build: {
     /*
     ** Run ESLint on save
