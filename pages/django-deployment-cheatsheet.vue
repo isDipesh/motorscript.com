@@ -36,12 +36,13 @@
 
             <h3>Setup Database</h3>
             Install Postgresql:
-            <pre><span class="su">apt-get install postgresql postgresql-contrib</span>
-<span class="su">systemctl enable postgresql</span>
-<span class="su">systemctl start postgresql</span>
-<span class="su">su - postgres</span></pre>
+            <pre><span class="su">apt-get install postgresql postgresql-contrib</span></pre>
+            Enable and start Postgresql
+<pre><span class="su">systemctl enable postgresql</span>
+<span class="su">systemctl start postgresql</span></pre>
             Create database and role:
-            <pre><span class="prefix">createdb {{db_name}}</span>
+            <pre><span class="su">su - postgres</span>
+<span class="prefix">createdb {{db_name}}</span>
 <span class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</span>
 <span class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</span></pre>
 
