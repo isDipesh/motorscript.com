@@ -44,6 +44,7 @@
             <pre><span class="su">su - postgres</span>
 <span class="prefix">createdb {{db_name}}</span>
 <span class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</span>
+<span class="prefix">echo "ALTER ROLE "mpdux" WITH LOGIN;" | psql</span>
 <span class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</span></pre>
 
 
@@ -127,9 +128,9 @@ EOT
 
             <pre>
 [watcher:{{django_project}}]
-cmd=chaussette --fd $(circus.sockets.esx) {{django_project}}.wsgi.application
-#cmd=chaussette --fd $(circus.sockets.esx) --backend gevent {{django_project}}.wsgi.application
-#cmd=chaussette --fd $(circus.sockets.esx) --backend meinheld {{django_project}}.wsgi.application
+cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
+#cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend gevent {{django_project}}.wsgi.application
+#cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend meinheld {{django_project}}.wsgi.application
 uid = {{user}}
 endpoint_owner = {{user}}
 use_sockets = True
