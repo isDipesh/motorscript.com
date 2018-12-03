@@ -1,6 +1,9 @@
 <template>
     <ul class="posts">
         <li>
+            <router-link to="using-google-cloud-vision-to-build-ml-training-dataset/">Using Google Cloud Vision to Build ML Training Dataset</router-link>
+        </li>
+        <li>
             <router-link to="lazy-loading-google-maps/">Lazy Loading Google Maps</router-link>
         </li>
         <li>
