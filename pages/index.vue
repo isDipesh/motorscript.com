@@ -1,7 +1,7 @@
 <template>
     <ul class="posts">
         <li>
-            <router-link to="Installing TensorFlow for Python on Arch Linux (with CUDA 9 and CUDNN 7)">Using Google Cloud Vision to Build ML Training Dataset</router-link>
+            <router-link to="install-tensorflow-arch-linux-cuda-cudnn">Installing TensorFlow for Python on Arch Linux (with CUDA 9 and CUDNN 7)</router-link>
         </li>
         <li>
             <router-link to="using-google-cloud-vision-to-build-ml-training-dataset/">Using Google Cloud Vision to Build ML Training Dataset</router-link>
