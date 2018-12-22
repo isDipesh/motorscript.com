@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        title: 'Recent Posts',
+        title: "Dipesh Acharya's Recent Posts",
       }
     },
     components: {
