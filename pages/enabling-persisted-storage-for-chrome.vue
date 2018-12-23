@@ -1,6 +1,6 @@
 <template>
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-        <BlogTitle title="Enabling Persisted Storage for your web app on Chrome" published="09 Apr 2018"/>
+        <BlogTitle title="Enabling Persisted Storage for your web app on Chrome" published="23 Dec 2018"/>
 
         <div class="content" itemprop="articleBody">
             According to Google Developer Docs, Chrome grants persistent storage permissions if any of these are satisfied:
