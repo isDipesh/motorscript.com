@@ -123,13 +123,23 @@ self.addEventListener('fetch', event => {
                 </li>
 
                 <li>And allow push notifications.
-                <img src="https://i.imgur.com/71ld1Yl.png" alt="Chrome Allow Push Notifications" title="Chrome Allow Push Notifications"/>
+                    <div>
+                <img src="https://i.imgur.com/71ld1Yl.png" alt="Chrome Allow Push Notifications" title="Chrome Allow Push Notifications"/></div>
                 </li>
             </ul>
         </li>
-                
-
+        <li>
+            <h2>Ask Chrome for the persisted storage permissions.</h2>
+            <pre>if (navigator.storage && navigator.storage.persist)
+  navigator.storage.persist().then(granted => {
+    if (granted)
+      console.log("Storage will not be cleared except by explicit user action");
+    else
+      console.log("Storage may be cleared by the UA under storage pressure.");
+  });</pre>
+        </li>
             </ol>
+Now, your web app should print "Storage will not be cleared except by explicit user action" on the console.
 
         </div>
     </article>
