@@ -1,6 +1,9 @@
 <template>
     <ul class="posts">
         <li>
+            <router-link to="enabling-persisted-storage-for-chrome">Enabling Persisted Storage for your web app on Chrome</router-link>
+        </li>
+        <li>
             <router-link to="install-tensorflow-arch-linux-cuda-cudnn">Installing TensorFlow for Python on Arch Linux (with CUDA 9 and CUDNN 7)</router-link>
         </li>
         <li>
