@@ -12,8 +12,6 @@
             </ul>
 
             We will use the last two options to get the permission.
-
-
             <ol>
 
                 <li>
