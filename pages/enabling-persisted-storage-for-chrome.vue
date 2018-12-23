@@ -3,7 +3,7 @@
         <BlogTitle title="Enabling Persisted Storage for your web app on Chrome" published="09 Apr 2018"/>
 
         <div class="content" itemprop="articleBody">
-            According to Google Developer Docs, Chrome grants persistent storage permissions if:
+            According to Google Developer Docs, Chrome grants persistent storage permissions if any of these are satisfied:
             <ul>
                 <li>The site is bookmarked (and the user has 5 or less bookmarks)</li>
                 <li>The site has high site engagement</li>
