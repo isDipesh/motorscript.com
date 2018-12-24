@@ -34,8 +34,8 @@
 
                 <li>
                     Download and install CUDNN 7.0.4-2
-                    <pre><span class="prefix">wget https://archive.archlinux.org/packages/c/cudnn/cudnn-7.0.4-2-x86_64.pkg.tar.xz</span>
-<span class="prefix">sudo pacman -U cudnn-7.0.4-2-x86_64.pkg.tar.xz</span></pre>
+                    <pre><span class="prefix">https://archive.archlinux.org/packages/c/cudnn/cudnn-7.1.4-1-x86_64.pkg.tar.xz</span>
+<span class="prefix">sudo pacman -U cudnn-7.1.4-1-x86_64.pkg.tar.xz</span></pre>
                 </li>
 
                 <li>
