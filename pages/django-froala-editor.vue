@@ -16,13 +16,12 @@
             <ol>
                 <li><p>Install the package:</p>
 
-                    <p><code><span class="prefix">pip install django-froala-editor</span></code></p>
+                    <pre class="language-bash"><code class="prefix">pip install django-froala-editor</code></pre>
 
                     <p>if not updated in pypi use this</p>
 
-                    <p><code><span
-                            class="prefix">pip install https://github.com/froala/django-froala-editor/archive/master.zip</span></code>
-                    </p></li>
+                    <pre class="language-bash"><code class="prefix">pip install https://github.com/froala/django-froala-editor/archive/master.zip</code>
+                    </pre></li>
             </ol>
 
             <p>OR</p>
@@ -35,7 +34,7 @@
                 <li><p>Add the following line to <code>urlpatterns</code> in your application's <code>urls.py</code>.</p></li>
             </ol>
 
-            <pre><code class="python language-python">  url(r'^froala_editor/', include('froala_editor.urls')),
+            <pre><code class="language-python">url(r'^froala_editor/', include('froala_editor.urls')),
 </code></pre>
 
             <p>
@@ -72,7 +71,7 @@ class PageForm(forms.ModelForm):
                 In case of jQuery conflict (when your project template already has jQuery), you need to include the following files instead of <code>{<i></i>{ form.media}}</code>
                 plus the static files for theme (if not default) and required plugins.</p>
 
-            <pre><code class="python language-python">&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all" rel="stylesheet" /&gt;
+            <pre><code class="python language-html">&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all" rel="stylesheet" /&gt;
 &lt;link href="{<i></i>{STATIC_URL}}froala_editor/css/froala_editor.min.css" type="text/css" media="all" rel="stylesheet" /&gt;
 &lt;link href="{<i></i>{STATIC_URL}}froala_editor/css/froala_style.min.css" type="text/css" media="all" rel="stylesheet" /&gt;
 &lt;script type="text/javascript" src="{<i></i>{STATIC_URL}}froala_editor/js/froala_editor.min.js"&gt;&lt;/script&gt;
@@ -190,12 +189,12 @@ class Page(models.Model):
             <p>If you bought a license and got your key, the easiest way to implement it is to put it into the <code>FROALA_EDITOR_OPTIONS</code>
                 setting in <code>settings.py</code>:</p>
 
-            <pre>
+            <pre class="language-python"><code>
 FROALAEDITOROPTIONS = {
   'key': 'our key goes here',
   # other options
   # ...
-}</pre>
+}</code></pre>
         </div>
     </article>
 </template>

@@ -43,7 +43,7 @@ module.exports = {
     babel: {
       "plugins": [
         ["prismjs", {
-            "languages": ["javascript", "css", "markup", "nginx", "bash", "ini"],
+            "languages": ["javascript", "css", "markup", "nginx", "bash", "ini", "python"],
             "plugins": ["normalize-whitespace"],
         }]
       ]
