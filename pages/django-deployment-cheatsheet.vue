@@ -223,20 +223,6 @@ PYTHONPATH=/home/{{user}}/app/
       <pre class="language-bash"><code class="su">apt install nginx</code>
 <code class="su">systemctl enable nginx</code></pre>
 
-      <pre class="language-javascript"><code>
-Prism.plugins.NormalizeWhitespace.setDefaults({
-	'remove-trailing': true,
-	'remove-indent': true,
-	'left-trim': true,
-	'right-trim': true,
-	/*'break-lines': 80,
-	'indent': 2,
-	'remove-initial-line-feed': false,
-	'tabs-to-spaces': 4,
-	'spaces-to-tabs': 4*/
-});
-</code></pre>
-
       <h3>Configure nginx with security headers</h3>
       <pre class="language-nginx"><code>
               
@@ -310,7 +296,8 @@ server {
 </pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash"><code class="su">nginx -t</code>
+      <pre class="language-bash">
+        <code class="su">nginx -t</code>
 <code class="su">systemctl restart nginx</code></pre>
     </div>
   </article>

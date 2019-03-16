@@ -44,7 +44,7 @@ module.exports = {
       "plugins": [
         ["prismjs", {
             "languages": ["javascript", "css", "markup", "nginx", "bash", "ini"],
-            
+            "plugins": ["normalize-whitespace"],
         }]
       ]
     }
