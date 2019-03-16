@@ -25,13 +25,13 @@ module.exports = {
   css: ["assets/main.scss"],
   modules: [
     "@nuxtjs/sitemap",
-    [
-      "@nuxtjs/google-adsense",
-      {
-        id: "ca-pub-8986893739514632",
-        pageLevelAds: true,
-      }
-    ]
+    // [
+      // "@nuxtjs/google-adsense",
+      // {
+      //   id: "ca-pub-8986893739514632",
+      //   pageLevelAds: true,
+      // }
+    // ]
   ],
   plugins: [
     {src: '~/plugins/prism.js', ssr: false},
@@ -39,6 +39,16 @@ module.exports = {
   generate: {
     routes: ["404"]
   },
+  build: {
+    babel: {
+      "plugins": [
+        ["prismjs", {
+            "languages": ["javascript", "css", "markup", "nginx", "bash", "ini"],
+            
+        }]
+      ]
+    }
+},
   sitemap: {
     path: "/sitemap.xml",
     hostname: "https://motorscript.com",

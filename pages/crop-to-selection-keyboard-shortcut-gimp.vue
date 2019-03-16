@@ -4,24 +4,24 @@
     <div class="content" itemprop="articleBody">
 
       <h4>For newer GIMP versions:</h4>
-      <span class="hl">Edit</span> -> <span class="hl">Keyboard Shortcuts</span> -> <span class="hl">Image</span> -> <span class="hl">Crop to Selection</span>
+      <code>Edit</code> -> <code>Keyboard Shortcuts</code> -> <code>Image</code> -> <code>Crop to Selection</code>
 
       <h4>For older GIMP versions:</h4>
       <ol>
         <li>
           <p>Enable
-            <span class="hl">Use dynamic keyboard shortcuts</span> and
-            <span class="hl">Save keyboard shortcuts on exit</span> from
-            <span class="hl">Edit</span> ->
-            <span class="hl">Preferences</span> ->
-            <span class="hl">Keyboard Shortcuts</span>
+            <code>Use dynamic keyboard shortcuts</code> and
+            <code>Save keyboard shortcuts on exit</code> from
+            <code>Edit</code> ->
+            <code>Preferences</code> ->
+            <code>Keyboard Shortcuts</code>
           </p>
         </li>
         <li>
           <p>From the
-            <span class="hl">Image</span> menu, hover over
-            <span class="hl">Crop to Selection</span> and hit a three key sequence (like
-            <span class="hl">Ctrl + Alt + C</span>).
+            <code>Image</code> menu, hover over
+            <code>Crop to Selection</code> and hit a three key sequence (like
+            <code>Ctrl + Alt + C</code>).
           </p>
         </li>
         <li>

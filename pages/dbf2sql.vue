@@ -4,18 +4,17 @@
 
         <div class="content" itemprop="articleBody">
 
-            <div><i class="hl">dbf2sql</i> converts dBase files to sql scriptsfor importing into MySQL Database.</div>
+            <div><code>dbf2sql</code> converts dBase files to sql scriptsfor importing into MySQL Database.</div>
 
             <h4>Usage:</h4>
 
-            <div>Extract files from the dbf2sql package. <i class="hl">dbf2sql.php</i> and <i class="hl">dbf_class.php</i>
+            <div>Extract files from the dbf2sql package. <code>dbf2sql.php</code> and <code>dbf_class.php</code>
                 are the required files.
             </div>
             <div class="block">
-                <pre><span class="prefix">php dbf2sql.php input.dbf tablename output.sql</span></pre>
-                <div>where <span class="hl">input.dbf</span> is the dbf file to be converted; <span class="hl">tablename</span>
-                    is the name of the table that the generated SQL script should insert rows into; <span
-                            class="hl">output.sql</span>
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php input.dbf tablename output.sql</code></pre>
+                <div>where <code>input.dbf</code> is the dbf file to be converted; <code>tablename</code>
+                    is the name of the table that the generated SQL script should insert rows into; <code>output.sql</code>
                     is the output SQL script to be&nbsp;generated.
                 </div>
             </div>
@@ -25,18 +24,18 @@
             <h4>Examples:</h4>
 
             <div class="block">
-                <pre><span class="prefix">php dbf2sql.php input.dbf myData</span></pre>
-                <div>Since output file name isn’t given, <i class="hl">myData.sql</i> will be generated.</div>
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php input.dbf myData</code></pre>
+                <div>Since output file name isn’t given, <code>myData.sql</code> will be generated.</div>
             </div>
 
             <div class="block">
-                <pre><span class="prefix">php dbf2sql.php data.dbf</span></pre>
-                <div>This will create <i class="hl">data.sql</i> script that would create a table named <i class="hl">data</i>
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php data.dbf</code></pre>
+                <div>This will create <code>data.sql</code> script that would create a table named <code>data</code>
                 </div>
             </div>
 
             <div class="block">
-                <pre><span class="prefix">php dbf2sql.php --bulk` OR `php dbf2sql.php --all</span></pre>
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php --bulk` OR `php dbf2sql.php --all</code></pre>
                 <div>Converts all dbf files on current directory to sql scripts.</div>
             </div>
 
