@@ -33,23 +33,11 @@ module.exports = {
       }
     ]
   ],
+  plugins: [
+    {src: '~/plugins/prism.js', ssr: false},
+  ],
   generate: {
     routes: ["404"]
-  },
-  build: {
-    /*
-     ** Run ESLint on save
-     */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
-      }
-    }
   },
   sitemap: {
     path: "/sitemap.xml",

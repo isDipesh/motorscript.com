@@ -1,25 +1,34 @@
 <template>
-    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-        <BlogTitle title="Enabling Persisted Storage for your web app on Chrome" published="23 Dec 2018"/>
+  <article
+    itemprop="blogPost"
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+  >
+    <BlogTitle
+      title="Enabling Persisted Storage for your web app on Chrome"
+      published="23 Dec 2018"
+    />
 
-        <div class="content" itemprop="articleBody">
-            According to Google Developer Docs, Chrome grants persistent storage permissions if any of these are satisfied:
-            <ul>
-                <li>The site is bookmarked (and the user has 5 or less bookmarks)</li>
-                <li>The site has high site engagement</li>
-                <li>The site has been added to home screen</li>
-                <li>The site has push notifications enabled</li>
-            </ul>
-
-            We will use the last two options to get the permission.
-            <ol>
-
-                <li>
-                    <h2>Adding our app to home screen.</h2>
-                    <ul>
-                        <li>To enable adding our site to homescreen, first add a manifest file - <span class="hl">manifest.json</span> to the root.
-                        <pre>
-{
+    <div class="content" itemprop="articleBody">
+      According to Google Developer Docs, Chrome grants persistent storage
+      permissions if any of these are satisfied:
+      <ul>
+        <li>The site is bookmarked (and the user has 5 or less bookmarks)</li>
+        <li>The site has high site engagement</li>
+        <li>The site has been added to home screen</li>
+        <li>The site has push notifications enabled</li>
+      </ul>
+      We will use the last two options to get the permission.
+      <ol>
+        <li>
+          <h2>Adding our app to home screen.</h2>
+          <ul>
+            <li>
+              To enable adding our site to homescreen, first add a manifest file
+              -
+              <code>manifest.json</code>
+              to the root.
+              <pre><code class="language-js">{
     "short_name": "OCR GT",
     "name": "OCR GT",
     "icons": [
@@ -39,16 +48,34 @@
     "display": "standalone",
     "scope": "/",
     "theme_color": "#3367D6"
-}
-  </pre>
-                    Change the values as per your requirement.
-                    Link the manifest file from your index.html. Add the following within the <span class="hl">head</span> tag.
-                    <pre>&lt;link rel="manifest" href="manifest.json"&gt;</pre>
-                        </li>
+}</code></pre>
 
-                        <li>
-                            Add a service worker with the file <span class="hl">sw.js</span> (following sample from <a href="https://googlechrome.github.io/samples/service-worker/basic/" target="_blank" rel="noreferer noopener nofollow">Google Chrome's Github</a>)
-                            <pre>const PRECACHE = 'precache-v1';
+              <div>
+                Change the values as per your requirement. Link the manifest
+                file from your index.html. Add the following within the
+                <code>head</code> tag.
+              </div>
+
+              <pre><code class="language-html">&lt;link rel="manifest" href="manifest.json"&gt;</code></pre>
+            </li>
+
+            <li>
+              <p>
+                <strong>Note</strong>: Do <em>not</em> use
+                <code class="language-javascript">loadLanguages()</code> with
+                Webpack or another bundler, as this will cause Webpack to
+                include all languages and plugins. Use the babel plugin
+                described above.
+              </p>
+              Add a service worker with the file <code>sw.js</code> (following
+              sample from
+              <a
+                href="https://googlechrome.github.io/samples/service-worker/basic/"
+                target="_blank"
+                rel="noreferer noopener nofollow"
+                >Google Chrome's Github</a
+              >)
+              <pre><code class="language-js">const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -98,49 +125,71 @@ self.addEventListener('fetch', event => {
     );
   }
 });
-                            </pre>
-                        Register the service worker from your app:
-                        <pre>if ('serviceWorker' in navigator) {
+                            </code></pre>
+              Register the service worker from your app:
+              <pre class="language-js"><code>if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js');
-}</pre>
-                        </li>
-                        <li>
-                            Now, open your app in Chrome, open <span class="hl">Dev Tools</span> -> <span class="hl">Application</span> tab  -> <span class="hl">Manifest</span>, click on <span class="hl">Add to homescreen</span>.
-                            <img src="https://developers.google.com/web/tools/chrome-devtools/images/manifest.png" alt="DevTools Add to Homescreen">
-                            <div><small><em>Image Courtesy: Google</em></small></div>
-                        </li>
-
-            </ul>
-
+}</code></pre>
+            </li>
+            <li>
+              Now, open your app in Chrome, open
+              <span class="hl">Dev Tools</span> ->
+              <span class="hl">Application</span> tab ->
+              <span class="hl">Manifest</span>, click on
+              <span class="hl">Add to homescreen</span>.
+              <img
+                src="https://developers.google.com/web/tools/chrome-devtools/images/manifest.png"
+                alt="DevTools Add to Homescreen"
+              />
+              <div>
+                <small>
+                  <em>Image Courtesy: Google</em>
+                </small>
+              </div>
+            </li>
+          </ul>
         </li>
         <li>
-            <h2>Enable push notifications</h2>
-            <ul>
-                <li>Click on the info icon or the Secure lock icon before the URL in the address bar. Then click on the <span class="hl">Site Settings</span>.
-                <img src="https://i.imgur.com/xZayWdc.png" alt="Chrome Site Settings" title="Chrome Site Settings"/>
-                </li>
+          <h2>Enable push notifications</h2>
+          <ul>
+            <li>
+              Click on the info icon or the Secure lock icon before the URL in
+              the address bar. Then click on the
+              <span class="hl">Site Settings</span>.
+              <img
+                src="https://i.imgur.com/xZayWdc.png"
+                alt="Chrome Site Settings"
+                title="Chrome Site Settings"
+              />
+            </li>
 
-                <li>And allow push notifications.
-                    <div>
-                <img src="https://i.imgur.com/71ld1Yl.png" alt="Chrome Allow Push Notifications" title="Chrome Allow Push Notifications"/></div>
-                </li>
-            </ul>
+            <li>
+              And allow push notifications.
+              <div>
+                <img
+                  src="https://i.imgur.com/71ld1Yl.png"
+                  alt="Chrome Allow Push Notifications"
+                  title="Chrome Allow Push Notifications"
+                />
+              </div>
+            </li>
+          </ul>
         </li>
         <li>
-            <h2>Ask Chrome for the persisted storage permissions.</h2>
-            <pre>if (navigator.storage && navigator.storage.persist)
+          <h2>Ask Chrome for the persisted storage permissions.</h2>
+          <pre class="language-js"><code>if (navigator.storage && navigator.storage.persist)
   navigator.storage.persist().then(granted => {
     if (granted)
       console.log("Storage will not be cleared except by explicit user action");
     else
       console.log("Storage may be cleared by the UA under storage pressure.");
-  });</pre>
+  });</code></pre>
         </li>
-            </ol>
-Now, your web app should print "Storage will not be cleared except by explicit user action" on the console.
-
-        </div>
-    </article>
+      </ol>
+      Now, your web app should print "Storage will not be cleared except by
+      explicit user action" on the console.
+    </div>
+  </article>
 </template>
 
 <script>
