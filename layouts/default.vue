@@ -4,7 +4,7 @@
     <main itemscope itemtype="https://schema.org/Blog">
       <nuxt/>
       <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div>
-      <!-- <script>
+      <script>
         var disqus_config = function() {};
         (function() {
           // DON'T EDIT BELOW THIS LINE
@@ -14,7 +14,7 @@
           s.setAttribute("data-timestamp", +new Date());
           (d.head || d.body).appendChild(s);
         })();
-      </script> -->
+      </script>
     </main>
     <BlogFooter/>
   </div>
