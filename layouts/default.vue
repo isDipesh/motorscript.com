@@ -29,6 +29,9 @@ export default {
   components: {
     BlogHeader,
     BlogFooter
+  },
+  mounted(){
+    Prism.highlightAll();
   }
 };
 </script>
