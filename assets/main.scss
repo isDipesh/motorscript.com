@@ -99,6 +99,10 @@ h1.title {
   line-height: 1.4rem;
 }
 
+code.prefix[class*="language-"]{
+  color: #35495e;
+}
+
 .prefix:before {
   content: "$ ";
   opacity: 0.5;
@@ -189,4 +193,8 @@ article {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
+}
+
+pre > code{
+  font-family: monospace !important;
 }

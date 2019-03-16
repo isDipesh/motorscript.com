@@ -13,10 +13,10 @@
       According to Google Developer Docs, Chrome grants persistent storage
       permissions if any of these are satisfied:
       <ul>
-        <li>The site is bookmarked (and the user has 5 or less bookmarks)</li>
-        <li>The site has high site engagement</li>
-        <li>The site has been added to home screen</li>
-        <li>The site has push notifications enabled</li>
+        <li>The site has been bookmarked in the browser and there are less than 5 bookmarks.</li>
+        <li>The site has high engagement in the browser.</li>
+        <li>The site is added to home screen.</li>
+        <li>Push notifications are enabled for the site.</li>
       </ul>
       We will use the last two options to get the permission.
       <ol>
