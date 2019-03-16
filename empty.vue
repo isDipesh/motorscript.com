@@ -11,6 +11,7 @@
   import BlogTitle from '../components/BlogTitle.vue';
 
   export default {
+    // layout: 'archive',
     mixins: [BlogTitle],
     components: {BlogTitle},
   }
