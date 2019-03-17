@@ -4,6 +4,12 @@
     <ul class="posts">
 
       <li>
+        <router-link to="git-pre-commit-hook-python-code-quality-flake8-virtualenv">
+          Git pre-commit hook for checking python code quality using flake8 inside virtualenv
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
