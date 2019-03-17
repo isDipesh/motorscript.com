@@ -19,11 +19,11 @@
         was my college assignment. Although I got an ‘A’ for it, I’m pretty sure
         there are many errors in this document. References, sources and
         acknowledgements are at the bottom. Feel free to comment on anything
-        I’ve missed. Here&nbsp;goes!
+        I’ve missed. Here goes!
       </p>
 
       <div name="DataCompression" data-unique="DataCompression"></div>
-      <h1>Data&nbsp;Compression</h1>
+      <h1>Data Compression</h1>
 
       <p>
         The hunger for information keeps growing in the modern age. Science and
@@ -36,7 +36,7 @@
         the popular ways for such communication. But there’s a price to pay for
         this richness in information – huge storage requirements and larger
         bandwidth for transmission. This cost can be reduced by the use of
-        data&nbsp;compression.
+        data compression.
       </p>
 
       <p>
@@ -49,14 +49,14 @@
         Compression generally involves two techniques. The first technique is to
         throw away the redundant information by representing single sample of
         data only once and the second technique is to throw away things that
-        have very minimal effect on perception of the end&nbsp;user.
+        have very minimal effect on perception of the end user.
       </p>
 
       <div
         name="LossyandLosselessCompression"
         data-unique="LossyandLosselessCompression"
       ></div>
-      <h2>Lossy and Losseless&nbsp;Compression</h2>
+      <h2>Lossy and Losseless Compression</h2>
 
       <p>
         There are basically two types of data compression – lossless and lossy
@@ -68,7 +68,7 @@
         perception of wholesome data. Decompression of entity compressed with
         lossless compression gives us the exact original object whereas the
         decompression of entity compressed with lossy compression gives us a
-        close estimate of the original&nbsp;object.
+        close estimate of the original object.
       </p>
 
       <p></p>
@@ -79,13 +79,13 @@
         assumption that individual components of information (e.g. pixels on an
         image) display a certain level of correlation. This correlation of
         individual units may be exploited for the compression of the whole
-        entity. Some of these techniques have been explained&nbsp;below:
+        entity. Some of these techniques have been explained below:
       </p>
       <div
         name="DiscreteCosineTransform"
         data-unique="DiscreteCosineTransform"
       ></div>
-      <h2>Discrete Cosine&nbsp;Transform</h2>
+      <h2>Discrete Cosine Transform</h2>
       <p>
         <span class="caps">DCT</span> (Discrete Cosine Transform), like other
         transformation techniques tries to decorrelate the basic units of data.
@@ -98,7 +98,7 @@
         <span class="caps">DCT</span> itself is a lossless transformation but it
         is usually mixed with lossy algorithms like quantization in it
         applications like <span class="caps">JPEG</span>,
-        <span class="caps">MPEG</span>,&nbsp;etc.
+        <span class="caps">MPEG</span>, etc.
       </p>
       <p>
         The several occurrences of the data points is expressed in terms of the
@@ -108,41 +108,35 @@
         <span class="caps">DFT</span> (Discrete Cosine Transform) but the only
         difference is that only real numbers are taken into account in
         <span class="caps">DCT</span> whereas
-        <span class="caps">DFT</span> takes in complex numbers&nbsp;too.
+        <span class="caps">DFT</span> takes in complex numbers too.
       </p>
       <p>
         There are different forms of <span class="caps">DCT</span>, which are
         listed below. Here x,<sub>0</sub>, …, x<sub>N-1</sub> are the spatial
         coordinates whereas X<sub>0</sub> , …, X<sub>N-1</sub> are the frequency
-        coordinates. Both are the sequences of real&nbsp;numbers.
+        coordinates. Both are the sequences of real numbers.
       </p>
       <div name="DCT-I" data-unique="DCT-I"></div>
       <h3><span class="caps">DCT</span>-I</h3>
       <p>
         <span class="caps">DCT</span>-I of N is given by<br />
-        <img
-          alt="DCT-I"
-          src="/media/mpeg/dct1.png"
-        />
+        <img alt="DCT-I" src="/media/mpeg/dct1.png" />
         where N is a real number greater than or equal to 2,<br />
         x<sub>n</sub> are real and even numbers around n=0 and n=N-1,<br />
         k = 0,1,2,…,N-1 and<br />
-        X<sub>k</sub> are real and even numbers around k=0 and&nbsp;k=N-1.
+        X<sub>k</sub> are real and even numbers around k=0 and k=N-1.
       </p>
       <div name="DCT-II" data-unique="DCT-II"></div>
       <h3><span class="caps">DCT</span>-<span class="caps">II</span></h3>
       <p>
         <span class="caps">DCT</span>-<span class="caps">II</span> is given
         by<br />
-        <img
-          alt="DCT-II Formula"
-          src="/media/mpeg/dct2.png"
-        />
+        <img alt="DCT-II Formula" src="/media/mpeg/dct2.png" />
         where N is a positive real number ( can be less than 2, unlike in
         <span class="caps">DCT</span>-I)<br />
         x<sub>n</sub> are real and even numbers around n=-1/2 and n=N-1/2,<br />
         k = 0,1,2,…,N-1 and<br />
-        X<sub>k</sub> are real and even numbers around k=0 and&nbsp;k=N.
+        X<sub>k</sub> are real and even numbers around k=0 and k=N.
       </p>
       <p>
         <span class="caps">DCT</span>-<span class="caps">II</span> is the most
@@ -157,25 +151,22 @@
         block-based <span class="caps">DCT</span> of 8×8 matrix is used for
         encoding blocks of video. This encoding standard is defined by
         <span class="caps">IEEE</span> 1180 to increase accuracy and reduce
-        mismatch&nbsp;errors.
+        mismatch errors.
       </p>
       <p>
         An example transformation is demonstrated on
-        <a href="#figure_transform">this&nbsp;figure.</a>
+        <a href="#figure_transform">this figure.</a>
       </p>
       <div name="DCT-III" data-unique="DCT-III"></div>
       <h3><span class="caps">DCT</span>-<span class="caps">III</span></h3>
       <p>
         <span class="caps">DCT</span>-<span class="caps">III</span> is given
         by<br />
-        <img
-          alt="DCT-III Formula"
-          src="/media/mpeg/dct3.png"
-        />
+        <img alt="DCT-III Formula" src="/media/mpeg/dct3.png" />
         where N is a real number,<br />
         x<sub>n</sub> are real and even numbers around n=0 and n=N,<br />
         k = 0,1,2,…,N-1 and<br />
-        X<sub>k</sub> are real and even numbers around k=-1/2 and&nbsp;k=N-1/2.
+        X<sub>k</sub> are real and even numbers around k=-1/2 and k=N-1/2.
       </p>
       <p>
         <span class="caps">DCT</span>-<span class="caps">III</span> can be
@@ -194,16 +185,13 @@
       <p>
         <span class="caps">DCT</span>-<span class="caps">IV</span> is given
         by<br />
-        <img
-          alt="DCT-IV Formula"
-          src="/media/mpeg/dct4.png"
-        />
+        <img alt="DCT-IV Formula" src="/media/mpeg/dct4.png" />
         where N is a real number,<br />
         x<sub>n</sub> are real and even numbers around n=-1/2 and odd numbers
         around n=N-1/2,<br />
         k = 0,1,2,…,N-1 and<br />
         X<sub>k</sub> are real and even numbers around n=-1/2 and odd numbers
-        around&nbsp;n=N-1/2.
+        around n=N-1/2.
       </p>
       <p></p>
       <center>
@@ -212,7 +200,8 @@
           alt="Image and its DCT coefficients"
           src="/media/mpeg/dct-diff1.png"
         />
-        <b>Figure 1.1 : Image and its
+        <b
+          >Figure 1.1 : Image and its
           <span class="caps">DCT</span> coefficients</b
         >
       </center>
@@ -221,7 +210,7 @@
       dimensions of the picture block. <span class="caps">DC</span> (Discrete
       Cosine) Coefficient is the coefficient relating to zero frequency indices
       on both the dimensions. Quantization and Variable Length Coding follow
-      <span class="caps">DCT</span> to reduce further number of&nbsp;bits.
+      <span class="caps">DCT</span> to reduce further number of bits.
       <p></p>
       <div name="Quantization" data-unique="Quantization"></div>
       <h2>Quantization</h2>
@@ -232,10 +221,10 @@
         into preferably smaller set. The advantage of quantization is that it
         reduces the number of bits required for storing and transmitting the
         data. Quantization can be of two types – scalar quantization and
-        vector&nbsp;quantization.
+        vector quantization.
       </p>
       <div name="ScalarQuantization" data-unique="ScalarQuantization"></div>
-      <h3>Scalar&nbsp;Quantization</h3>
+      <h3>Scalar Quantization</h3>
       <p>
         Scalar quantization is a one-dimensional quantization process. It treats
         each value from the input set separately.<br />
@@ -245,10 +234,10 @@
         Simple example of scalar quantization is constraining a set of real
         numbers into integer values by rounding each real x value to their
         closest integer value y. This process is also used in converting analog
-        wave forms to digital&nbsp;samples.
+        wave forms to digital samples.
       </p>
       <div name="VectorQuantization" data-unique="VectorQuantization"></div>
-      <h3>Vector&nbsp;Quantization</h3>
+      <h3>Vector Quantization</h3>
       <p>
         Vector quantization is also known as ‘pattern matching quantization’ or
         ‘block quantization’. It involves grouping together of input symbols
@@ -259,13 +248,13 @@
         density estimation and signal processing because it is powerful for
         detecting density of huge data of high dimensions. For values in vector
         space of multi-dimensions, quantization encodes them to a bounded set of
-        values from a lower dimensional subspace of discrete&nbsp;nature.
+        values from a lower dimensional subspace of discrete nature.
       </p>
       <div
         name="QuantizationofDigitalImage"
         data-unique="QuantizationofDigitalImage"
       ></div>
-      <h3>Quantization of Digital&nbsp;Image</h3>
+      <h3>Quantization of Digital Image</h3>
       <p>
         Quantization of a digital image is the technique of judging which
         sections of the image can be ignored in such a way that the image
@@ -281,7 +270,7 @@
         Quantization is a lossy process since it involves approaches like
         rounding off and discarding negligible entities. The inverse of
         quantization doesn’t produce exactly the same object which was fed for
-        quantization. Whatever is lost is called quantization&nbsp;noise.
+        quantization. Whatever is lost is called quantization noise.
       </p>
       <p>
         Quantization matrices or quantizers are used for defining the
@@ -289,15 +278,15 @@
         time a matrix of <span class="caps">DCT</span> coefficients, say M[i,j],
         is encountered, it is divided by quantizer matrix Q[i,j] to obtain
         quantized matrix M<sub>q</sub>[i,j]. Here, we are only considering
-        two-dimensional&nbsp;matrices.
+        two-dimensional matrices.
       </p>
       <p>
         The quantization equation can be given as<br />
-        M<sub>q</sub> [i,j] = round( M[i,j] / Q[i,j]&nbsp;)
+        M<sub>q</sub> [i,j] = round( M[i,j] / Q[i,j] )
       </p>
       <p>
         The inverse quantization equation becomes<br />
-        M’[i,j]= M<sub>q</sub>[i,j] *&nbsp;Q[i,j]
+        M’[i,j]= M<sub>q</sub>[i,j] * Q[i,j]
       </p>
       <p>
         The rounding off is not invertible and therefore the process is lossy.
@@ -306,7 +295,7 @@
       </p>
       <p>
         An example:<br />
-        Matrix of <span class="caps">DCT</span> coefficients,&nbsp;M[i,j]=
+        Matrix of <span class="caps">DCT</span> coefficients, M[i,j]=
       </p>
       <p>
         <img
@@ -315,45 +304,39 @@
         />
         <br />
         Quantizer Matrix, Q[i,j] =<br />
-        <img
-          alt="Quantizer Matrix"
-          src="/media/mpeg/m2.png"
-        />
+        <img alt="Quantizer Matrix" src="/media/mpeg/m2.png" />
       </p>
 
       <p>
         Now dividing each elements from M matrix with corresponding elements
-        (from same row i and same column j) from Q matrix&nbsp;like
+        (from same row i and same column j) from Q matrix like
       </p>
       <p>
         M<sub>q</sub>[1,1] = round( M[1,1] / Q[1,1] )<br />
         = round ( – 415 / 16)<br />
         = round ( -25.9375)<br />
-        =&nbsp;-26
+        = -26
       </p>
       <p>
         and so on, we get<br />
         Quantized Matrix M<sub>q</sub>[i,j] =<br />
-        <img
-          alt="Quantized Matrix"
-          src="/media/mpeg/m3-300x185.png"
-        />
+        <img alt="Quantized Matrix" src="/media/mpeg/m3-300x185.png" />
       </p>
 
       <p></p>
       <p>
         The matrix thus obtained is processed through other techniques like
-        zigzag scanning, entropy encoding&nbsp;etc.
+        zigzag scanning, entropy encoding etc.
       </p>
       <div name="EntropyCoding" data-unique="EntropyCoding"></div>
-      <h2>Entropy&nbsp;Coding</h2>
+      <h2>Entropy Coding</h2>
       <p>
         Entropy literally refers to the lack of predictability or order. In the
         context of information theory and engineering, entropy is the
         measurement of the uncertainty of a variable. Entropy also gives the
         measure of similarity of dispersion of basic units. Lower is the
         entropy, higher is the compression. Techniques like statistical
-        forecasting can reduce&nbsp;entropy.
+        forecasting can reduce entropy.
       </p>
       <p>
         Entropy encoding is the process of ordering the input elements in an
@@ -361,32 +344,29 @@
         compression. Entropy encoding can be broken into two steps. The first
         step is Zigzag scanning and the second one is Variable Length Coding
         (<span class="caps">VLC</span>). The second one has major contribution
-        to entropy&nbsp;encoding.
+        to entropy encoding.
       </p>
       <div name="ZigzagScanordering" data-unique="ZigzagScanordering"></div>
-      <h3>Zigzag Scan&nbsp;ordering</h3>
+      <h3>Zigzag Scan ordering</h3>
       <p>
         The most <span class="caps">AC</span> values in a quantized matrix are
         zero. Zigzag scan can be used to gather more number of zeros together.
         Bringing zeroes together increases the optimality of the encoding
         process that follows. Zigzag scanning groups the low frequency
         coefficients before the high frequency coefficients. This processes
-        serializes the matrix into a&nbsp;string.
+        serializes the matrix into a string.
       </p>
       <p>
         The 8 x 8 matrix is mapped into a one-dimensional array of 1 x 64
         vector. Grouping zeros enables us to encode the bitstream in the pair of
         ‘skip and value’. Here, ‘skip’ means the number of occurrences of zero
         and ‘value’ means the occurrence of next non-zero component in
-        the&nbsp;sequence.
+        the sequence.
       </p>
       <p></p>
       <center>
         <br />
-        <img
-          alt="Zigzag Scan"
-          src="/media/mpeg/zigzag.jpg"
-        />
+        <img alt="Zigzag Scan" src="/media/mpeg/zigzag.jpg" />
         <br />
         <b>Figure 1.2 Zigzag Scan</b>
       </center>
@@ -424,10 +404,10 @@
         used for compression of small blocks of data too, with less probability
         of failure.<br />
         Some of the most popular strategies of <span class="caps">VLC</span> are
-        Arithmetic Coding, Huffman Coding and Lempel-Ziv&nbsp;coding.
+        Arithmetic Coding, Huffman Coding and Lempel-Ziv coding.
       </p>
       <div name="HuffmanCoding" data-unique="HuffmanCoding"></div>
-      <h4>Huffman&nbsp;Coding</h4>
+      <h4>Huffman Coding</h4>
       <p>
         Huffman Coding like other coding techniques for compression is a
         statistical technique that attempts to reduce the number of bits
@@ -437,12 +417,12 @@
         David Huffman (1925-1999) in 1952.The vital part of this coding
         technique is to generate the codes which are called Huffman codes. Code
         Book is used to store the Huffman codes. Huffman algorithm is a
-        bottom-up&nbsp;approach.
+        bottom-up approach.
       </p>
       <p>
         Huffman code is generated using a binary tree. Such binary tree is
         called Huffman tree.<br />
-        The process of building is tree is outlined&nbsp;below:
+        The process of building is tree is outlined below:
       </p>
       <p>
         Step 1 : Independent parentless node is created for each input symbol,
@@ -454,15 +434,15 @@
         Step 4 : The newly created node is assigned the probability equal to the
         sum of its children.<br />
         Step 5 : Continue from Step 2 until only only one parentless node
-        is&nbsp;left.
+        is left.
       </p>
       <p>
         Thus generated binary tree is unambiguous for decomposing it during
         decoding process is only possible in exactly one way. Since leaf nodes
         are used to store symbols, no code happens to be the prefix of
-        another&nbsp;code.
+        another code.
       </p>
-      <p>&nbsp;</p>
+      <p> </p>
       <pre class="language-art">
        *
       / \
@@ -473,7 +453,7 @@
     (110)(111)
 </pre
       >
-      <p>&nbsp;</p>
+      <p> </p>
       <p></p>
       <center><b>Figure 1.4: An Example of Huffman Tree</b></center>
       <p></p>
@@ -504,20 +484,20 @@
         name="Exponential-GolombCoding"
         data-unique="Exponential-GolombCoding"
       ></div>
-      <h4>Exponential-Golomb&nbsp;Coding</h4>
+      <h4>Exponential-Golomb Coding</h4>
       <p>
         Exponential-Golomb (Exp-Golomb) coding is an alternative for
         <span class="caps">CABAC</span> and
         <span class="caps">CAVLC</span> which provides a more simple yet better
         structured <span class="caps">VLC</span> technique for encoding syntax
         elements. A non-integer code is used to parameterize the encoding in
-        this&nbsp;process.
+        this process.
       </p>
       <div
         name="WaveletTransformation"
         data-unique="WaveletTransformation"
       ></div>
-      <h2>Wavelet&nbsp;Transformation</h2>
+      <h2>Wavelet Transformation</h2>
       <p>
         Wavelet transformation is a technique for compression of data used in
         images and sometimes in audio and video. It is used as a substitute to
@@ -543,7 +523,7 @@
         suitable for data which do not have items repeating consecutively.
         <span class="caps">RLE</span> can be performed in bit-level, byte-level
         or even pixel-level in case of images. <span class="caps">RLE</span> is
-        a lossless&nbsp;compression.
+        a lossless compression.
       </p>
       <p>
         An example of Run Length Encoding:<br />
@@ -558,10 +538,10 @@
         Counting the number of zeroes separated by 1’s,<br />
         5 11 3 1 0 12<br />
         In 4-bit code representation, the run length encoding is:<br />
-        0101 1011 0011 0001 0000&nbsp;1100
+        0101 1011 0011 0001 0000 1100
       </p>
       <div name="Chromasubsampling" data-unique="Chromasubsampling"></div>
-      <h2>Chroma&nbsp;subsampling</h2>
+      <h2>Chroma subsampling</h2>
       <p>
         In the early years of television broadcasting, same bandwidth were
         provided for color components and brightness. Soon it was realized that
@@ -571,15 +551,12 @@
         television broadcasting companies started saving bandwidth by
         propagating only half the amount of chroma than luma. This methodology
         they implemented is called <b>chroma subsampling</b>. This is
-        demonstrated in the figure below&nbsp;:
+        demonstrated in the figure below :
       </p>
       <p></p>
       <center>
         <br />
-        <img
-          alt="Color Subsampling"
-          src="/media/mpeg/9.jpg"
-        /><br />
+        <img alt="Color Subsampling" src="/media/mpeg/9.jpg" /><br />
         <b>Figure 1.5: Demonstration of color subsampling</b>
       </center>
       The <span class="caps">RGB</span> color model uses the basic Red (R),
@@ -589,7 +566,7 @@
       can also be transformed to luminance-chrominance. The advantage of
       expressing them independently into the components luma and chroma is that
       different bandwidth can be assigned for each component thus
-      promoting&nbsp;compression.
+      promoting compression.
       <p></p>
       <p>
         <b>Luma</b>, in imaging and video technology refers to the intensity or
@@ -601,18 +578,18 @@
         represented as Y, Luma is represented as Y’, read as Y prime, where the
         prime (‘) symbol stands for gamma-compression. The weighted sum is
         calculated by using coefficients that have recommended. Rec. 709
-        specifies the following expression for computation of&nbsp;luma:
+        specifies the following expression for computation of luma:
       </p>
-      <p>Y’ = 0.212671 * R’ + 0.715160 * G’ + 0.072169 *&nbsp;B’</p>
+      <p>Y’ = 0.212671 * R’ + 0.715160 * G’ + 0.072169 * B’</p>
       <p>
         <b>Chroma</b>, or sometimes called chrominance, is the signal that
         carries the color information of the image. It is abbreviated as ‘C’
         whereas popularly represented as <span class="caps">UV</span>, since it
-        is composed of two color-difference components, U and&nbsp;V.
+        is composed of two color-difference components, U and V.
       </p>
       <p>
         U= B’ – Y’ (Gamma-compressed Blue – Luma)<br />
-        V = R’ – Y’ (Gamma-compressed Red –&nbsp;Luma)
+        V = R’ – Y’ (Gamma-compressed Red – Luma)
       </p>
       <p>
         The Y’<span class="caps">UV</span> or
@@ -628,7 +605,7 @@
           >b</sub
         >
         does not correspond to U and C<sub>b</sub> does not correspond
-        to&nbsp;V.
+        to V.
       </p>
       <p>
         Almost all digital video formats today use <span class="caps">YC</span
@@ -652,7 +629,7 @@
         vertical subsampling has been done. If ‘r’ is equal to ‘q’, vertical
         subsampling is absent that is same chroma samples haven’t been forced
         for vertical pixels. If ‘r’ is zero, vertical subsampling has been done
-        for the&nbsp;image.
+        for the image.
       </p>
       <p></p>
       <center>
@@ -666,7 +643,7 @@
       Subsampled videos are always required to be stored using even dimensions
       in order to prevent ‘ghosts’ effect due to chroma mismatch. This occurs as
       shadows are seen because some colors appear to be ahead of or behind the
-      rest of the image&nbsp;frame.
+      rest of the image frame.
       <p></p>
       <p>
         Since pictures and videos are the basic types of multi-media, we now
@@ -697,7 +674,7 @@
         preferred for editing images whereas <span class="caps">JPEG</span> is
         usually preferred for distribution because of its great compression
         abilities which makes it more portable and yet with considerable quality
-        despite being&nbsp;lossy.
+        despite being lossy.
       </p>
       <p>
         <span class="caps">JPEG</span> is the most widely used and a very
@@ -711,7 +688,7 @@
         <span class="caps">JPEG</span> compression technique can withstand
         compression ratio of 10:1 without compromising with quality noticeably.
         There is an alternative standard for image compression which is not used
-        widely and not compatible across variety of&nbsp;devices.
+        widely and not compatible across variety of devices.
       </p>
       <p>
         <span class="caps">JPEG</span>, technically, is a compression method
@@ -731,13 +708,13 @@
         ‘4A 46 49 46′, which is the <span class="caps">ASCII</span> code for the
         string ‘<span class="caps">JFIF</span>’ is used as a null terminated
         string in <span class="caps">JPEG</span>/<span class="caps">JFIF</span
-        >&nbsp;files.
+        > files.
       </p>
       <div
         name="JPEGStandardizationBody"
         data-unique="JPEGStandardizationBody"
       ></div>
-      <h2><span class="caps">JPEG</span> Standardization&nbsp;Body</h2>
+      <h2><span class="caps">JPEG</span> Standardization Body</h2>
       <p>
         Joint Photographers Expert Group is a joint committee of the
         standardization bodies <span class="caps">ISO</span>/<span class="caps"
@@ -762,7 +739,7 @@
         <span class="caps">JPEG</span>-<span class="caps">LS</span>,
         <span class="caps">JPEG</span> 2000, JPSearch and
         <span class="caps">JPEG</span>
-        <span class="caps">XR</span>&nbsp;standards.
+        <span class="caps">XR</span> standards.
       </p>
       <div name="HistoryofJPEG" data-unique="HistoryofJPEG"></div>
       <h2>History of <span class="caps">JPEG</span></h2>
@@ -778,7 +755,7 @@
         <span class="caps">JPEG</span> Part 5 is under development and in a
         recent press release, the joint group has revealed that
         <span class="caps">JFIF</span> will be standardized and designated as
-        <span class="caps">JPEG</span> Part&nbsp;5.
+        <span class="caps">JPEG</span> Part 5.
       </p>
       <p>
         <span class="caps">JPEG</span>-<span class="caps">LS</span> is the
@@ -800,25 +777,25 @@
         <span class="quo">‘</span><span class="caps">JPEG</span> 2000′, not to
         be confused with the <span class="caps">JPEG</span> standard, is another
         image compression standard the group has been publishing since 2000 and
-        its Part 14 is currently under&nbsp;development.
+        its Part 14 is currently under development.
       </p>
       <div
         name="CompressioninJPEGStandard"
         data-unique="CompressioninJPEGStandard"
       ></div>
-      <h2>Compression in <span class="caps">JPEG</span>&nbsp;Standard</h2>
+      <h2>Compression in <span class="caps">JPEG</span> Standard</h2>
       <div
         name="PsychovisualCompression"
         data-unique="PsychovisualCompression"
       ></div>
-      <h3>Psychovisual&nbsp;Compression</h3>
+      <h3>Psychovisual Compression</h3>
       <p>
         The human perception is not highly sensitive to detailed spatial
         information. This means our vision has limited response to details
         around edges of objects and shot-changes. This nature of human
         perception can be exploited to reduce the amount of information in an
         image or video frame and thus allows some considerable amount of
-        compression without real significant&nbsp;notice.
+        compression without real significant notice.
       </p>
       <p>
         <span class="caps">JPEG</span> makes use of
@@ -830,13 +807,13 @@
         as a psychovisual compression technique. This technique exploits the
         fact that human eye is far less sensitive to the variation in hue than
         that in brightness. <span class="caps">JPEG</span> utilizes the 4:2:0
-        and 4:1:1 subsample ratio, 4:2:0 being the usual&nbsp;one.
+        and 4:1:1 subsample ratio, 4:2:0 being the usual one.
       </p>
       <div
         name="SpatialRedundancyRemoval"
         data-unique="SpatialRedundancyRemoval"
       ></div>
-      <h3>Spatial Redundancy&nbsp;Removal</h3>
+      <h3>Spatial Redundancy Removal</h3>
       <p>
         Block preparation is the first step of the compression. Blocks of 8 x 8
         pixels are segmented. A block then can be represented in a 8 x 8 matrix.
@@ -868,7 +845,7 @@
       element from first row and first column of the matrix of
       <span class="caps">DCT</span> coefficients) is the
       <span class="caps">DC</span> coefficient. The rest of the elements in the
-      matrix are <span class="caps">AC</span>&nbsp;coefficients.
+      matrix are <span class="caps">AC</span> coefficients.
       <p></p>
       <p>
         Wavelet Transformation may also be employed as a substitute to
@@ -895,7 +872,7 @@
         Variable-Length Coding (<span class="caps">VLC</span>) to be used,
         Huffman Coding is preferred for its better compression.
         <span class="caps">VLC</span> is the last step during encoding and first
-        step during decoding of <span class="caps">JPEG</span>&nbsp;images.
+        step during decoding of <span class="caps">JPEG</span> images.
       </p>
       <div name="DecodingofJPEG" data-unique="DecodingofJPEG"></div>
       <h3>Decoding of <span class="caps">JPEG</span></h3>
@@ -911,12 +888,12 @@
         information about how the encoding or the compression has been done.
         This information is available within the
         <span class="caps">JPEG</span> file as
-        <span class="caps">CH</span> (Compression&nbsp;History).
+        <span class="caps">CH</span> (Compression History).
       </p>
       <div name="JPEGCompressionModes" data-unique="JPEGCompressionModes"></div>
-      <h2><span class="caps">JPEG</span> Compression&nbsp;Modes</h2>
+      <h2><span class="caps">JPEG</span> Compression Modes</h2>
       <p>
-        There are four modes of <span class="caps">JPEG</span>&nbsp;compression:
+        There are four modes of <span class="caps">JPEG</span> compression:
       </p>
       <div name="LosslessJPEG" data-unique="LosslessJPEG"></div>
       <h3>Lossless <span class="caps">JPEG</span></h3>
@@ -924,7 +901,7 @@
         Lossless <span class="caps">JPEG</span> compression mode uses only
         predictive technique. No information is discarded if it isn’t redundant.
         Entropy coding is employed for this no quantization is done. Eight kinds
-        of prediction schemes are&nbsp;used.
+        of prediction schemes are used.
       </p>
       <div
         name="BaselineorSequentialJPEG"
@@ -936,7 +913,7 @@
         <span class="caps">JPEG</span> compression. It employs all the lossy and
         lossless compression algorithms for psychovisual compression as well as
         spatial prediction. It involves chroma subsampling,
-        <span class="caps">DCT</span>, quantization and entropy&nbsp;encoding.
+        <span class="caps">DCT</span>, quantization and entropy encoding.
       </p>
       <div name="ProgressiveJPEG" data-unique="ProgressiveJPEG"></div>
       <h3>Progressive <span class="caps">JPEG</span></h3>
@@ -948,7 +925,7 @@
         image/pjpeg <span class="caps">MIME</span> type for images compressed
         with this mode. It is suitable for download in slower internet
         connection where portions of the images can be
-        gradually&nbsp;downloaded.
+        gradually downloaded.
       </p>
       <div name="HierarchialJPEG" data-unique="HierarchialJPEG"></div>
       <h3>Hierarchial <span class="caps">JPEG</span></h3>
@@ -956,13 +933,13 @@
         This is a lossless mode based on <span class="caps">DCT</span>. Multiple
         frames of differential and non-differential kinds are used. This mode
         provides multiple resolutions and the images compressed with this mode
-        take more&nbsp;space.
+        take more space.
       </p>
       <div
         name="ApplicationsofJPEGformat"
         data-unique="ApplicationsofJPEGformat"
       ></div>
-      <h2>Applications of <span class="caps">JPEG</span>&nbsp;format</h2>
+      <h2>Applications of <span class="caps">JPEG</span> format</h2>
       <p>
         Digital photography is primarily used for sharing information and
         storage. <span class="caps">JPEG</span> images are widely used for
@@ -976,14 +953,14 @@
         makes it very popular and applicable. <span class="caps">JPEG</span> is
         preferred as widely used image compression standard because it is
         capable of storing 24 bit per pixel color data instead of 8 bit per
-        pixel color data which were used&nbsp;before.
+        pixel color data which were used before.
       </p>
       <p>
         <span class="caps">JPEG</span> is the format used for saving images in
         digital cameras, storing them, as images in web-pages and everywhere
         else. The image in <span class="caps">ID3</span> tag of
         <span class="caps">MP3</span> files for album covers and artist pictures
-        are also encoded as <span class="caps">JPEG</span>&nbsp;images.
+        are also encoded as <span class="caps">JPEG</span> images.
       </p>
       <p>
         Another use of digital photographs is for scientific research and
@@ -1002,17 +979,17 @@
         of what you are doing now to your important friends and families to get
         connected with each other and remember the moments of personal, cultural
         and social events is very important as well.
-        <span class="caps">JPEG</span> is the best choice for this&nbsp;purpose.
+        <span class="caps">JPEG</span> is the best choice for this purpose.
       </p>
       <p>
         Digital imagery are also used for surveillance and better representation
         of raw data in the form of information. Maps make our day to day life
         easier. These are only the few examples of implementation of Digital
         Photography and <span class="caps">JPEG</span> compression standard to
-        be&nbsp;specific.
+        be specific.
       </p>
       <div name="JPEG’sLimitations" data-unique="JPEG’sLimitations"></div>
-      <h2><span class="caps">JPEG</span>’s&nbsp;Limitations</h2>
+      <h2><span class="caps">JPEG</span>’s Limitations</h2>
       <p>
         <span class="caps">JPEG</span> has some downsides too. It is a lossy
         compression standard. It may not be appropriate in cases where the
@@ -1027,7 +1004,7 @@
         <span class="caps">JPEG2000</span> but the transition to this new format
         is becoming very difficult as very low number of device so only very few
         improvements have been made in past two decades and there is no sign of
-        that transition happening very&nbsp;soon.
+        that transition happening very soon.
       </p>
       <p>
         <span class="caps">JPEG</span> is superior when we need rich colored and
@@ -1035,7 +1012,7 @@
         quantity of colors of the photograph is lower, it creates overhead and
         cannot compress as good as other image compression standard like GIFs.
         Another limitation of <span class="caps">JPEG</span> file format is that
-        it cannot handle transparency and very sharp&nbsp;edges.
+        it cannot handle transparency and very sharp edges.
       </p>
       <div
         name="FutureTechnologiesofJPEG"
@@ -1062,7 +1039,7 @@
         <span class="caps">JPEG2000</span> is only a modest improvement to
         existing <span class="caps">JPEG</span> compression standard so until
         there is something very revolutionary there is no need to totally shift
-        to new&nbsp;technology.
+        to new technology.
       </p>
       <p>
         Now <span class="caps">JPEG2000</span> is the improved standard of photo
@@ -1088,7 +1065,7 @@
         independent Israeli group is compatible with existing
         <span class="caps">JPEG</span> and compresses the images 5-10 times more
         without losing the original quality. It can be said that this is in very
-        infant stage and still need some&nbsp;improvements.
+        infant stage and still need some improvements.
       </p>
       <div name="MPEG" data-unique="MPEG"></div>
       <h1><span class="caps">MPEG</span></h1>
@@ -1110,12 +1087,12 @@
         the <span class="caps">MPEG</span> family are the most widespread and
         accepted ones. The official homepage of
         <span class="caps">MPEG</span> is http://mpeg.chiariglione.org/ whereas
-        resources and references are available on&nbsp;http://www.mpeg.org.
+        resources and references are available on http://www.mpeg.org.
       </p>
       <p>
         <span class="caps">MPEG</span> files are generally represented with the
         extension ‘.mpg’. Its <span class="caps">MIME</span> type
-        is&nbsp;‘video/mpeg’.
+        is ‘video/mpeg’.
       </p>
       <div name="HistoryofMPEG" data-unique="HistoryofMPEG"></div>
       <h2>History of <span class="caps">MPEG</span></h2>
@@ -1125,7 +1102,7 @@
         <span class="caps">SC2</span> and few other organizations initiated the
         movement in January 1988. The following table gives an overview of the
         early phases and the <span class="caps">MPEG</span>-1 and
-        <span class="caps">MPEG</span>-2&nbsp;development.
+        <span class="caps">MPEG</span>-2 development.
       </p>
       <table>
         <tbody>
@@ -1378,7 +1355,7 @@
         name="StandardsoftheMPEGFamily"
         data-unique="StandardsoftheMPEGFamily"
       ></div>
-      <h2>Standards of the <span class="caps">MPEG</span>&nbsp;Family</h2>
+      <h2>Standards of the <span class="caps">MPEG</span> Family</h2>
       <div name="MPEG-1" data-unique="MPEG-1"></div>
       <h3><span class="caps">MPEG</span>-1</h3>
       <p>
@@ -1407,7 +1384,7 @@
       <p>
         <span class="caps">MPEG</span>-1 can compress video in 26:1 and audio in
         6:1 ratio without significant notice in<br />
-        degradation of&nbsp;quality.
+        degradation of quality.
       </p>
       <p>
         <span class="caps">MPEG</span>-1 had following weaknesses which gave
@@ -1416,7 +1393,7 @@
         interlaced video.<br />
         • Audio compression is possible with only two channels.<br />
         • Only ‘4:2:0′ color space is supported.<br />
-        • Not compatible with videos of high&nbsp;resolution.
+        • Not compatible with videos of high resolution.
       </p>
       <div name="MPEG-2" data-unique="MPEG-2"></div>
       <h3><span class="caps">MPEG</span>-2</h3>
@@ -1437,7 +1414,7 @@
         compression of videos with low bit rates.
         <span class="caps">MPEG</span>-2 can produce compression down to the bit
         rate of around 3-15 Mbit/s. Any lower bit rate than this may introduce
-        noticeable impairments in the&nbsp;video.
+        noticeable impairments in the video.
       </p>
       <div name="MPEG-3" data-unique="MPEG-3"></div>
       <h3><span class="caps">MPEG</span>-3</h3>
@@ -1446,7 +1423,7 @@
         high definition television but it was realized that
         <span class="caps">MPEG</span>-2 was capable of fulfilling the need with
         extensions and therefore <span class="caps">MPEG</span>-3 doesn’t exist
-        as a coding&nbsp;standard.
+        as a coding standard.
       </p>
       <div name="MPEG-4" data-unique="MPEG-4"></div>
       <h3><span class="caps">MPEG</span>-4</h3>
@@ -1459,7 +1436,7 @@
         then, twenty seven parts of <span class="caps">MPEG</span>-4 standard
         has been published while Part 28 is under development. However,
         <span class="caps">MPEG</span>-4 is not limited to videos with low bit
-        rates, it is becoming the generic standard for video&nbsp;coding.
+        rates, it is becoming the generic standard for video coding.
       </p>
       <p>
         <span class="caps">MPEG</span>-4 employs object-based compression
@@ -1471,16 +1448,16 @@
         <span class="caps">ISO</span>/<span class="caps">IEC</span> 14496-3
         determines the audio coding and composition standards with support for
         very low to high bitrates. Audio components are also objects which have
-        natural and synthetic&nbsp;quality.
+        natural and synthetic quality.
       </p>
       <p>
         <span class="caps">MJPEG</span> is not to be confused with
         <span class="caps">MPEG</span>. <span class="caps">MJPEG</span> nothing
         but a sequence of image frames that uses
-        <span class="caps">JPEG</span> compression for each&nbsp;frame.
+        <span class="caps">JPEG</span> compression for each frame.
       </p>
       <div name="VideoFundamentals" data-unique="VideoFundamentals"></div>
-      <h2>Video&nbsp;Fundamentals</h2>
+      <h2>Video Fundamentals</h2>
       <p>
         <b>Video</b> is the technology in which moving visual images are
         recorded, reproduced and/or broadcasted. An analog video is a video with
@@ -1490,20 +1467,17 @@
       </p>
       <p>
         <b>Frame rate</b> is the frequency in which consecutive still images
-        appear in a video. It is measured in fps ( frames per&nbsp;second).
+        appear in a video. It is measured in fps ( frames per second).
       </p>
       <p>
         An <b>interlaced video</b> is a video with interwoven frames. Frames are
         interwoven with fields. Each frame has two fields (or half-frames) – odd
-        fields and even&nbsp;fields.
+        fields and even fields.
       </p>
       <p></p>
       <center>
         <br />
-        <img
-          alt="Frame and its fields"
-          src="/media/mpeg/13.jpg"
-        />
+        <img alt="Frame and its fields" src="/media/mpeg/13.jpg" />
         <br />
         <b>Figure 3.2 : Frame and its fields</b>
       </center>
@@ -1516,7 +1490,7 @@
       <span class="caps">PAL</span> videos use
       <span class="caps">YUV</span> color model. Videos of bit-rate 6 Mbit/s is
       recognized to be best for terrestrial video broadcasting systems
-      considering both the compression and quality&nbsp;factors.
+      considering both the compression and quality factors.
       <p></p>
       <p>
         <b>Video Object (<span class="caps">VO</span>)</b><br />
@@ -1524,14 +1498,14 @@
         the background scene of a video. A video object can be accessed and
         manipulated by the user. A user can browse or seek the video objects
         while accessing the video and cut or paste the video objects while
-        manipulating&nbsp;it.
+        manipulating it.
       </p>
       <p>
         <b>Video Object Plane (<span class="caps">VOP</span>)</b><br />
         Video Object Plane is the instance of Video Object at a given time. It
         may also be defined as time sample of video object. A
         <span class="caps">VOP</span> of rectangular shape forms a conventional
-        video frame. A video is made up of such encoded&nbsp;VOPs.
+        video frame. A video is made up of such encoded VOPs.
       </p>
       <p>
         <b>Group of Video Object Planes (<span class="caps">GOV</span>)</b
@@ -1541,14 +1515,14 @@
         in videos. Random Access points in video bitstream is facilitated by the
         points provided by GOVs. One of the reasons video objects are grouped
         into <span class="caps">GOV</span> is that redundancy can not only be
-        removed from objects but from the whole&nbsp;group.
+        removed from objects but from the whole group.
       </p>
       <p>
         <b>Video Object Layer (<span class="caps">VOL</span>)</b><br />
         A Video Object Layer is the representation of video objects in single or
         multiple strata. A <span class="caps">VOL</span> with single stratum is
         in non-scalable form whereas a <span class="caps">VOL</span> with
-        multiple strata is a scalable&nbsp;form.
+        multiple strata is a scalable form.
       </p>
       <div name="Frames" data-unique="Frames"></div>
       <h2>Frames</h2>
@@ -1556,11 +1530,11 @@
         <span class="caps">MPEG</span> identifies frames into three kinds:<br />
         1. I-frames<br />
         2. P-frames<br />
-        3.&nbsp;B-frames
+        3. B-frames
       </p>
       <p>
         Each one of these frames has different properties and purposes, as
-        explained&nbsp;below.
+        explained below.
       </p>
       <div name="I-frames" data-unique="I-frames"></div>
       <h3>I-frames</h3>
@@ -1571,7 +1545,7 @@
         contains more amount of bits or information compared to other kind of
         frames and therefore is the least compressible, thus taking more storage
         and bandwidth. The more I-frames a video has, better is
-        its&nbsp;quality.
+        its quality.
       </p>
       <div name="P-frames" data-unique="P-frames"></div>
       <h3>P-frames</h3>
@@ -1579,7 +1553,7 @@
         P-frame is the short name for predictive frame or predicted frame.
         P-frames depend on preceding I-frame or P-frame for information like
         content and color changes, thus the name predictive. It is more
-        compressible than&nbsp;I-frames.
+        compressible than I-frames.
       </p>
       <div name="B-frames" data-unique="B-frames"></div>
       <h3>B-frames</h3>
@@ -1590,12 +1564,12 @@
         upon previous and next frame during decoding and decompression and thus
         the name bidirectional. It provides highest level of compression
         compared to the other two kinds of frames. B-frames are never
-        reference&nbsp;frames.
+        reference frames.
       </p>
       <p>
         Since P-frames and B-frames only store the changed information relative
         to the other<br />
-        frames, they are also known as delta&nbsp;frames.
+        frames, they are also known as delta frames.
       </p>
       <p></p>
       <center>
@@ -1616,7 +1590,7 @@
       <span class="caps">IBBPBBPBBPBB</span>, where I stands for I-frames, B for
       B-frames and P for P-frames. The arrangement of frames determines the
       <span class="caps">GOP</span> structure which is ultimately one of the
-      factors for determining the compression&nbsp;ratio.
+      factors for determining the compression ratio.
       <p></p>
       <p>
         <b>Open GOPs and Closed GOPs</b><br />
@@ -1627,15 +1601,12 @@
         open GOPs contain one less P-frame and one more B-frame than closed
         GOPs. However open GOPs aren’t applicable to all
         <span class="caps">MPEG</span> streams like mixed-angle or
-        multi-angle&nbsp;DVDs.
+        multi-angle DVDs.
       </p>
       <p></p>
       <center>
         <br />
-        <img
-          alt="Open and Closed GOPs"
-          src="/media/mpeg/gop.png"
-        />
+        <img alt="Open and Closed GOPs" src="/media/mpeg/gop.png" />
         <b>Figure 3.4: Comparison of Open and Closed GOPs</b>
       </center>
       <p></p>
@@ -1657,11 +1628,11 @@
         name="PsychovisualCompression53"
         data-unique="PsychovisualCompression53"
       ></div>
-      <h3>Psychovisual&nbsp;Compression</h3>
+      <h3>Psychovisual Compression</h3>
       <p>
         Psychovisual compression on <span class="caps">MPEG</span> is done
         similarly as in <span class="caps">JPEG</span> with
-        Chroma&nbsp;subsampling.
+        Chroma subsampling.
       </p>
       <p>
         <span class="caps">MPEG</span> usually utilizes the 4:2:0 sub-sample
@@ -1673,10 +1644,10 @@
         <span class="caps">DVCAM</span> use this pattern. The 4:4:4 subsampling
         can found in <span class="caps">MPEG</span>-4 Part 2 and
         <span class="caps">MPEG</span>-4 since it is considered to be a high
-        quality sampling&nbsp;scheme.
+        quality sampling scheme.
       </p>
       <div name="SpatialCompression" data-unique="SpatialCompression"></div>
-      <h3>Spatial&nbsp;Compression</h3>
+      <h3>Spatial Compression</h3>
       <p>
         I-frames being independent frame are simply just still pictures. Spatial
         redundancy removal is an intra-picture compression technique. Spatial
@@ -1688,13 +1659,13 @@
         technique is also known as backward prediction. This prediction is done
         within an I-frame and does not depend upon information in preceding or
         following frames. This kind of prediction is also known as
-        backward&nbsp;prediction.
+        backward prediction.
       </p>
       <div
         name="Compression/EncodingofI-frames"
         data-unique="Compression/EncodingofI-frames"
       ></div>
-      <h4>Compression/Encoding of&nbsp;I-frames</h4>
+      <h4>Compression/Encoding of I-frames</h4>
       <p>
         An I-frame is chambered into different macroblocks , say of 8 by 8
         blocks of pixels. The macroblocks are then transformed using Discrete
@@ -1707,7 +1678,7 @@
         block-based <span class="caps">DCT</span> of 8×8 matrix is used for
         encoding blocks of video. This encoding standard is defined by
         <span class="caps">IEEE</span> 1180 to increase accuracy and reduce
-        mismatch&nbsp;errors.
+        mismatch errors.
       </p>
       <p>
         Wavelet compression may also be employed in
@@ -1729,7 +1700,7 @@
         substituted with run-length codes which is the popular Run length
         Encoding (<span class="caps">RLE</span>) algorithm. Huffman Coding is
         then applied as a <span class="caps">VLC</span> to obtain smaller array
-        of<br />&nbsp;numbers.
+        of<br /> numbers.
       </p>
       <p>
         H.264/<span class="caps">MPEG</span>-<span class="caps">AVC</span>
@@ -1752,13 +1723,13 @@
         <span class="caps">ASP</span> codecs. Although
         <span class="caps">CAVLC</span> may be used for coding transform
         coefficients, Exponential-Golomb Coding is used to code other syntax
-        elements in the video&nbsp;stream.
+        elements in the video stream.
       </p>
       <div
         name="Decoding/DecompressionofI-frames"
         data-unique="Decoding/DecompressionofI-frames"
       ></div>
-      <h4>Decoding/Decompression of&nbsp;I-frames</h4>
+      <h4>Decoding/Decompression of I-frames</h4>
       <p>
         The I-frames in <span class="caps">MPEG</span> video are required to be
         decoded in order to be played by the media player or the video broadcast
@@ -1771,17 +1742,17 @@
         inversely quantized matrix is then passed through Inverse Discrete
         Cosine Transform (<span class="caps">IDCT</span>) to obtain the
         macroblocks. The macroblocks are structured to obtain the I-frame which
-        is very much similar to the I-frame where the compression&nbsp;started.
+        is very much similar to the I-frame where the compression started.
       </p>
       <div name="TemporalPrediction" data-unique="TemporalPrediction"></div>
-      <h3>Temporal&nbsp;Prediction</h3>
+      <h3>Temporal Prediction</h3>
       <p>
         Temporal prediction takes advantage of the fact that neighbor frames in
         a video have similar information. Temporal meaning relating to time,
         temporal redundancy removal is concerned with representing repeating
         information in consecutive or close frames only once by employing
         different algorithms. Temporal prediction involves coding of P-frames
-        and&nbsp;B-frames.
+        and B-frames.
       </p>
       <p>
         Temporal compression provides more compression than spatial compression
@@ -1790,13 +1761,13 @@
         shift in position, rotation or intensity and the new object can be
         created just by knowing how different is it from the original object.
         Storing the original and changed object takes a lot more space than
-        storing the original object and and just the&nbsp;difference.
+        storing the original object and and just the difference.
       </p>
       <div
         name="EncodingofP-framesandB-frames"
         data-unique="EncodingofP-framesandB-frames"
       ></div>
-      <h4>Encoding of P-frames and&nbsp;B-frames</h4>
+      <h4>Encoding of P-frames and B-frames</h4>
       <p>
         Encoding of P-frames and encoding of B-frames are similar except that
         P-frames refer to the information in the previous I-frame or P-frame and
@@ -1831,7 +1802,7 @@
         coefficients are passed through entropy coding for further compression.
         The final information is then combined with the motion vector along with
         other information like frame types, etc. to obtain the final difference
-        known as <strong>prediction error</strong> between the&nbsp;frames.
+        known as <strong>prediction error</strong> between the frames.
       </p>
       <p>
         The above explained method is the most common method of motion
@@ -1846,7 +1817,7 @@
         Difference (<span class="caps">MAD</span>), Sum of Absolute Difference
         (<span class="caps">SAD</span>), etc. <span class="caps">SAD</span> is
         used in <span class="caps">MPEG</span> technology to get the variation
-        of macroblock matches using polygons of modified&nbsp;blocks.
+        of macroblock matches using polygons of modified blocks.
       </p>
       <p>
         Instead of basing the blocks on integer values, half-pels can also be
@@ -1855,7 +1826,7 @@
         exist for motion estimation and compensation like Pel-Recursive
         Algorithm (<span class="caps">PRA</span>), phase correlations, Bayesian
         estimations, etc. But block-based compensation is believed to be the
-        most efficient&nbsp;one.
+        most efficient one.
       </p>
       <p>
         Older <span class="caps">MPEG</span> standards use fixed block size for
@@ -1871,13 +1842,13 @@
         <span class="caps">MPEG</span>-4 even allows wavelet transforms instead
         of <span class="caps">DCT</span> during the conversion of spatial
         variations to<br />
-        functional&nbsp;variations.
+        functional variations.
       </p>
       <div
         name="DecodingofDeltaFrames"
         data-unique="DecodingofDeltaFrames"
       ></div>
-      <h4>Decoding of Delta&nbsp;Frames</h4>
+      <h4>Decoding of Delta Frames</h4>
       <p>
         Encoding of delta frames, i.e. P-frames and B-frames involves
         computation of delta factors which are the displacements of macroblocks
@@ -1890,7 +1861,7 @@
         or difference between reference and candidate frame. So, adding this
         difference to the reference frame gives us the required candidate frame
         which is not exactly the same frame before encoding due to lossy
-        algorithms used but is of considerably good&nbsp;quality.
+        algorithms used but is of considerably good quality.
       </p>
       <p>
         <span class="caps">MPEG</span> videos are not suitable for editing
@@ -1900,23 +1871,23 @@
         specially created for editing videos keep all frames as independent
         I-frames. The interdependence of frames is also the reason why all
         <span class="caps">MPEG</span> decoders are forced to have encoders
-        built in within&nbsp;themselves.
+        built in within themselves.
       </p>
       <div name="CompressionofAudio" data-unique="CompressionofAudio"></div>
-      <h3>Compression of&nbsp;Audio</h3>
+      <h3>Compression of Audio</h3>
       <p>
         Audio in <span class="caps">MPEG</span> is compressed with techniques
         like sub-band filtering, psychoacoustic model and quantization of
         digital audio. Audio signals are divided into frequency sub-bands using
         convolution filters. There are 32 critical sub-bands available.
         Psychoacoustics utilizes the aspects and processes like limits of
-        perception, masking effects and sound&nbsp;localization.
+        perception, masking effects and sound localization.
       </p>
       <div
         name="QuantizationofDigitalAudio"
         data-unique="QuantizationofDigitalAudio"
       ></div>
-      <h4>Quantization of Digital&nbsp;Audio</h4>
+      <h4>Quantization of Digital Audio</h4>
       <p>
         Quantization of digital audio means converting of sound waves to a
         distribution of individual samples each having unique magnitude of
@@ -1926,7 +1897,7 @@
         can be total of 65,536 possible values of amplitude. Autocorrecting
         music tracks is also done with quantization in which the beats are
         distributed evenly to remove errors on timing by analyzing and
-        stretching in&nbsp;time.
+        stretching in time.
       </p>
       <p>
         <span class="caps">MDCT</span> (Modified Discrete Cosine Transform) is a
@@ -1936,7 +1907,7 @@
         <span class="caps">MPEG</span>-1 Audio Layer 3 and
         <span class="caps">MPEG</span>-2 Audio Layer 3, i.e.
         <span class="caps">MP3</span> as well as in
-        <span class="caps">AAC</span> and Vorbis&nbsp;encoding.
+        <span class="caps">AAC</span> and Vorbis encoding.
       </p>
       <div name="VBRandCBR" data-unique="VBRandCBR"></div>
       <h4><span class="caps">VBR</span> and <span class="caps">CBR</span></h4>
@@ -1949,7 +1920,7 @@
         given the same bit-rate. <span class="caps">VBR</span> provides more
         flexibility, accuracy and quality whereas
         <span class="caps">CBR</span> provides more compatibility with devices,
-        software and&nbsp;connections.
+        software and connections.
       </p>
       <div
         name="ImplementationsofMPEG"
@@ -1970,7 +1941,7 @@
         popular projects for producing free audio/video codec libraries for
         <span class="caps">MPEG</span>. Interestingly, FFmpeg uses this zigzag
         pattern used for entropy encoding of
-        <span class="caps">MPEG</span> videos in their&nbsp;logo.
+        <span class="caps">MPEG</span> videos in their logo.
       </p>
       <p></p>
       <center>
@@ -1999,7 +1970,7 @@
         metadata and <span class="caps">DRM</span> information of the audio
         file. The <span class="caps">MP3</span> encoding format is patented.
         <span class="caps">MP3</span> is the most popular audio file format and
-        is used for music tracks, online streaming, audio recording,&nbsp;etc.
+        is used for music tracks, online streaming, audio recording, etc.
       </p>
       <div name="MP4" data-unique="MP4"></div>
       <h3><span class="caps">MP4</span></h3>
@@ -2014,19 +1985,19 @@
         standard <span class="caps">ISO</span>/<span class="caps">IEC</span>
         14496-14. It is heavily influenced from the QuickTime File Format.
         <span class="caps">MP4</span> files are represented with the file
-        extension&nbsp;‘.mp4′.
+        extension ‘.mp4′.
       </p>
       <div name="ApplicationsofJPEG" data-unique="ApplicationsofJPEG"></div>
       <h2>Applications of <span class="caps">JPEG</span></h2>
       <p>
         <span class="caps">MPEG</span>, being the most popular video coding
-        standard, has very wide range of&nbsp;applications.
+        standard, has very wide range of applications.
       </p>
       <div
         name="TelevisionandBroadcasting"
         data-unique="TelevisionandBroadcasting"
       ></div>
-      <h3>Television and&nbsp;Broadcasting</h3>
+      <h3>Television and Broadcasting</h3>
       <p>
         All terrestrial, cable or broadcasting television technologies like
         <span class="caps">DBS</span> (Direct Broadcast Satellite),
@@ -2040,13 +2011,13 @@
         have also standardized <span class="caps">MPEG</span>-2 as the official
         encoding format. Smart Television systems like Apple
         <span class="caps">TV</span> also support
-        <span class="caps">MPEG</span>-4 video up to 2.5&nbsp;Mbps.
+        <span class="caps">MPEG</span>-4 video up to 2.5 Mbps.
       </p>
       <div
         name="Internet,Mobile,MultimediaandGaming"
         data-unique="Internet,Mobile,MultimediaandGaming"
       ></div>
-      <h3>Internet, Mobile, Multimedia and&nbsp;Gaming</h3>
+      <h3>Internet, Mobile, Multimedia and Gaming</h3>
       <p>
         <span class="caps">MPEG</span> is also very popular with online
         streaming. Since bandwidth is an important factor in internet,
@@ -2059,7 +2030,7 @@
         name="RecordingandCommunication"
         data-unique="RecordingandCommunication"
       ></div>
-      <h3>Recording and&nbsp;Communication</h3>
+      <h3>Recording and Communication</h3>
       <p>
         Varieties of digital camcorders and video recorders use
         <span class="caps">MPEG</span> as the default format for recording
@@ -2072,7 +2043,7 @@
         name="StorageandDistribution"
         data-unique="StorageandDistribution"
       ></div>
-      <h3>Storage and&nbsp;Distribution</h3>
+      <h3>Storage and Distribution</h3>
       <p>
         <span class="caps">MPEG</span>-1 is used for VCDs (Video CDs). The very
         popular <span class="caps">DVD</span> videos are possible only because
@@ -2111,7 +2082,7 @@
         <span class="caps">MPEG</span> encoders and decoders may be subject to
         royalty fee.<br />
         • End-users may have to bear the royalty when using free software like
-        <span class="caps">VLC</span> for encoding and decoding&nbsp;purposes.
+        <span class="caps">VLC</span> for encoding and decoding purposes.
       </p>
       <div name="FutureofMPEG" data-unique="FutureofMPEG"></div>
       <h2>Future of <span class="caps">MPEG</span></h2>
@@ -2139,7 +2110,7 @@
         space for improvement. Use of <span class="caps">MPEG</span> is not
         appropriate for all gaming and interactive contents. More profiles have
         to be added to the standard. Also, there is a room for better
-        compression in&nbsp;audio.
+        compression in audio.
       </p>
       <p>
         <span class="caps">MPEG</span>-4 Part 28 which is under development has
@@ -2150,7 +2121,7 @@
         encoding format. Despite being one of the most popular video encoding
         standard, <span class="caps">MPEG</span> falls short in may applications
         and its future is uncertain unless huge improvement and flexibility have
-        been added to&nbsp;it.
+        been added to it.
       </p>
       <p>
         <b><span class="caps">REFERENCES</span></b>
@@ -2161,7 +2132,7 @@
         <em
           >Standard (Digital Multimedia Standards) (Digital Multimedia Standards
           S.)</em
-        >. 1st Edition.&nbsp;Springer.
+        >. 1st Edition. Springer.
       </p>
       <p>
         Vasudev Bhaskaran, 1997.
@@ -2169,7 +2140,7 @@
         <em
           >Architectures (The Springer International Series in Engineering and
           Computer Science)</em
-        >. 2nd Edition.&nbsp;Springer.
+        >. 2nd Edition. Springer.
       </p>
       <p>
         Jerry D. Gibson, 1998.
@@ -2180,18 +2151,18 @@
         <em
           >(The Morgan Kaufmann Series in Multimedia Information and
           Systems)</em
-        >. 1 Edition. Morgan&nbsp;Kaufmann.
+        >. 1 Edition. Morgan Kaufmann.
       </p>
       <p>
         David Salomon, 2004. <em>Data Compression: The Complete Reference</em>.
-        3rd Edition.&nbsp;Springer.
+        3rd Edition. Springer.
       </p>
       <p>
         Chad Fogg, 1996.
         <em
           ><span class="caps">MPEG</span> Video Compression Standard (Digital
           Multimedia Standards </em
-        ><em>Series)</em>. 1 Edition.&nbsp;Springer.
+        ><em>Series)</em>. 1 Edition. Springer.
       </p>
       <p>
         Wallace, Gregory K.,
@@ -2200,7 +2171,7 @@
           Standard, Communications of</em
         >
         <em>the <span class="caps">ACM</span></em
-        >, April 1991 (Vol. 34, No. 4), pp.&nbsp;30-44.
+        >, April 1991 (Vol. 34, No. 4), pp. 30-44.
       </p>
       <p>
         Neelamani, R., de Queiroz, R., Fan, Z., Dash, S.,
@@ -2208,7 +2179,7 @@
         <em><span class="caps">JPEG</span> compression</em>
         <em>history estimation for color images</em>,
         <span class="caps">IEEE</span> Trans. on Image Processing, June 2006
-        (Vol 15, No&nbsp;6).
+        (Vol 15, No 6).
       </p>
       <p>
         Ja-Ling Wu, 2002. ‘<span class="caps">MPEG</span>-1 Coding Standard’,
@@ -2219,7 +2190,7 @@
           title="http://www.cmlab.csie.ntu.edu.tw/cml/dsp/training/coding/mpeg1/"
           target="_blank"
           >http://www.cmlab.csie.ntu.edu.tw/cml/dsp/training/coding/mpeg1/</a
-        >&gt;. [Accessed 17 November&nbsp;2011].
+        >&gt;. [Accessed 17 November 2011].
       </p>
       <p>
         Prof. Tsuhan Chen, 1999. ‘<span class="caps">MPEG</span> Audio’, 18-796
@@ -2230,7 +2201,7 @@
           title="http://www.ece.cmu.edu/~ece796/mpegaudio.pdf"
           target="_blank"
           >http://www.ece.cmu.edu/~ece796/mpegaudio.pdf</a
-        >&gt;. [Accessed 19 November&nbsp;2011].
+        >&gt;. [Accessed 19 November 2011].
       </p>
       <p>
         Avila A., n.d. ‘History of <span class="caps">MPEG</span>’,
@@ -2242,7 +2213,7 @@
           title="http://www2.sims.berkeley.edu/courses/is224/s99/GroupG/report1.html"
           target="_blank"
           >http://www2.sims.berkeley.edu/courses/is224/s99/GroupG/report1.html</a
-        >&gt;. [Accessed 15 November&nbsp;2011].
+        >&gt;. [Accessed 15 November 2011].
       </p>
       <p>
         Berkeley Design Technology, Inc., 2006.
@@ -2252,7 +2223,7 @@
           title="http://www.eetimes.com/design/signal-processing-dsp/4013042/Introduction-to-video-compression"
           target="_blank"
           >http://www.eetimes.com/design/signal-processing-dsp/4013042/Introduction-to-video-compression</a
-        >&gt;. [Accessed 16 November&nbsp;2011].
+        >&gt;. [Accessed 16 November 2011].
       </p>
       <p>
         Michael Niedermayer, 2005. 15 reasons why
@@ -2263,7 +2234,7 @@
           title="http://guru.multimedia.cx/15-reasons-why-mpeg4-sucks/"
           target="_blank"
           >http://guru.multimedia.cx/15-reasons-why-mpeg4-sucks/</a
-        >&gt; [Accessed 22 November&nbsp;2011].
+        >&gt; [Accessed 22 November 2011].
       </p>
       <p>
         <span class="caps">P.N.</span> Tudor, December 1995.
@@ -2274,7 +2245,7 @@
           title="from archive.org"
           target="_blank"
           >http://www.bbc.co.uk/rd/pubs/papers/paper_14/paper_14.shtml</a
-        >&gt; [Accessed 18 November&nbsp;2011].
+        >&gt; [Accessed 18 November 2011].
       </p>
       <p>
         Ebrahimi, T.,Horne, C., 2010.
@@ -2297,7 +2268,7 @@
           title="http://www.bretl.com/mpeghtml/MPEGindex.htm"
           target="_blank"
           >http://www.bretl.com/mpeghtml/MPEGindex.htm</a
-        >&gt; [Accessed 18 November&nbsp;2011].
+        >&gt; [Accessed 18 November 2011].
       </p>
       <p><b>Images</b></p>
       <p>
@@ -2325,7 +2296,7 @@
           title="http://www.glennchan.info/articles/technical/chroma/chroma1.htm"
           target="_blank"
           >http://www.glennchan.info/articles/technical/chroma/chroma1.htm</a
-        >&gt; [Accessed 14 November&nbsp;2011].
+        >&gt; [Accessed 14 November 2011].
       </p>
       <p>
         Luke, 2002. <em>Frame fields</em> [image online] Available at: &lt;<a
@@ -2333,7 +2304,7 @@
           title="http://neuron2.net/LVG/framefields.gif"
           target="_blank"
           >http://neuron2.net/<span class="caps">LVG</span>/framefields.gif</a
-        >&gt; [Accessed 14 November&nbsp;2011].
+        >&gt; [Accessed 14 November 2011].
       </p>
       <p>
         Apple, Inc. n.d. <em>Open and Closed GOPs</em> [image online] Available
@@ -2342,14 +2313,14 @@
           title="http://documentation.apple.com/en/compressor/usermanual/Art/L00/L0006_IBBP.png"
           target="_blank"
           >http://documentation.apple.com/en/compressor/usermanual/Art/L00/L0006_IBBP.png</a
-        >&gt; [Accessed 17 November&nbsp;2011].
+        >&gt; [Accessed 17 November 2011].
       </p>
       <p>
         <b><span class="caps">ACKNOWLEDGEMENTS</span></b
         ><br />
         I would like to show my gratitude to the contributors of Wikipedia and
         the World Wide Web. Also, huge thanks goes to the lecturer Mr. Ayush
-        Subedi and my friend Binayak&nbsp;Upadhaya.
+        Subedi and my friend Binayak Upadhaya.
       </p>
     </div>
   </article>
@@ -2365,8 +2336,8 @@ export default {
 </script>
 
 <style scoped>
-img{
+img {
   display: block;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 </style>
