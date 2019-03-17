@@ -42,6 +42,12 @@
       </li>
 
       <li>
+        <router-link to="mythtv-without-tv-tuner-card">
+          Configuring MythTV to run without a TV Tuner/Card
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>

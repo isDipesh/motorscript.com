@@ -15,22 +15,20 @@
         themeable menus with nested/sortable items.<br />
         This work is inspired from menu management in WordPress and tries to
         provide a similar interface to drag and drop items for setting its order
-        and&nbsp;depth.
+        and depth.
       </p>
 
       <p>
         The module utilizes
         <a
-          href="http://web.archive.org/web/20160323105621/http://mjsarfatti.com/sandbox/nestedSortable/"
-          >nestedSortable</a
-        >
+          href="http://web.archive.org/web/20160323105621/http://mjsarfatti.com/sandbox/nestedSortable/">nestedSortable</a>
         jQuery plugin for drag-drop sorting of menu items in backend.<br />
-        Free <span class="caps">CSS</span> dropdown menu from
+        Free <span>CSS</span> dropdown menu from
         <a
           href="http://web.archive.org/web/20160323105621/http://www.lwis.net/free-css-drop-down-menu/"
           >http://www.lwis.net/free-css-drop-down-menu/</a
         >
-        is used for menu styles and&nbsp;themes.
+        is used for menu styles and themes.
       </p>
       <p>
         The code for menu rendering is borrowed from
@@ -54,7 +52,7 @@
         >
       </p>
       <p>
-        Extract the contents of the archive to menu folder inside&nbsp;modules.
+        Extract the contents of the archive to menu folder inside modules.
       </p>
       <p>
         Acknowledge Yii about this module by including it into list of modules
@@ -65,26 +63,26 @@
                 'menu',
             ),
 </code></pre>
-      <p>Add the components and models required to your imports&nbsp;section</p>
+      <p>Add the components and models required to your imports section</p>
       <pre class="language-php"><code>        'import' =&gt; array(
             ...
             'application.modules.menu.models.*',
             'application.modules.menu.components.*',
             ),
 </code></pre>
-      <p>Add Metadata class to&nbsp;components</p>
+      <p>Add Metadata class to components</p>
       <pre class="language-php"><code>'components'=&gt;array(
 ...
         'metadata' =&gt; array('class' =&gt; 'Metadata'),
 ...
 ),
 </code></pre>
-      <p>Import menu.sql to install the database&nbsp;schema.</p>
+      <p>Import <code>menu.sql</code> to install the database schema.</p>
       <h2>Usage</h2>
       <p>
         Browse to /menu to create menu and menu items.<br />
         Click on <code>Get Code</code> link to get code for any menu.<br />
-        Insert the code into any layout or view&nbsp;file.
+        Insert the code into any layout or view file.
       </p>
       <p>
         Git Repo:
