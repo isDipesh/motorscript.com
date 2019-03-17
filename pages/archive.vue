@@ -16,6 +16,12 @@
       </li>
 
       <li>
+        <router-link to="mpeg-jpeg-compression">
+          MPEG and JPEG Compression
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
