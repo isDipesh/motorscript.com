@@ -8,23 +8,26 @@
 
                 <li>
                     Install Selenium Server from AUR
-                    <pre><span class="prefix">pacaur -S selenium-server-standalone</span></pre>
+                    <pre class="language-bash"><code class="prefix">pacaur -S selenium-server-standalone</code></pre>
                 </li>
                 
                 <li>
                     Install Gecko and Chrome Webdrivers
-                    <pre><span class="prefix">pacaur -S geckodriver</span>
-<span class="prefix">pacaur -S chromedriver</span></pre>
+                    <pre class="language-bash"><code class="prefix">pacaur -S geckodriver</code>
+<code class="prefix">pacaur -S chromedriver</code></pre>
                 </li>
 
                 <li>
                     Change Java environment to Java 8
-                    <pre><span class="su">archlinux-java set java-8-openjdk/jre</span></pre>
+                    <pre class="language-bash"><code class="su">archlinux-java set java-8-openjdk/jre</code></pre>
                 </li>
 
                 <li>
                     Install as a service
-                    <pre><span class="su"> cat &lt;&lt;EOT &gt;&gt; /etc/systemd/system/selenium.service
+                    <pre class="language-bash">
+                        <code class="su"> cat &lt;&lt;EOT &gt;&gt; /etc/systemd/system/selenium.service</code>
+                    </pre>
+                    <pre class="language-ini"><code>
 [Unit]
 Description=Selenium Standalone Server
 [Service]
@@ -35,11 +38,14 @@ KillMode=process
 User=nobody
 [Install]
 WantedBy=multi-user.target
-EOT</span>
+EOT
+</code>
+                    </pre>
                     
-<span class="su">systemctl --system daemon-reload</span>
-<span class="su">systemctl enable selenium</span>
-<span class="su">systemctl start selenium</span></pre>
+<pre class="language-bash">                    
+<code class="su">systemctl --system daemon-reload</code>
+<code class="su">systemctl enable selenium</code>
+<code class="su">systemctl start selenium</code></pre>
                 </li>
                 
                 <li>

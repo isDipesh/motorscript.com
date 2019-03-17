@@ -10,31 +10,31 @@
 
                 <li>
                     <h3>Point your custom domain to the server with nginx installed using DNS A Record</h3>
-                    <pre>A         mail         [ip-address]</pre>
+                    <pre class="language-dns"><code>A         mail         [your-ip-address]</code></pre>
                 </li>
 
                 <li>
                     <h3>Configure nginx to proxy pass to Zoho</h3>
-                    <pre>
+                    <pre class="language-nginx"><code>
 server {
     listen 80;
     server_name mail.your-domain.com;
     location / {
 	proxy_pass https://mail.zoho.com/biz/customlogin?rd=your-domain.com;
     }
-</pre>
+</code></pre>
                 </li>
 
                 <li>
                     <h3>Obtain SSL certificate with Certbot</h3>
-                    <pre><span class="su">apt-get install software-properties-common</span>
-<span class="su">add-apt-repository ppa:certbot/certbot</span>
-<span class="su">apt-get update</span>
-<span class="su">apt-get install python-certbot-nginx</span>
-<span class="su">apt-get install python-certbot-nginx</span>
-<span class="su">certbot --nginx</span>
-<span class="su">nginx -t</span>
-<span class="su">systemctl restart nginx</span></pre>
+                    <pre class="language-bash"><code class="su">apt-get install software-properties-common</code>
+<code class="su">add-apt-repository ppa:certbot/certbot</code>
+<code class="su">apt-get update</code>
+<code class="su">apt-get install python-certbot-nginx</code>
+<code class="su">apt-get install python-certbot-nginx</code>
+<code class="su">certbot --nginx</code>
+<code class="su">nginx -t</code>
+<code class="su">systemctl restart nginx</code></pre>
                 </li>
                 
                 <li>

@@ -16,32 +16,32 @@
 
             <h3><span class="caps">SSH</span> into the server</h3>
 
-            <pre>
-<span class="prefix">cd</span>
-<span class="prefix">mkdir repo.git {{project_dir}} conf logs media static</span>
-<span class="prefix">cd repo.git</span>
-<span class="prefix">git init --bare</span>
-<span class="prefix">git --bare update-server-info</span>
-<span class="prefix">git config core.bare false</span>
-<span class="prefix">git config receive.denycurrentbranch ignore</span>
-<span class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</span>
+            <pre class="language-bash">
+<code class="prefix">cd</code>
+<code class="prefix">mkdir repo.git {{project_dir}} conf logs media static</code>
+<code class="prefix">cd repo.git</code>
+<code class="prefix">git init --bare</code>
+<code class="prefix">git --bare update-server-info</code>
+<code class="prefix">git config core.bare false</code>
+<code class="prefix">git config receive.denycurrentbranch ignore</code>
+<code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
 
-<span class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
+<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/sh
 git checkout -f
-EOF</span>
+EOF</code>
 
-<span class="prefix">chmod +x hooks/post-receive</span>
+<code class="prefix">chmod +x hooks/post-receive</code>
 
-<span class="prefix">exit</span>
+<code class="prefix">exit</code>
 </pre>
 
             <h3>On the client</h3>
 
-            <pre>
-<span class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</span><span class="prefix" v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</span>
-<span class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</span><span class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</span>
-<span class="prefix">git push server --all</span>
+            <pre class="language-bash">
+<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</code><code class="prefix" v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
+<code class="prefix">git push server --all</code>
 </pre>
             
             <p>

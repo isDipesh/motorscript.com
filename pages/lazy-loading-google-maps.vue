@@ -18,7 +18,7 @@
                 href="https://github.com/verlok/lazyload" target="_blank" rel="noreferrer noopener">LazyLoad</a>
             which reads the <span class="hl">data-src</span> attribute and writes <span class="hl">src</span> attribute lazily.
 
-            <pre>
+            <pre class="language-html"><code>
 &lt;template&gt;
     &lt;div&gt;
         &lt;div v-if=&quot;isStatic&quot; class=&quot;has-text-centered&quot; id=&quot;static-map-wrapper&quot;&gt;
@@ -29,6 +29,8 @@
 &lt;/template&gt;
 
 &lt;script&gt;
+</code>
+<code class="language-javascript">
   export default {
     props: {
       'lat': {}, 'lng': {}, 'zoom': {default: 14}
@@ -74,21 +76,28 @@
       }
     }
   };
+</code>
+<code class="language-html">
 &lt;/script&gt;
 
 &lt;style scoped&gt;
+</code>
+<code class="language-css">
     .g-map {
         height: 400px;
         margin: 0 auto;
         background: #ebe8de;
     }
+</code>
+<code class="language-html">
 &lt;/style&gt;
+</code>
 </pre>
 
             Example usage of the component:
-            <pre>
+            <pre class="language-html"><code>
 &lt;GMap lat=&quot;27.6861537&quot; lng=&quot;85.3295763&quot;/&gt;
-</pre>
+</code></pre>
 
 
         </div>

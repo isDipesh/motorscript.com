@@ -8,11 +8,14 @@
 
 <p>The script is only used for building training data but not for production. The output of this script is used for training for pattern matching which is then used in production. This same technique can be used to detect other sections in passport or other document types. Just adjust the index in the assignment of `target_bound` variable.</p>
 
-<p>Before  running the script, you need to download your GCP credentails set the path to the credentials json as GOOGLE_APPLICATION_CREDENTIALS environment variable.
-<pre>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</pre>
+<p>Before  running the script, you need to download your GCP credentails set the path to the credentials json as <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.
+
+<pre class="language-bash">
+    <code>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</code>
+    </pre>
 </p>
 
-<pre>
+<pre class="language-python"><code>
 import argparse
 from enum import Enum
 import io
@@ -135,7 +138,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     render_doc_text(args.directory)
-</pre>
+</code></pre>
 
         </div>
     </article>
