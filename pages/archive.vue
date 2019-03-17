@@ -36,6 +36,12 @@
       </li>
 
       <li>
+        <router-link to="menu-management-for-yii-framework">
+          Menu Management for Yii Framework
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
