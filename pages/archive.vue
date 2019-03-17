@@ -8,6 +8,12 @@
             </router-link
         >
       </li>
+      <li>
+        <router-link to="e-mail-this-file-option-in-right-clickcontext-menu">
+            Nautilus: 'E-mail this file' option in right-click/context menu
+            </router-link
+        >
+      </li>
     </ul>
   </div>
 </template>
