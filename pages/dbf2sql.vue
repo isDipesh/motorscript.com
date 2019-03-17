@@ -35,7 +35,9 @@
             </div>
 
             <div class="block">
-                <pre class="language-bash"><code class="prefix">php dbf2sql.php --bulk` OR `php dbf2sql.php --all</code></pre>
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php --bulk</code></pre>
+                OR
+                <pre class="language-bash"><code class="prefix">php dbf2sql.php --all</code></pre>
                 <div>Converts all dbf files on current directory to sql scripts.</div>
             </div>
 
