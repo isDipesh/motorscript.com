@@ -4,6 +4,7 @@
     <main itemscope itemtype="https://schema.org/Blog">
       <nuxt/>
       <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div>
+      <no-ssr>
       <script>
         var disqus_config = function() {};
         (function() {
@@ -15,6 +16,7 @@
           (d.head || d.body).appendChild(s);
         })();
       </script>
+      </no-ssr>
     </main>
     <BlogFooter/>
   </div>

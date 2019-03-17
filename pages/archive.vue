@@ -4,6 +4,12 @@
     <ul class="posts">
 
       <li>
+        <router-link to="mpeg-jpeg-compression">
+          MPEG and JPEG Compression
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="git-pre-commit-hook-python-code-quality-flake8-virtualenv">
           Git pre-commit hook for checking python code quality using flake8 inside virtualenv
         </router-link>
@@ -16,8 +22,8 @@
       </li>
 
       <li>
-        <router-link to="mpeg-jpeg-compression">
-          MPEG and JPEG Compression
+        <router-link to="git-cheat-sheet">
+          git Cheat-sheet
         </router-link>
       </li>
 
