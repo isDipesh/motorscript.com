@@ -2,7 +2,6 @@
   <div>
     <h1>Archived Posts</h1>
     <ul class="posts">
-
       <li>
         <router-link to="mpeg-jpeg-compression">
           MPEG and JPEG Compression
@@ -10,8 +9,11 @@
       </li>
 
       <li>
-        <router-link to="git-pre-commit-hook-python-code-quality-flake8-virtualenv">
-          Git pre-commit hook for checking python code quality using flake8 inside virtualenv
+        <router-link
+          to="git-pre-commit-hook-python-code-quality-flake8-virtualenv"
+        >
+          Git pre-commit hook for checking python code quality using flake8
+          inside virtualenv
         </router-link>
       </li>
 
@@ -24,6 +26,12 @@
       <li>
         <router-link to="git-cheat-sheet">
           git Cheat-sheet
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="installing-sublime-text-3-linux">
+          Installing Sublime Text 3 in Linux
         </router-link>
       </li>
 
@@ -50,9 +58,8 @@
           Compiling VLC for root users
         </router-link>
       </li>
-
     </ul>
-  <router-link to="/">
+    <router-link to="/">
       View Recent Posts
     </router-link>
   </div>
