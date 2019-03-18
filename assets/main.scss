@@ -211,3 +211,14 @@ ol.pad li{
 .pl-2{
   padding-left: 2em;
 }
+
+.company{
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #ccc;
+  display: flex;
+  img{
+    max-height: 50px;
+  }
+}
+

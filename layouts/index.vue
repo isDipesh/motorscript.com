@@ -29,7 +29,7 @@
           {
             hid: 'description',
             name: 'description',
-            content: 'Dipesh Acharya\'s weblog of cheat-sheets on Web, Javascript, Python, Linux and other technologies.'
+            content: 'Dipesh Acharya\'s weblog of cheat-sheets on Web, Javascript, Python, Linux, and other technologies.'
           }
         ],
         bodyAttrs: {
