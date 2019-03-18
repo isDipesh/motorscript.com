@@ -72,6 +72,12 @@
       </li>
 
       <li>
+        <router-link to="vbulletin-to-smf-301-permanent-url-redirects">
+          Vbulletin to SMF 301 Permanent URL Redirects
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
