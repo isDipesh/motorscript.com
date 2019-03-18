@@ -84,6 +84,12 @@
       </li>
 
       <li>
+        <router-link to="mounting-nexus-7-in-fedora">
+          Mounting Nexus 7 in Fedora
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="last-fm-widget">
           Last.fm widget for websites
         </router-link>

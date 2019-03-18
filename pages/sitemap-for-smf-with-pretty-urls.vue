@@ -34,7 +34,7 @@
         >
       </p>
       <p>
-        Native mysql_query is used instead of SMF's <code>db_query</code> (or the latest
+        Native <code>mysql_query</code> is used instead of SMF's <code>db_query</code> (or the latest
         <code>$smcFunc['db_query']</code>). The database field names have been corrected to
         match the latest version of SMF. Support for search-engine friendly URLs
         for member profiles (e.g. <code>http://mysite.com/profile/username</code>) has been
