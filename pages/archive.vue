@@ -102,6 +102,12 @@
       </li>
 
       <li>
+        <router-link to="imdb-to-getglue-bookmarklets">
+          IMDB to GetGlue Bookmarklets
+        </router-link>
+      </li>
+
+      <li>
         <router-link
           to="hacking-tweetdeck-for-chrome-to-show-tweet-source-client"
         >
