@@ -60,6 +60,12 @@
       </li>
 
       <li>
+        <router-link to="guake-patch-to-fix-focus-on-gnome">
+          Guake patch to fix focus issue on GNOME 3.4
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
