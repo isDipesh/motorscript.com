@@ -84,7 +84,9 @@
       </li>
 
       <li>
-        <router-link to="hacking-tweetdeck-for-chrome-to-show-tweet-source-client">
+        <router-link
+          to="hacking-tweetdeck-for-chrome-to-show-tweet-source-client"
+        >
           Hacking TweetDeck for Chrome to show tweet source/client
         </router-link>
       </li>
@@ -110,6 +112,12 @@
       <li>
         <router-link to="gnome-shell-extension-firefox-profiles">
           Gnome Shell Extension: Firefox Profiles
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="fedora-15-post-install-customization">
+          Fedora 15 post installation customization
         </router-link>
       </li>
 
