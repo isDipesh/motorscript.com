@@ -12,7 +12,7 @@
     <div class="content" itemprop="articleBody">
       <p>
         This widget shows last played tracks from last.fm for a user. It also
-        shows ‘Now Playing’ track if&nbsp;available.
+        shows ‘Now Playing’ track if available.
       </p>
       <p>
         <strong>Download:</strong>
@@ -26,7 +26,7 @@
       <p>
         <strong>Insert</strong>:
         <code>&lt;table id="last_fm_tracks"&gt;&lt;/table&gt;</code> where you
-        want the script to write the track&nbsp;lists.
+        want the script to write the track lists.
       </p>
       <p><strong>Add</strong>:</p>
       <pre class="language-html"><code>&lt;script type="text/javascript" src="last_widget.js"&gt;&lt;/script&gt;  
