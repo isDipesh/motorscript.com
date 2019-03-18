@@ -78,6 +78,12 @@
       </li>
 
       <li>
+        <router-link to="last-fm-widget">
+          Last.fm widget for websites
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
