@@ -90,6 +90,12 @@
       </li>
 
       <li>
+        <router-link to="emailspy">
+          Emailspy
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="crop-to-selection-keyboard-shortcut-gimp">
           'Crop to Selection' keyboard shortcut for GIMP
         </router-link>
