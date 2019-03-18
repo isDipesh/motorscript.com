@@ -116,8 +116,8 @@
       </li>
 
       <li>
-        <router-link to="fedora-15-post-install-customization">
-          Fedora 15 post installation customization
+        <router-link to="customizing-gnome-shell">
+          Customizing Gnome Shell
         </router-link>
       </li>
 

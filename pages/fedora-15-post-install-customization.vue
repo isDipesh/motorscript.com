@@ -121,8 +121,10 @@
       <p>
         MySQL and phpmyadmin:
         <pre class="language-bash">
-        <code class="su">yum install -y mysql phpmyadmin chkconfig mysqld on</code>
-          <code class="su">mysql_secure_installation service mysqld restart</code></pre>
+        <code class="su">yum install -y mysql phpmyadmin</code>
+        <code class="su">chkconfig mysqld on</code>
+        <code class="su">mysql_secure_installation</code>
+        <code class="su">service mysqld restart</code></pre>
       </p>
     </div>
   </article>
