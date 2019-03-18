@@ -78,6 +78,12 @@
       </li>
 
       <li>
+        <router-link to="sitemap-for-smf-with-pretty-urls">
+          Sitemap for SMF with Pretty URLs
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="last-fm-widget">
           Last.fm widget for websites
         </router-link>
@@ -118,6 +124,12 @@
       <li>
         <router-link to="customizing-gnome-shell">
           Customizing Gnome Shell
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="enable-root-login-for-linux-systems">
+          Enable graphical root login for Linux systems
         </router-link>
       </li>
 
