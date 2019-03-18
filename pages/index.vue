@@ -79,7 +79,7 @@
         >
       </li>
     </ul>
-    <router-link to="archive">
+    <router-link to="archive" class="pl-2">
       View Archived Posts
     </router-link>
   </div>

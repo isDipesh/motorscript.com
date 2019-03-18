@@ -175,7 +175,7 @@
         </router-link>
       </li>
     </ul>
-    <router-link to="/">
+    <router-link to="/" class="pl-2">
       View Recent Posts
     </router-link>
   </div>
