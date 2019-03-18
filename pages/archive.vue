@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Archived Posts</h1>
+    <h1 class="pl-1">Archived Posts</h1>
     <ul class="posts">
       <li>
         <router-link to="mpeg-jpeg-compression">
@@ -185,7 +185,8 @@
 export default {
   layout: "index",
   head: {
-    link: [{ rel: "canonical", href: "https://motorscript.com/archive" }]
+    link: [{ rel: "canonical", href: "https://motorscript.com/archive" }],
+    title: "Archived Posts"
   }
 };
 </script>
