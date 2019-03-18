@@ -5,7 +5,7 @@
     itemtype="https://schema.org/BlogPosting"
   >
     <BlogTitle
-      title="Gnome Shell Extension : Force Quit"
+      title="Gnome Shell Extension: Force Quit"
       published="17 Aug 2011"
       archived="true"
     />

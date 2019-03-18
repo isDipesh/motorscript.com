@@ -97,13 +97,19 @@
 
       <li>
         <router-link to="gnome-shell-extension-force-quit">
-          Gnome Shell Extension : Force Quit
+          Gnome Shell Extension: Force Quit
         </router-link>
       </li>
 
       <li>
         <router-link to="gnome-shell-extension-screen-turn-off-button">
-          Gnome Shell Extension : Screen Off
+          Gnome Shell Extension: Screen Off
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="gnome-shell-extension-firefox-profiles">
+          Gnome Shell Extension: Firefox Profiles
         </router-link>
       </li>
 

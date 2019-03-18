@@ -5,7 +5,7 @@
     itemtype="https://schema.org/BlogPosting"
   >
     <BlogTitle
-      title="Gnome Shell Extension : Screen Off"
+      title="Gnome Shell Extension: Screen Off"
       published="16 Aug 2011"
       archived="true"
     />
