@@ -96,6 +96,12 @@
       </li>
 
       <li>
+        <router-link to="compiling-hotot-from-latest-source-in-fedora">
+          Compiling Hotot from latest source in Fedora
+        </router-link>
+      </li>
+
+      <li>
         <router-link
           to="hacking-tweetdeck-for-chrome-to-show-tweet-source-client"
         >
