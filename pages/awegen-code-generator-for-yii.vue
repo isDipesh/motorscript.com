@@ -22,7 +22,7 @@
       <ol>
         <li>Generates textarea for <code>text</code> db type.</li>
         <li>
-          Genearates textarea with markitp editor for <code>longtext</code> db
+          Genearates textarea with markitup editor for <code>longtext</code> db
           type. (Uses
           <a href="http://yiiext.github.com/extensions/markitup-widget/"
             >markitup widget</a
