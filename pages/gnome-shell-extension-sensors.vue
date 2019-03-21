@@ -17,7 +17,7 @@ to read temperature for different CPU cores and adapters, voltage data and fan s
 <p>Optionally, this extension uses the <a target="_blank" rel="noopener noreferrer" href="http://www.freedesktop.org/wiki/Software/udisks/">UDisks2</a> dbus interface or <a target="_blank" rel="noopener noreferrer" href="https://savannah.nongnu.org/projects/hddtemp/">hddtemp</a> as fallback to
 read hard drive temperature data.</p>
 
-<p><img src="https://raw.github.com/wiki/xtranophilist/gnome-shell-extension-sensors/gnome-shell-extension-sensors.png" alt="Screenshot" /></p>
+<p><img src="/media/posts/gnome-shell-extension-sensors.jpg" alt="Screenshot of Gnome Shell Extension Sensors" /></p>
 
 <h1 id="installation">Installation</h1>
 

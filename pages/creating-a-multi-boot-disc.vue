@@ -12,7 +12,7 @@
     <div class="content" itemprop="articleBody">
       <p>
         <img
-          src="http://web.archive.org/web/20111016085617im_/http://i51.tinypic.com/53cc8.jpg"
+          src="/media/posts/happyboot_logo.jpg"
           alt="happyBoot Logo"
         /><br />
         This how-to is created during the course of documentation of happyBoot
@@ -223,7 +223,7 @@ TEXT HELP
         <strong>Screenshots:</strong><br />
         The main menu:<br />
         <img
-          src="http://web.archive.org/web/20111016085617im_/http://i53.tinypic.com/o05g07.jpg"
+          src="/media/posts/main_boot_screen.jpg"
           alt="happyBoot Main Menu"
         />
       </p>
@@ -231,7 +231,7 @@ TEXT HELP
       <p>
         One of the sub-menus (Parted Magic):<br />
         <img
-          src="http://web.archive.org/web/20111016085617im_/http://i53.tinypic.com/30ka77l.jpg"
+          src="/media/posts/parted_magic_menu.png"
           alt="happyBoot sub-menu - Parted Magic"
         />
       </p>
