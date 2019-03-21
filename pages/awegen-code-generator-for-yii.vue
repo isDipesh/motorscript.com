@@ -48,7 +48,7 @@
           Allows easy addition of access control templates in the generator. (
           Users can add templates into
           <code>AweCrud/templates/default/auth</code> folder and they will be
-          listed in the <span class="caps">CRUD</span> generator.)
+          listed in the CRUD generator.)
         </li>
         <li>
           Guesses e-mail fields by field names and adds e-mail validation for
