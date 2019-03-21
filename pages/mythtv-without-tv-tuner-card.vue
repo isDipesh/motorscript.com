@@ -12,23 +12,23 @@
     <div class="content" itemprop="articleBody">
       <p>
         This post is a straight forward set of instructions on how you can
-        configure MythTV to run without a <span class="caps">TV</span> tuner or
+        configure MythTV to run without a TV tuner or
         capture card.
       </p>
       <p>
-        My current ADSTech <span class="caps">TV</span> tuner isn’t supported by
+        My current ADSTech TV tuner isn’t supported by
         MythTV due to driver issues. So, I have ordered a Hauppauge
-        <span class="caps">TV</span> tuner which I am getting very soon.
+        TV tuner which I am getting very soon.
         Although I had no plans of using MythTV just for local music and video
         playback, I couldn’t wait to try and see why it is so popular.
         Configuring MythTV to run without any identified
-        <span class="caps">TV</span> capture card wasn’t that straight-forward
+        TV capture card wasn’t that straight-forward
         and I thought sharing it would help someone else besides serving as a
         cheatsheet for myself.
       </p>
       <h1>Installing MythTV</h1>
       <p>
-        On Fedora, CentOS, <span class="caps">RHEL</span> and other rpm based
+        On Fedora, CentOS, RHEL and other rpm based
         distros:<br />
         <pre class="language-bash"><code class="prefix">sudo yum -y install mythtv</code></pre>
       </p>

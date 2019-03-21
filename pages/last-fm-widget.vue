@@ -37,9 +37,9 @@ loadLastFMTracks('xtranophilist');
       <p>
         just before the end of the body tag <code>&lt;/body&gt;</code> Don’t
         forget to replace <code>xtranophilist</code> with your username. If you
-        are using <span class="caps">ID</span> for the
+        are using ID for the
         <code>&lt;table&gt;</code> other than <code>last_fm_tracks</code>, make
-        sure you pass the <span class="caps">ID</span> string as the second
+        sure you pass the ID string as the second
         parameter for the <code>loadLastFMTracks()</code> method.
       </p>
       <p>

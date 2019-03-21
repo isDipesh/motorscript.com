@@ -68,7 +68,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
 
       <h3>Clementine media player</h3>
       <pre class="language-bash"><code class="su">yum -y install clementine</code></pre>
-      <h3><span class="caps">VLC</span> media player</h3>
+      <h3>VLC media player</h3>
       <pre class="language-bash"><code class="su">yum -y install vlc</code></pre>
       <h3>SMPlayer</h3>
       <pre class="language-bash"><code class="su">yum -y install smplayer</code></pre>
@@ -83,7 +83,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
       <h3>Install English language pack for Libreoffice.</h3>
       <pre class="language-bash"><code class="su">yum -y install libreoffice-langpack-en</code></pre>
       <h3>
-        Install 7zip and <span class="caps">RAR</span> plugins
+        Install 7zip and RAR plugins
         and executables
       </h3>
       <pre class="language-bash"><code class="su">yum -y install p7zip p7zip-plugins unrar</code></pre>
@@ -125,7 +125,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
       <pre class="language-bash"><code class="su">yum -y install filezilla</code></pre>
       <h3>Install OpenJDK</h3>
       <pre class="language-bash"><code class="su">yum -y install java-*-openjdk java-*-openjdk-plugin</code></pre>
-      <h3>Apache and <span class="caps">PHP</span></h3>
+      <h3>Apache and PHP</h3>
       <pre class="language-bash">
         <code class="su">yum -y install httpd php php-xml</code>
         <code class="su">chkconfig httpd on</code>
@@ -167,7 +167,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
         <code class="su">service postgresql restart</code>
         <code class="su">systemctl enable postgresql.service</code>
       </pre>
-      <h3><span class="caps">SCM</span> Breeze:</h3>
+      <h3>SCM Breeze:</h3>
       <p>
         (set of shell scripts (for bash and zsh ) that enhance your interaction
         with git.)

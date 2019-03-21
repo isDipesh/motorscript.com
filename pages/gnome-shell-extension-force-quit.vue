@@ -12,7 +12,7 @@
     <div class="content" itemprop="articleBody">
       <p>
         Force Quit is an extension that adds a ‘Force Quit’ button to the top
-        panel of gnome shell, the <span class="caps">UI</span> of Gnome 3.
+        panel of gnome shell, the UI of Gnome 3.
         Clicking the <code>x</code> icon from the left of the gnome-shell panel changes the
         cursor into a <code>x</code>. Then, click over a non-responding application to kill
         it instantly.
@@ -55,7 +55,7 @@
       </p>
       <p>
         Superpiffer has created a package for archlinux in
-        <span class="caps">AUR</span> (<a
+        AUR (<a
           href="http://web.archive.org/web/20160323104200/https://aur.archlinux.org/packages.php?ID=55879"
           title="https://aur.archlinux.org/packages.php?ID=55879"
           >https://aur.archlinux.org/packages.php?<span class="caps">ID</span
@@ -64,7 +64,7 @@
       </p>
       <p>
         If it doesn’t work on your system, maybe you don’t have xkill. jjmarin
-        on <span class="caps">GSE</span> says “In fedora you need to install the
+        on GSE says “In fedora you need to install the
         package xorg-x11-apps in order to get the xkill”.
       </p>
     </div>

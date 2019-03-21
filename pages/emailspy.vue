@@ -19,7 +19,7 @@
       </p>
       <p>
         The mashup is possible by employing Yahoo Pipes and Dapper and
-        <span class="caps">AJAX</span> requests.<br />
+        AJAX requests.<br />
         The information is displayed in a new pop-up division over e-mail
         addresses in the page.
       </p>

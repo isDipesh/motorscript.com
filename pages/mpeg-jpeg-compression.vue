@@ -13,8 +13,8 @@
       <p>
         This document titled
         <b
-          ><span class="caps">MPEG</span> and
-          <span class="caps">JPEG</span> Compression</b
+          >MPEG and
+          JPEG Compression</b
         >
         was my college assignment. Although I got an ‘A’ for it, I’m pretty sure
         there are many errors in this document. References, sources and
@@ -87,39 +87,39 @@
       ></div>
       <h2>Discrete Cosine Transform</h2>
       <p>
-        <span class="caps">DCT</span> (Discrete Cosine Transform), like other
+        DCT (Discrete Cosine Transform), like other
         transformation techniques tries to decorrelate the basic units of data.
         Correlated units mean the similar units spread over the same plane in
         space. In case of images, it reduces or sometimes eliminates interpixel
-        redundancy. <span class="caps">DCT</span> is used to map this spatial
+        redundancy. DCT is used to map this spatial
         variation into uncorrelated frequency variation.
-        <span class="caps">DCT</span> is a linear function. Also, it is
+        DCT is a linear function. Also, it is
         invertible and its inverse gives the same original spectrum, therefore,
-        <span class="caps">DCT</span> itself is a lossless transformation but it
+        DCT itself is a lossless transformation but it
         is usually mixed with lossy algorithms like quantization in it
-        applications like <span class="caps">JPEG</span>,
-        <span class="caps">MPEG</span>, etc.
+        applications like JPEG,
+        MPEG, etc.
       </p>
       <p>
         The several occurrences of the data points is expressed in terms of the
         sum of cosine functions at different periodic frequencies. Cosine
         functions are chosen over sine functions because of their advantage of
-        efficiency. <span class="caps">DCT</span> is quite similar to
-        <span class="caps">DFT</span> (Discrete Cosine Transform) but the only
+        efficiency. DCT is quite similar to
+        DFT (Discrete Cosine Transform) but the only
         difference is that only real numbers are taken into account in
-        <span class="caps">DCT</span> whereas
-        <span class="caps">DFT</span> takes in complex numbers too.
+        DCT whereas
+        DFT takes in complex numbers too.
       </p>
       <p>
-        There are different forms of <span class="caps">DCT</span>, which are
+        There are different forms of DCT, which are
         listed below. Here x,<sub>0</sub>, …, x<sub>N-1</sub> are the spatial
         coordinates whereas X<sub>0</sub> , …, X<sub>N-1</sub> are the frequency
         coordinates. Both are the sequences of real numbers.
       </p>
       <div name="DCT-I" data-unique="DCT-I"></div>
-      <h3><span class="caps">DCT</span>-I</h3>
+      <h3>DCT-I</h3>
       <p>
-        <span class="caps">DCT</span>-I of N is given by<br />
+        DCT-I of N is given by<br />
         <img alt="DCT-I" src="/media/mpeg/dct1.png" />
         where N is a real number greater than or equal to 2,<br />
         x<sub>n</sub> are real and even numbers around n=0 and n=N-1,<br />
@@ -127,30 +127,30 @@
         X<sub>k</sub> are real and even numbers around k=0 and k=N-1.
       </p>
       <div name="DCT-II" data-unique="DCT-II"></div>
-      <h3><span class="caps">DCT</span>-<span class="caps">II</span></h3>
+      <h3>DCT-II</h3>
       <p>
-        <span class="caps">DCT</span>-<span class="caps">II</span> is given
+        DCT-II is given
         by<br />
         <img alt="DCT-II Formula" src="/media/mpeg/dct2.png" />
         where N is a positive real number ( can be less than 2, unlike in
-        <span class="caps">DCT</span>-I)<br />
+        DCT-I)<br />
         x<sub>n</sub> are real and even numbers around n=-1/2 and n=N-1/2,<br />
         k = 0,1,2,…,N-1 and<br />
         X<sub>k</sub> are real and even numbers around k=0 and k=N.
       </p>
       <p>
-        <span class="caps">DCT</span>-<span class="caps">II</span> is the most
+        DCT-II is the most
         widely used form of cosine transformation and
-        <span class="caps">DCT</span> in general means
-        <span class="caps">DCT</span>-<span class="caps">II</span>.
-        <span class="caps">DCT</span>-<span class="caps">II</span>, sometimes
-        also <span class="caps">DCT</span>-I is used for compression of
-        correlated pixels in <span class="caps">JPEG</span>,
-        <span class="caps">MJPEG</span> and
-        <span class="caps">MPEG</span> standards. The two dimensional
-        block-based <span class="caps">DCT</span> of 8×8 matrix is used for
+        DCT in general means
+        DCT-II.
+        DCT-II, sometimes
+        also DCT-I is used for compression of
+        correlated pixels in JPEG,
+        MJPEG and
+        MPEG standards. The two dimensional
+        block-based DCT of 8×8 matrix is used for
         encoding blocks of video. This encoding standard is defined by
-        <span class="caps">IEEE</span> 1180 to increase accuracy and reduce
+        IEEE 1180 to increase accuracy and reduce
         mismatch errors.
       </p>
       <p>
@@ -158,9 +158,9 @@
         <a href="#figure_transform">this figure.</a>
       </p>
       <div name="DCT-III" data-unique="DCT-III"></div>
-      <h3><span class="caps">DCT</span>-<span class="caps">III</span></h3>
+      <h3>DCT-III</h3>
       <p>
-        <span class="caps">DCT</span>-<span class="caps">III</span> is given
+        DCT-III is given
         by<br />
         <img alt="DCT-III Formula" src="/media/mpeg/dct3.png" />
         where N is a real number,<br />
@@ -169,21 +169,21 @@
         X<sub>k</sub> are real and even numbers around k=-1/2 and k=N-1/2.
       </p>
       <p>
-        <span class="caps">DCT</span>-<span class="caps">III</span> can be
-        scaled to get the inverse of <span class="caps">DCT</span>-<span
+        DCT-III can be
+        scaled to get the inverse of DCT-<span
           class="caps"
           >II</span
         >
         and therefore is also known as Inverse Direct Cosine Transform (<span
           class="caps"
           >IDCT</span
-        >), since <span class="caps">DCT</span> simply refers to
-        <span class="caps">DCT</span>-<span class="caps">II</span>.
+        >), since DCT simply refers to
+        DCT-II.
       </p>
       <div name="DCT-IV" data-unique="DCT-IV"></div>
-      <h3><span class="caps">DCT</span>-<span class="caps">IV</span></h3>
+      <h3>DCT-IV</h3>
       <p>
-        <span class="caps">DCT</span>-<span class="caps">IV</span> is given
+        DCT-IV is given
         by<br />
         <img alt="DCT-IV Formula" src="/media/mpeg/dct4.png" />
         where N is a real number,<br />
@@ -202,15 +202,15 @@
         />
         <b
           >Figure 1.1 : Image and its
-          <span class="caps">DCT</span> coefficients</b
+          DCT coefficients</b
         >
       </center>
       The coefficients retrieved i.e. X<sub>k</sub> represents the contribution
       of combination of the spatial repetitions in two horizontal and vertical
-      dimensions of the picture block. <span class="caps">DC</span> (Discrete
+      dimensions of the picture block. DC (Discrete
       Cosine) Coefficient is the coefficient relating to zero frequency indices
       on both the dimensions. Quantization and Variable Length Coding follow
-      <span class="caps">DCT</span> to reduce further number of bits.
+      DCT to reduce further number of bits.
       <p></p>
       <div name="Quantization" data-unique="Quantization"></div>
       <h2>Quantization</h2>
@@ -261,8 +261,8 @@
         doesn’t look significantly different. This is a lossy process. The color
         spectrum is also quantized by reducing the number of colors used to
         represent it in processes like conversion of
-        <span class="caps">JPEG</span> to <span class="caps">GIF</span> since
-        <span class="caps">GIF</span> only supports 256 colors. Quantization is
+        JPEG to GIF since
+        GIF only supports 256 colors. Quantization is
         also done when images are printed because the printers don’t have the
         tonal resolution which supports all the colors for all pixels in the
         image. Similar is the case with image scanning specially for shadow
@@ -275,7 +275,7 @@
       <p>
         Quantization matrices or quantizers are used for defining the
         quantization process. Supposing Q[i,j] is the quantizer matrix, every
-        time a matrix of <span class="caps">DCT</span> coefficients, say M[i,j],
+        time a matrix of DCT coefficients, say M[i,j],
         is encountered, it is divided by quantizer matrix Q[i,j] to obtain
         quantized matrix M<sub>q</sub>[i,j]. Here, we are only considering
         two-dimensional matrices.
@@ -295,7 +295,7 @@
       </p>
       <p>
         An example:<br />
-        Matrix of <span class="caps">DCT</span> coefficients, M[i,j]=
+        Matrix of DCT coefficients, M[i,j]=
       </p>
       <p>
         <img
@@ -343,13 +343,13 @@
         optimal way and assigning code for each of them. It is a lossless
         compression. Entropy encoding can be broken into two steps. The first
         step is Zigzag scanning and the second one is Variable Length Coding
-        (<span class="caps">VLC</span>). The second one has major contribution
+        (VLC). The second one has major contribution
         to entropy encoding.
       </p>
       <div name="ZigzagScanordering" data-unique="ZigzagScanordering"></div>
       <h3>Zigzag Scan ordering</h3>
       <p>
-        The most <span class="caps">AC</span> values in a quantized matrix are
+        The most AC values in a quantized matrix are
         zero. Zigzag scan can be used to gather more number of zeros together.
         Bringing zeroes together increases the optimality of the encoding
         process that follows. Zigzag scanning groups the low frequency
@@ -372,11 +372,11 @@
       </center>
       In the above diagram, the first index is zero, so the first row is row 0
       and the last row is row 7, similar with the columns. The scanning proceeds
-      like this – <span class="caps">DC</span>, <span class="caps">AC01</span>,
-      <span class="caps">AC10</span>, <span class="caps">AC20</span>,
-      <span class="caps">AC11</span>, … , <span class="caps">AC57</span>,
-      <span class="caps">AC67</span>, <span class="caps">AC76</span>,
-      <span class="caps">AC77</span>.
+      like this – DC, AC01,
+      AC10, AC20,
+      AC11, … , AC57,
+      AC67, AC76,
+      AC77.
       <p></p>
       <center>
         <img
@@ -390,20 +390,20 @@
         name="VariableLengthCoding(VLC)"
         data-unique="VariableLengthCoding(VLC)"
       ></div>
-      <h3>Variable Length Coding (<span class="caps">VLC</span>)</h3>
+      <h3>Variable Length Coding (VLC)</h3>
       <p>
-        <span class="caps">VLC</span> is the major part of entropy encoding.
-        <span class="caps">VLC</span> is the process of mapping the input
+        VLC is the major part of entropy encoding.
+        VLC is the process of mapping the input
         symbols into codes of variable lengths. This enables us to compress the
         the symbols without any error. This means the compression is lossless
         and decompressing the symbols one by one gives us the same original
         input. Compression level close to its entropy can be arbitrarily
         achieved if the right coding strategy is chosen. Also, identically
         distributed as independent source needs to be selected. Unlike
-        fixed-length coding techniques, <span class="caps">VLC</span> can be
+        fixed-length coding techniques, VLC can be
         used for compression of small blocks of data too, with less probability
         of failure.<br />
-        Some of the most popular strategies of <span class="caps">VLC</span> are
+        Some of the most popular strategies of VLC are
         Arithmetic Coding, Huffman Coding and Lempel-Ziv coding.
       </p>
       <div name="HuffmanCoding" data-unique="HuffmanCoding"></div>
@@ -469,16 +469,16 @@
         >)
       </h4>
       <p>
-        <span class="caps">CABAC</span> and <span class="caps">CAVLC</span> are
+        CABAC and CAVLC are
         coding algorithms used to encode the syntax elements when theprobability
         of its occurrence in the context is given. These are one of the forms of
-        entropy encoding and are lossless. <span class="caps">CABAC</span> has
-        higher compression ratio than <span class="caps">CAVLC</span> but
-        decoding a <span class="caps">CABAC</span> encoded entity requires more
-        processing than decoding a <span class="caps">CAVLC</span> encoded
+        entropy encoding and are lossless. CABAC has
+        higher compression ratio than CAVLC but
+        decoding a CABAC encoded entity requires more
+        processing than decoding a CAVLC encoded
         entity. Parallelization and vectorization in
-        <span class="caps">CABAC</span> is more difficult than in
-        <span class="caps">CAVLC</span>.
+        CABAC is more difficult than in
+        CAVLC.
       </p>
       <div
         name="Exponential-GolombCoding"
@@ -487,9 +487,9 @@
       <h4>Exponential-Golomb Coding</h4>
       <p>
         Exponential-Golomb (Exp-Golomb) coding is an alternative for
-        <span class="caps">CABAC</span> and
-        <span class="caps">CAVLC</span> which provides a more simple yet better
-        structured <span class="caps">VLC</span> technique for encoding syntax
+        CABAC and
+        CAVLC which provides a more simple yet better
+        structured VLC technique for encoding syntax
         elements. A non-integer code is used to parameterize the encoding in
         this process.
       </p>
@@ -501,38 +501,38 @@
       <p>
         Wavelet transformation is a technique for compression of data used in
         images and sometimes in audio and video. It is used as a substitute to
-        <span class="caps">DCT</span> for transformation of coefficients from
+        DCT for transformation of coefficients from
         spatial domain to frequency domain. Wavelet compression can either be
-        lossy or lossless whereas <span class="caps">DCT</span> is always
+        lossy or lossless whereas DCT is always
         lossless. This is why wavelet may provide more compression ratio than
-        <span class="caps">DCT</span>.
+        DCT.
       </p>
       <div
         name="RunlengthEncoding(RLE)"
         data-unique="RunlengthEncoding(RLE)"
       ></div>
-      <h2>Run length Encoding (<span class="caps">RLE</span>)</h2>
+      <h2>Run length Encoding (RLE)</h2>
       <p>
         un Length Encoding is a technique of encoding data where consecutively
         occurring entities are represented only once with a symbol along with
         the frequency. The original sequence is transformed into a smaller run
         with data values and their count thus enabling compression.
-        <span class="caps">RLE</span> is considered to be one of the oldest data
+        RLE is considered to be one of the oldest data
         compression approaches. This approach is suitable for all kinds of
-        information, text or binary. <span class="caps">RLE</span> may not be
+        information, text or binary. RLE may not be
         suitable for data which do not have items repeating consecutively.
-        <span class="caps">RLE</span> can be performed in bit-level, byte-level
-        or even pixel-level in case of images. <span class="caps">RLE</span> is
+        RLE can be performed in bit-level, byte-level
+        or even pixel-level in case of images. RLE is
         a lossless compression.
       </p>
       <p>
         An example of Run Length Encoding:<br />
         Input symbols:
-        <span class="caps">AAHHHHHHHTTTTTTPPPPPWWJKKKKLLLLLLLLLL</span><br />
-        Run Length Code : <span class="caps">2A7H6T5P2W1J4K10L</span>
+        AAHHHHHHHTTTTTTPPPPPWWJKKKKLLLLLLLLLL<br />
+        Run Length Code : 2A7H6T5P2W1J4K10L
       </p>
       <p>
-        Another example of <span class="caps">RLE</span> that only compresses
+        Another example of RLE that only compresses
         consecutive zeroes:<br />
         Input Symbols : 0000010000000000010001011000000000000<br />
         Counting the number of zeroes separated by 1’s,<br />
@@ -559,10 +559,10 @@
         <img alt="Color Subsampling" src="/media/mpeg/9.jpg" /><br />
         <b>Figure 1.5: Demonstration of color subsampling</b>
       </center>
-      The <span class="caps">RGB</span> color model uses the basic Red (R),
+      The RGB color model uses the basic Red (R),
       Green (G) and Blue (B) colors to get wide range of other colors by adding
-      them up, and therefore, <span class="caps">RGB</span> color space is
-      called additive color space. The <span class="caps">RGB</span> color space
+      them up, and therefore, RGB color space is
+      called additive color space. The RGB color space
       can also be transformed to luminance-chrominance. The advantage of
       expressing them independently into the components luma and chroma is that
       different bandwidth can be assigned for each component thus
@@ -573,7 +573,7 @@
         brightness of the image. It is sometimes called ‘Luminance’ but by
         convention, the term ‘Luma’ is to be used in video technology and
         ‘Luminance’ in general color science. Luminance is the weighted sum of
-        the <span class="caps">RGB</span> components of image whereas Luma
+        the RGB components of image whereas Luma
         considers the gamma-compressed components- R’G’B’. If Luminance is
         represented as Y, Luma is represented as Y’, read as Y prime, where the
         prime (‘) symbol stands for gamma-compression. The weighted sum is
@@ -584,7 +584,7 @@
       <p>
         <b>Chroma</b>, or sometimes called chrominance, is the signal that
         carries the color information of the image. It is abbreviated as ‘C’
-        whereas popularly represented as <span class="caps">UV</span>, since it
+        whereas popularly represented as UV, since it
         is composed of two color-difference components, U and V.
       </p>
       <p>
@@ -592,16 +592,16 @@
         V = R’ – Y’ (Gamma-compressed Red – Luma)
       </p>
       <p>
-        The Y’<span class="caps">UV</span> or
-        <span class="caps">YUV</span> color space was used for analog color
+        The Y’UV or
+        YUV color space was used for analog color
         television systems. For modern digital imaging and video broadcasting
-        the <b><span class="caps">YC</span><sub>b</sub>C<sub>r</sub></b> family
+        the <b>YC<sub>b</sub>C<sub>r</sub></b> family
         of color spaces are used. C<sub>b</sub> stands for blue chrominance and
         C<sub>r</sub> stands for red chrominance. <span class="caps">YC</span
         ><sub>b</sub>C<sub>r</sub> color space is not an absolute or basic color
-        space but is an encoding of the <span class="caps">RGB</span> color
-        space. Also, like <span class="caps">YUV</span> should not be confused
-        with <span class="caps">YC</span><sub>b</sub>C<sub>r</sub> , C<sub
+        space but is an encoding of the RGB color
+        space. Also, like YUV should not be confused
+        with YC<sub>b</sub>C<sub>r</sub> , C<sub
           >b</sub
         >
         does not correspond to U and C<sub>b</sub> does not correspond
@@ -648,85 +648,85 @@
       <p>
         Since pictures and videos are the basic types of multi-media, we now
         look into popular<br />
-        encoding formats of each kind, <span class="caps">JPEG</span> and
-        <span class="caps">MPEG</span>.
+        encoding formats of each kind, JPEG and
+        MPEG.
       </p>
       <hr />
       <div name="JPEG" data-unique="JPEG"></div>
-      <h1><span class="caps">JPEG</span></h1>
+      <h1>JPEG</h1>
       <div name="Introduction" data-unique="Introduction"></div>
       <h2>Introduction</h2>
       <p>
-        <span class="caps">JPEG</span>, pronounced ‘Jay-Peg’, stands for ‘Joint
-        Photographers Expert Group’. <span class="caps">JPEG</span> is also used
+        JPEG, pronounced ‘Jay-Peg’, stands for ‘Joint
+        Photographers Expert Group’. JPEG is also used
         to refer to the family of standards this group has created for coding
-        and compression of still images. <span class="caps">JPEG</span> standard
+        and compression of still images. JPEG standard
         is the most widespread standard for representation of still images.
         Images can be represented in other different formats like Bitmap (<span
           class="caps"
           >BMP</span
-        >), Tagged Image File Format (<span class="caps">TIFF</span>), Portable
-        Network Graphics (<span class="caps">PNG</span>), Graphics Interchange
-        Format (<span class="caps">GIF</span>), et cetera.
-        <span class="caps">TIFF</span> is mostly used with Optical Character
-        Recognition, and <span class="caps">GIF</span> is popular with animation
-        (not still images). Lossless <span class="caps">PNG</span> files are
-        preferred for editing images whereas <span class="caps">JPEG</span> is
+        >), Tagged Image File Format (TIFF), Portable
+        Network Graphics (PNG), Graphics Interchange
+        Format (GIF), et cetera.
+        TIFF is mostly used with Optical Character
+        Recognition, and GIF is popular with animation
+        (not still images). Lossless PNG files are
+        preferred for editing images whereas JPEG is
         usually preferred for distribution because of its great compression
         abilities which makes it more portable and yet with considerable quality
         despite being lossy.
       </p>
       <p>
-        <span class="caps">JPEG</span> is the most widely used and a very
+        JPEG is the most widely used and a very
         flexible digital photograph compression standard. It is the best example
         of continuous tone image compression technique. Continuous tone is the
         term used for images in which each color at any point is independent
         color or single tone from its surrounding points and the quality of the
         image depends on how many points are there in given size of image.
-        <span class="caps">JPEG</span> is lossy image compression method where
+        JPEG is lossy image compression method where
         the size of image and its quality is inversely proportional.
-        <span class="caps">JPEG</span> compression technique can withstand
+        JPEG compression technique can withstand
         compression ratio of 10:1 without compromising with quality noticeably.
         There is an alternative standard for image compression which is not used
         widely and not compatible across variety of devices.
       </p>
       <p>
-        <span class="caps">JPEG</span>, technically, is a compression method
+        JPEG, technically, is a compression method
         whereas the file format is defined to be
-        <span class="caps">JFIF</span> (<span class="caps">JPEG</span> File
+        JFIF (JPEG File
         Interchange Format). In general usage,
-        <span class="caps">JFIF</span> files are called ‘<span class="caps"
+        JFIF files are called ‘<span class="caps"
           >JPEG</span
         >
         images’ and are represented with file extensions – .jpeg, .jpg, .jfif,
-        .jfi. The <span class="caps">MIME</span> type for
-        <span class="caps">JFIF</span> file format as specified in
-        <span class="caps">RFC</span> 2046 in 1996 is ‘image/jpeg’. A
-        <span class="caps">JPEG</span> file has the bytes ‘<span class="caps"
+        .jfi. The MIME type for
+        JFIF file format as specified in
+        RFC 2046 in 1996 is ‘image/jpeg’. A
+        JPEG file has the bytes ‘<span class="caps"
           >FFD8</span
-        >′ in its beginning and ‘<span class="caps">FF</span> D9′ at its end.
-        ‘4A 46 49 46′, which is the <span class="caps">ASCII</span> code for the
-        string ‘<span class="caps">JFIF</span>’ is used as a null terminated
-        string in <span class="caps">JPEG</span>/<span class="caps">JFIF</span
+        >′ in its beginning and ‘FF D9′ at its end.
+        ‘4A 46 49 46′, which is the ASCII code for the
+        string ‘JFIF’ is used as a null terminated
+        string in JPEG/<span class="caps">JFIF</span
         > files.
       </p>
       <div
         name="JPEGStandardizationBody"
         data-unique="JPEGStandardizationBody"
       ></div>
-      <h2><span class="caps">JPEG</span> Standardization Body</h2>
+      <h2>JPEG Standardization Body</h2>
       <p>
         Joint Photographers Expert Group is a joint committee of the
-        standardization bodies <span class="caps">ISO</span>/<span class="caps"
+        standardization bodies ISO/<span class="caps"
           >IEC</span
         >
-        <span class="caps">JTC</span> 1 and <span class="caps">ITU</span>-T
+        JTC 1 and ITU-T
         (International Telecommunications Union).
-        <span class="caps">ISO</span>/<span class="caps">IEC</span>
-        <span class="caps">JTC</span> 1 in turn is the joint committee of
-        <span class="caps">ISO</span> (International Organization for
-        Standardization) and <span class="caps">IEC</span> (International
-        Electrotechnical Commission). In fact, <span class="caps">JPEG</span> is
+        ISO/IEC
+        JTC 1 in turn is the joint committee of
+        ISO (International Organization for
+        Standardization) and IEC (International
+        Electrotechnical Commission). In fact, JPEG is
         just a nickname to this joint group. The official homepage of the group
         is
         <a
@@ -735,47 +735,47 @@
           target="_blank"
           >http://www.jpeg.org</a
         >. The committee meets at least three times a year and has been
-        publishing parts of the <span class="caps">JPEG</span>,
-        <span class="caps">JPEG</span>-<span class="caps">LS</span>,
-        <span class="caps">JPEG</span> 2000, JPSearch and
-        <span class="caps">JPEG</span>
-        <span class="caps">XR</span> standards.
+        publishing parts of the JPEG,
+        JPEG-LS,
+        JPEG 2000, JPSearch and
+        JPEG
+        XR standards.
       </p>
       <div name="HistoryofJPEG" data-unique="HistoryofJPEG"></div>
-      <h2>History of <span class="caps">JPEG</span></h2>
+      <h2>History of JPEG</h2>
       <p>
-        The first <span class="caps">JPEG</span> standard –
-        <span class="caps">JPEG</span> Part 1 was published in 1992, which
+        The first JPEG standard –
+        JPEG Part 1 was published in 1992, which
         explained the requirements and guidelines for digital compression of
-        images. <span class="caps">JPEG</span> Part 2 released on 1994 explained
-        compliance testing and <span class="caps">JPEG</span> Part 3 released on
-        1996 explained the extensions. <span class="caps">JPEG</span> Part 4
+        images. JPEG Part 2 released on 1994 explained
+        compliance testing and JPEG Part 3 released on
+        1996 explained the extensions. JPEG Part 4
         released on 1998 added profiles, index tags, color spaces, markers and
-        other designations to <span class="caps">JPEG</span>.
-        <span class="caps">JPEG</span> Part 5 is under development and in a
+        other designations to JPEG.
+        JPEG Part 5 is under development and in a
         recent press release, the joint group has revealed that
-        <span class="caps">JFIF</span> will be standardized and designated as
-        <span class="caps">JPEG</span> Part 5.
+        JFIF will be standardized and designated as
+        JPEG Part 5.
       </p>
       <p>
-        <span class="caps">JPEG</span>-<span class="caps">LS</span> is the
+        JPEG-LS is the
         standard for lossless or near-losless compression. Part 1 and Part 2 of
         this standard were released in 1998 and 2002, which specified the
         baseline and the extensions of the standard, respectively. The group has
-        also published <span class="caps">MRC</span> (Mixed Raster Content) in
+        also published MRC (Mixed Raster Content) in
         1999 which is used for image segmentation. Six parts of JPSearch
         standard has been released starting from 2007, of which Part 2, 5 and 6
-        still being under development. <span class="caps">JPEG</span>
-        <span class="caps">XR</span> standard has five parts published, Part 1
+        still being under development. JPEG
+        XR standard has five parts published, Part 1
         surprisingly being the latest one to be revised. Also, the group is
-        developing <span class="caps">AIC</span> (Advanced Image Coding) with
-        major involvement from <span class="caps">ISO</span>/<span class="caps"
+        developing AIC (Advanced Image Coding) with
+        major involvement from ISO/<span class="caps"
           >IEC</span
         >.
       </p>
       <p>
-        <span class="quo">‘</span><span class="caps">JPEG</span> 2000′, not to
-        be confused with the <span class="caps">JPEG</span> standard, is another
+        <span class="quo">‘</span>JPEG 2000′, not to
+        be confused with the JPEG standard, is another
         image compression standard the group has been publishing since 2000 and
         its Part 14 is currently under development.
       </p>
@@ -783,7 +783,7 @@
         name="CompressioninJPEGStandard"
         data-unique="CompressioninJPEGStandard"
       ></div>
-      <h2>Compression in <span class="caps">JPEG</span> Standard</h2>
+      <h2>Compression in JPEG Standard</h2>
       <div
         name="PsychovisualCompression"
         data-unique="PsychovisualCompression"
@@ -798,7 +798,7 @@
         compression without real significant notice.
       </p>
       <p>
-        <span class="caps">JPEG</span> makes use of
+        JPEG makes use of
         <a
           href="http://web.archive.org/web/20170930220816/http://motorscript.com/mpeg-jpeg-compression/#Chromasubsampling"
           title="Chroma Subsampling"
@@ -806,7 +806,7 @@
         >
         as a psychovisual compression technique. This technique exploits the
         fact that human eye is far less sensitive to the variation in hue than
-        that in brightness. <span class="caps">JPEG</span> utilizes the 4:2:0
+        that in brightness. JPEG utilizes the 4:2:0
         and 4:1:1 subsample ratio, 4:2:0 being the usual one.
       </p>
       <div
@@ -829,76 +829,76 @@
         />
         <b
           >Figure 2.1 : Transformation of 8 x 8 picture matrix to
-          <span class="caps">DCT</span> coefficients</b
+          DCT coefficients</b
         >
       </center>
       The above example shows transformation of 8 x 8 matrix. The transformed
-      matrix is known as matrix of <span class="caps">DCT</span> coefficients.
-      <span class="caps">DCT</span> coefficients are of two kinds –
-      <span class="caps">DC</span> (Direct Current) coefficients and
-      <span class="caps">AC</span> (Alternate Current) coefficients.
-      <span class="caps">DC</span> coefficient is the one which has zero
+      matrix is known as matrix of DCT coefficients.
+      DCT coefficients are of two kinds –
+      DC (Direct Current) coefficients and
+      AC (Alternate Current) coefficients.
+      DC coefficient is the one which has zero
       frequency across both the horizontal and vertical dimension. A 8 x 8
-      matrix of <span class="caps">DCT</span> coefficients has 64 elements, one
-      of them is <span class="caps">DC</span> coefficient and the rest 63 are
-      <span class="caps">AC</span> coefficients. In the above example, 239 (
+      matrix of DCT coefficients has 64 elements, one
+      of them is DC coefficient and the rest 63 are
+      AC coefficients. In the above example, 239 (
       element from first row and first column of the matrix of
-      <span class="caps">DCT</span> coefficients) is the
-      <span class="caps">DC</span> coefficient. The rest of the elements in the
-      matrix are <span class="caps">AC</span> coefficients.
+      DCT coefficients) is the
+      DC coefficient. The rest of the elements in the
+      matrix are AC coefficients.
       <p></p>
       <p>
         Wavelet Transformation may also be employed as a substitute to
-        <span class="caps">DCT</span>, although it is more widely used in the
-        <span class="caps">JPEG</span> 2000 standard.
-        <span class="caps">DCT</span> is always lossless whereas wavelet may be
+        DCT, although it is more widely used in the
+        JPEG 2000 standard.
+        DCT is always lossless whereas wavelet may be
         lossy. Quantization is performed over the retrieved transformation
         coefficients to convert higher frequency coefficients into zero. Some
         insignificant amount of information is lost during this process. The
         quantized matrix then entropy coded. The
-        <span class="caps">DC</span> component of the matrix is encoded using
-        <span class="caps">DPCM</span> (Differential Pulse-Code Modulation)
-        which is a derivation of the <span class="caps">PCM</span> (Pulse Code
-        Modulation) technique. <span class="caps">DPCM</span> uses the
+        DC component of the matrix is encoded using
+        DPCM (Differential Pulse-Code Modulation)
+        which is a derivation of the PCM (Pulse Code
+        Modulation) technique. DPCM uses the
         differential value among the sample nodes for coding. Whereas for the
-        <span class="caps">AC</span> coefficients, zigzag scanning is done to
+        AC coefficients, zigzag scanning is done to
         align zeroes on one corner. Since zeroes are accumulated at the end, End
-        of Block (<span class="caps">EOB</span>) marker can be used to replace
+        of Block (EOB) marker can be used to replace
         the final run of zeroes, which further reduces the bit-size. Run length
-        Encoding (<span class="caps">RLE</span>) is applied to reduce the
+        Encoding (RLE) is applied to reduce the
         redundancy. Then, Huffman Coding or Arithmetic coding is to be done to
         get smaller array of data. Although
-        <span class="caps">JPEG</span> standard recommends any of these two
-        Variable-Length Coding (<span class="caps">VLC</span>) to be used,
+        JPEG standard recommends any of these two
+        Variable-Length Coding (VLC) to be used,
         Huffman Coding is preferred for its better compression.
-        <span class="caps">VLC</span> is the last step during encoding and first
-        step during decoding of <span class="caps">JPEG</span> images.
+        VLC is the last step during encoding and first
+        step during decoding of JPEG images.
       </p>
       <div name="DecodingofJPEG" data-unique="DecodingofJPEG"></div>
-      <h3>Decoding of <span class="caps">JPEG</span></h3>
+      <h3>Decoding of JPEG</h3>
       <p>
-        Decoding of <span class="caps">JPEG</span> file is the inverse process
+        Decoding of JPEG file is the inverse process
         of its encoding. The decoding process starts with entropy decoding.
         Variable-Length decoding is done. Huffman Code Book is used for
         identifying the symbols for which the codes are used. Inverse
-        quantization and then Inverse <span class="caps">DCT</span> (which is
-        <span class="caps">DCT</span>-<span class="caps">III</span>) further
+        quantization and then Inverse DCT (which is
+        DCT-III) further
         decodes the image file. This gives us a very very close match of the raw
         image that was fed to the encoder. The decoding process requires
         information about how the encoding or the compression has been done.
         This information is available within the
-        <span class="caps">JPEG</span> file as
-        <span class="caps">CH</span> (Compression History).
+        JPEG file as
+        CH (Compression History).
       </p>
       <div name="JPEGCompressionModes" data-unique="JPEGCompressionModes"></div>
-      <h2><span class="caps">JPEG</span> Compression Modes</h2>
+      <h2>JPEG Compression Modes</h2>
       <p>
-        There are four modes of <span class="caps">JPEG</span> compression:
+        There are four modes of JPEG compression:
       </p>
       <div name="LosslessJPEG" data-unique="LosslessJPEG"></div>
-      <h3>Lossless <span class="caps">JPEG</span></h3>
+      <h3>Lossless JPEG</h3>
       <p>
-        Lossless <span class="caps">JPEG</span> compression mode uses only
+        Lossless JPEG compression mode uses only
         predictive technique. No information is discarded if it isn’t redundant.
         Entropy coding is employed for this no quantization is done. Eight kinds
         of prediction schemes are used.
@@ -907,30 +907,30 @@
         name="BaselineorSequentialJPEG"
         data-unique="BaselineorSequentialJPEG"
       ></div>
-      <h3>Baseline or Sequential <span class="caps">JPEG</span></h3>
+      <h3>Baseline or Sequential JPEG</h3>
       <p>
         This is the most common mode of
-        <span class="caps">JPEG</span> compression. It employs all the lossy and
+        JPEG compression. It employs all the lossy and
         lossless compression algorithms for psychovisual compression as well as
         spatial prediction. It involves chroma subsampling,
-        <span class="caps">DCT</span>, quantization and entropy encoding.
+        DCT, quantization and entropy encoding.
       </p>
       <div name="ProgressiveJPEG" data-unique="ProgressiveJPEG"></div>
-      <h3>Progressive <span class="caps">JPEG</span></h3>
+      <h3>Progressive JPEG</h3>
       <p>
-        Progressive <span class="caps">JPEG</span> is a lossy mode and is very
-        much similar to the baseline <span class="caps">JPEG</span> except that
+        Progressive JPEG is a lossy mode and is very
+        much similar to the baseline JPEG except that
         multiple scans are done for coding. It is of two kinds – spectra
         selection and successive approximation. Some applications use
-        image/pjpeg <span class="caps">MIME</span> type for images compressed
+        image/pjpeg MIME type for images compressed
         with this mode. It is suitable for download in slower internet
         connection where portions of the images can be
         gradually downloaded.
       </p>
       <div name="HierarchialJPEG" data-unique="HierarchialJPEG"></div>
-      <h3>Hierarchial <span class="caps">JPEG</span></h3>
+      <h3>Hierarchial JPEG</h3>
       <p>
-        This is a lossless mode based on <span class="caps">DCT</span>. Multiple
+        This is a lossless mode based on DCT. Multiple
         frames of differential and non-differential kinds are used. This mode
         provides multiple resolutions and the images compressed with this mode
         take more space.
@@ -939,28 +939,28 @@
         name="ApplicationsofJPEGformat"
         data-unique="ApplicationsofJPEGformat"
       ></div>
-      <h2>Applications of <span class="caps">JPEG</span> format</h2>
+      <h2>Applications of JPEG format</h2>
       <p>
         Digital photography is primarily used for sharing information and
-        storage. <span class="caps">JPEG</span> images are widely used for
+        storage. JPEG images are widely used for
         sharing images in internet. Besides just photographs, thumbnails for
         pages, videos, and other different contents are encoded as
-        <span class="caps">JPEG</span>. <span class="caps">JPEG</span> is
+        JPEG. JPEG is
         suitable for all kinds of devices – powerful computers as well as mobile
         devices of low end. It is also appropriate for sharing in all kinds of
         connections. The capability of level wise compression with minimum loss
-        in the quality of <span class="caps">JPEG</span> compression standard
-        makes it very popular and applicable. <span class="caps">JPEG</span> is
+        in the quality of JPEG compression standard
+        makes it very popular and applicable. JPEG is
         preferred as widely used image compression standard because it is
         capable of storing 24 bit per pixel color data instead of 8 bit per
         pixel color data which were used before.
       </p>
       <p>
-        <span class="caps">JPEG</span> is the format used for saving images in
+        JPEG is the format used for saving images in
         digital cameras, storing them, as images in web-pages and everywhere
-        else. The image in <span class="caps">ID3</span> tag of
-        <span class="caps">MP3</span> files for album covers and artist pictures
-        are also encoded as <span class="caps">JPEG</span> images.
+        else. The image in ID3 tag of
+        MP3 files for album covers and artist pictures
+        are also encoded as JPEG images.
       </p>
       <p>
         Another use of digital photographs is for scientific research and
@@ -971,7 +971,7 @@
         the quality has to be very good. They can zoom in and magnify the minute
         details which would have been impossible to detect by the normal human
         eye. Such super high quality of images is supported by
-        <span class="caps">JPEG</span>.
+        JPEG.
       </p>
       <p>
         Capturing the personal moments in the form of still photographs is very
@@ -979,130 +979,130 @@
         of what you are doing now to your important friends and families to get
         connected with each other and remember the moments of personal, cultural
         and social events is very important as well.
-        <span class="caps">JPEG</span> is the best choice for this purpose.
+        JPEG is the best choice for this purpose.
       </p>
       <p>
         Digital imagery are also used for surveillance and better representation
         of raw data in the form of information. Maps make our day to day life
         easier. These are only the few examples of implementation of Digital
-        Photography and <span class="caps">JPEG</span> compression standard to
+        Photography and JPEG compression standard to
         be specific.
       </p>
       <div name="JPEG’sLimitations" data-unique="JPEG’sLimitations"></div>
-      <h2><span class="caps">JPEG</span>’s Limitations</h2>
+      <h2>JPEG’s Limitations</h2>
       <p>
-        <span class="caps">JPEG</span> has some downsides too. It is a lossy
+        JPEG has some downsides too. It is a lossy
         compression standard. It may not be appropriate in cases where the
         minute details of the image and high quality precision matters more than
         the storage size and transmission bandwidth.
-        <span class="caps">JPEG</span> can easily handle compression ration of
+        JPEG can easily handle compression ration of
         10:1 without drastically degrading the quality but this is also
-        disadvantage of the <span class="caps">JPEG</span> as it takes longer
+        disadvantage of the JPEG as it takes longer
         time to decode or decompress. There always has to be a compromise
         between time and space. There is already a new and improved standards of
-        <span class="caps">JPEG</span> family called
-        <span class="caps">JPEG2000</span> but the transition to this new format
+        JPEG family called
+        JPEG2000 but the transition to this new format
         is becoming very difficult as very low number of device so only very few
         improvements have been made in past two decades and there is no sign of
         that transition happening very soon.
       </p>
       <p>
-        <span class="caps">JPEG</span> is superior when we need rich colored and
+        JPEG is superior when we need rich colored and
         realistic photograph since it supports 24 bit per pixels but when the
         quantity of colors of the photograph is lower, it creates overhead and
         cannot compress as good as other image compression standard like GIFs.
-        Another limitation of <span class="caps">JPEG</span> file format is that
+        Another limitation of JPEG file format is that
         it cannot handle transparency and very sharp edges.
       </p>
       <div
         name="FutureTechnologiesofJPEG"
         data-unique="FutureTechnologiesofJPEG"
       ></div>
-      <h2>Future Technologies of <span class="caps">JPEG</span></h2>
+      <h2>Future Technologies of JPEG</h2>
       <p>
-        Joint Photographic Expert Group (<span class="caps">JPEG</span>) in 1992
+        Joint Photographic Expert Group (JPEG) in 1992
         introduced a very popular image compression algorithm and standard
-        called <span class="caps">JPEG</span>. It is true that
-        <span class="caps">JPEG</span> has been one of the most reliable and
+        called JPEG. It is true that
+        JPEG has been one of the most reliable and
         easy to use photo standard and thus it is the most popular also but very
         little improvements have been made by the group since last two decades.
         Technology needs constant revisions and improvements but
-        <span class="caps">JPEG</span> committee instead of improving the
+        JPEG committee instead of improving the
         existing standard introduced a new photo compression and coding
-        algorithm that is meant to replace <span class="caps">JPEG</span>. This
-        standard is called <span class="caps">JPEG2000</span>, which was
+        algorithm that is meant to replace JPEG. This
+        standard is called JPEG2000, which was
         introduced initially in the year 2000.
-        <span class="caps">JPEG2000</span> itself is based on wavelet method and
+        JPEG2000 itself is based on wavelet method and
         there are two standard file format ‘.jp2′ and ‘.jpx’ . Although its been
-        a decade since <span class="caps">JPEG2000</span> was first introduced
+        a decade since JPEG2000 was first introduced
         people have not accepted the file format. It is also thought that
-        <span class="caps">JPEG2000</span> is only a modest improvement to
-        existing <span class="caps">JPEG</span> compression standard so until
+        JPEG2000 is only a modest improvement to
+        existing JPEG compression standard so until
         there is something very revolutionary there is no need to totally shift
         to new technology.
       </p>
       <p>
-        Now <span class="caps">JPEG2000</span> is the improved standard of photo
+        Now JPEG2000 is the improved standard of photo
         compression from Joint Photographic Expert Group committee itself but
-        there are lots of other versions of <span class="caps">JPEG</span> that
+        there are lots of other versions of JPEG that
         have been standardized and are in the development process. Examples of
-        such is <span class="caps">JPEG</span>
-        <span class="caps">XR</span> where <span class="caps">XR</span> stands
-        for eXtended Range and <span class="caps">JPEG</span> Mini.
-        <span class="caps">JPEG</span> <span class="caps">XR</span> is also
+        such is JPEG
+        XR where XR stands
+        for eXtended Range and JPEG Mini.
+        JPEG XR is also
         compression standard for still photographs and digital graphics which is
         based on technology which is developed by Microsoft under
-        <span class="caps">HD</span> Photo standard. Although
-        <span class="caps">JPEG</span> <span class="caps">XR</span> is a
+        HD Photo standard. Although
+        JPEG XR is a
         standard that improved the deficits of
-        <span class="caps">JPEG</span> but then <span class="caps">JPEG</span>
-        <span class="caps">XR</span> is not a open standard and patented by
+        JPEG but then JPEG
+        XR is not a open standard and patented by
         Microsoft and so there are very few vendors who support this standard
         like Microsoft itself and Adobe. There are bunch of other so called
-        improvements to <span class="caps">JPEG</span> that are either waiting
+        improvements to JPEG that are either waiting
         to be standardized internationally or adopted by peoples. The
-        <span class="caps">JPEG</span> mini which is also developed by
+        JPEG mini which is also developed by
         independent Israeli group is compatible with existing
-        <span class="caps">JPEG</span> and compresses the images 5-10 times more
+        JPEG and compresses the images 5-10 times more
         without losing the original quality. It can be said that this is in very
         infant stage and still need some improvements.
       </p>
       <div name="MPEG" data-unique="MPEG"></div>
-      <h1><span class="caps">MPEG</span></h1>
+      <h1>MPEG</h1>
       <div name="Introduction39" data-unique="Introduction39"></div>
       <h2>Introduction</h2>
       <p>
-        <span class="caps">MPEG</span>, pronounced ‘M-Peg’, stands for ‘Moving
-        Picture Experts Group’. Like <span class="caps">JPEG</span>,
-        <span class="caps">MPEG</span> can be used to refer to the group itself
+        MPEG, pronounced ‘M-Peg’, stands for ‘Moving
+        Picture Experts Group’. Like JPEG,
+        MPEG can be used to refer to the group itself
         or the standards the group has created for coding audio-visual data.
         There are various digital video encoding formats or codecs, among which
-        some popular ones are <span class="caps">3GPP</span> (popular on mobile
-        phones), <span class="caps">AVI</span> (Microsoft’s Audio Video
-        container codec derived from <span class="caps">RIFF</span>),
-        <span class="caps">FLV</span> (Flash Video, popular on web pages,
-        utilizes Adobe Flash Technology), <span class="caps">MOV</span> (Apple’s
+        some popular ones are 3GPP (popular on mobile
+        phones), AVI (Microsoft’s Audio Video
+        container codec derived from RIFF),
+        FLV (Flash Video, popular on web pages,
+        utilizes Adobe Flash Technology), MOV (Apple’s
         QuickTime multimedia format), etc. While these formats have their own
         special capabilities and abundance in particular platforms, codecs from
-        the <span class="caps">MPEG</span> family are the most widespread and
+        the MPEG family are the most widespread and
         accepted ones. The official homepage of
-        <span class="caps">MPEG</span> is http://mpeg.chiariglione.org/ whereas
+        MPEG is http://mpeg.chiariglione.org/ whereas
         resources and references are available on http://www.mpeg.org.
       </p>
       <p>
-        <span class="caps">MPEG</span> files are generally represented with the
-        extension ‘.mpg’. Its <span class="caps">MIME</span> type
+        MPEG files are generally represented with the
+        extension ‘.mpg’. Its MIME type
         is ‘video/mpeg’.
       </p>
       <div name="HistoryofMPEG" data-unique="HistoryofMPEG"></div>
-      <h2>History of <span class="caps">MPEG</span></h2>
+      <h2>History of MPEG</h2>
       <p>
         With an objective to provide better quality videos with small file
-        sizes, <span class="caps">ISO</span>, <span class="caps">IEC</span> ,
-        <span class="caps">SC2</span> and few other organizations initiated the
+        sizes, ISO, IEC ,
+        SC2 and few other organizations initiated the
         movement in January 1988. The following table gives an overview of the
-        early phases and the <span class="caps">MPEG</span>-1 and
-        <span class="caps">MPEG</span>-2 development.
+        early phases and the MPEG-1 and
+        MPEG-2 development.
       </p>
       <table>
         <tbody>
@@ -1124,13 +1124,13 @@
             <td>18-22 July 1988</td>
             <td>Politecnico di Torino, Italy</td>
             <td>
-              <span class="caps">IVC</span> (Internet Video Coding) and
-              <span class="caps">CDVS</span> was proposed
+              IVC (Internet Video Coding) and
+              CDVS was proposed
             </td>
           </tr>
           <tr>
             <td>September 1988</td>
-            <td>London, <span class="caps">UK</span></td>
+            <td>London, UK</td>
             <td>Goals and objectives were hammered.</td>
           </tr>
           <tr>
@@ -1143,7 +1143,7 @@
           </tr>
           <tr>
             <td>February 1989</td>
-            <td>Livingston, New Jersey, <span class="caps">USA</span></td>
+            <td>Livingston, New Jersey, USA</td>
             <td>Techniques for matrix testing were specified</td>
           </tr>
           <tr>
@@ -1161,7 +1161,7 @@
             <td>Stockholm, Sweden</td>
             <td>
               Finalization of video package.<br />
-              Initiation of activities on <span class="caps">MPEG</span> system.
+              Initiation of activities on MPEG system.
             </td>
           </tr>
           <tr>
@@ -1181,68 +1181,68 @@
           </tr>
           <tr>
             <td>March 1990</td>
-            <td>Tampa, Florida, <span class="caps">USA</span></td>
+            <td>Tampa, Florida, USA</td>
             <td>
               Results from core experiments were analyzed.<br />
-              <span class="caps">JPEG</span> vs. H.261 comparison was run for
+              JPEG vs. H.261 comparison was run for
               picture coding.<br />
               Syntax in pseudocode was defined.<br />
-              <span class="caps">SM1</span> (First Simulation Model) for video
+              SM1 (First Simulation Model) for video
               was bring forth.
             </td>
           </tr>
           <tr>
             <td>April 1990</td>
-            <td>Washington, <span class="caps">USA</span></td>
+            <td>Washington, USA</td>
             <td>
-              Working Group – <span class="caps">WG8</span> was restructured.
+              Working Group – WG8 was restructured.
             </td>
           </tr>
           <tr>
             <td>May 1990</td>
             <td>Torino, Italy</td>
             <td>
-              <span class="caps">MPEG</span>-2 with high definition coding was
+              MPEG-2 with high definition coding was
               proposed.
             </td>
           </tr>
           <tr>
             <td>September 1990</td>
-            <td>Santa Clara, California, <span class="caps">USA</span></td>
+            <td>Santa Clara, California, USA</td>
             <td>
               Macroblock level was selected for motion compensation.<br />
-              <span class="caps">WD</span> (Working Draft) was created.
+              WD (Working Draft) was created.
             </td>
           </tr>
           <tr>
             <td>December 1990</td>
             <td>Berlin, Germany</td>
             <td>
-              <span class="caps">MPEG</span>-1 standard (<span class="caps"
+              MPEG-1 standard (<span class="caps"
                 >WD</span
               >
               11172) was edited.<br />
-              Requirements for <span class="caps">MPEG</span>-2 were specified.
+              Requirements for MPEG-2 were specified.
             </td>
           </tr>
           <tr>
             <td>March 1991</td>
-            <td>San Jose, California, <span class="caps">USA</span></td>
+            <td>San Jose, California, USA</td>
             <td>Meetings canceled due to Gulf War crisis.</td>
           </tr>
           <tr>
             <td>May 1991</td>
             <td>Paris france</td>
             <td>
-              <span class="caps">WD</span> 11172 was edited and cleaned up.
+              WD 11172 was edited and cleaned up.
             </td>
           </tr>
           <tr>
             <td>August 1991</td>
-            <td>Santa Clara, California, <span class="caps">USA</span></td>
+            <td>Santa Clara, California, USA</td>
             <td>
-              <span class="caps">MPEG</span>-1 <span class="caps">WD</span> was
-              prepared to promote to <span class="caps">CD</span> (Committee
+              MPEG-1 WD was
+              prepared to promote to CD (Committee
               Draft).
             </td>
           </tr>
@@ -1250,16 +1250,16 @@
             <td>November 1991</td>
             <td>Kurihama, Japan</td>
             <td>
-              <span class="caps">MPEG</span>-1 <span class="caps">WD</span> was
-              accepted as <span class="caps">CD</span>.
+              MPEG-1 WD was
+              accepted as CD.
             </td>
           </tr>
           <tr>
             <td>January 1992</td>
             <td>Haifa, Israel</td>
             <td>
-              <span class="caps">WG11</span> created
-              <span class="caps">DIS</span> (Draft International Standard)
+              WG11 created
+              DIS (Draft International Standard)
               11172.
             </td>
           </tr>
@@ -1267,33 +1267,33 @@
             <td>July 1992</td>
             <td>Angra dos Reis, Brazil</td>
             <td>
-              <span class="caps">TM1</span> (Test Model 1) for
-              <span class="caps">MPEG</span>-2 was made available.
+              TM1 (Test Model 1) for
+              MPEG-2 was made available.
             </td>
           </tr>
           <tr>
             <td>September 1992</td>
-            <td>Tarrytown, New York, <span class="caps">USA</span></td>
+            <td>Tarrytown, New York, USA</td>
             <td>
               Discussions with cable companies for likely application of
-              <span class="caps">MPEG</span>-2 for cable television.
+              MPEG-2 for cable television.
             </td>
           </tr>
           <tr>
             <td>November 1992</td>
-            <td>London, <span class="caps">UK</span></td>
+            <td>London, UK</td>
             <td>
-              First <span class="caps">WD</span> for
-              <span class="caps">MPEG</span>-2 was created.<br />
-              It was realized that <span class="caps">MPEG</span>-2 could
-              fulfill what <span class="caps">MPEG</span>-3 was expected to.
+              First WD for
+              MPEG-2 was created.<br />
+              It was realized that MPEG-2 could
+              fulfill what MPEG-3 was expected to.
             </td>
           </tr>
           <tr>
             <td>January 1993</td>
             <td>Rome, Italy</td>
             <td>
-              Technical details for <span class="caps">MPEG</span>-2 were worked
+              Technical details for MPEG-2 were worked
               out.
             </td>
           </tr>
@@ -1301,16 +1301,16 @@
             <td>April 1993</td>
             <td>Sydney, Australia</td>
             <td>
-              Main profile of <span class="caps">MPEG</span>-2 was frozen.<br />
+              Main profile of MPEG-2 was frozen.<br />
               Macroblock stuffing was discarded.
             </td>
           </tr>
           <tr>
             <td>July 1993</td>
-            <td>New York, <span class="caps">USA</span></td>
+            <td>New York, USA</td>
             <td>
               Started to clean the scalabilty aspects of
-              <span class="caps">WD</span>.
+              WD.
             </td>
           </tr>
           <tr>
@@ -1322,31 +1322,31 @@
             <td>November 1993</td>
             <td>Seoul, Korea</td>
             <td>
-              <span class="caps">MPEG</span>-2
-              <span class="caps">CD</span> 13818 was published.
+              MPEG-2
+              CD 13818 was published.
             </td>
           </tr>
           <tr>
             <td>March 1994</td>
             <td>Paris, France</td>
-            <td><span class="caps">DIS</span> 13818 was prepared.</td>
+            <td>DIS 13818 was prepared.</td>
           </tr>
           <tr>
             <td>July 1994</td>
             <td>Norway</td>
             <td>
-              <span class="caps">MPEG</span>-2 Part 6 (<span class="caps"
+              MPEG-2 Part 6 (<span class="caps"
                 >DSM</span
               >
-              <span class="caps">CC</span>) was published.
+              CC) was published.
             </td>
           </tr>
           <tr>
             <td>November 1994</td>
             <td>Singapore</td>
             <td>
-              <span class="caps">MPEG</span>-1 and
-              <span class="caps">MPEG</span>-2 achieved final approval.
+              MPEG-1 and
+              MPEG-2 achieved final approval.
             </td>
           </tr>
         </tbody>
@@ -1355,106 +1355,106 @@
         name="StandardsoftheMPEGFamily"
         data-unique="StandardsoftheMPEGFamily"
       ></div>
-      <h2>Standards of the <span class="caps">MPEG</span> Family</h2>
+      <h2>Standards of the MPEG Family</h2>
       <div name="MPEG-1" data-unique="MPEG-1"></div>
-      <h3><span class="caps">MPEG</span>-1</h3>
+      <h3>MPEG-1</h3>
       <p>
-        <span class="caps">MPEG</span>-1 was designed for encoding multimedia
-        with videos of <span class="caps">VHS</span> (Video Home System) quality
-        and audio of bit rate up to 1.5 Mbit/s. <span class="caps">MPEG</span>-1
-        standard, specified as <span class="caps">ISO</span>/<span class="caps"
+        MPEG-1 was designed for encoding multimedia
+        with videos of VHS (Video Home System) quality
+        and audio of bit rate up to 1.5 Mbit/s. MPEG-1
+        standard, specified as ISO/<span class="caps"
           >IEC</span
         >
         11172, has 5 parts, viz. Systems, Video, Audio, Compliance testing and
         Software simulation. This standard is highly influenced by the standards
-        <span class="caps">JPEG</span> and H.261 developed by
-        <span class="caps">ITU</span>-T. Resolutions up to 4095×4095 and bitrate
-        up to 100 Mbit/s is supported by <span class="caps">MPEG</span>-1. 4:2:0
+        JPEG and H.261 developed by
+        ITU-T. Resolutions up to 4095×4095 and bitrate
+        up to 100 Mbit/s is supported by MPEG-1. 4:2:0
         color space is only supported. Audio, part 3 of
-        <span class="caps">MPEG</span>-1, defined as
-        <span class="caps">ISO</span>/<span class="caps">IEC</span>-11172-3, is
+        MPEG-1, defined as
+        ISO/IEC-11172-3, is
         the first standard audio compression technology. It only supports two
         channels of audio. It is divided into three layers – Layer I,
-        <span class="caps">II</span> and <span class="caps">III</span>.
+        II and III.
       </p>
       <p>
-        <span class="caps">MPEG</span>-1 Layer <span class="caps">III</span> is
-        commonly known as <span class="caps">MP3</span>.
+        MPEG-1 Layer III is
+        commonly known as MP3.
       </p>
       <p>
-        <span class="caps">MPEG</span>-1 can compress video in 26:1 and audio in
+        MPEG-1 can compress video in 26:1 and audio in
         6:1 ratio without significant notice in<br />
         degradation of quality.
       </p>
       <p>
-        <span class="caps">MPEG</span>-1 had following weaknesses which gave
+        MPEG-1 had following weaknesses which gave
         birth to the next standard:<br />
-        • <span class="caps">MPEG</span>-1 had no standard support for
+        • MPEG-1 had no standard support for
         interlaced video.<br />
         • Audio compression is possible with only two channels.<br />
         • Only ‘4:2:0′ color space is supported.<br />
         • Not compatible with videos of high resolution.
       </p>
       <div name="MPEG-2" data-unique="MPEG-2"></div>
-      <h3><span class="caps">MPEG</span>-2</h3>
+      <h3>MPEG-2</h3>
       <p>
-        <span class="caps">MPEG</span>-2 is is the most popular standard for
+        MPEG-2 is is the most popular standard for
         video compression with huge range of applications. It was extended from
-        <span class="caps">MPEG</span>-1 with lots of improvements and feature
+        MPEG-1 with lots of improvements and feature
         additions. It goes up to Part 11, Part 8 (10-bit video) being dropped.
-        <span class="caps">MPEG</span>-2 Part 3 (<span class="caps">ISO</span
-        >/<span class="caps">IEC</span> 13818-3) which describes Audio is
-        backward compatible with <span class="caps">MPEG</span>-1 Audio whereas
-        Part 7 describing <span class="caps">AAC</span> (Advanced Audio Coding)
-        is not. <span class="caps">MPEG</span>-2 adds Variable quantization and
-        Variable Bit Rate (<span class="caps">VBR</span>) to
-        <span class="caps">MPEG</span>-1 among other features. Since,
-        <span class="caps">MPEG</span>-2 has more complex algorithm for
-        encoding, <span class="caps">MPEG</span>-1 is slightly better for
+        MPEG-2 Part 3 (<span class="caps">ISO</span
+        >/IEC 13818-3) which describes Audio is
+        backward compatible with MPEG-1 Audio whereas
+        Part 7 describing AAC (Advanced Audio Coding)
+        is not. MPEG-2 adds Variable quantization and
+        Variable Bit Rate (VBR) to
+        MPEG-1 among other features. Since,
+        MPEG-2 has more complex algorithm for
+        encoding, MPEG-1 is slightly better for
         compression of videos with low bit rates.
-        <span class="caps">MPEG</span>-2 can produce compression down to the bit
+        MPEG-2 can produce compression down to the bit
         rate of around 3-15 Mbit/s. Any lower bit rate than this may introduce
         noticeable impairments in the video.
       </p>
       <div name="MPEG-3" data-unique="MPEG-3"></div>
-      <h3><span class="caps">MPEG</span>-3</h3>
+      <h3>MPEG-3</h3>
       <p>
-        <span class="caps">MPEG</span>-3 was expected to be the standard for
+        MPEG-3 was expected to be the standard for
         high definition television but it was realized that
-        <span class="caps">MPEG</span>-2 was capable of fulfilling the need with
-        extensions and therefore <span class="caps">MPEG</span>-3 doesn’t exist
+        MPEG-2 was capable of fulfilling the need with
+        extensions and therefore MPEG-3 doesn’t exist
         as a coding standard.
       </p>
       <div name="MPEG-4" data-unique="MPEG-4"></div>
-      <h3><span class="caps">MPEG</span>-4</h3>
+      <h3>MPEG-4</h3>
       <p>
         In early 1995, development of the next standard was initiated so that
         low bit rates could also be supported. This standard was called
-        <span class="caps">MPEG</span>-4 and it reached
-        <span class="caps">CD</span> (Committee Draft) status only in March 1998
+        MPEG-4 and it reached
+        CD (Committee Draft) status only in March 1998
         and the final approval was obtained in the end of the same year. Since
-        then, twenty seven parts of <span class="caps">MPEG</span>-4 standard
+        then, twenty seven parts of MPEG-4 standard
         has been published while Part 28 is under development. However,
-        <span class="caps">MPEG</span>-4 is not limited to videos with low bit
+        MPEG-4 is not limited to videos with low bit
         rates, it is becoming the generic standard for video coding.
       </p>
       <p>
-        <span class="caps">MPEG</span>-4 employs object-based compression
+        MPEG-4 employs object-based compression
         technique which endorses more efficient and scalable compression with
         wide range of bit rates. The object-based interaction also enables
         developers to control each objects of a scene independently and also
         enable the interactivity among the objects.
-        <span class="caps">MPEG</span>-4 Audio or as it was specified as
-        <span class="caps">ISO</span>/<span class="caps">IEC</span> 14496-3
+        MPEG-4 Audio or as it was specified as
+        ISO/IEC 14496-3
         determines the audio coding and composition standards with support for
         very low to high bitrates. Audio components are also objects which have
         natural and synthetic quality.
       </p>
       <p>
-        <span class="caps">MJPEG</span> is not to be confused with
-        <span class="caps">MPEG</span>. <span class="caps">MJPEG</span> nothing
+        MJPEG is not to be confused with
+        MPEG. MJPEG nothing
         but a sequence of image frames that uses
-        <span class="caps">JPEG</span> compression for each frame.
+        JPEG compression for each frame.
       </p>
       <div name="VideoFundamentals" data-unique="VideoFundamentals"></div>
       <h2>Video Fundamentals</h2>
@@ -1483,17 +1483,17 @@
       </center>
       A <b>progressive video</b> or a non-interlaced video has its each pixel
       refreshed starting from left top, one column by another.
-      <span class="caps">NTSC</span> (National Television Systems Committee),
-      <span class="caps">PAL</span> (Phase Alternating Line),
-      <span class="caps">SECAM</span> (Séquentiel couleur à mémoire) are the
+      NTSC (National Television Systems Committee),
+      PAL (Phase Alternating Line),
+      SECAM (Séquentiel couleur à mémoire) are the
       most common analog television color encoding systems.
-      <span class="caps">PAL</span> videos use
-      <span class="caps">YUV</span> color model. Videos of bit-rate 6 Mbit/s is
+      PAL videos use
+      YUV color model. Videos of bit-rate 6 Mbit/s is
       recognized to be best for terrestrial video broadcasting systems
       considering both the compression and quality factors.
       <p></p>
       <p>
-        <b>Video Object (<span class="caps">VO</span>)</b><br />
+        <b>Video Object (VO)</b><br />
         A video object is any arbitrarily shaped object, a rectangular frame or
         the background scene of a video. A video object can be accessed and
         manipulated by the user. A user can browse or seek the video objects
@@ -1501,33 +1501,33 @@
         manipulating it.
       </p>
       <p>
-        <b>Video Object Plane (<span class="caps">VOP</span>)</b><br />
+        <b>Video Object Plane (VOP)</b><br />
         Video Object Plane is the instance of Video Object at a given time. It
         may also be defined as time sample of video object. A
-        <span class="caps">VOP</span> of rectangular shape forms a conventional
+        VOP of rectangular shape forms a conventional
         video frame. A video is made up of such encoded VOPs.
       </p>
       <p>
-        <b>Group of Video Object Planes (<span class="caps">GOV</span>)</b
+        <b>Group of Video Object Planes (GOV)</b
         ><br />
         A collection of video object planes is called Group of Video Object
-        Planes or <span class="caps">GOV</span> in short. GOVs are not mandatory
+        Planes or GOV in short. GOVs are not mandatory
         in videos. Random Access points in video bitstream is facilitated by the
         points provided by GOVs. One of the reasons video objects are grouped
-        into <span class="caps">GOV</span> is that redundancy can not only be
+        into GOV is that redundancy can not only be
         removed from objects but from the whole group.
       </p>
       <p>
-        <b>Video Object Layer (<span class="caps">VOL</span>)</b><br />
+        <b>Video Object Layer (VOL)</b><br />
         A Video Object Layer is the representation of video objects in single or
-        multiple strata. A <span class="caps">VOL</span> with single stratum is
-        in non-scalable form whereas a <span class="caps">VOL</span> with
+        multiple strata. A VOL with single stratum is
+        in non-scalable form whereas a VOL with
         multiple strata is a scalable form.
       </p>
       <div name="Frames" data-unique="Frames"></div>
       <h2>Frames</h2>
       <p>
-        <span class="caps">MPEG</span> identifies frames into three kinds:<br />
+        MPEG identifies frames into three kinds:<br />
         1. I-frames<br />
         2. P-frames<br />
         3. B-frames
@@ -1580,16 +1580,16 @@
         />
         <b>Figure 3.3: An example frame sequence in videos</b>
       </center>
-      <b><span class="caps">GOP</span> (Group of Pictures)</b><br />
+      <b>GOP (Group of Pictures)</b><br />
       A Group of Pictures is a collection of frames. A
-      <span class="caps">GOP</span> (contains at least one I-frame. In an
-      averagely compressed <span class="caps">NTSC</span> video, usually every
+      GOP (contains at least one I-frame. In an
+      averagely compressed NTSC video, usually every
       15 th or so frames are I-frames although the
-      <span class="caps">MPEG</span> standard isn’t strict about this. A
-      <span class="caps">GOP</span> may look like
-      <span class="caps">IBBPBBPBBPBB</span>, where I stands for I-frames, B for
+      MPEG standard isn’t strict about this. A
+      GOP may look like
+      IBBPBBPBBPBB, where I stands for I-frames, B for
       B-frames and P for P-frames. The arrangement of frames determines the
-      <span class="caps">GOP</span> structure which is ultimately one of the
+      GOP structure which is ultimately one of the
       factors for determining the compression ratio.
       <p></p>
       <p>
@@ -1600,7 +1600,7 @@
         same number of frames, open provides a little more compression since
         open GOPs contain one less P-frame and one more B-frame than closed
         GOPs. However open GOPs aren’t applicable to all
-        <span class="caps">MPEG</span> streams like mixed-angle or
+        MPEG streams like mixed-angle or
         multi-angle DVDs.
       </p>
       <p></p>
@@ -1613,7 +1613,7 @@
       <div name="Macroblock" data-unique="Macroblock"></div>
       <h2>Macroblock</h2>
       <p>
-        A macroblock (<span class="caps">MB</span>) is a segment or component of
+        A macroblock (MB) is a segment or component of
         frame. 16×16 blocks of pixels are usually taken as a macroblock where as
         8 by 8 pixels for advanced prediction mode. A still image or video frame
         contains several non-overlapping macroblocks. Macroblocks are the basic
@@ -1630,20 +1630,20 @@
       ></div>
       <h3>Psychovisual Compression</h3>
       <p>
-        Psychovisual compression on <span class="caps">MPEG</span> is done
-        similarly as in <span class="caps">JPEG</span> with
+        Psychovisual compression on MPEG is done
+        similarly as in JPEG with
         Chroma subsampling.
       </p>
       <p>
-        <span class="caps">MPEG</span> usually utilizes the 4:2:0 sub-sample
+        MPEG usually utilizes the 4:2:0 sub-sample
         configuration in most of its implementations like DVDs, etc. Also,
-        <span class="caps">MJPEG</span>’s common implementation includes 4:2:0
-        configuration. <span class="caps">MPEG</span> also utilizes 4:1:1
-        subsample pattern. <span class="caps">NTSC</span> videos in
-        <span class="caps">DVCPRO</span>, <span class="caps">DV</span> and
-        <span class="caps">DVCAM</span> use this pattern. The 4:4:4 subsampling
-        can found in <span class="caps">MPEG</span>-4 Part 2 and
-        <span class="caps">MPEG</span>-4 since it is considered to be a high
+        MJPEG’s common implementation includes 4:2:0
+        configuration. MPEG also utilizes 4:1:1
+        subsample pattern. NTSC videos in
+        DVCPRO, DV and
+        DVCAM use this pattern. The 4:4:4 subsampling
+        can found in MPEG-4 Part 2 and
+        MPEG-4 since it is considered to be a high
         quality sampling scheme.
       </p>
       <div name="SpatialCompression" data-unique="SpatialCompression"></div>
@@ -1672,56 +1672,56 @@
         Cosine Transform which results in a 8×8 matrix of coefficients. This
         transformation is not lossy which means the inverse of cosine
         transformation gives us the original block.
-        <span class="caps">DCT</span>-<span class="caps">II</span>, sometimes
-        also <span class="caps">DCT</span>-I is used for compression of
+        DCT-II, sometimes
+        also DCT-I is used for compression of
         correlated pixels into frequency variations. The two dimensional
-        block-based <span class="caps">DCT</span> of 8×8 matrix is used for
+        block-based DCT of 8×8 matrix is used for
         encoding blocks of video. This encoding standard is defined by
-        <span class="caps">IEEE</span> 1180 to increase accuracy and reduce
+        IEEE 1180 to increase accuracy and reduce
         mismatch errors.
       </p>
       <p>
         Wavelet compression may also be employed in
-        <span class="caps">MPEG</span>-4 technology as a substitute to
-        <span class="caps">DCT</span>. Quantization of the frequency variations
+        MPEG-4 technology as a substitute to
+        DCT. Quantization of the frequency variations
         is performed during the process of which many coefficients, generally
         the coefficients with higher frequency are changed to zero. This
         quantization is a lossy process, which means the inverse transformation
         of the quantized matrix gives a similar matrix but not the original one,
         however, this doesn’t significantly alter the image quality. Non-linear
         quantization of Direct Cosine coefficients is also possible with
-        <span class="caps">MPEG</span>-4. <span class="caps">MPEG</span>-4
-        employs Twin Vector Quantization (<span class="caps">VQF</span>) which
+        MPEG-4. MPEG-4
+        employs Twin Vector Quantization (VQF) which
         considers time domain as one of the dimensions. The matrix of quantized
         matrix is then itself compressed to obtain zeros on one corner of the
         matrix. Zigzagging is performed beginning from the corner opposite to
         where the zeros have been aligned. Zigzagging combines the coefficients
         into a string. The redundant consecutive zeros from the string are
         substituted with run-length codes which is the popular Run length
-        Encoding (<span class="caps">RLE</span>) algorithm. Huffman Coding is
-        then applied as a <span class="caps">VLC</span> to obtain smaller array
+        Encoding (RLE) algorithm. Huffman Coding is
+        then applied as a VLC to obtain smaller array
         of<br /> numbers.
       </p>
       <p>
-        H.264/<span class="caps">MPEG</span>-<span class="caps">AVC</span>
+        H.264/MPEG-AVC
         employs Context-Adaptive Binary Arithmetic Coding (<span class="caps"
           >CABAC</span
         >) and Context-adaptive Variable-length Coding (<span class="caps"
           >CAVLC</span
-        >) for variable-length coding. <span class="caps">CABAC</span> is used
+        >) for variable-length coding. CABAC is used
         whenever higher compression is required and
-        <span class="caps">CAVLC</span> is used in slower playback devices to
+        CAVLC is used in slower playback devices to
         increase the performance since it is a lower efficiency scheme. All
-        H.264 profiles support <span class="caps">CAVLC</span> whereas only
+        H.264 profiles support CAVLC whereas only
         Baseline and Extended profiles do not support
-        <span class="caps">CABAC</span>. So
-        <span class="caps">CAVLC</span> support is seen everywhere in in all
-        kinds of decoders like Blu-ray and <span class="caps">HD</span>
-        <span class="caps">DVD</span> players.
-        <span class="caps">CAVLC</span> is also supposed to be a superior
-        technique than DivX, XviD and other <span class="caps">MPEG</span>-4
-        <span class="caps">ASP</span> codecs. Although
-        <span class="caps">CAVLC</span> may be used for coding transform
+        CABAC. So
+        CAVLC support is seen everywhere in in all
+        kinds of decoders like Blu-ray and HD
+        DVD players.
+        CAVLC is also supposed to be a superior
+        technique than DivX, XviD and other MPEG-4
+        ASP codecs. Although
+        CAVLC may be used for coding transform
         coefficients, Exponential-Golomb Coding is used to code other syntax
         elements in the video stream.
       </p>
@@ -1731,7 +1731,7 @@
       ></div>
       <h4>Decoding/Decompression of I-frames</h4>
       <p>
-        The I-frames in <span class="caps">MPEG</span> video are required to be
+        The I-frames in MPEG video are required to be
         decoded in order to be played by the media player or the video broadcast
         receiver (e.g. television). The decoding process is more or less the
         inverse of the encoding process. The decoding process starts from the
@@ -1740,7 +1740,7 @@
         the matrix after inverse quantization during encoding is not exactly the
         same as the matrix before quantization during the encoding process. The
         inversely quantized matrix is then passed through Inverse Discrete
-        Cosine Transform (<span class="caps">IDCT</span>) to obtain the
+        Cosine Transform (IDCT) to obtain the
         macroblocks. The macroblocks are structured to obtain the I-frame which
         is very much similar to the I-frame where the compression started.
       </p>
@@ -1779,7 +1779,7 @@
         by 16 pixels. The reference frame is
         <strong>searched for best match of the macroblocks</strong> for each
         macroblocks of the frame being compressed. Exhaustive search, 2-D
-        Logarithmic search, or Three-Step Search (<span class="caps">TSS</span>)
+        Logarithmic search, or Three-Step Search (TSS)
         may be used to optimize the search. For most of the macroblocks, an
         exact match is found on the reference frame because two subsequent
         frames have very less change in their blocks. Since some components move
@@ -1796,7 +1796,7 @@
         The difference is computed as coefficient values which is then obtained
         as string called <strong>residual</strong>. This residual value
         undergoes <strong>compression</strong>. The residual value which is in
-        spatial domain is transformed using <span class="caps">DCT</span> of two
+        spatial domain is transformed using DCT of two
         dimensions. The transformation coefficients are then quantized to reduce
         their bit size, most of them quantized to zero. The quantized
         coefficients are passed through entropy coding for further compression.
@@ -1807,16 +1807,16 @@
       <p>
         The above explained method is the most common method of motion
         estimation indifferent video coding standards, also seen on
-        <span class="caps">MPEG</span>. This technique has been given several
-        names such as Block-Matching Algorithm (<span class="caps">BMA</span>)
-        or Block Matching Compensation (<span class="caps">BMC</span>). This
+        MPEG. This technique has been given several
+        names such as Block-Matching Algorithm (BMA)
+        or Block Matching Compensation (BMC). This
         block-based method utilizes algorithms like Mean of Squared Error (<span
           class="caps"
           >MSE</span
-        >), Matching Pel Count (<span class="caps">MPC</span>), Mean of Absolute
-        Difference (<span class="caps">MAD</span>), Sum of Absolute Difference
-        (<span class="caps">SAD</span>), etc. <span class="caps">SAD</span> is
-        used in <span class="caps">MPEG</span> technology to get the variation
+        >), Matching Pel Count (MPC), Mean of Absolute
+        Difference (MAD), Sum of Absolute Difference
+        (SAD), etc. SAD is
+        used in MPEG technology to get the variation
         of macroblock matches using polygons of modified blocks.
       </p>
       <p>
@@ -1824,23 +1824,23 @@
         taken as the basic unit which may increase the compression ratio but
         this eats a lot more computational resources. Several other methods
         exist for motion estimation and compensation like Pel-Recursive
-        Algorithm (<span class="caps">PRA</span>), phase correlations, Bayesian
+        Algorithm (PRA), phase correlations, Bayesian
         estimations, etc. But block-based compensation is believed to be the
         most efficient one.
       </p>
       <p>
-        Older <span class="caps">MPEG</span> standards use fixed block size for
+        Older MPEG standards use fixed block size for
         the motion estimation and compensation process. Newer standards like
-        <span class="caps">MPEG</span>-4 Part 2,
-        <span class="caps">MPEG</span>-4 <span class="caps">AVC</span> use
+        MPEG-4 Part 2,
+        MPEG-4 AVC use
         dynamically selected size of the blocks. This method is known as
         variable block-size motion compensation (<span class="caps">VBSMC</span
         >). This enables the encoder to use larger or smaller block size
         whichever is more efficient. Larger block size can decrease the bits
         required to represent the motion vector whereas smaller block size may
         allow for more precise prediction error.
-        <span class="caps">MPEG</span>-4 even allows wavelet transforms instead
-        of <span class="caps">DCT</span> during the conversion of spatial
+        MPEG-4 even allows wavelet transforms instead
+        of DCT during the conversion of spatial
         variations to<br />
         functional variations.
       </p>
@@ -1856,7 +1856,7 @@
         are applied on the reference frame to obtain the candidate frame which
         can then be displayed. Since the residual value goes compression during
         encoding it has to be decoded using entropy decoding, inverse
-        quantization and <span class="caps">IDCT</span>. This decompressed
+        quantization and IDCT. This decompressed
         coefficient of residual and the motion vector gives the prediction error
         or difference between reference and candidate frame. So, adding this
         difference to the reference frame gives us the required candidate frame
@@ -1864,19 +1864,19 @@
         algorithms used but is of considerably good quality.
       </p>
       <p>
-        <span class="caps">MPEG</span> videos are not suitable for editing
+        MPEG videos are not suitable for editing
         because of the presence of the reference frames since P-frames and
         B-frames depend upon I-frames and other P-frames for being decoded.
         Cutting a frame could break other frames which depend upon it. Formats
         specially created for editing videos keep all frames as independent
         I-frames. The interdependence of frames is also the reason why all
-        <span class="caps">MPEG</span> decoders are forced to have encoders
+        MPEG decoders are forced to have encoders
         built in within themselves.
       </p>
       <div name="CompressionofAudio" data-unique="CompressionofAudio"></div>
       <h3>Compression of Audio</h3>
       <p>
-        Audio in <span class="caps">MPEG</span> is compressed with techniques
+        Audio in MPEG is compressed with techniques
         like sub-band filtering, psychoacoustic model and quantization of
         digital audio. Audio signals are divided into frequency sub-bands using
         convolution filters. There are 32 critical sub-bands available.
@@ -1900,48 +1900,48 @@
         stretching in time.
       </p>
       <p>
-        <span class="caps">MDCT</span> (Modified Discrete Cosine Transform) is a
-        variant of <span class="caps">DCT</span>-<span class="caps">IV</span> in
+        MDCT (Modified Discrete Cosine Transform) is a
+        variant of DCT-IV in
         which the various transforms are overlapped.
-        <span class="caps">MDCT</span> is used in audio compression in the
-        <span class="caps">MPEG</span>-1 Audio Layer 3 and
-        <span class="caps">MPEG</span>-2 Audio Layer 3, i.e.
-        <span class="caps">MP3</span> as well as in
-        <span class="caps">AAC</span> and Vorbis encoding.
+        MDCT is used in audio compression in the
+        MPEG-1 Audio Layer 3 and
+        MPEG-2 Audio Layer 3, i.e.
+        MP3 as well as in
+        AAC and Vorbis encoding.
       </p>
       <div name="VBRandCBR" data-unique="VBRandCBR"></div>
-      <h4><span class="caps">VBR</span> and <span class="caps">CBR</span></h4>
+      <h4>VBR and CBR</h4>
       <p>
-        With <span class="caps">VBR</span> (Variable Bit Rate), higher bit rate
+        With VBR (Variable Bit Rate), higher bit rate
         may be assigned to the segments with higher complexity of audio or video
         file and lower for less complex segments. The bitrate for the whole file
         is represented as the average bitrate. In contrast, in
-        <span class="caps">CBR</span> (Constant Bit Rate), all segments are
-        given the same bit-rate. <span class="caps">VBR</span> provides more
+        CBR (Constant Bit Rate), all segments are
+        given the same bit-rate. VBR provides more
         flexibility, accuracy and quality whereas
-        <span class="caps">CBR</span> provides more compatibility with devices,
+        CBR provides more compatibility with devices,
         software and connections.
       </p>
       <div
         name="ImplementationsofMPEG"
         data-unique="ImplementationsofMPEG"
       ></div>
-      <h2>Implementations of <span class="caps">MPEG</span></h2>
+      <h2>Implementations of MPEG</h2>
       <div name="Codecs" data-unique="Codecs"></div>
       <h3>Codecs</h3>
       <p>
         Most televisions, multimedia players have support for decoding
-        <span class="caps">MPEG</span>. Several codecs are available for
+        MPEG. Several codecs are available for
         different operating systems. A codec (compressor-decompressor) is a
         software or hardware that can encode/compress and/or decode/decompress
         digital stream of data. A software codec may not be a stand-alone
         program but just a library or module. Xvid is an example of codec which
         is the open-source codec that implements the
-        <span class="caps">MPEG</span>-4 standard. FFmpeg is one of the most
+        MPEG-4 standard. FFmpeg is one of the most
         popular projects for producing free audio/video codec libraries for
-        <span class="caps">MPEG</span>. Interestingly, FFmpeg uses this zigzag
+        MPEG. Interestingly, FFmpeg uses this zigzag
         pattern used for entropy encoding of
-        <span class="caps">MPEG</span> videos in their logo.
+        MPEG videos in their logo.
       </p>
       <p></p>
       <center>
@@ -1954,43 +1954,43 @@
       </center>
       <p></p>
       <div name="MP3" data-unique="MP3"></div>
-      <h3><span class="caps">MP3</span></h3>
+      <h3>MP3</h3>
       <p>
-        <span class="caps">MP3</span> is a popular name for
-        <span class="caps">MPEG</span>-1 and <span class="caps">MPEG</span>-2
-        Audio Layer <span class="caps">III</span>. It is the most widely used
-        audio encoding format. <span class="caps">MP3</span> standard was
-        finalized in 1992 and released in 1993. <span class="caps">MP3</span> is
-        a lossy format. It supports both <span class="caps">CBR</span> (Constant
-        Bit Rate) and <span class="caps">VBR</span> (Variable Bit Rate)
-        encoding. <span class="caps">MP3</span> files usually have ‘.mp3′ file
-        extension and their standard <span class="caps">MIME</span> type is
-        ‘audio/mpeg’. <span class="caps">MP3</span> has support for
-        <span class="caps">ID3</span> and other kinds of tags for storing
-        metadata and <span class="caps">DRM</span> information of the audio
-        file. The <span class="caps">MP3</span> encoding format is patented.
-        <span class="caps">MP3</span> is the most popular audio file format and
+        MP3 is a popular name for
+        MPEG-1 and MPEG-2
+        Audio Layer III. It is the most widely used
+        audio encoding format. MP3 standard was
+        finalized in 1992 and released in 1993. MP3 is
+        a lossy format. It supports both CBR (Constant
+        Bit Rate) and VBR (Variable Bit Rate)
+        encoding. MP3 files usually have ‘.mp3′ file
+        extension and their standard MIME type is
+        ‘audio/mpeg’. MP3 has support for
+        ID3 and other kinds of tags for storing
+        metadata and DRM information of the audio
+        file. The MP3 encoding format is patented.
+        MP3 is the most popular audio file format and
         is used for music tracks, online streaming, audio recording, etc.
       </p>
       <div name="MP4" data-unique="MP4"></div>
-      <h3><span class="caps">MP4</span></h3>
+      <h3>MP4</h3>
       <p>
-        <span class="caps">MP4</span> is a common name for
-        <span class="caps">MPEG</span>-4 Part 14.
-        <span class="caps">MP4</span> is a container for digital video and audio
-        streams. <span class="caps">MP4</span> files can also contain subtitles,
+        MP4 is a common name for
+        MPEG-4 Part 14.
+        MP4 is a container for digital video and audio
+        streams. MP4 files can also contain subtitles,
         images and hint tracks. The hint track is what makes
-        <span class="caps">MP4</span> easily possible to be streamed over the
-        internet. <span class="caps">MP4</span> encoding is specified in the
-        standard <span class="caps">ISO</span>/<span class="caps">IEC</span>
+        MP4 easily possible to be streamed over the
+        internet. MP4 encoding is specified in the
+        standard ISO/IEC
         14496-14. It is heavily influenced from the QuickTime File Format.
-        <span class="caps">MP4</span> files are represented with the file
+        MP4 files are represented with the file
         extension ‘.mp4′.
       </p>
       <div name="ApplicationsofJPEG" data-unique="ApplicationsofJPEG"></div>
-      <h2>Applications of <span class="caps">JPEG</span></h2>
+      <h2>Applications of JPEG</h2>
       <p>
-        <span class="caps">MPEG</span>, being the most popular video coding
+        MPEG, being the most popular video coding
         standard, has very wide range of applications.
       </p>
       <div
@@ -2000,18 +2000,18 @@
       <h3>Television and Broadcasting</h3>
       <p>
         All terrestrial, cable or broadcasting television technologies like
-        <span class="caps">DBS</span> (Direct Broadcast Satellite),
-        <span class="caps">DVB</span> (Digital Video Broadcasting),
-        <span class="caps">ISDB</span>-T, <span class="caps">HDTV</span> (High
-        Definition Television), <span class="caps">CATV</span> (Cable
-        Televisions) depend on <span class="caps">MPEG</span>. Most terrestrial
-        television systems use <span class="caps">MPEG</span>-2 although some
-        use <span class="caps">MPEG</span>-1 for certain purposes.
-        <span class="caps">ATSC</span> (Advanced Television Systems Committee)
-        have also standardized <span class="caps">MPEG</span>-2 as the official
+        DBS (Direct Broadcast Satellite),
+        DVB (Digital Video Broadcasting),
+        ISDB-T, HDTV (High
+        Definition Television), CATV (Cable
+        Televisions) depend on MPEG. Most terrestrial
+        television systems use MPEG-2 although some
+        use MPEG-1 for certain purposes.
+        ATSC (Advanced Television Systems Committee)
+        have also standardized MPEG-2 as the official
         encoding format. Smart Television systems like Apple
-        <span class="caps">TV</span> also support
-        <span class="caps">MPEG</span>-4 video up to 2.5 Mbps.
+        TV also support
+        MPEG-4 video up to 2.5 Mbps.
       </p>
       <div
         name="Internet,Mobile,MultimediaandGaming"
@@ -2019,12 +2019,12 @@
       ></div>
       <h3>Internet, Mobile, Multimedia and Gaming</h3>
       <p>
-        <span class="caps">MPEG</span> is also very popular with online
+        MPEG is also very popular with online
         streaming. Since bandwidth is an important factor in internet,
-        <span class="caps">MPEG</span> format is usually chosen for its better
+        MPEG format is usually chosen for its better
         compression. It is also gaining more popularity in mobile multimedia
         because of its smaller size. Motion pictures in most video games are
-        also rendered using <span class="caps">MPEG</span>.
+        also rendered using MPEG.
       </p>
       <div
         name="RecordingandCommunication"
@@ -2033,11 +2033,11 @@
       <h3>Recording and Communication</h3>
       <p>
         Varieties of digital camcorders and video recorders use
-        <span class="caps">MPEG</span> as the default format for recording
-        videos. Products like <span class="caps">XDCAM</span> implement in the
+        MPEG as the default format for recording
+        videos. Products like XDCAM implement in the
         standard in their own different ways. Different communication activities
         like video conferencing and video calling also utilize
-        <span class="caps">MPEG</span>.
+        MPEG.
       </p>
       <div
         name="StorageandDistribution"
@@ -2045,90 +2045,90 @@
       ></div>
       <h3>Storage and Distribution</h3>
       <p>
-        <span class="caps">MPEG</span>-1 is used for VCDs (Video CDs). The very
-        popular <span class="caps">DVD</span> videos are possible only because
-        of <span class="caps">MPEG</span>-2. The latest Blu-ray technology also
-        utilizes <span class="caps">MPEG</span>-2 Part 2 and H.264/<span
+        MPEG-1 is used for VCDs (Video CDs). The very
+        popular DVD videos are possible only because
+        of MPEG-2. The latest Blu-ray technology also
+        utilizes MPEG-2 Part 2 and H.264/<span
           class="caps"
           >MPEG</span
-        >-4 <span class="caps">AVC</span>.
+        >-4 AVC.
       </p>
       <div name="LimitationsofMPEG" data-unique="LimitationsofMPEG"></div>
-      <h2>Limitations of <span class="caps">MPEG</span></h2>
+      <h2>Limitations of MPEG</h2>
       <p>
-        Newer standards of the <span class="caps">MPEG</span> family keep being
+        Newer standards of the MPEG family keep being
         published to overcome the limitations of the older one. The latest
         popular standard has many limitations. The current downsides of the
         format have been listed below:<br />
-        • <span class="caps">MPEG</span> being a lossy compression doesn’t
+        • MPEG being a lossy compression doesn’t
         preserve all minute data.<br />
         • The compression flow involves many encoding and transformation
         algorithms which could be difficult to perceive and implement.<br />
-        • <span class="caps">AAC</span> and <span class="caps">OGG</span> Vorbis
-        provide better audio encoding than <span class="caps">MPEG</span> audio
+        • AAC and OGG Vorbis
+        provide better audio encoding than MPEG audio
         layers.<br />
-        • <span class="caps">MPEG</span> is not the best file format for online
+        • MPEG is not the best file format for online
         streaming and therefore is slowly<br />
         being replaced by other file formats like
-        <span class="caps">FLV</span> (Flash Video).<br />
-        • Overlapped Block Motion Compensation (<span class="caps">OBMC</span>)
+        FLV (Flash Video).<br />
+        • Overlapped Block Motion Compensation (OBMC)
         is not allowed in profiles in all parts of
-        <span class="caps">MPEG</span>-4 standards.<br />
-        • <span class="caps">MPEG</span>-4 has a short header format.<br />
-        • Initial parts of <span class="caps">MPEG</span>-4 couldn’t provide
+        MPEG-4 standards.<br />
+        • MPEG-4 has a short header format.<br />
+        • Initial parts of MPEG-4 couldn’t provide
         significant improvement in bit-rate that caused users to be attracted to
         other encoding formats.<br />
-        • Since <span class="caps">MPEG</span> is a patented format, non-free
-        <span class="caps">MPEG</span> encoders and decoders may be subject to
+        • Since MPEG is a patented format, non-free
+        MPEG encoders and decoders may be subject to
         royalty fee.<br />
         • End-users may have to bear the royalty when using free software like
-        <span class="caps">VLC</span> for encoding and decoding purposes.
+        VLC for encoding and decoding purposes.
       </p>
       <div name="FutureofMPEG" data-unique="FutureofMPEG"></div>
-      <h2>Future of <span class="caps">MPEG</span></h2>
+      <h2>Future of MPEG</h2>
       <p>
         Huge improvements in video encoding have been made since the
-        introduction of <span class="caps">MPEG</span>-1. Every new
+        introduction of MPEG-1. Every new
         specification released gives better compression of data and allows more
         features for video technology. The latest widespread standard
-        <span class="caps">MPEG</span>-4 provides lot more flexibility with
+        MPEG-4 provides lot more flexibility with
         support for internal subtitles and hint tracks. Online streaming and
         other certain needs of the modern days may be fulfilled by it is not the
         most optimal format. It requires lot more improvement to win back the
         video streaming in internet from other encoding formats like
-        <span class="caps">FLV</span>. With booming of Internet and Smart
-        <span class="caps">TV</span> systems like Google
-        <span class="caps">TV</span> and Apple
-        <span class="caps">TV</span> which promise to provide a lot more
+        FLV. With booming of Internet and Smart
+        TV systems like Google
+        TV and Apple
+        TV which promise to provide a lot more
         flexibility for the users, a better standard is required as the
         currently standardized specifications of the
-        <span class="caps">MPEG</span> family may not be enough to support this
+        MPEG family may not be enough to support this
         flexibility. Also, with portable devices gaining more popularity, the
         standard has to be portable with easy support for wide array of devices.
-        <span class="caps">MP4</span> may be replacing mobile video coding
-        technologies like <span class="caps">3GP</span> but it has a lot more
-        space for improvement. Use of <span class="caps">MPEG</span> is not
+        MP4 may be replacing mobile video coding
+        technologies like 3GP but it has a lot more
+        space for improvement. Use of MPEG is not
         appropriate for all gaming and interactive contents. More profiles have
         to be added to the standard. Also, there is a room for better
         compression in audio.
       </p>
       <p>
-        <span class="caps">MPEG</span>-4 Part 28 which is under development has
-        lots of improvements to bring. <span class="caps">MPEG</span>
-        <span class="caps">DASH</span> led by employees of Microsoft is also
+        MPEG-4 Part 28 which is under development has
+        lots of improvements to bring. MPEG
+        DASH led by employees of Microsoft is also
         believed to overcome many limitation of
-        <span class="caps">MPEG</span>-4, as a common adaptive-optimized
+        MPEG-4, as a common adaptive-optimized
         encoding format. Despite being one of the most popular video encoding
-        standard, <span class="caps">MPEG</span> falls short in may applications
+        standard, MPEG falls short in may applications
         and its future is uncertain unless huge improvement and flexibility have
         been added to it.
       </p>
       <p>
-        <b><span class="caps">REFERENCES</span></b>
+        <b>REFERENCES</b>
       </p>
       <p>
         William B. Pennebaker, Joan L. Mitchell, 1992.
-        <span class="caps">JPEG</span>: <em>Still Image Data Compression</em>
+        JPEG: <em>Still Image Data Compression</em>
         <em
           >Standard (Digital Multimedia Standards) (Digital Multimedia Standards
           S.)</em
@@ -2160,31 +2160,31 @@
       <p>
         Chad Fogg, 1996.
         <em
-          ><span class="caps">MPEG</span> Video Compression Standard (Digital
+          >MPEG Video Compression Standard (Digital
           Multimedia Standards </em
         ><em>Series)</em>. 1 Edition. Springer.
       </p>
       <p>
         Wallace, Gregory K.,
         <em
-          >The <span class="caps">JPEG</span> Still Picture Compression
+          >The JPEG Still Picture Compression
           Standard, Communications of</em
         >
-        <em>the <span class="caps">ACM</span></em
+        <em>the ACM</em
         >, April 1991 (Vol. 34, No. 4), pp. 30-44.
       </p>
       <p>
         Neelamani, R., de Queiroz, R., Fan, Z., Dash, S.,
         <span class="amp">&amp;</span> Baraniuk, R.,
-        <em><span class="caps">JPEG</span> compression</em>
+        <em>JPEG compression</em>
         <em>history estimation for color images</em>,
-        <span class="caps">IEEE</span> Trans. on Image Processing, June 2006
+        IEEE Trans. on Image Processing, June 2006
         (Vol 15, No 6).
       </p>
       <p>
-        Ja-Ling Wu, 2002. ‘<span class="caps">MPEG</span>-1 Coding Standard’,
-        <em><span class="caps">DSP</span> (Digital Signal Processing)</em>.
-        [online via internal <span class="caps">VLE</span>] Communications and
+        Ja-Ling Wu, 2002. ‘MPEG-1 Coding Standard’,
+        <em>DSP (Digital Signal Processing)</em>.
+        [online via internal VLE] Communications and
         Multimedia Library, Available at: &lt;<a
           href="http://web.archive.org/web/20170930220816/http://www.cmlab.csie.ntu.edu.tw/cml/dsp/training/coding/mpeg1/"
           title="http://www.cmlab.csie.ntu.edu.tw/cml/dsp/training/coding/mpeg1/"
@@ -2193,9 +2193,9 @@
         >&gt;. [Accessed 17 November 2011].
       </p>
       <p>
-        Prof. Tsuhan Chen, 1999. ‘<span class="caps">MPEG</span> Audio’, 18-796
+        Prof. Tsuhan Chen, 1999. ‘MPEG Audio’, 18-796
         (<em>Multimedia Communications</em>), [online via internal
-        <span class="caps">VLE</span>] Carneggie Melon University, Available at:
+        VLE] Carneggie Melon University, Available at:
         &lt;<a
           href="http://web.archive.org/web/20170930220816/http://www.ece.cmu.edu/~ece796/mpegaudio.pdf"
           title="http://www.ece.cmu.edu/~ece796/mpegaudio.pdf"
@@ -2204,10 +2204,10 @@
         >&gt;. [Accessed 19 November 2011].
       </p>
       <p>
-        Avila A., n.d. ‘History of <span class="caps">MPEG</span>’,
-        <span class="caps">IS224</span> (<em
+        Avila A., n.d. ‘History of MPEG’,
+        IS224 (<em
           >Strategic Computing and Communications Technlology</em
-        >), [online via internal <span class="caps">VLE</span>] School of
+        >), [online via internal VLE] School of
         Information Management and Systems, California, Available at: &lt;<a
           href="http://web.archive.org/web/20170930220816/http://www2.sims.berkeley.edu/courses/is224/s99/GroupG/report1.html"
           title="http://www2.sims.berkeley.edu/courses/is224/s99/GroupG/report1.html"
@@ -2227,7 +2227,7 @@
       </p>
       <p>
         Michael Niedermayer, 2005. 15 reasons why
-        <span class="caps">MPEG4</span> sucks.
+        MPEG4 sucks.
         <em>Liar of the Multimedia Guru</em>, [blog] 28 November, Available at:
         &lt;<a
           href="http://web.archive.org/web/20170930220816/http://guru.multimedia.cx/15-reasons-why-mpeg4-sucks/"
@@ -2237,8 +2237,8 @@
         >&gt; [Accessed 22 November 2011].
       </p>
       <p>
-        <span class="caps">P.N.</span> Tudor, December 1995.
-        <span class="caps">MPEG</span>-2 Video Compression,
+        P.N. Tudor, December 1995.
+        MPEG-2 Video Compression,
         <em>Electronics and Communication Engineering Journal</em>, [online],
         Available at: &lt;<a
           href="http://web.archive.org/web/20170930220816/http://www.bbc.co.uk/rd/pubs/papers/paper_14/paper_14.shtml"
@@ -2250,7 +2250,7 @@
       <p>
         Ebrahimi, T.,Horne, C., 2010.
         <em
-          ><span class="caps">MPEG</span>-4 Natural Video Coding – An
+          >MPEG-4 Natural Video Coding – An
           overview</em
         >, Swiss Federal Institute of Technology [online] 04 February, Available
         at: &lt;<a
@@ -2262,7 +2262,7 @@
       </p>
       <p>
         Bretl W., Fimoff M., 2000.
-        <em><span class="caps">MPEG2</span> Tutorial</em> [online] 15 January,
+        <em>MPEG2 Tutorial</em> [online] 15 January,
         Available at: &lt;<a
           href="http://web.archive.org/web/20170930220816/http://www.bretl.com/mpeghtml/MPEGindex.htm"
           title="http://www.bretl.com/mpeghtml/MPEGindex.htm"
@@ -2274,8 +2274,8 @@
       <p>
         DePiero, F. W., 2011.
         <em
-          >2D <span class="caps">DCT</span> and
-          <span class="caps">JPEG</span></em
+          >2D DCT and
+          JPEG</em
         >
         [image online] Available at: &lt;<a
           href="http://web.archive.org/web/20170930220816/https://courseware.ee.calpoly.edu/~fdepiero/STL/STL%20-%20Image%20-%202D%20DCT%20and%20JPEG.htm"
@@ -2283,10 +2283,10 @@
           target="_blank"
           >https://courseware.ee.calpoly.edu/~fdepiero/<span class="caps"
             >STL</span
-          >/<span class="caps">STL</span>%20-%20Image%20-%202D%<span
+          >/STL%20-%20Image%20-%202D%<span
             class="caps"
             >20DCT</span
-          >%20and%<span class="caps">20JPEG</span>.htm</a
+          >%20and%20JPEG.htm</a
         >&gt;
       </p>
       <p>
@@ -2303,7 +2303,7 @@
           href="http://web.archive.org/web/20170930220816/http://neuron2.net/LVG/framefields.gif"
           title="http://neuron2.net/LVG/framefields.gif"
           target="_blank"
-          >http://neuron2.net/<span class="caps">LVG</span>/framefields.gif</a
+          >http://neuron2.net/LVG/framefields.gif</a
         >&gt; [Accessed 14 November 2011].
       </p>
       <p>
@@ -2316,7 +2316,7 @@
         >&gt; [Accessed 17 November 2011].
       </p>
       <p>
-        <b><span class="caps">ACKNOWLEDGEMENTS</span></b
+        <b>ACKNOWLEDGEMENTS</b
         ><br />
         I would like to show my gratitude to the contributors of Wikipedia and
         the World Wide Web. Also, huge thanks goes to the lecturer Mr. Ayush

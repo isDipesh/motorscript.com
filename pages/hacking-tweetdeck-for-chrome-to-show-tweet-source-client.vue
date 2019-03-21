@@ -30,7 +30,7 @@
         Change directory to <code>Extensions/[tweetdeck-extension-id]/</code><br />
         <code>[tweetdeck-extension-id]</code> can be known from Chrome/Chromium
         -&gt; Tools -&gt; Extensions -&gt; TweetDeck -&gt;
-        <span class="caps">ID</span>
+        ID
       </p>
       <p>
         Change directory to the only folder inside the current folder which is

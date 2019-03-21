@@ -11,7 +11,7 @@
     />
     <div class="content" itemprop="articleBody">
       <p>
-        Gnome shell refers to the <span class="caps">UI</span> of Gnome 3, the
+        Gnome shell refers to the UI of Gnome 3, the
         latest incarnation of Gnome desktop environment. The first thing a gnome
         2 user notices on a gnome shell is the lack of familiar things. Windows
         on Gnome shell have no minimize and maximize buttons by default, only
@@ -77,14 +77,14 @@
           ><code class="su">yum install gnome-tweak-tool</code></pre>
           Then, execute <code>gnome-tweak-tool</code>. Go through the options
           and tweak Gnome to your feel. [E.g. <code>Shell</code> =>
-          <code>Show Date in Clock</code> : <span class="caps">ON</span>]
+          <code>Show Date in Clock</code> : ON]
         </li>
         <li>
           Adding Minimize and Maximize button to the title bar:
           <pre
             class="language-bash"
           ><code class="su">gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout "menu:minimize,maximize,close"</code></pre>
-          <span class="caps">OR</span>
+          OR
           <div>
             <code>Alt+F2</code> to open run command prompt
             <code>gnome-tweak-tool</code>
@@ -112,19 +112,19 @@
         </li>
         <li>
           Switch to fallback mode Fallback mode in gnome shell gives you a
-          <span class="caps">UI</span> similar to that of Gnome 2. Execute this
+          UI similar to that of Gnome 2. Execute this
           in terminal:
           <pre class="language-bash"><code class="su">
           gsettings set org.gnome.desktop.session session-name gnome-fallback
           </code></pre>
           <div>
-            <span class="caps">OR</span> <code>System Settings</code> =>
+            OR <code>System Settings</code> =>
             <code>System Info</code> => <code>Graphics</code> =>
-            <code>Forced Fallback Mode</code> : <span class="caps">ON</span>
+            <code>Forced Fallback Mode</code> : ON
           </div>
           <div>
             [Note that this is what you will be using to go back to normal mode
-            with <span class="caps">OFF</span> flag]
+            with OFF flag]
           </div>
           [System Settings is available from User Menu on top right]
         </li>
@@ -176,7 +176,7 @@
           <pre
             class="language-bash"
           ><code class="su">yum install gnome-shell-extensions-alternative-status-menu</code></pre>
-          <span class="caps">OR</span>: Download
+          OR: Download
           http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
           <div>
             Extract its contents to

@@ -14,7 +14,7 @@
                 </ul>
             </div>
 
-            <h3><span class="caps">SSH</span> into the server</h3>
+            <h3>SSH into the server</h3>
 
             <pre class="language-bash">
 <code class="prefix">cd</code>

@@ -15,15 +15,15 @@
         of time.
       </p>
       <p>
-        In <span class="caps">GNOME</span> 3.4, there’s this annoying bug with
-        Guake (or is it <span class="caps">GNOME</span>’s?) that Guake can’t
+        In GNOME 3.4, there’s this annoying bug with
+        Guake (or is it GNOME’s?) that Guake can’t
         release focus via hotkey (which is F12 by default).
       </p>
       <p>
         <a
           href="https://bugzilla.gnome.org/show_bug.cgi?id=676103"
         >
-          <span class="caps">GNOME</span> Bugzilla – Bug 676103
+          GNOME Bugzilla – Bug 676103
         </a>
       </p>
       <p>
@@ -46,7 +46,7 @@ self.window.hide() # Don't use hide_all here!
       <p>
         This hack was suggested by Hador on Guake Trac against my hack which
         seemed to work only on Fedora. This has been tested
-        <span class="caps">OK</span> on Fedora 17 and ArchLinux.
+        OK on Fedora 17 and ArchLinux.
       </p>
     </div>
   </article>

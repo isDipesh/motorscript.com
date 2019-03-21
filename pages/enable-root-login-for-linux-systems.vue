@@ -26,7 +26,7 @@
         Edit the file /etc/pam.d/gdm with your favorite text editor:
         <pre class="language-bash"><code class="su">vi /etc/pam.d/gdm</code></pre>
       </p>
-      <p><span class="caps">OR</span>
+      <p>OR
       <pre class="language-bash"><code class="su">gedit /etc/pam.d/gdm</code></pre>
       </p>
       <p>
@@ -39,12 +39,12 @@
       </p>
       <p>Do the same with the file <em>/etc/pam.d/gdm-password</em></p>
       <p>
-        You can login to <span class="caps">GDM</span> as root from the
+        You can login to GDM as root from the
         next time.
       </p>
       <p>
         <strong>Alternative Technique :</strong> Since it is the
-        <span class="caps">GUI</span> that prevents you to login as root, you
+        GUI that prevents you to login as root, you
         can login in run level 3 then start the X Windows system to get root up
         on Gnome or any other desktop environment.
       </p>
@@ -63,8 +63,8 @@
         <pre class="language-bash"><code class="su">vi /etc/grub.conf</code></pre>
       </p>
       <p>
-        <span class="caps">OR</span> if you are on
-        <span class="caps">GUI</span> and if you are comfortable with gedit
+        OR if you are on
+        GUI and if you are comfortable with gedit
         <pre class="language-bash"><code class="su">gedit /etc/grub.conf</code></pre>
       </p>
       <p>Find the block item for your boot target with a kernel entry.</p>
@@ -84,7 +84,7 @@
       <p>Save and close the file.</p>
       <p>
         The next time you login, you will be presented with login on terminal
-        instead of <span class="caps">GUI</span>. Use ‘root’ for login and the
+        instead of GUI. Use ‘root’ for login and the
         root password you set during the system installation for password. After
         you’ve successfully logged in, enter <code>startx</code>.
       </p>

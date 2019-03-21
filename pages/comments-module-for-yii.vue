@@ -36,7 +36,7 @@
       <pre class="language-bash"><code class="prefix">git clone https://github.com/awecode/comments.git
 </code></pre>
       <p>
-        <span class="caps">OR</span> Download :
+        OR Download :
         <a href="https://github.com/awecode/comments/zipball/master"
           >https://github.com/awecode/comments/zipball/master</a
         ><br />
@@ -44,7 +44,7 @@
         modules.
       </p>
       <p>
-        Execute the following <span class="caps">SQL</span> queries to create
+        Execute the following SQL queries to create
         table and insert default comment settings.
       </p>
       <pre class="language-sql"><code>CREATE TABLE IF NOT EXISTS `comment` (
@@ -105,7 +105,7 @@ INSERT INTO `comment_setting` (`id`, `model`, `registeredOnly`, `useCaptcha`, `a
         to the view of any model to make it commentable.
       </p>
       <p>
-        Go to the <span class="caps">URL</span> <code>/comments</code> to manage
+        Go to the URL <code>/comments</code> to manage
         comments and to play with the settings.
       </p>
       <h2>Downloads</h2>

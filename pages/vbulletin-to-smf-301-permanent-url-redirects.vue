@@ -11,7 +11,7 @@
     />
     <div class="content" itemprop="articleBody">
       <p>
-        Switching to <span class="caps">SMF</span> from vbulletin is easy. The
+        Switching to SMF from vbulletin is easy. The
         database converters are easily available. The only tricky part is to
         keep the old links alive, which isn’t difficult either with a little
         regex knowledge and Apache mod_rewrite power.
@@ -19,9 +19,9 @@
       <p>
         Since this is a permanent switch, 301 redirects are used to send
         acknowldgements to web spiders. The old vbulletin installation used
-        <span class="caps">SEO</span> friendly URLs and the new
-        <span class="caps">SMF</span> has PrettyURLs Mod, which i think despite
-        of no <span class="caps">SMF</span> experience at all is a must.
+        SEO friendly URLs and the new
+        SMF has PrettyURLs Mod, which i think despite
+        of no SMF experience at all is a must.
       </p>
       <p>
         The following is the content from .htaccess file which should reside at

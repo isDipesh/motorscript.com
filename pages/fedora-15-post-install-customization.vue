@@ -12,11 +12,11 @@
     <div class="content" itemprop="articleBody">
       <p>
         The installation is pretty smooth as is always with Anaconda. You get to
-        choose which packages to install. Gnome, <span class="caps">KDE</span>,
-        <span class="caps">LXDE</span>, <span class="caps">XFCE</span>, etc. are
+        choose which packages to install. Gnome, KDE,
+        LXDE, XFCE, etc. are
         the desktop environment options available and I chose to install all.
         Installing more than 2000 packages from the
-        <span class="caps">DVD</span> media didn’t take long!
+        DVD media didn’t take long!
       </p>
       <p>
         After the one time post-installation configuration, I logged into Gnome
@@ -32,7 +32,7 @@
       </p>
       <p>
         Firefox 4.0.1 comes with the distribution as the default web browser.
-        Empathy is the default <span class="caps">IM</span> client, so Pidgin
+        Empathy is the default IM client, so Pidgin
         lovers like me have to go through one more yum install command. Also,
         banshee isn’t integrated, but Amarok and RhythmBox are available!
       </p>
@@ -44,7 +44,7 @@
         The system is very much stable, haven’t experience a single crash or bug
         problem yet. The system boots up pretty fast and resuming from
         hibernation is very very fast. The only disaapointment may be the change
-        of <span class="caps">UI</span> in gnome 3, Fedora 15 is
+        of UI in gnome 3, Fedora 15 is
         perfect otherwise.
       </p>
       <p>Installing the essentials:</p>
@@ -65,10 +65,10 @@
         installed manually.
       </p>
       <p>
-        “<span class="caps">RPM</span> Fusion provides software that the Fedora
+        “RPM Fusion provides software that the Fedora
         Project or Red Hat doesn’t want to ship. That software is provided as
         precompiled RPMs for all current Fedora versions and Red Hat Enterprise
-        Linux 5; you can use the <span class="caps">RPM</span> Fusion
+        Linux 5; you can use the RPM Fusion
         repositories with tools like yum and PackageKit.”
       </p>
       <p>
@@ -89,9 +89,9 @@
           libdvdcss</code></pre>
       </p>
       <p>
-        Install <span class="caps">VLC</span>:
+        Install VLC:
         <pre class="language-bash"><code class="su">yum -y install vlc</code></pre>
-          If you want <span class="caps">VLC</span> to run as root (not recommended), see this post:
+          If you want VLC to run as root (not recommended), see this post:
         <a
           href="https://motorscript.com/compiling-vlc-for-root-users/"
           title="https://motorscript.com/compiling-vlc-for-root-users/"
@@ -100,19 +100,19 @@
       <p>
         Install flash player and plugin for browsers:
         <pre class="language-bash"><code class="su">yum -y install gnash gnash-plugin</code></pre>
-        <span class="caps">OR</span> if the non-free/properietary Adobe Flash
+        OR if the non-free/properietary Adobe Flash
         player is to be installed:
         <pre class="language-bash">
           <code class="su">yum localinstall --nogpgcheckhttp://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm</code>
           <code class="su">yum -y install flash-plugin</code></pre>
       </p>
       <p>
-        Install 7zip and <span class="caps">RAR</span> plugins and executables
+        Install 7zip and RAR plugins and executables
         <pre class="language-bash"><code>yum -y install p7zip p7zip-plugins unrar</code></pre>
       </p>
       <p>
         Most probably your wireless device is supported out of the box. If it
-        isn’t and if yours is a Broadcom <span class="caps">WLAN</span> device,
+        isn’t and if yours is a Broadcom WLAN device,
         follow this:
         <pre class="language-bash"><code class="su">yum install kmod-wl</code>
         <code class="su">service NetworkManager restart </code>
