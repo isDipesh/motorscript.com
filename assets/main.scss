@@ -217,8 +217,18 @@ ol.pad li{
   margin: 1em;
   border: 1px solid #ccc;
   display: flex;
+  a{
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   img{
-    max-height: 50px;
+    height: 30px;
+    display: block
+  }
+  img.larger{
+    height: 40px;
   }
 }
 

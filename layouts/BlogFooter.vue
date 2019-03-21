@@ -7,7 +7,9 @@
         <meta itemprop="worksFor" content="Awecode" />
       </span> -->
       My Weblog of Cheat-sheets 
-      [<a href="/about-me">About Me</a>]
+      [<router-link to="about-me">
+          About Me
+      </router-link>]
     </div>
     <div class="center">
       Powered by
