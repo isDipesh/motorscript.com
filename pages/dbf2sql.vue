@@ -15,7 +15,7 @@
                 <pre class="language-bash"><code class="prefix">php dbf2sql.php input.dbf tablename output.sql</code></pre>
                 <div>where <code>input.dbf</code> is the dbf file to be converted; <code>tablename</code>
                     is the name of the table that the generated SQL script should insert rows into; <code>output.sql</code>
-                    is the output SQL script to be&nbsp;generated.
+                    is the output SQL script to be generated.
                 </div>
             </div>
 
@@ -42,11 +42,11 @@
             </div>
 
             <div>
-                <strong>Repo:</strong>&nbsp;
+                <strong>Repo:</strong>
                 <a href="https://github.com/xtranophilist/dbf2sql/">https://github.com/xtranophilist/dbf2sql/</a>
             </div>
             <div>
-                <strong>Download:</strong>&nbsp;
+                <strong>Download:</strong>
                 <a href="https://github.com/xtranophilist/dbf2sql/zipball/master">https://github.com/xtranophilist/dbf2sql/zipball/master</a>
             </div>
         </div>
