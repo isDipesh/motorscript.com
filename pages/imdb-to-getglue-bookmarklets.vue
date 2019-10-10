@@ -51,10 +51,7 @@
       <p>If you have any suggestions, feel free to comment.</p>
       <p>
         The source code is available from this
-        <a
-          href="https://gist.github.com/4636655"
-          title="gist"
-          target="_blank"
+        <a href="https://gist.github.com/4636655" title="gist" target="_blank"
           >gist</a
         >.
       </p>

@@ -47,6 +47,7 @@
       </div>
 
       <h3>Create a sudo user</h3>
+
       <pre class="language-bash"><code class="su">useradd -m {{user}}</code>
 <code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
 <code class="su">usermod -aG sudo {{user}}</code>

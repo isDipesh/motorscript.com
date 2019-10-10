@@ -1563,10 +1563,10 @@ babel-loader@^8.0.5:
     mkdirp "^0.5.1"
     util.promisify "^1.0.0"
 
-babel-plugin-prismjs@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-1.0.2.tgz#837bf6b32168b3ba624c054fc755946deb1b63fa"
-  integrity sha512-WbUE86Aih6h6daLpyavuikEXECrkon21oWh4MOHa5stMfY/IK1e/Sr79qEGhl7KrL16fMChB3tdbVR82ubnzOg==
+babel-plugin-prismjs@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-1.1.1.tgz#974b2346d6ea8bdb2b16c3fdf1342bbe97fc6f51"
+  integrity sha512-MmwxA//jBpXH0IhJ2FbpBJmd6Bvq5rBe3UD3udUqfkkOdh6lmQeYxoVGpkIvLuuXecrynWjpPqwM0JPxErebpQ==
 
 babylon@7.0.0-beta.42, babylon@^7.0.0-beta.40:
   version "7.0.0-beta.42"
@@ -6255,10 +6255,15 @@ pretty-time@^1.1.0:
   resolved "https://registry.yarnpkg.com/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
   integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
 
-prismjs@^1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
-  integrity sha512-Lf2JrFYx8FanHrjoV5oL8YHCclLQgbJcVZR+gikGGMqz6ub5QVWDTM6YIwm3BuPxM/LOV+rKns3LssXNLIf+DA==
+prism-es6@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/prism-es6/-/prism-es6-1.2.0.tgz#ead4e0d7809fefc36b9636f1ea4b2cebad074e63"
+  integrity sha512-A8JV9G2zKM8PWksT7YJcmnaWtYO6C9hSfxM/xv0RxB2aNc8rjv30WakzIw1gWyqLi2eiqquo2KmS7orxqlm+yg==
+
+prismjs@^1.16.0:
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.17.1.tgz#e669fcbd4cdd873c35102881c33b14d0d68519be"
+  integrity sha512-PrEDJAFdUGbOP6xK/UsfkC5ghJsPJviKgnQOoxaDbBjwc8op68Quupwt1DeAFoG8GImPhiKXAvvsH7wDSLsu1Q==
   optionalDependencies:
     clipboard "^2.0.0"
 

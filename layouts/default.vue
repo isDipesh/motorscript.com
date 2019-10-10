@@ -32,8 +32,8 @@ export default {
     BlogHeader,
     BlogFooter
   },
-  mounted(){
-    Prism.highlightAll();
-  }
+  // mounted(){
+    // Prism.highlightAll();
+  // }
 };
 </script>

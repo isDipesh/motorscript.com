@@ -9,7 +9,7 @@
       published="10 Jul 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         yii-comments is a module for Yii Framework which allows you to make any
         instance of CActiveRecord commentable. This is a modification of the
@@ -26,14 +26,18 @@
         <li>Better Comment Management</li>
         <li>Admin interface for editing comments</li>
         <li>Admin interface for comments settings</li>
-        <li>Anchor for each comments (e.g. http://example.com/page/1#comment-12)</li>
+        <li>
+          Anchor for each comments (e.g. http://example.com/page/1#comment-12)
+        </li>
         <li>Better User Interaction</li>
         and others.
       </ul>
       <h2>Installation</h2>
       <h3>Via Git:</h3>
       <p>From inside the modules directory in your application:</p>
-      <pre class="language-bash"><code class="prefix">git clone https://github.com/awecode/comments.git
+      <pre
+        class="language-bash"
+      ><code class="prefix">git clone https://github.com/awecode/comments.git
 </code></pre>
       <p>
         OR Download :
@@ -44,8 +48,8 @@
         modules.
       </p>
       <p>
-        Execute the following SQL queries to create
-        table and insert default comment settings.
+        Execute the following SQL queries to create table and insert default
+        comment settings.
       </p>
       <pre class="language-sql"><code>CREATE TABLE IF NOT EXISTS `comment` (
 `id` int(12) NOT NULL AUTO_INCREMENT,
@@ -105,19 +109,20 @@ INSERT INTO `comment_setting` (`id`, `model`, `registeredOnly`, `useCaptcha`, `a
         to the view of any model to make it commentable.
       </p>
       <p>
-        Go to the URL <code>/comments</code> to manage
-        comments and to play with the settings.
+        Go to the URL <code>/comments</code> to manage comments and to play with
+        the settings.
       </p>
       <h2>Downloads</h2>
-      <p>
-        <pre class="language-bash"><code>git clone https://github.com/awecode/comments.git</code></pre>
-        or download
-        <a
-          href="https://github.com/awecode/comments/zipball/master"
-          title="https://github.com/awecode/comments/zipball/master"
-          >from here.</a
-        >
-      </p>
+
+      <pre
+        class="language-bash"
+      ><code class="prefix">git clone https://github.com/awecode/comments.git</code></pre>
+      or download
+      <a
+        href="https://github.com/awecode/comments/zipball/master"
+        title="https://github.com/awecode/comments/zipball/master"
+        >from here.</a
+      >
     </div>
   </article>
 </template>

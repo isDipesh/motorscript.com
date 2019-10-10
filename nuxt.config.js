@@ -29,26 +29,35 @@ module.exports = {
       "@nuxtjs/google-adsense",
       {
         id: "ca-pub-8986893739514632",
-        pageLevelAds: true,
+        pageLevelAds: true
       }
     ]
   ],
-  plugins: [
-    {src: '~/plugins/prism.js', ssr: false},
-  ],
+  plugins: [{ src: "~/plugins/prism.js", ssr: false }],
   generate: {
     routes: ["404"]
   },
-  build: {
-    babel: {
-      "plugins": [
-        ["prismjs", {
-            "languages": ["javascript", "css", "markup", "nginx", "bash", "ini", "python"],
-            "plugins": ["normalize-whitespace"],
-        }]
-      ]
-    }
-},
+  // build: {
+  //   babel: {
+  //     plugins: [
+  //       [
+  //         "prismjs",
+  //         {
+  //           languages: [
+  //             "javascript",
+  //             "css",
+  //             "markup",
+  //             "nginx",
+  //             "bash",
+  //             "ini",
+  //             "python"
+  //           ],
+  //           plugins: ["normalize-whitespace"]
+  //         }
+  //       ]
+  //     ]
+  //   }
+  // },
   sitemap: {
     path: "/sitemap.xml",
     hostname: "https://motorscript.com",
