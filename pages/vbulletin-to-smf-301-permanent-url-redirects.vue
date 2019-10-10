@@ -9,7 +9,7 @@
       published="14 Apr 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Switching to SMF from vbulletin is easy. The
         database converters are easily available. The only tricky part is to

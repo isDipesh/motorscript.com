@@ -9,11 +9,14 @@
       published="23 Dec 2018"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       According to Google Developer Docs, Chrome grants persistent storage
       permissions if any of these are satisfied:
       <ul>
-        <li>The site has been bookmarked in the browser and there are less than 5 bookmarks.</li>
+        <li>
+          The site has been bookmarked in the browser and there are less than 5
+          bookmarks.
+        </li>
         <li>The site has high engagement in the browser.</li>
         <li>The site is added to home screen.</li>
         <li>Push notifications are enabled for the site.</li>
@@ -177,7 +180,9 @@ self.addEventListener('fetch', event => {
         </li>
         <li>
           <h2>Ask Chrome for the persisted storage permissions.</h2>
-          <pre class="language-js"><code>if (navigator.storage && navigator.storage.persist)
+          <pre
+            class="language-js"
+          ><code>if (navigator.storage && navigator.storage.persist)
   navigator.storage.persist().then(granted => {
     if (granted)
       console.log("Storage will not be cleared except by explicit user action");

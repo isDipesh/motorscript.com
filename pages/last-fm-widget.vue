@@ -9,7 +9,7 @@
       published="25 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This widget shows last played tracks from last.fm for a user. It also
         shows ‘Now Playing’ track if available.

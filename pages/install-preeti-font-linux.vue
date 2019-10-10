@@ -9,7 +9,7 @@
       published="12 Sep 2014"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Script to download and install Preeti font on your Fedora Linux system:
       </p>

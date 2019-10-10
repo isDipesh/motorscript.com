@@ -1,7 +1,7 @@
 <template>
   <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <BlogTitle title="'Crop to Selection' keyboard shortcut for GIMP" published="06 Nov 2014" archived="true"/>
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
 
       <h4>For newer GIMP versions:</h4>
       <code>Edit</code> -> <code>Keyboard Shortcuts</code> -> <code>Image</code> -> <code>Crop to Selection</code>

@@ -10,7 +10,7 @@
       updated="18 Dec 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Install udev rules for Nexus 7:<br />
         <pre class="language-bash"><code class="su">

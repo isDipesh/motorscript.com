@@ -1,21 +1,63 @@
 <template>
-    <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-        <BlogTitle title="Using Google Cloud Vision to Build ML Training Dataset" published="27 Oct 2011"/>
+  <article
+    itemprop="blogPost"
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+  >
+    <BlogTitle
+      title="Using Google Cloud Vision to Build ML Training Dataset"
+      published="27 Oct 2011"
+    />
 
-        <div class="content" itemprop="articleBody">
-<p>While building an OCR system for passports, I needed to crop out MRZ (Machine Readable Zone) from passports. In order to build the training set, I needed ground truth values. MRZ of the passports needed to be annotated. The two popular ways for this were either labellilng manually using tools like LabelImg or outsourcing using something like Amazon Mechanical Turk. I used Google Cloud Vision API rather because I knew it does well with labelling such things and returning bounds within such documents. The following script uses document text annotation example from <a href="https://cloud.google.com/vision/docs/fulltext-annotations" target="_blank" rel="noreferer noopener">https://cloud.google.com/vision/docs/fulltext-annotations</a> and improves over it.</p>
-<p>The code provided by Google needed a fix nonetheless since it hits API with same request multiple times which would increase our cost. API requests were separately made for Page, Paragraph and Word detection while the same could be done by reusing the response from single request. However, we are only using Paragraph detection to find the bounding box for MRZ. The modified script also optionally uses Redis to store the serialized vertices of the bounds and reuses them if the same image needs to processed again.</p>
+    <div class="content" itemprop="articleBody" v-highlight>
+      <p>
+        While building an OCR system for passports, I needed to crop out MRZ
+        (Machine Readable Zone) from passports. In order to build the training
+        set, I needed ground truth values. MRZ of the passports needed to be
+        annotated. The two popular ways for this were either labellilng manually
+        using tools like LabelImg or outsourcing using something like Amazon
+        Mechanical Turk. I used Google Cloud Vision API rather because I knew it
+        does well with labelling such things and returning bounds within such
+        documents. The following script uses document text annotation example
+        from
+        <a
+          href="https://cloud.google.com/vision/docs/fulltext-annotations"
+          target="_blank"
+          rel="noreferer noopener"
+          >https://cloud.google.com/vision/docs/fulltext-annotations</a
+        >
+        and improves over it.
+      </p>
+      <p>
+        The code provided by Google needed a fix nonetheless since it hits API
+        with same request multiple times which would increase our cost. API
+        requests were separately made for Page, Paragraph and Word detection
+        while the same could be done by reusing the response from single
+        request. However, we are only using Paragraph detection to find the
+        bounding box for MRZ. The modified script also optionally uses Redis to
+        store the serialized vertices of the bounds and reuses them if the same
+        image needs to processed again.
+      </p>
 
-<p>The script is only used for building training data but not for production. The output of this script is used for training for pattern matching which is then used in production. This same technique can be used to detect other sections in passport or other document types. Just adjust the index in the assignment of `target_bound` variable.</p>
+      <p>
+        The script is only used for building training data but not for
+        production. The output of this script is used for training for pattern
+        matching which is then used in production. This same technique can be
+        used to detect other sections in passport or other document types. Just
+        adjust the index in the assignment of `target_bound` variable.
+      </p>
 
-<p>Before  running the script, you need to download your GCP credentails set the path to the credentials json as <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.
+      <p>
+        Before running the script, you need to download your GCP credentails set
+        the path to the credentials json as
+        <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.
+      </p>
 
-<pre class="language-bash">
+      <pre class="language-bash">
     <code>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</code>
     </pre>
-</p>
 
-<pre class="language-python"><code>
+      <pre class="language-python"><code>
 import argparse
 from enum import Enum
 import io
@@ -139,9 +181,8 @@ if __name__ == '__main__':
 
     render_doc_text(args.directory)
 </code></pre>
-
-        </div>
-    </article>
+    </div>
+  </article>
 </template>
 
 <script>

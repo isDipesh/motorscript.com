@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="What happened to IPv5?" published="27 Oct 2011"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
             <p>IP version numbers 0, 1, 2, and 3 were the development versions for IPv4 used between 1977 and 1979. IPv4 was officially described for the first time in January 1980. It is the most popular version of the internet protocol. The deployment of the next generation IP.
                 – IPv6 has already been initiated. But, very few people know if the intermediate version IPv5 does even exist.
             </p>

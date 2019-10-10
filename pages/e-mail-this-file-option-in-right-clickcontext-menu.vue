@@ -9,7 +9,7 @@
       published="02 Oct 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This should work for all Linux users with <strong>Nautilus</strong> file
         manager.

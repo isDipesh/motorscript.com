@@ -9,7 +9,7 @@
       published="16 Oct 2014"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This git pre-commit hook checks your Python code quality and prevents bad code from checking it into your git repo.
       </p>

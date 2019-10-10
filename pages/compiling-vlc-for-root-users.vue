@@ -9,7 +9,7 @@
       published="05 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         <strong>VLC media player</strong> binaries are available in repos but
         VLC installed from those cannot be run as root. The source code needs to

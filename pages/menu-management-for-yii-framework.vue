@@ -9,7 +9,7 @@
       published="17 Jun 2013"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This <code>menu</code> module for Yii allows you to create and edit
         themeable menus with nested/sortable items.<br />

@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Using git to push websites to server" published="12 Oct 2014"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
 
             <div class="block">
                 This cheatsheet will push your repo to the <i class="hl">app</i>

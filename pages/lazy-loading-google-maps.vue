@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Lazy Loading Google Maps" published="04 May 2018"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
 
             I created a really lean page and then I had to embed Google Maps which made multiple requests and made the page slower.
             Not all users reach to the viewport with the map and very few of the ones who reach there use it interactively.

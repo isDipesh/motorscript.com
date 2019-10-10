@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="dbf2sql – dbf to sql converter" published="03 Nov 2011"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
 
             <div><code>dbf2sql</code> converts dBase files to sql scriptsfor importing into MySQL Database.</div>
 

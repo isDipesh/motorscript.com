@@ -9,7 +9,7 @@
       published="04 Feb 2015"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This is a custom binding for using Selectize.js with your Knockout.js
         powered application.
@@ -21,11 +21,9 @@
 
       <p>
         This custom binding wraps the built-in
-        <code>options</code> binding of Knockout.js. So, additional
-        parameters like <code>optionsValue</code>,
-        <code>optionsText</code>,
-        <code>optionsCaption</code>, etc. can be used with this
-        binding. See
+        <code>options</code> binding of Knockout.js. So, additional parameters
+        like <code>optionsValue</code>, <code>optionsText</code>,
+        <code>optionsCaption</code>, etc. can be used with this binding. See
         <a
           href="http://knockoutjs.com/documentation/options-binding.html"
           target="_blank"
@@ -33,16 +31,16 @@
           >official documentation</a
         >
         for further details. By default, the
-        <code>selectize</code> binding uses
-        <code>id</code> for <code>optionsValue</code> and
-        <code>name</code> for <code>optionsText</code>.
+        <code>selectize</code> binding uses <code>id</code> for
+        <code>optionsValue</code> and <code>name</code> for
+        <code>optionsText</code>.
       </p>
 
       <p>
         By default, the text <code>Choose...</code> is used as
         <code>optionsCaption</code>. You can use
-        <code>optionsCaption: null</code> for no captions (first item
-        is selected by default).
+        <code>optionsCaption: null</code> for no captions (first item is
+        selected by default).
       </p>
 
       <p>
@@ -67,8 +65,8 @@
 
       <p>
         Warning: This binding wraps the built-in
-        <code>options</code> binding of Knockout.js and doesn't
-        provide the whole object to Selectize and therefore options like
+        <code>options</code> binding of Knockout.js and doesn't provide the
+        whole object to Selectize and therefore options like
         <code>searchField</code>
         do not work out of the box.
       </p>
@@ -88,9 +86,8 @@
 
       <p>
         The dropdown is created with all objects from
-        <code>items</code> observable array. The value of
-        <code>id</code> or attribute set in
-        <code>optionsValue</code> binding is set to
+        <code>items</code> observable array. The value of <code>id</code> or
+        attribute set in <code>optionsValue</code> binding is set to
         <code>item_id</code>.
       </p>
       <pre class="language-html"><code>
@@ -100,13 +97,11 @@
 
       <p>
         The <code>selectize</code> binding provides optional
-        <code>object</code> parameter. While the observable provided
-        with <code>value</code> parameter (like
-        <code>item_id</code> in our example) holds the
-        <code>id</code> (or whatever property
-        <code>optionsValue</code> defines), the observable provided
-        with <code>object</code> parameter holds the whole item
-        itself.
+        <code>object</code> parameter. While the observable provided with
+        <code>value</code> parameter (like <code>item_id</code> in our example)
+        holds the <code>id</code> (or whatever property
+        <code>optionsValue</code> defines), the observable provided with
+        <code>object</code> parameter holds the whole item itself.
       </p>
 
       <pre class="language-html"><code>
@@ -133,7 +128,6 @@
       <pre class="language-html"><code>
 &lt;select data-bind="selectize: items, value: selected_items2, options: {plugins: ['remove_button']}"
         multiple&gt;&lt;/select&gt;</code></pre>
-        
     </div>
   </article>
 </template>

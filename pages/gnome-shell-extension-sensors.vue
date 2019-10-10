@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="Gnome Shell Extension : Sensors" published="20 Aug 2011"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
             <p>This extensions isn't currently maintained. Please use the this fork: <a target="_blank" rel="noopener noreferrer" href="https://extensions.gnome.org/extension/841/freon/">https://extensions.gnome.org/extension/841/freon/</a> (<a target="_blank" rel="noopener noreferrer" href="https://github.com/UshakovVasilii/gnome-shell-extension-freon">https://github.com/UshakovVasilii/gnome-shell-extension-freon</a>)</p>
 
 <h1 id="gnomeshellextensionsensors">gnome-shell-extension-sensors</h1>

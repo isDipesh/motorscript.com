@@ -9,7 +9,7 @@
       published="07 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
 
 
       <p><strong>Enabling root login with Graphical Desktop isn't recommended for regular use. Use with caution and only on special ocassions.</strong></p>

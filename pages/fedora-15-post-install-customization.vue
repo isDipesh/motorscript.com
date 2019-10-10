@@ -9,7 +9,7 @@
       published="11 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         The installation is pretty smooth as is always with Anaconda. You get to
         choose which packages to install. Gnome, KDE,

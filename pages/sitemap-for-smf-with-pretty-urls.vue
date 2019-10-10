@@ -10,7 +10,7 @@
       updated="13 Jan 2013"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This is a PHP script that generates a sitemap file from an SMF
         installation with PrettyURLs mod, which is a must-have SEO package. The

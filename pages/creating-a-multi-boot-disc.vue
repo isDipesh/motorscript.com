@@ -9,7 +9,7 @@
       published="02 Oct 2010"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         <img
           src="/media/posts/happyboot_logo.jpg"

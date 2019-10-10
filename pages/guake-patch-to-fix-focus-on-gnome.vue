@@ -9,7 +9,7 @@
       published="01 Jun 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Guake is an awesome Quake style terminal which saves you a lot
         of time.

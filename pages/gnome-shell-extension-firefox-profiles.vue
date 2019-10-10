@@ -9,7 +9,7 @@
       published="16 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This is an extension that adds a button to gnome panel which when
         clicked launches Firefox Profile Manager.

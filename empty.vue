@@ -6,7 +6,7 @@
   >
     <BlogTitle title="" published="01 Apr 2018" />
 
-    <div class="content" itemprop="articleBody"></div>
+    <div class="content" itemprop="articleBody" v-highlight></div>
   </article>
 </template>
 

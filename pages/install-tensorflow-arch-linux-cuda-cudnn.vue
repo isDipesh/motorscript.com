@@ -9,7 +9,7 @@
       published="15 Dec 2018"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <ol>
         <li>
           Installing CUDA 9 requires installation of gcc6. (This first step may

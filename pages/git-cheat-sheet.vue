@@ -9,7 +9,7 @@
       published="30 May 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         <strong><span>BASICS</span></strong>
       </p>

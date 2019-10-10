@@ -18,7 +18,7 @@
     "babel-plugin-prismjs": "^1.1.1",
     "nuxt": "^2.4.5",
     "prism-es6": "^1.2.0",
-    "prismjs": "^1.16.0"
+    "prismjs": "1.15.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

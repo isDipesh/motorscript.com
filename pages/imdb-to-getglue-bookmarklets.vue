@@ -10,7 +10,7 @@
       updated="19 Dev 2013"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         You can use these bookmarklets to open GetGlue page of a movie or TV
         show from its IMDB page. I created these because I thought it would be a

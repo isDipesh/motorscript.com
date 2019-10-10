@@ -9,7 +9,7 @@
       published="16 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <strong>[Note: This extension isn’t maintained any more.]</strong>
       <div>
         Use this instead:

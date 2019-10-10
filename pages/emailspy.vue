@@ -5,7 +5,7 @@
     itemtype="https://schema.org/BlogPosting"
   >
     <BlogTitle title="Emailspy" published="21 Aug 2014" archived="true" />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Emailspy finds information from Facebook, Myspace, Yahoo Messenger,
         Google Profiles, Picasa, etc. for all e-mail addresses found in a page

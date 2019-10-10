@@ -9,7 +9,7 @@
       published="23 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         TweetDeck extension for Chrome doesn’t show the client or source
         application for each tweet.<br />

@@ -2,7 +2,7 @@
     <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <BlogTitle title="HTTPS for Zoho Mail Custom Domain" published="04 Apr 2018"/>
 
-        <div class="content" itemprop="articleBody">
+        <div class="content" itemprop="articleBody" v-highlight>
 
             <div class="block">NOTE: You need a server with nginx setup to proxy your custom domain to Zoho.</div>
 

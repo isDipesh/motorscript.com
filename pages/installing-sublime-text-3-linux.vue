@@ -9,7 +9,7 @@
       published="12 Nov 2014"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         The following scripts install Sublime Text 3 Build 3065 in Linux x64 and
         x32 systems. The scripts have been tested okay in Fedora 20. All you

@@ -9,7 +9,7 @@
       published="10 Jul 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         awegen is an intelligent code generator for Yii framework with optional
         Twitter Bootstrap support.

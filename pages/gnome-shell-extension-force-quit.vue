@@ -9,7 +9,7 @@
       published="17 Aug 2011"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         Force Quit is an extension that adds a ‘Force Quit’ button to the top
         panel of gnome shell, the UI of Gnome 3.

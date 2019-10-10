@@ -10,7 +10,7 @@
       updated="12 Feb 2013"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         <a
           href="http://web.archive.org/web/20150315002558/http://hotot.org/"

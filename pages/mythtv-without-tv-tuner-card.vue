@@ -9,7 +9,7 @@
       published="15 Aug 2012"
       archived="true"
     />
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <p>
         This post is a straight forward set of instructions on how you can
         configure MythTV to run without a TV tuner or
