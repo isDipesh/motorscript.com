@@ -10,7 +10,7 @@
       updated="03 Apr 2018"
     />
 
-    <div class="content" itemprop="articleBody" v-highlight>
+    <div class="content" itemprop="articleBody">
       <div class="block">
         <ul>
           <form id="django-form">
@@ -85,16 +85,12 @@
 <code class="prefix">git config core.bare false</code>
 <code class="prefix">git config receive.denycurrentbranch ignore</code>
 <code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
-
 <code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/sh
 git checkout -f
 EOF</code>
-
 <code class="prefix">chmod +x hooks/post-receive</code>
-
-<code class="prefix">exit</code>
-</pre>
+<code class="prefix">exit</code></pre>
 
       Add this bare repo as a remote on local.
 
@@ -103,8 +99,7 @@ EOF</code>
                     class="prefix"
                     v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
 <code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
-<code class="prefix">git push server --all</code>
-</pre>
+<code class="prefix">git push server --all</code></pre>
 
       <p>
         You may want to modify your <i class="hl">git post-receive</i>
@@ -123,8 +118,7 @@ EOF</code>
 <code class="prefix">cd app</code>
 <code class="prefix">pip install -r requirements/production.txt</code>
 <code class="prefix">./manage.py migrate</code>
-<code class="prefix">./manage.py collectstatic</code>
-</pre>
+<code class="prefix">./manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
       is all right.
 
@@ -204,13 +198,13 @@ stderr_stream.backup_count = 3
 [env:{{django_project}}_q]
 PYTHONPATH=/home/{{user}}/app/
 </code></pre>
-
       <h4>
         Soft-link our configuration to circus <code>conf.d</code> directory
       </h4>
 
-      <pre class="language-bash"><code class="prefix">
-              sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/</code>
+      <pre
+        class="language-bash"
+      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/</code>
 <code class="prefix">circusctl reloadconfig</code></pre>
 
       <h3>Install redis</h3>
@@ -225,9 +219,7 @@ PYTHONPATH=/home/{{user}}/app/
 <code class="su">systemctl enable nginx</code></pre>
 
       <h3>Configure nginx with security headers</h3>
-      <pre class="language-nginx"><code>
-              
-              upstream django {
+      <pre class="language-nginx"><code>upstream django {
     server unix:/tmp/{{django_project}};
 }
 
@@ -297,8 +289,7 @@ server {
 </pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash">
-        <code class="su">nginx -t</code>
+      <pre class="language-bash"><code class="su">nginx -t</code>
 <code class="su">systemctl restart nginx</code></pre>
     </div>
   </article>

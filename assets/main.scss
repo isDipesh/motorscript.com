@@ -99,7 +99,7 @@ h1.title {
   line-height: 1.4rem;
 }
 
-code.prefix[class*="language-"]{
+code.prefix[class*="language-"] {
   color: #35495e;
 }
 
@@ -184,8 +184,8 @@ article {
   margin-bottom: 2em;
 }
 
-:not(pre) > code{
-  padding: .3em;
+:not(pre) > code {
+  padding: 0.3em;
   white-space: normal;
   background: #f5f2f0;
   hyphens: none;
@@ -195,40 +195,43 @@ article {
   word-wrap: normal;
 }
 
-pre > code{
+pre > code {
   font-family: monospace !important;
   display: block;
 }
 
-ol.pad li{
+ol.pad li {
   padding: 1em 0;
 }
 
-.pl-1{
+.pl-1 {
   padding-left: 1em;
 }
 
-.pl-2{
+.pl-2 {
   padding-left: 2em;
 }
 
-.company{
+.company {
   padding: 1em;
   margin: 1em;
   border: 1px solid #ccc;
   display: flex;
-  a{
+  a {
     min-width: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  img{
+  img {
     height: 30px;
-    display: block
+    display: block;
   }
-  img.larger{
+  img.larger {
     height: 40px;
   }
 }
 
+pre {
+  line-height: 1em !important;
+}
