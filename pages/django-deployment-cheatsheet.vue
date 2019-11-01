@@ -74,8 +74,9 @@
       <pre class="language-bash normal"><code class="su">su - postgres</code>
 <code class="prefix">createdb {{db_name}}</code>
 <code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
-<code class="prefix">echo "ALTER ROLE "mpdux" WITH LOGIN;" | psql</code>
-<code class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</code></pre>
+<code class="prefix">echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql</code>
+<code class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</code>
+<code class="prefix">exit</code></pre>
 
       <h3>Setup pushing via Git</h3>
 
