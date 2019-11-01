@@ -88,10 +88,11 @@
 <code class="prefix">git config core.bare false</code>
 <code class="prefix">git config receive.denycurrentbranch ignore</code>
 <code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
-<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
-#!/bin/sh
-git checkout -f
-EOF</code>
+<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF</code>
+<code>#!/bin/sh</code>
+<code>git checkout -f</code>
+<code>EOF</code>
+<code></code>
 <code class="prefix">chmod +x hooks/post-receive</code>
 <code class="prefix">exit</code></pre>
 
