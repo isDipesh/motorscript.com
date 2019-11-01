@@ -53,6 +53,7 @@
       ><code class="su">useradd -m {{user}}</code>
 <code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
 <code class="su">usermod -aG sudo {{user}}</code>
+<code class="su">chsh --shell /bin/bash {{user}}</code>
 <code class="su">su {{user}}</code></pre>
       Add <i class="hl">{{ user }}</i> to <i class="hl">sshd_config</i>
       <i class="hl">AllowUsers</i> configuration if
