@@ -130,7 +130,7 @@ EOF</code>
       ><code class="su">apt install circus</code>
                 
 <code class="su"> cat &lt;&lt;EOT &gt;&gt; /etc/systemd/system/circus.service</code></pre>
-      <pre class="language-ini normal"><code>[Unit]
+      <pre class="language-ini"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
 [Service]
@@ -154,7 +154,7 @@ EOT</code></pre>
       <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">vim conf/circus.ini</code></pre>
 
-      <pre class="language-ini normal"><code>[watcher:{{django_project}}]
+      <pre class="language-ini"><code>[watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend gevent {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend meinheld {{django_project}}.wsgi.application
@@ -225,7 +225,7 @@ PYTHONPATH=/home/{{user}}/app/
 <code class="su">systemctl enable nginx</code></pre>
 
       <h3>Configure nginx with security headers</h3>
-      <pre class="language-nginx normal"><code>upstream django {
+      <pre class="language-nginx"><code>upstream django {
     server unix:/tmp/{{django_project}};
 }
 
