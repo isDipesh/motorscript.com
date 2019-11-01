@@ -220,7 +220,7 @@ PYTHONPATH=/home/{{user}}/app/
 
       <pre
         class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d//{{django_project}}.ini</code>
+      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/{{django_project}}.ini</code>
 <code class="prefix">circusctl reloadconfig</code></pre>
 
       <h3>Install redis</h3>
@@ -260,8 +260,8 @@ server {
     #access_log /home/{{user}}/logs/nginx.access.log;
     error_log /home/{{user}}/logs/nginx.error.log;
 
-    limit_conn conn_limit_per_ip 100;
-    limit_req zone=req_limit_per_ip burst=100 nodelay;
+    #limit_conn conn_limit_per_ip 100;
+    #limit_req zone=req_limit_per_ip burst=100 nodelay;
 
     location /robots.txt {
         alias /home/{{user}}/static/robots.txt;
@@ -306,8 +306,7 @@ server {
 
       <pre
         class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code>
-<code class="prefix">circusctl reloadconfig</code></pre>
+      ><code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code></pre>
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
