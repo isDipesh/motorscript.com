@@ -48,7 +48,9 @@
 
       <h3>Create a sudo user</h3>
 
-      <pre class="language-bash"><code class="su">useradd -m {{user}}</code>
+      <pre
+        class="language-bash normal"
+      ><code class="su">useradd -m {{user}}</code>
 <code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
 <code class="su">usermod -aG sudo {{user}}</code>
 <code class="su">su {{user}}</code></pre>
@@ -60,15 +62,15 @@
       <h3>Setup Database</h3>
       Install Postgresql:
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="su">apt-get install postgresql postgresql-contrib</code></pre>
       Enable and start Postgresql
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="su">systemctl enable postgresql</code>
 <code class="su">systemctl start postgresql</code></pre>
       Create database and role:
-      <pre class="language-bash"><code class="su">su - postgres</code>
+      <pre class="language-bash normal"><code class="su">su - postgres</code>
 <code class="prefix">createdb {{db_name}}</code>
 <code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
 <code class="prefix">echo "ALTER ROLE "mpdux" WITH LOGIN;" | psql</code>
@@ -76,7 +78,7 @@
 
       <h3>Setup pushing via Git</h3>
 
-      <pre class="language-bash">
+      <pre class="language-bash normal">
 <code class="prefix">cd</code>
 <code class="prefix">mkdir repo.git {{project_dir}} conf logs media static</code>
 <code class="prefix">cd repo.git</code>
@@ -94,7 +96,7 @@ EOF</code>
 
       Add this bare repo as a remote on local.
 
-      <pre class="language-bash">
+      <pre class="language-bash normal">
 <code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</code><code
                     class="prefix"
                     v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
@@ -112,7 +114,7 @@ EOF</code>
       <!--data-gist-file="example-file2.html"></code>-->
 
       <h3>Setup the Project</h3>
-      <pre class="language-bash"><code class="prefix">cd</code>
+      <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">virtualenv env -p python3</code>
 <code class="prefix">source env/bin/activate</code>
 <code class="prefix">cd app</code>
@@ -123,10 +125,12 @@ EOF</code>
       is all right.
 
       <h3>Install Circus</h3>
-      <pre class="language-bash"><code class="su">apt install circus</code>
+      <pre
+        class="language-bash normal"
+      ><code class="su">apt install circus</code>
                 
 <code class="su"> cat &lt;&lt;EOT &gt;&gt; /etc/systemd/system/circus.service</code></pre>
-      <pre class="language-ini"><code>[Unit]
+      <pre class="language-ini normal"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
 [Service]
@@ -140,17 +144,17 @@ WantedBy=default.target
 EOT</code></pre>
 
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="su">systemctl --system daemon-reload</code>
 <code class="su">systemctl enable circus</code>
 <code class="su">systemctl start circus</code></pre>
 
       <h4>Create circus configuration</h4>
 
-      <pre class="language-bash"><code class="prefix">cd</code>
+      <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">vim conf/circus.ini</code></pre>
 
-      <pre class="language-ini"><code>[watcher:{{django_project}}]
+      <pre class="language-ini normal"><code>[watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend gevent {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend meinheld {{django_project}}.wsgi.application
@@ -203,23 +207,25 @@ PYTHONPATH=/home/{{user}}/app/
       </h4>
 
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/</code>
 <code class="prefix">circusctl reloadconfig</code></pre>
 
       <h3>Install redis</h3>
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="su">apt install redis-server</code>
 <code class="su">systemctl enable redis</code>
 <code class="su">systemctl start redis</code></pre>
 
       <h3>Install nginx</h3>
-      <pre class="language-bash"><code class="su">apt install nginx</code>
+      <pre
+        class="language-bash normal"
+      ><code class="su">apt install nginx</code>
 <code class="su">systemctl enable nginx</code></pre>
 
       <h3>Configure nginx with security headers</h3>
-      <pre class="language-nginx"><code>upstream django {
+      <pre class="language-nginx normal"><code>upstream django {
     server unix:/tmp/{{django_project}};
 }
 
@@ -279,7 +285,7 @@ server {
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
-        class="language-bash"
+        class="language-bash normal"
       ><code class="su">apt-get install software-properties-common</code>
 <code class="su">add-apt-repository ppa:certbot/certbot</code>
 <code class="su">apt-get update</code>
@@ -289,7 +295,7 @@ server {
 </pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash"><code class="su">nginx -t</code>
+      <pre class="language-bash normal"><code class="su">nginx -t</code>
 <code class="su">systemctl restart nginx</code></pre>
     </div>
   </article>
