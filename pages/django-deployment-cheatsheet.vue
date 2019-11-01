@@ -116,12 +116,18 @@
       <!--<code data-gist-id="8001624" data-gist-hide-footer="true" data-gist-caption="this/is/a/sample/path/to/file.extension"-->
       <!--data-gist-file="example-file2.html"></code>-->
 
+      <h3>Install Required Libraries and Packages</h3>
+
+      <pre class="language-bash normal">
+<code class="su">apt install python-dev python3.7-dev build-essential links</code></pre>
+
       <h3>Setup the Project</h3>
       <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">virtualenv env -p python3</code>
 <code class="prefix">source env/bin/activate</code>
 <code class="prefix">cd app</code>
 <code class="prefix">pip install -r requirements/production.txt</code>
+<code class="prefix">pip install circus</code>
 <code class="prefix">./manage.py migrate</code>
 <code class="prefix">./manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
@@ -138,8 +144,8 @@ Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
 [Service]
 Type=simple
-ExecReload=/usr/bin/circusctl reload
-ExecStart=/usr/bin/circusd /etc/circus/circusd.ini
+ExecReload=/home/{{user}}/env/bin/circusctl reload
+ExecStart=/home/{{user}}/env/bin/circusd /etc/circus/circusd.ini
 Restart=always
 RestartSec=5
 [Install]
@@ -164,6 +170,7 @@ cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi
 uid = {{user}}
 endpoint_owner = {{user}}
 use_sockets = True
+virtualenv_py_ver = 3.7
 numprocesses = 2 
 virtualenv = /home/{{user}}/env/
 copy_env = True
@@ -179,8 +186,10 @@ stderr_stream.backup_count = 3
 working_dir = /home/{{user}}/app/
 
 [socket:{{django_project}}]
-path = /tmp/{{django_project}}.sock
-family = AF_UNIX
+host=127.0.0.1
+port=8000
+#path = /tmp/{{django_project}}.sock
+#family = AF_UNIX
 
 [env:{{django_project}}]
 PYTHONPATH=/home/{{user}}/app/
@@ -211,7 +220,7 @@ PYTHONPATH=/home/{{user}}/app/
 
       <pre
         class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/</code>
+      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d//{{django_project}}.ini</code>
 <code class="prefix">circusctl reloadconfig</code></pre>
 
       <h3>Install redis</h3>
@@ -228,8 +237,13 @@ PYTHONPATH=/home/{{user}}/app/
 <code class="su">systemctl enable nginx</code></pre>
 
       <h3>Configure nginx with security headers</h3>
-      <pre class="language-nginx"><code>upstream django {
-    server unix:/tmp/{{django_project}};
+
+      <pre class="language-bash normal"><code class="prefix">cd</code>
+<code class="prefix">vim conf/nginx.conf</code></pre>
+
+      <pre class="language-nginx"><code>upstream {{django_project}} {
+    server 127.0.0.1:8000;
+    # server unix:/tmp/{{django_project}};
 }
 
 # Redirect www.{{remote}} to {{remote}}
@@ -285,6 +299,15 @@ server {
     # Prevent hidden files (beginning with a period) from being served
     location ~ /\. { access_log off; log_not_found off; deny all; }
 }</code></pre>
+
+      <h4>
+        Soft-link our configuration to nginx <code>conf.d</code> directory
+      </h4>
+
+      <pre
+        class="language-bash normal"
+      ><code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code>
+<code class="prefix">circusctl reloadconfig</code></pre>
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
