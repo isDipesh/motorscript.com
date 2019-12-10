@@ -92,6 +92,7 @@
 <code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF</code>
 <code>#!/bin/sh</code>
 <code>git checkout -f</code>
+<code>#../app/deploy.sh</code>
 <code>EOF</code>
 <code></code>
 <code class="prefix">chmod +x hooks/post-receive</code>
