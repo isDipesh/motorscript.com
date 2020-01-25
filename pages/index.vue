@@ -2,6 +2,11 @@
   <div>
     <ul class="posts">
       <li>
+        <router-link to="using-ckeditor5-with-nuxtjs"
+          >Using CKEditor 5 with Nuxt.js</router-link
+        >
+      </li>
+      <li>
         <router-link to="enabling-persisted-storage-for-chrome"
           >Enabling Persisted Storage for your web app on Chrome</router-link
         >
