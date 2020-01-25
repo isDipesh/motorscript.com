@@ -228,14 +228,15 @@ PYTHONPATH=/home/{{user}}/app/
       <pre
         class="language-bash normal"
       ><code class="su">apt install redis-server</code>
-<code class="su">systemctl enable redis</code>
-<code class="su">systemctl start redis</code></pre>
+<code class="su">systemctl enable redis-server</code>
+<code class="su">systemctl start redis-server</code></pre>
 
       <h3>Install nginx</h3>
       <pre
         class="language-bash normal"
       ><code class="su">apt install nginx</code>
-<code class="su">systemctl enable nginx</code></pre>
+<code class="su">systemctl enable nginx</code>
+<code class="su">rm /etc/nginx/sites-enabled/default</code></pre>
 
       <h3>Configure nginx with security headers</h3>
 
@@ -287,7 +288,7 @@ server {
         proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect off;
-        proxy_pass http://django;
+        proxy_pass http://{{django_project}};
         client_max_body_size 50m;
         add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
         add_header X-Content-Type-Options nosniff;
