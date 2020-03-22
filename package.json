@@ -4,6 +4,9 @@
   "description": "Dipesh Acharya's technical blog",
   "author": "Dipesh Acharya <dipesh@awecode.com>",
   "private": true,
+  "engines": {
+    "node": "=9.11.2"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

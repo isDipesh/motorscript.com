@@ -2,6 +2,11 @@
   <div>
     <ul class="posts">
       <li>
+        <router-link to="cleanup-ubuntu-server"
+          >Cleaning Up Ubuntu Server</router-link
+        >
+      </li>
+      <li>
         <router-link to="using-ckeditor5-with-nuxtjs"
           >Using CKEditor 5 with Nuxt.js</router-link
         >
