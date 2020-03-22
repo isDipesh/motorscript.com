@@ -2,6 +2,17 @@
   <div>
     <ul class="posts">
       <li>
+        <router-link to="security-hardening-ubuntu-server"
+          >Security: Hardening Ubuntu Server</router-link
+        >
+      </li>
+      <li>
+        <router-link to="security-hardening-ssh-linux-server"
+          >Security: Hardening SSH on Linux Server</router-link
+        >
+      </li>
+
+      <li>
         <router-link to="cleanup-ubuntu-server"
           >Cleaning Up Ubuntu Server</router-link
         >

@@ -33,8 +33,9 @@
       This removes the <i class="hl">unattended-upgrades</i> package and the
       associated services which are reponsible for automatically updating
       packages in the system. Although removing this package saves disk space
-      and also removes a service that runs in the background, this is not
-      recommended. You can rather configure it to install just the security
+      and also removes a services running in the background, this is not
+      recommended. You can rather configure
+      <i class="hl">unattended-upgrades</i> to install just the security
       updates.
 
       <!-- Please refer to this article for more details: XXXXXX -->
