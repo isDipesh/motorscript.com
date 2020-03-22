@@ -45,6 +45,15 @@
 
       Use the above command to list all services running in your server. Disable
       the services you don't need.
+
+      <h2>Remove orphan packages</h2>
+
+      <pre
+        class="language-bash normal"
+      ><code>sudo apt autoremove --purge</code></pre>
+
+      This removes packages required as dependencies of previously installed
+      packages which have been removed now.
     </div>
   </article>
 </template>
