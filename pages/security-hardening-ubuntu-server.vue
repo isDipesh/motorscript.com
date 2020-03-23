@@ -154,7 +154,6 @@ Enable automatic security updates (unattended-upgrades)
       <ul>
         <li>Use fail2ban.</li>
         <li>Try using single network service per VM instance.</li>
-        <li>Try using single network service per VM instance.</li>
         <li>Make use of security extensions like AppArmor and SELinux.</li>
         <li>Implement service specific security measures like securing Nginx, Apache, PostgreSQL, MySQL.</li>
         <li>Use firewall provided by our cloud service provider.</li>
