@@ -152,10 +152,16 @@ Enable automatic security updates (unattended-upgrades)
 
       <h2>Other Security Measures</h2>
       <ul>
-      <li>Try using single network service per VM instance.</li>
-<li>Make use of security extensions like AppArmor and SELinux.</li>
-<li>Implement service specific security measures: Secure Nginx.</li>
-<li>Use firewall provided by our cloud service provider.</li>
+        <li>Use fail2ban.</li>
+        <li>Try using single network service per VM instance.</li>
+        <li>Try using single network service per VM instance.</li>
+        <li>Make use of security extensions like AppArmor and SELinux.</li>
+        <li>Implement service specific security measures like securing Nginx, Apache, PostgreSQL, MySQL.</li>
+        <li>Use firewall provided by our cloud service provider.</li>
+        <li>Access your system with security audit tools like Lynis.</li>
+        <li>Watch your logs. Use tools like LogWatch.</li>
+        <li>Try things you'd do if you lost access to your system but you need to get in. You may find some security holes. Fix them.</li>
+        <li>Get consultancy from a security expert.</li>
       </ul>
     </div>
   </article>
