@@ -2,33 +2,33 @@
   <div>
     <ul class="posts">
       <li>
-        <router-link to="security-hardening-ubuntu-server"
+        <router-link to="security-hardening-ubuntu-server/"
           >Security: Hardening Ubuntu Server</router-link
         >
       </li>
       <li>
-        <router-link to="security-hardening-ssh-linux-server"
+        <router-link to="security-hardening-ssh-linux-server/"
           >Security: Hardening SSH on Linux Server</router-link
         >
       </li>
 
       <li>
-        <router-link to="cleanup-ubuntu-server"
+        <router-link to="cleanup-ubuntu-server/"
           >Cleaning Up Ubuntu Server</router-link
         >
       </li>
       <li>
-        <router-link to="using-ckeditor5-with-nuxtjs"
+        <router-link to="using-ckeditor5-with-nuxtjs/"
           >Using CKEditor 5 with Nuxt.js</router-link
         >
       </li>
       <li>
-        <router-link to="enabling-persisted-storage-for-chrome"
+        <router-link to="enabling-persisted-storage-for-chrome/"
           >Enabling Persisted Storage for your web app on Chrome</router-link
         >
       </li>
       <li>
-        <router-link to="install-tensorflow-arch-linux-cuda-cudnn"
+        <router-link to="install-tensorflow-arch-linux-cuda-cudnn/"
           >Installing TensorFlow for Python on Arch Linux (with CUDA 9 and CUDNN
           7)</router-link
         >

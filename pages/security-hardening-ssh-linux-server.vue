@@ -79,6 +79,9 @@
       This prevents brute-force login attacks. You will have to use key pair to
       authenticate.
 
+      <p>Confirm if you can make new SSH connections to the server using the current configuration
+      before exiting your current SSH session.</p>
+
       <p>
         For older versions of OpenSSH, please refer to this
         <a

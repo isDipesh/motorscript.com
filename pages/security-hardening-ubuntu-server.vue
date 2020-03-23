@@ -10,101 +10,65 @@
     />
 
     <div class="content" itemprop="articleBody">
-      An Ubuntu server instance can be cleaned by removing some unwanted
-      packages and disabling services. This saves some disk space and also frees
-      up memory.
+      A default installation of Ubuntu server is fairly secure. However, one can follow the following instructions to harden the security further.
 
-      <h2>Harden SSH Configuration</h2>
+      <h2>Improve SSH Security</h2>
 
-      Login to your server using SSH and start editing SSH service configuration
-      file:
+      Hardening SSH is vital in keeping your server secure.
+      <nuxt-link to="/security-hardening-ssh-linux-server/"
+        >Refer to this article for in-depth instructions for SSH
+        hardening.</nuxt-link
+      >
 
+      <h2>Secure Shared Memory</h2>
+      Since multiple processes can use the same memory space, making shared memory read only prevents exploitation of vulnerabilities in services running in the server.
       <pre
         class="language-bash"
-      ><code class="su">vi /etc/ssh/sshd_config</code></pre>
-
-      <h3>Update the port for SSH service</h3>
-      <pre class="language-ini"><code>Port 23456</code></pre>
-      Use a port number in the range 1024-49151. Although networking tools can
-      easily detect open ports, this may prevent bots and humans only trying to
-      penetrate on default port.
-
-      <h3>Use the following HostKey configuration</h3>
+      ><code class="prefix">sudo vi /etc/fstab</code></pre>
       <pre
         class="language-ini"
-      ><code>HostKey /etc/ssh/ssh_host_ed25519_key</code>
-<code>HostKey /etc/ssh/ssh_host_rsa_key</code>
-<code>HostKey /etc/ssh/ssh_host_ecdsa_key</code></pre>
+      ><code>none /run/shm tmpfs defaults,ro 0 0</code></pre>
 
-      <h3>Change default Key Exchange algorithms and Ciphers</h3>
-      <pre
-        class="language-ini"
-      ><code>KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256</code>
-<code>Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr</code>
-<code>MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com</code></pre>
 
-      <h3>Enable Verbose Logging</h3>
-      <pre class="language-ini"><code>LogLevel VERBOSE</code></pre>
+      <h2>Use a Firewall</h2>
+      Ubuntu comes with UFW, Uncomplicated Firewall. It is a simple alternative
+      to <i class="hl">iptables</i>.
 
-      <h3>Disable Remote Root Login</h3>
-      <pre class="language-ini"><code>PermitRootLogin no</code></pre>
-
-      <h3>Only Allow Specific Users to SSH</h3>
-      <pre
-        class="language-ini"
-      ><code>AllowUsers <i>username1</i> <i>username2</i></code></pre>
-
-      <h3>Disable X11Forwarding</h3>
-      <pre class="language-ini"><code>X11Forwarding no</code></pre>
-      Because you probably don't need GUIs on server.
-
-      <h3>Automatically Disconnect Idle Sessions</h3>
-      <pre class="language-ini"><code>ClientAliveInterval 300</code>
-<code>ClientAliveCountMax 0</code></pre>
-      SSH sessions will disconnect when no data is received for 5 minutes.
-
-      <h3>Use Kernel Sandboxing for Unprivileged Processes</h3>
-      <pre
-        class="language-ini"
-      ><code>UsePrivilegeSeparation sandbox</code></pre>
-
-      <h3>Disable Password Authentication</h3>
-      <pre class="language-ini"><code>PasswordAuthentication no</code></pre>
-      This prevents brute-force login attacks. You will have to use key pair to
-      authenticate.
-
-      <p>
-        For older versions of OpenSSH, please refer to this
-        <a
-          href="https://infosec.mozilla.org/guidelines/openssh"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Mozilla Guideline.</a
-        >
-      </p>
-
-      <h2>Generate Private/Public Key Pair</h2>
-
-      On your local computer, generate new SSH key pair. You may want to backup
-      your existing key pairs or create the new pair in a different location.
-      Use a passphrase you can retrieve later while adding this SSH key to your
-      agent.
+      <p>Install and enable UFW:
       <pre
         class="language-bash"
-      ><code class="prefix">ssh-keygen -t rsa</code></pre>
+      ><code class="prefix">sudo apt install ufw</code>
+      <code class="prefix">sudo ufw enable</code></pre></p>
 
-      Add the new SSH private key to your SSH agent.
+      UFW by default denies all incoming connection and allows all outgoing
+      connections.
+
+      <!-- Allow all outgoing connections, deny all incoming connections.
       <pre
         class="language-bash"
-      ><code class="prefix">set ssh-add ~/.ssh/id_rsa</code></pre>
-      Use the path you generated the key pairs in.
+      ><code class="prefix">sudo ufw allow outgoing</code><code class="prefix">sudo ufw deny incoming</code></pre> -->
 
-      <p>Copy the contents of <i class="hl">id_rsa.pub</i>.</p>
+    <p>
+      Allow SSH:
+      <pre
+        class="language-bash"
+      ><code class="prefix">sudo ufw allow 22 # Or sudo ufw allow 23456 if SSH is listening on another port</code></pre></p>
 
-      <p>On the server, paste it to <i class="hl">~/.ssh/authorized_keys</i></p>
+      Allow HTTP and HTTPS:
+      <pre
+        class="language-bash"
+      ><code class="prefix">sudo ufw allow http # OR sudo ufw allow 80</code>
+      <code class="prefix">sudo ufw allow https # OR sudo ufw allow 443</code></pre>
 
-      You should now be able to securely SSH into the server without using a
-      password.
+      View status and configuration:
+      <pre
+        class="language-bash"
+      ><code class="prefix">sudo ufw status verbose</code></pre>
+
+      <h2>Keep your system up-to-date</h2>
+<pre><code class="prefix">sudo apt update</code>
+<code class="prefix">sudo apt upgrade</code></pre>
+Enable automatic security updates (unattended-upgrades)
 
       <h2>Remove unwanted user accounts</h2>
 
@@ -116,9 +80,6 @@
         class="language-bash"
       ><code class="su">deluser --remove-home ubuntu</code></pre>
 
-      Confirm if you can SSH to the server using allowed user configuration
-      before exiting your current SSH session.
-
       <h2>Cleanup unncessary packages and services</h2>
       List all running services and disable the services you are certain you
       won't need.
@@ -129,6 +90,14 @@
       <pre
         class="language-bash"
       ><code class="su">apt autoremove --purge</code></pre>
+
+      <h2>Other Security Measures</h2>
+      <ul>
+      <li>Try using single network service per VM instance.</li>
+<li>Make use of security extensions like AppArmor and SELinux.</li>
+<li>Implement service specific security measures: Secure Nginx.</li>
+<li>Use firewall provided by our cloud service provider.</li>
+      </ul>
     </div>
   </article>
 </template>
