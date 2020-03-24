@@ -71,7 +71,9 @@
       ><code class="su">systemctl enable postgresql</code>
 <code class="su">systemctl start postgresql</code></pre>
       Create database and role:
-      <pre class="language-bash normal"><code class="su">su - postgres</code>
+      <pre
+        class="language-bash normal"
+      ><code class="prefix">sudo su - postgres</code>
 <code class="prefix">createdb {{db_name}}</code>
 <code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
 <code class="prefix">echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql</code>
@@ -120,7 +122,7 @@
       <h3>Install Required Libraries and Packages</h3>
 
       <pre class="language-bash normal">
-<code class="su">apt install python-dev python3.7-dev build-essential links</code></pre>
+<code class="su">apt install python-dev python3.7-dev build-essential links virtualenv</code></pre>
 
       <h3>Setup the Project</h3>
       <pre class="language-bash normal"><code class="prefix">cd</code>
