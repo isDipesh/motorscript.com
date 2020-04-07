@@ -18,6 +18,7 @@
               Download form data
             </div>
             <li>Domain Name: <input name="remote" v-model="remote" /></li>
+            <li>IP Address: <input name="ip" v-model="ip" /></li>
             <li>User on Server : <input name="user" v-model="user" /></li>
             <li>
               User Password :
@@ -103,10 +104,10 @@
       Add this bare repo as a remote on local.
 
       <pre class="language-bash normal">
-<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</code><code
+<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
                     class="prefix"
-                    v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
+                    v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
 <code class="prefix">git push server --all</code></pre>
 
       <p>
@@ -122,7 +123,8 @@
       <h3>Install Required Libraries and Packages</h3>
 
       <pre class="language-bash normal">
-<code class="su">apt install python-dev python3.7-dev build-essential links virtualenv</code></pre>
+<code class="su">apt install python-dev build-essential links virtualenv python3-pip</code>
+<code class="su">pip3 install virtualenv</code></pre>
 
       <h3>Setup the Project</h3>
       <pre class="language-bash normal"><code class="prefix">cd</code>
@@ -376,13 +378,14 @@ export default {
     return {
       project_dir: "app",
       user: "user",
+      ip: "143.666.7.343",
       user_password: user_password,
       db_name: "db_name",
       db_user: "db_user",
       db_password: db_password,
       remote: "awecode.com",
       ssh_port: "22",
-      django_project: "django_project"
+      django_project: "django_project",
     };
   },
   methods: {
@@ -411,7 +414,7 @@ export default {
       document.body.appendChild(element);
       element.click();
       document.body.removeChild(element);
-    }
-  }
+    },
+  },
 };
 </script>
