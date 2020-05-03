@@ -85,12 +85,9 @@
           >https://dl.yarnpkg.com/debian/pubkey.gpg</a
         >
         | sudo apt-key add -<br />
-        echo “deb
-        <a href="https://dl.yarnpkg.com/debian/"
-          >https://dl.yarnpkg.com/debian/</a
-        >
-        stable main” | sudo tee /etc/apt/sources.list.d/yarn.list<br />
-        sudo apt update &amp;&amp; sudo apt install yarn<br />
+        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list<br/>
+     sudo apt-get update && sudo apt-get install yarn
+<br />
         yarn --version
       </p>
       <p class="has-line-data" data-line-start="21" data-line-end="22">
@@ -117,7 +114,9 @@
         cd app<br />
         yarn<br />
         yarn build<br />
-        pm2 start npm – start<br />
+        pm2 start npm – start<br /> 
+        OR<br/>
+        pm2 start pm2.json<br /> 
         pm2 status<br />
         pm2 startup
       </p>
@@ -151,24 +150,26 @@
         /etc/nginx/sites-enabled/edupatra.conf
       </p>
       <p class="has-line-data" data-line-start="70" data-line-end="88">
-        pm2.json:<br />
-        {<br />
-        “apps”: [<br />
-        {<br />
-        “name”: “thuprai”,<br />
-        “instances”: “max”,<br />
-        “exec_mode”: “cluster”,<br />
-        “script”: “npm”,<br />
-        “args”: “start”,<br />
-        “cwd”: “/home/thufx/app/”,<br />
-        “env”: {<br />
-        “HOST”: “127.0.0.1”,<br />
-        “PORT”: “3000”,<br />
-        “NODE_ENV”: “production”<br />
-        }<br />
-        }<br />
-        ]<br />
-        }
+        <pre><code>
+       {
+  "apps": [
+    {
+      "name": "thuprai",
+      "instances": "max",
+      "exec_mode": "cluster",
+      "script": "npm",
+      "args": "start",
+      "cwd": "/home/thufx/app/",
+      "env": {
+        "HOST": "127.0.0.1",
+        "PORT": "3000",
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
+</code></pre>
+
       </p>
       <p class="has-line-data" data-line-start="89" data-line-end="98">
         post-receive:<br />
@@ -178,7 +179,7 @@
         . ~/.nvm/nvm.sh<br />
         nvm use 12.8.0<br />
         yarn<br />
-        yarn build <br />
+        yarn build \<br />
         &amp;&amp; pm2 restart pm2.json
       </p>
 

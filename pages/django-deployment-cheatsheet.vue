@@ -107,7 +107,7 @@
 <code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
                     class="prefix"
                     v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{ip}} -p {{ssh_port}}</code>
 <code class="prefix">git push server --all</code></pre>
 
       <p>
