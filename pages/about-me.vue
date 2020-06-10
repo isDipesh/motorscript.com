@@ -85,7 +85,7 @@
         </div>
     </div>
 
-    <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization" class="company">
+    <!-- <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization" class="company">
         <a href="http://nepa-laya.com" target="_blank" itemprop="url">
             <img itemprop="logo" src="/media/companies/nepalaya.svg" />
         </a>
@@ -103,7 +103,7 @@
                     <meta itemprop="postOfficeBoxNumber" content="8975" />
             </div>
         </div>
-    </div>
+    </div> -->
     
 </div>
 
