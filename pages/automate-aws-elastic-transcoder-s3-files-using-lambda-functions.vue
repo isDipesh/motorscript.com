@@ -166,8 +166,8 @@ def lambda_handler(event, context):
         <li>Under <span class="hl">Properties</span>, open <span class="hl">Events</span>.</li>
         <li>Click <span class="hl">Add notification</span>.</li>
         <li>Give the notification a name, select <span class="hl">PUT</span> event.
-        If the lambda is to be triggered only for selecyed folders/prefixes or file extension,
-        specify using <span class="hl">Prefix</span> and/or <span class="h">Suffix</span> fields. Select <span class="hl">Lambda Function</span>
+        If the lambda is to be triggered only for particular folders/prefixes or file extension,
+        specify using <span class="hl">Prefix</span> and/or <span class="hl">Suffix</span> fields. Select <span class="hl">Lambda Function</span>
         for notification destination. Then, pick the lambda function created earlier and save the form.</li>
     </div>
   </article>
