@@ -2,6 +2,11 @@
   <div>
     <ul class="posts">
       <li>
+        <router-link to="automate-aws-elastic-transcoder-s3-files-using-lambda-functions/"
+          >Automatically Run AWS Elastic Transcoder Jobs using Lambda Functions</router-link
+        >
+      </li>
+      <li>
         <router-link to="security-hardening-ubuntu-server/"
           >Security: Hardening Ubuntu Server</router-link
         >
