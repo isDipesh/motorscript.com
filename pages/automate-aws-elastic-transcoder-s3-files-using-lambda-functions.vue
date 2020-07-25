@@ -20,7 +20,7 @@
 
       <h2>Create Amazon S3 Buckets</h2>
       <p>
-        Create two S3 buckets – one for uploading your audio files, another one
+        Create two S3 buckets – one for uploading your media files, another one
         to save, and distribute the transcoded files. The first bucket that
         stores your uploads can be private whereas the second one needs to be
         public if you want to use it to distribute the files. Select a region
@@ -122,7 +122,7 @@ import os
 import boto3
 
 def lambda_handler(event, context):
-    pipeline_id = '1594648224461-1gh2td'
+    pipeline_id = '[pipeline-id]'
     hls_audio_160k_preset_id = '1351620000001-200060' # HLS Audio - 160k
     segment_duration = '15'
     transcoder = boto3.client('elastictranscoder')
