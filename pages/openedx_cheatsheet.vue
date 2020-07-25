@@ -4,22 +4,23 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
   >
-    <BlogTitle title="Open edX Cheatsheet" published="04 Apr 2020" />
+    <BlogTitle title="Open edX Setup Cheatsheet" published="04 Apr 2020" />
 
     <div class="content" itemprop="articleBody" v-highlight>
       <h2>Installation</h2>
-      <h3>Guide for Ubuntu 16.04 (x64)</h3>
+      Guide for Ubuntu 16.04 (x64) : 
+      <a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/146440579/Native+Open+edX+platform+Ubuntu+16.04+64+bit+Installation">
       https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/146440579/Native+Open+edX+platform+Ubuntu+16.04+64+bit+Installation
+      </a>
 
       <h2>User Management</h2>
       <p>
       Creating a user or upgrading an existing user to superuser:
       <pre
         class="language-bash normal"
-      ><code class="prefix"><code class="prefix">sudo su edxapp -s /bin/bash</code>
+      ><code class="prefix">sudo su edxapp -s /bin/bash</code>
 <code class="prefix">cd</code>
 <code class="prefix">/edx/bin/python.edxapp /edx/bin/manage.edxapp lms manage_user username user@domain.com --staff --superuser --settings=production</code></pre>
-        Reference:
       </p>
 
       <p>
@@ -56,8 +57,10 @@
         <li>Create superuser</li>
         <li>Access Admin</li>
         <li>Update Site</li>
-        <li>Update Site Configuration - https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/sites/configure_site.html</li>
-        
+        <li>Update Site Configuration -
+          <a href="https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/sites/configure_site.html" target="_blank" rel="noreferrer noopener">
+          https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/sites/configure_site.html</a></li>
+    </ul>
 
 
     </div>

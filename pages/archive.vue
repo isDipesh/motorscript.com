@@ -3,6 +3,11 @@
     <h1 class="pl-1">Archived Posts</h1>
     <ul class="posts">
       <li>
+        <router-link to="openedx_cheatsheet">
+          Open edX Setup Cheatsheet
+        </router-link>
+      </li>
+      <li>
         <router-link to="mpeg-jpeg-compression">
           MPEG and JPEG Compression
         </router-link>
