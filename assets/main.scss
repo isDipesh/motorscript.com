@@ -1,9 +1,9 @@
 $border-color: #dbdfe1;
 
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap");
 
 html {
-  font-family: 'Zilla Slab', serif;
+  font-family: "Zilla Slab", serif;
   font-size: 137.5%;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -17,7 +17,7 @@ html {
 body {
   max-width: 1280px;
   margin: 0 auto;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 *,
@@ -26,7 +26,7 @@ body {
   box-sizing: border-box;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -65,7 +65,7 @@ h1.title {
   // font-weight: normal;
 }
 
-h3{
+h3 {
   font-size: 1.2em;
   font-weight: normal;
 }
@@ -230,6 +230,12 @@ article {
 pre > code {
   font-family: monospace !important;
   display: block;
+}
+
+pre,
+code {
+  max-width: 100%;
+  overflow: auto;
 }
 
 ol.pad li {
