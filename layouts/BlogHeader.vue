@@ -1,7 +1,5 @@
 <template>
-    <header>
-            <h1>
-                <router-link to="/">motorscript.com</router-link>
-            </h1>
-        </header>
+  <header>
+    <router-link to="/">motorscript.com</router-link>
+  </header>
 </template>

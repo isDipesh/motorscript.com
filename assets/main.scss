@@ -1,8 +1,10 @@
 $border-color: #dbdfe1;
 
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Zilla Slab', serif;
+
   font-size: 137.5%;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -10,7 +12,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: #35495e;
+  color: #3a4149;
 }
 
 body {
@@ -41,9 +43,33 @@ footer {
   }
 }
 
+header a {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0.2em 0;
+  display: block;
+}
+
 header {
   border-bottom: 1px solid $border-color;
   padding: 0 1rem;
+}
+
+h1.title {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  // font-weight: normal;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+h2,
+h3,
+h4 {
+  margin-bottom: 0.25em;
 }
 
 footer {
@@ -59,14 +85,9 @@ footer {
   text-align: center;
 }
 
-/* Copy & Lists */
 p {
   line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
-
-h1.title {
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -85,13 +106,11 @@ h1.title {
 }
 
 .hl {
-  padding: 0 0.3rem;
-  border-radius: 5%;
-}
-
-.hl {
   background: #eee;
   overflow: auto;
+  padding: 0 0.3rem;
+  border-radius: 5%;
+  font-size: 0.85em;
 }
 
 .content {
@@ -142,10 +161,13 @@ code.prefix[class*="language-"] {
 }
 
 .btn:hover {
-  -webkit-box-shadow: 0px 0px 0 #666;
-  -moz-box-shadow: 0px 0px 0 #666;
+  box-shadow: 0px 0px 0 #666;
   top: 5px;
   left: 5px;
+}
+
+ul {
+  margin-top: 0;
 }
 
 .block {
