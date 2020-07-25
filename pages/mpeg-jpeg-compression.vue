@@ -23,7 +23,7 @@
       </p>
 
       <div name="DataCompression" data-unique="DataCompression"></div>
-      <h1>Data Compression</h1>
+      <h2>Data Compression</h2>
 
       <p>
         The hunger for information keeps growing in the modern age. Science and
@@ -56,7 +56,7 @@
         name="LossyandLosselessCompression"
         data-unique="LossyandLosselessCompression"
       ></div>
-      <h2>Lossy and Losseless Compression</h2>
+      <h3>Lossy and Losseless Compression</h3>
 
       <p>
         There are basically two types of data compression – lossless and lossy
@@ -85,7 +85,7 @@
         name="DiscreteCosineTransform"
         data-unique="DiscreteCosineTransform"
       ></div>
-      <h2>Discrete Cosine Transform</h2>
+      <h3>Discrete Cosine Transform</h3>
       <p>
         DCT (Discrete Cosine Transform), like other
         transformation techniques tries to decorrelate the basic units of data.
@@ -213,7 +213,7 @@
       DCT to reduce further number of bits.
       <p></p>
       <div name="Quantization" data-unique="Quantization"></div>
-      <h2>Quantization</h2>
+      <h3>Quantization</h3>
       <p>
         Quantization is the process of converting a continuous range of
         infinitely many values into a finite discrete set of all possible
@@ -329,7 +329,7 @@
         zigzag scanning, entropy encoding etc.
       </p>
       <div name="EntropyCoding" data-unique="EntropyCoding"></div>
-      <h2>Entropy Coding</h2>
+      <h3>Entropy Coding</h3>
       <p>
         Entropy literally refers to the lack of predictability or order. In the
         context of information theory and engineering, entropy is the
@@ -497,7 +497,7 @@
         name="WaveletTransformation"
         data-unique="WaveletTransformation"
       ></div>
-      <h2>Wavelet Transformation</h2>
+      <h3>Wavelet Transformation</h3>
       <p>
         Wavelet transformation is a technique for compression of data used in
         images and sometimes in audio and video. It is used as a substitute to
@@ -511,7 +511,7 @@
         name="RunlengthEncoding(RLE)"
         data-unique="RunlengthEncoding(RLE)"
       ></div>
-      <h2>Run length Encoding (RLE)</h2>
+      <h3>Run length Encoding (RLE)</h3>
       <p>
         un Length Encoding is a technique of encoding data where consecutively
         occurring entities are represented only once with a symbol along with
@@ -541,7 +541,7 @@
         0101 1011 0011 0001 0000 1100
       </p>
       <div name="Chromasubsampling" data-unique="Chromasubsampling"></div>
-      <h2>Chroma subsampling</h2>
+      <h3>Chroma subsampling</h3>
       <p>
         In the early years of television broadcasting, same bandwidth were
         provided for color components and brightness. Soon it was realized that
@@ -653,9 +653,9 @@
       </p>
       <hr />
       <div name="JPEG" data-unique="JPEG"></div>
-      <h1>JPEG</h1>
+      <h2>JPEG</h2>
       <div name="Introduction" data-unique="Introduction"></div>
-      <h2>Introduction</h2>
+      <h3>Introduction</h3>
       <p>
         JPEG, pronounced ‘Jay-Peg’, stands for ‘Joint
         Photographers Expert Group’. JPEG is also used
@@ -714,7 +714,7 @@
         name="JPEGStandardizationBody"
         data-unique="JPEGStandardizationBody"
       ></div>
-      <h2>JPEG Standardization Body</h2>
+      <h3>JPEG Standardization Body</h3>
       <p>
         Joint Photographers Expert Group is a joint committee of the
         standardization bodies ISO/<span class="caps"
@@ -742,7 +742,7 @@
         XR standards.
       </p>
       <div name="HistoryofJPEG" data-unique="HistoryofJPEG"></div>
-      <h2>History of JPEG</h2>
+      <h3>History of JPEG</h3>
       <p>
         The first JPEG standard –
         JPEG Part 1 was published in 1992, which
@@ -783,7 +783,7 @@
         name="CompressioninJPEGStandard"
         data-unique="CompressioninJPEGStandard"
       ></div>
-      <h2>Compression in JPEG Standard</h2>
+      <h3>Compression in JPEG Standard</h3>
       <div
         name="PsychovisualCompression"
         data-unique="PsychovisualCompression"
@@ -891,7 +891,7 @@
         CH (Compression History).
       </p>
       <div name="JPEGCompressionModes" data-unique="JPEGCompressionModes"></div>
-      <h2>JPEG Compression Modes</h2>
+      <h3>JPEG Compression Modes</h3>
       <p>
         There are four modes of JPEG compression:
       </p>
@@ -939,7 +939,7 @@
         name="ApplicationsofJPEGformat"
         data-unique="ApplicationsofJPEGformat"
       ></div>
-      <h2>Applications of JPEG format</h2>
+      <h3>Applications of JPEG format</h3>
       <p>
         Digital photography is primarily used for sharing information and
         storage. JPEG images are widely used for
@@ -989,7 +989,7 @@
         be specific.
       </p>
       <div name="JPEG’sLimitations" data-unique="JPEG’sLimitations"></div>
-      <h2>JPEG’s Limitations</h2>
+      <h3>JPEG’s Limitations</h3>
       <p>
         JPEG has some downsides too. It is a lossy
         compression standard. It may not be appropriate in cases where the
@@ -1018,7 +1018,7 @@
         name="FutureTechnologiesofJPEG"
         data-unique="FutureTechnologiesofJPEG"
       ></div>
-      <h2>Future Technologies of JPEG</h2>
+      <h3>Future Technologies of JPEG</h3>
       <p>
         Joint Photographic Expert Group (JPEG) in 1992
         introduced a very popular image compression algorithm and standard
@@ -1068,9 +1068,9 @@
         infant stage and still need some improvements.
       </p>
       <div name="MPEG" data-unique="MPEG"></div>
-      <h1>MPEG</h1>
+      <h2>MPEG</h2>
       <div name="Introduction39" data-unique="Introduction39"></div>
-      <h2>Introduction</h2>
+      <h3>Introduction</h3>
       <p>
         MPEG, pronounced ‘M-Peg’, stands for ‘Moving
         Picture Experts Group’. Like JPEG,
@@ -1095,7 +1095,7 @@
         is ‘video/mpeg’.
       </p>
       <div name="HistoryofMPEG" data-unique="HistoryofMPEG"></div>
-      <h2>History of MPEG</h2>
+      <h3>History of MPEG</h3>
       <p>
         With an objective to provide better quality videos with small file
         sizes, ISO, IEC ,
@@ -1355,7 +1355,7 @@
         name="StandardsoftheMPEGFamily"
         data-unique="StandardsoftheMPEGFamily"
       ></div>
-      <h2>Standards of the MPEG Family</h2>
+      <h3>Standards of the MPEG Family</h3>
       <div name="MPEG-1" data-unique="MPEG-1"></div>
       <h3>MPEG-1</h3>
       <p>
@@ -1457,7 +1457,7 @@
         JPEG compression for each frame.
       </p>
       <div name="VideoFundamentals" data-unique="VideoFundamentals"></div>
-      <h2>Video Fundamentals</h2>
+      <h3>Video Fundamentals</h3>
       <p>
         <b>Video</b> is the technology in which moving visual images are
         recorded, reproduced and/or broadcasted. An analog video is a video with
@@ -1525,7 +1525,7 @@
         multiple strata is a scalable form.
       </p>
       <div name="Frames" data-unique="Frames"></div>
-      <h2>Frames</h2>
+      <h3>Frames</h3>
       <p>
         MPEG identifies frames into three kinds:<br />
         1. I-frames<br />
@@ -1611,7 +1611,7 @@
       </center>
       <p></p>
       <div name="Macroblock" data-unique="Macroblock"></div>
-      <h2>Macroblock</h2>
+      <h3>Macroblock</h3>
       <p>
         A macroblock (MB) is a segment or component of
         frame. 16×16 blocks of pixels are usually taken as a macroblock where as
@@ -1623,7 +1623,7 @@
         macroblocks forms a <b>slice</b>.
       </p>
       <div name="Compression" data-unique="Compression"></div>
-      <h2>Compression</h2>
+      <h3>Compression</h3>
       <div
         name="PsychovisualCompression53"
         data-unique="PsychovisualCompression53"
@@ -1926,7 +1926,7 @@
         name="ImplementationsofMPEG"
         data-unique="ImplementationsofMPEG"
       ></div>
-      <h2>Implementations of MPEG</h2>
+      <h3>Implementations of MPEG</h3>
       <div name="Codecs" data-unique="Codecs"></div>
       <h3>Codecs</h3>
       <p>
@@ -1988,7 +1988,7 @@
         extension ‘.mp4′.
       </p>
       <div name="ApplicationsofJPEG" data-unique="ApplicationsofJPEG"></div>
-      <h2>Applications of JPEG</h2>
+      <h3>Applications of JPEG</h3>
       <p>
         MPEG, being the most popular video coding
         standard, has very wide range of applications.
@@ -2054,7 +2054,7 @@
         >-4 AVC.
       </p>
       <div name="LimitationsofMPEG" data-unique="LimitationsofMPEG"></div>
-      <h2>Limitations of MPEG</h2>
+      <h3>Limitations of MPEG</h3>
       <p>
         Newer standards of the MPEG family keep being
         published to overcome the limitations of the older one. The latest
@@ -2085,7 +2085,7 @@
         VLC for encoding and decoding purposes.
       </p>
       <div name="FutureofMPEG" data-unique="FutureofMPEG"></div>
-      <h2>Future of MPEG</h2>
+      <h3>Future of MPEG</h3>
       <p>
         Huge improvements in video encoding have been made since the
         introduction of MPEG-1. Every new

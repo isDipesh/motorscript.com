@@ -26,7 +26,7 @@
         and I thought sharing it would help someone else besides serving as a
         cheatsheet for myself.
       </p>
-      <h1>Installing MythTV</h1>
+      <h2>Installing MythTV</h2>
       <p>
         On Fedora, CentOS, RHEL and other rpm based
         distros:<br />
@@ -36,7 +36,7 @@
         For Ubuntu:<br />
         <pre class="language-bash"><code class="prefix">sudo apt-get install mythtv</code></pre>
       </p>
-      <h1>Setup</h1>
+      <h2>Setup</h2>
       <p>Launch setup with <code>mythtv-setup</code>.</p>
       <p>
         Navigate to <code>2. Capture Cards</code><br />
@@ -77,7 +77,7 @@
         this channel.
       </p>
       <p>We can now exit the setup.</p>
-      <h1>Running MythTV</h1>
+      <h2>Running MythTV</h2>
       <p>
         Start MythTV backend service with <code>mythbackend &amp;</code>.<br />
         The <span class="amp">&amp;</span> after a process name pushes it
