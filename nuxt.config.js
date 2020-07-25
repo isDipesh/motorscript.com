@@ -24,14 +24,14 @@ module.exports = {
    */
   css: ["assets/main.scss"],
   modules: [
-    "@nuxtjs/sitemap",
-    [
-      "@nuxtjs/google-adsense",
-      {
-        id: "ca-pub-8986893739514632",
-        pageLevelAds: true
-      }
-    ]
+    "@nuxtjs/sitemap"
+    // [
+    //   "@nuxtjs/google-adsense",
+    //   {
+    //     id: "ca-pub-8986893739514632",
+    //     pageLevelAds: true
+    //   }
+    // ]
   ],
   plugins: [{ src: "~/plugins/prism.js", ssr: false }],
   generate: {
