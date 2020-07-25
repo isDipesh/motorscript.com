@@ -9,7 +9,7 @@
       published="22 Mar 2020"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       SSH is an essential tool to remotely administrate servers. Although SSH is
       a very secure protocol, you are prone to brute-force attacks if you don't
       follow proper security measures. The following instructions can be

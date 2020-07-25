@@ -9,7 +9,7 @@
       published="22 Mar 2020"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       A default installation of Ubuntu server is fairly secure. However, one can follow the following instructions to harden the security further.
 
       <h2>Improve SSH Security</h2>

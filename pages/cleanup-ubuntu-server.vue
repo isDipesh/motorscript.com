@@ -6,7 +6,7 @@
   >
     <BlogTitle title="Cleaning up Ubuntu Server" published="22 Mar 2020" />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       An Ubuntu server instance can be cleaned by removing some unwanted
       packages and disabling services. This saves some disk space and also frees
       up memory.
