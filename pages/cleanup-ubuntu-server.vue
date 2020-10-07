@@ -15,7 +15,7 @@
 
       <pre
         class="language-bash normal"
-      ><code class="su">sudo apt purge --auto-remove snapd ubuntu-core-launcher squashfs-tools friendly-recovery ureadahead apport at</code></pre>
+      ><code class="su">sudo apt purge --auto-remove snapd squashfs-tools friendly-recovery apport at</code></pre>
 
       Very few server instances utilize these packages. Make sure you don't need
       them before removing them.
