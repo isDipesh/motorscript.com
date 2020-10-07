@@ -125,7 +125,7 @@ net.netfilter.nf_conntrack_tcp_loose = 0</code></pre>
       ><code class="prefix">sudo ufw status verbose</code></pre>
 
       <h2>Keep your system up-to-date</h2>
-<pre><code class="prefix">sudo apt update</code>
+<pre class="language-bash"><code class="prefix">sudo apt update</code>
 <code class="prefix">sudo apt upgrade</code></pre>
 Enable automatic security updates (unattended-upgrades)
 

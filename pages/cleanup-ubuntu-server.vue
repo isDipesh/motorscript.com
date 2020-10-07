@@ -30,15 +30,21 @@
 <code>sudo systemctl disable apt-daily.timer</code>
 <code>sudo systemctl mask apt-daily.service</code></pre>
 
-      This removes the <i class="hl">unattended-upgrades</i> package and the
+      <p>This removes the <i class="hl">unattended-upgrades</i> package and the
       associated services which are reponsible for automatically updating
       packages in the system. Although removing this package saves disk space
       and also removes a services running in the background, this is not
       recommended. You can rather configure
       <i class="hl">unattended-upgrades</i> to install just the security
-      updates.
+      updates.</p>
 
       <!-- Please refer to this article for more details: XXXXXX -->
+
+      <p>Enable only security updates by commenting other origins from <span class="hl">unattended-upgrades</span> apt configuration.
+      Commented lines start with <span class="hl">//</span>.
+      <pre
+        class="language-bash normal"
+      ><code>vi /etc/apt/apt.conf.d/50unattended-upgrades</code></pre>
 
       <h2>Other unwanted services</h2>
 

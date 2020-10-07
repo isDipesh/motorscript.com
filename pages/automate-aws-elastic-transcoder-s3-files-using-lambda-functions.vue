@@ -162,13 +162,31 @@ def lambda_handler(event, context):
 
       <h2>Notifying Lambda for new uploads</h2>
       <ul>
-        <li>Visit <a target="_blank" rel="noopener noreferrer" href="https://s3.console.aws.amazon.com/s3/buckets/">https://s3.console.aws.amazon.com/s3/buckets/</a> and open the first bucket, the one where media is to be uploaded.</li>
-        <li>Under <span class="hl">Properties</span>, open <span class="hl">Events</span>.</li>
+        <li>
+          Visit
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://s3.console.aws.amazon.com/s3/buckets/"
+            >https://s3.console.aws.amazon.com/s3/buckets/</a
+          >
+          and open the first bucket, the one where media is to be uploaded.
+        </li>
+        <li>
+          Under <span class="hl">Properties</span>, open
+          <span class="hl">Events</span>.
+        </li>
         <li>Click <span class="hl">Add notification</span>.</li>
-        <li>Give the notification a name, select <span class="hl">PUT</span> event.
-        If the lambda is to be triggered only for particular folders/prefixes or file extension,
-        specify using <span class="hl">Prefix</span> and/or <span class="hl">Suffix</span> fields. Select <span class="hl">Lambda Function</span>
-        for notification destination. Then, pick the lambda function created earlier and save the form.</li>
+        <li>
+          Give the notification a name, select
+          <span class="hl">PUT</span> event. If the lambda is to be triggered
+          only for particular folders/prefixes or file extension, specify using
+          <span class="hl">Prefix</span> and/or
+          <span class="hl">Suffix</span> fields. Select
+          <span class="hl">Lambda Function</span> for notification destination.
+          Then, pick the lambda function created earlier and save the form.
+        </li>
+      </ul>
     </div>
   </article>
 </template>

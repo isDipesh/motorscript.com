@@ -4,12 +4,12 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
   >
-    <BlogTitle title="Nuxt.js Deployment Cheat-sheet" published="01 Apr 2020" />
+    <BlogTitle title="Nuxt.js Deployment Cheat-sheet" published="01 Apr 2020" updated="08 Oct 2020" />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <div class="block">
         <ul>
-          <!-- <form id="nuxt-form">
+          <form id="nuxt-form">
             <div class="right btn small" @click="download">
               Download form data
             </div>
@@ -26,140 +26,57 @@
             </li>
             <li>SSH Port : <input name="ssh_port" v-model="ssh_port" /></li>
             <li>
-              Django Project Name :
-              <input name="django_project" v-model="django_project" />
+              Project Name :
+              <input name="project_name" v-model="project_name" />
             </li>
-            <li>Database Name : <input name="db_name" v-model="db_name" /></li>
-            <li>Database User : <input name="db_user" v-model="db_user" /></li>
-            <li>
-              Database Password :
-              <input name="db_password" v-model="db_password" />
-              <a class="l1 small" href="#" @click.prevent="regenerate_db"
-                >Regenerate</a
-              >
-              <a class="l1 small" href="#" @click.prevent="copy_db">Copy</a>
-            </li>
-          </form> -->
+          </form>
         </ul>
       </div>
 
-      <p class="has-line-data" data-line-start="0" data-line-end="1">
-        Nuxt Deployment Cheatsheet
-      </p>
-      <ol>
-        <li class="has-line-data" data-line-start="2" data-line-end="3">
-          Create a sudo user
-        </li>
-        <li class="has-line-data" data-line-start="3" data-line-end="4">
-          Harden SSH -
-          <a
-            href="https://gist.github.com/xtranophilist/174b08ab7c756afd56a4747acf64b878"
-            >https://gist.github.com/xtranophilist/174b08ab7c756afd56a4747acf64b878</a
-          >
-        </li>
-        <li class="has-line-data" data-line-start="4" data-line-end="5">
-          Cleanup
-        </li>
-      </ol>
-      <p class="has-line-data" data-line-start="7" data-line-end="11">
-        Disable anacron:<br />
-        vi /etc/crontab<br />
-        Comment anacron lines<br />
-        <a
-          href="http://bookofzeus.com/harden-ubuntu/disable-services/disable-anacron/"
-          >http://bookofzeus.com/harden-ubuntu/disable-services/disable-anacron/</a
-        >
-      </p>
-      <p class="has-line-data" data-line-start="12" data-line-end="15">
-        curl -sL
-        <a href="https://deb.nodesource.com/setup_11.x"
-          >https://deb.nodesource.com/setup_11.x</a
-        >
-        | sudo -E bash -<br />
-        sudo apt-get update<br />
-        sudo apt-get install nodejs npm
-      </p>
-      <p class="has-line-data" data-line-start="16" data-line-end="20">
-        curl -sS
-        <a href="https://dl.yarnpkg.com/debian/pubkey.gpg"
-          >https://dl.yarnpkg.com/debian/pubkey.gpg</a
-        >
-        | sudo apt-key add -<br />
-        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list<br/>
-     sudo apt-get update && sudo apt-get install yarn
-<br />
-        yarn --version
-      </p>
-      <p class="has-line-data" data-line-start="21" data-line-end="22">
-        yarn global add pm2
-      </p>
-      <p class="has-line-data" data-line-start="23" data-line-end="28">
-        If using different node versions in same server:<br />
-        Install nvm<br />
-        curl -o-
-        <a
-          href="https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh"
-          >https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh</a
-        >
-        | bash<br />
-        nvm install 12.8.0<br />
-        nvm use 12.8.0
-      </p>
-      <p class="has-line-data" data-line-start="32" data-line-end="34">
-        Setup pushing via Git<br />
-        app, repo, conf
-      </p>
-      <p class="has-line-data" data-line-start="35" data-line-end="42">
-        cd<br />
-        cd app<br />
-        yarn<br />
-        yarn build<br />
-        pm2 start npm – start<br /> 
-        OR<br/>
-        pm2 start pm2.json<br /> 
-        pm2 status<br />
-        pm2 startup
-      </p>
-      <p class="has-line-data" data-line-start="43" data-line-end="44">
-        sudo apt-get install nginx
-      </p>
-      <p class="has-line-data" data-line-start="45" data-line-end="48">
-        cd<br />
-        cd conf<br />
-        vi nginx.conf
-      </p>
-      <p class="has-line-data" data-line-start="50" data-line-end="55">
-        server {<br />
-        listen 80;<br />
-        listen [::]:80;<br />
-        index index.html;<br />
-        server_name <a href="http://b1.edupatra.com">b1.edupatra.com</a>;
-      </p>
-      <pre><code>location / {
-    proxy_pass http://localhost:3000;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_cache_bypass $http_upgrade;
-}
-</code></pre>
-      <p class="has-line-data" data-line-start="64" data-line-end="65">}</p>
-      <p class="has-line-data" data-line-start="67" data-line-end="68">
-        sudo ln -s /home/ep/conf/nginx.conf
-        /etc/nginx/sites-enabled/edupatra.conf
-      </p>
-      <p class="has-line-data" data-line-start="70" data-line-end="88">
-        <pre><code>
+      <h3>Create a sudo user</h3>
+
+      <pre
+        class="language-bash normal"
+      ><code class="su">useradd -m {{user}}</code>
+<code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
+<code class="su">usermod -aG sudo {{user}}</code>
+<code class="su">chsh --shell /bin/bash {{user}}</code>
+<code class="su">su {{user}}</code></pre>
+      
+      <p>Add <i class="hl">{{ user }}</i> to <i class="hl">/etc/ssh/sshd_config</i>
+      <i class="hl">AllowUsers</i> configuration line if
+      <i class="hl">AllowUsers</i> is used to allow specific user logins via
+      SSH.</p>
+
+      <p>Refer to <a href="https://motorscript.com/security-hardening-ssh-linux-server/" target="_blank">Security: Hardening SSH on Linux Server</a> for SSH Hardening cheatsheet.</p>
+
+      <h3>Install node</h3>
+      <pre class="language-bash normal"><code class="prefix">curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -</code>
+<code class="prefix">sudo apt-get install -y nodejs</code></pre>
+
+<h3>Install yarn and pm2</h3>
+      <pre class="language-bash normal"><code class="prefix">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -</code>
+<code class="prefix">echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list</code>
+<code class="prefix">sudo apt update && sudo apt install yarn</code>
+<code class="prefix">sudo yarn global add pm2</code>
+</pre>
+      
+<h3>If using different node versions in same server, install <span class="hl">nvm</span></h3>
+        <pre class="language-bash normal"><code class="prefix">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash</code>
+<code class="prefix">nvm install 12.8.0</code>
+<code class="prefix">nvm use 12.8.0</code></pre>
+
+<h4>Create <span class="hl">pm2.json</span> file in project root.</h4>
+        <pre class="language-js normal"><code>
        {
   "apps": [
     {
-      "name": "thuprai",
+      "name": "{{project_name}}",
       "instances": "max",
       "exec_mode": "cluster",
       "script": "npm",
       "args": "start",
-      "cwd": "/home/thufx/app/",
+      "cwd": "/home/{{user}}/app/",
       "env": {
         "HOST": "127.0.0.1",
         "PORT": "3000",
@@ -170,26 +87,85 @@
 }
 </code></pre>
 
-      </p>
-      <p class="has-line-data" data-line-start="89" data-line-end="98">
-        post-receive:<br />
-        #!/bin/bash<br />
-        git checkout -f<br />
-        cd /home/thufx/app/<br />
-        . ~/.nvm/nvm.sh<br />
-        nvm use 12.8.0<br />
-        yarn<br />
-        yarn build \<br />
-        &amp;&amp; pm2 restart pm2.json
-      </p>
+<h3>Setup pushing via Git</h3>
 
+      <pre class="language-bash normal">
+<code class="prefix">cd</code>
+<code class="prefix">mkdir repo.git {{project_dir}} conf logs</code>
+<code class="prefix">cd repo.git</code>
+<code class="prefix">git init --bare</code>
+<code class="prefix">git --bare update-server-info</code>
+<code class="prefix">git config core.bare false</code>
+<code class="prefix">git config receive.denycurrentbranch ignore</code>
+<code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
+<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF</code>
+<code>#!/bin/bash</code>
+<code>git checkout -f</code>
+<code>cd /home/{{user}}/{{project_dir}}/</code>
+<code>yarn</code>
+<code>yarn build \</code>
+<code>&& pm2 restart pm2.json</code>
+<code>EOF</code>
+<code></code>
+<code class="prefix">chmod +x hooks/post-receive</code>
+<code class="prefix">exit</code></pre>
+
+      Add this bare repo as a remote on local.
+
+      <pre class="language-bash normal">
+<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
+                    class="prefix"
+                    v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{ip}} -p {{ssh_port}}</code>
+<code class="prefix">git push server --all</code></pre>
+
+If using multiple node versions managed by nvm, you may want the post receive hook to switch node to the desired version before creating a build.
+Add the following lines before the <span class="hl">yarn</span> line in <span class="hl">vi /home/{{user}}/repo.git/hooks/post-receive</span>.
+      <pre class="language-bash normal">
+<code>~/.nvm/nvm.sh</code>
+<code>nvm use 12.8.0</code></pre>
+      
+      <h3>Install and configure nginx</h3>
+      <pre class="language-bash normal">
+        <code class="prefix">sudo apt-get install nginx</code>
+        <code class="prefix">cd</code>
+        <code class="prefix">cd conf</code>
+        <code class="prefix">vi nginx.conf</code>
+      </pre>
+      <pre class="language-nginx normal"><code>
+        server {
+          listen 80;
+          listen [::]:80;
+          index index.html;
+          server_name {{remote}};
+
+          #access_log /home/{{user}}/logs/nginx.access.log;
+          #error_log /home/{{user}}/logs/nginx.error.log;
+
+          location /sitemap.xml {
+            alias /home/{{user}}/sitemap.xml;
+          }
+
+          location / {
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          }
+        }
+</code></pre>
+      
       <h4>
-        Soft-link our configuration to nginx <code>conf.d</code> directory
+        Soft-link our configuration to nginx conf directory
       </h4>
-
-      <pre
-        class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code></pre>
+      <pre class="language-bash normal">
+        <code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/sites-enabled/{{project_name}}.conf</code>
+      </pre>
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
@@ -206,6 +182,8 @@
       <pre class="language-bash normal"><code class="su">nginx -t</code>
 <code class="su">systemctl restart nginx</code></pre>
     </div>
+
+    Happy Nuxting!
   </article>
 </template>
 
@@ -257,9 +235,7 @@ export default {
       user: "user",
       ip: "143.666.7.343",
       user_password: user_password,
-      db_name: "db_name",
-      db_user: "db_user",
-      db_password: db_password,
+      project_name: 'awecode',
       remote: "awecode.com",
       ssh_port: "22"
     };
@@ -268,14 +244,8 @@ export default {
     regenerate_user() {
       this.user_password = generatePassword();
     },
-    regenerate_db() {
-      this.db_password = generatePassword();
-    },
     copy_user() {
       copyText(document.getElementsByName("user_password")[0]);
-    },
-    copy_db() {
-      copyText(document.getElementsByName("db_password")[0]);
     },
     // https://jsfiddle.net/ourcodeworld/rce6nn3z/2
     download() {
@@ -285,7 +255,7 @@ export default {
         "href",
         "data:text/plain;charset=utf-8," + encodeURIComponent(content)
       );
-      element.setAttribute("download", this.django_project + ".json");
+      element.setAttribute("download", this.project_name + ".json");
       element.style.display = "none";
       document.body.appendChild(element);
       element.click();

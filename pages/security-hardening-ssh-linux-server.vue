@@ -69,11 +69,6 @@
 <code>ClientAliveCountMax 0</code></pre>
       SSH sessions will disconnect when no data is received for 5 minutes.
 
-      <h3>Use Kernel Sandboxing for Unprivileged Processes</h3>
-      <pre
-        class="language-ini"
-      ><code>UsePrivilegeSeparation sandbox</code></pre>
-
       <h3>Disable Password Authentication</h3>
       <pre class="language-ini"><code>PasswordAuthentication no</code></pre>
       This prevents brute-force login attacks. You will have to use key pair to

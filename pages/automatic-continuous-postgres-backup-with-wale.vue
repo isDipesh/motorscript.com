@@ -9,7 +9,7 @@
       published="04 Apr 2018"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <h3>Create AWS S3 IAM user and a bucket</h3>
       <ol>
         <li>
