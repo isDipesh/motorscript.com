@@ -10,7 +10,7 @@
       updated="03 Apr 2018"
     />
 
-    <div class="content" itemprop="articleBody" v-highlight>
+    <div class="content" itemprop="articleBody">
       <div class="block">
         <ul>
           <form id="django-form">
