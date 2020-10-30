@@ -12,7 +12,8 @@
     <div class="content" itemprop="articleBody" v-highlight>
       ShareThis provides javascript embed code for HTML which doesn't work
       directly for Single Page Applications like the one created with
-      Vue.js/Nuxt.js.
+      Vue.js/Nuxt.js. Re-initializing ShareThis on page mount will fix it for
+      Vue.js apps.
 
       <h2>The Component: <span class="hl">ShareThis.vue</span></h2>
 
@@ -59,6 +60,15 @@ export default {
         the placement code on the
         <span class="hl">&lt;template&gt;</span> section.
       </p>
+
+      <div class="block">
+        <h3>What the component does:</h3>
+        <p>
+          If the browser window hasn't loaded the ShareThis javascript yet, the
+          script is loaded. If it is already available, it is re-initialized
+          with the current URL.
+        </p>
+      </div>
 
       <h2>Usage</h2>
 

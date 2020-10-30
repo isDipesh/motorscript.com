@@ -2,6 +2,11 @@
   <div>
     <ul class="posts pt-1">
       <li>
+        <router-link to="share-this-component-for-vue-nuxt/"
+          >ShareThis component for Vue.js/Nuxt.js</router-link
+        >
+      </li>
+      <li>
         <router-link to="automate-aws-elastic-transcoder-s3-files-using-lambda-functions/"
           >Automatically Run AWS Elastic Transcoder Jobs using Lambda Functions</router-link
         >
