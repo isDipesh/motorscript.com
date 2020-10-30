@@ -6,7 +6,7 @@
   >
     <BlogTitle title="Nuxt.js Deployment Cheat-sheet" published="01 Apr 2020" updated="08 Oct 2020" />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <div class="block">
         <ul>
           <form id="nuxt-form">
@@ -133,6 +133,12 @@ Add the following lines before the <span class="hl">yarn</span> line in <span cl
         <code class="prefix">vi nginx.conf</code>
       </pre>
       <pre class="language-nginx normal"><code>
+        #Redirect www to non-www
+        server {
+            server_name www.{{remote}};
+            return 301 $scheme://{{remote}}$request_uri;
+        }
+
         server {
           listen 80;
           listen [::]:80;
