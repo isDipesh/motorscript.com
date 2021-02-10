@@ -187,7 +187,7 @@ cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi
 uid = {{user}}
 endpoint_owner = {{user}}
 use_sockets = True
-virtualenv_py_ver = 3.7
+virtualenv_py_ver = 3.8
 numprocesses = 2 
 virtualenv = /home/{{user}}/env/
 copy_env = True
@@ -310,8 +310,6 @@ server {
         add_header X-Content-Type-Options nosniff;
         add_header X-XSS-Protection "1; mode=block";
         add_header X-Frame-Options SAMEORIGIN;
-        # CSP allowing popular third party integrations
-        add_header Content-Security-Policy "default-src 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' adservice.google.com adservice.google.com.np pagead2.googlesyndication.com d31qbv1cthcecs.cloudfront.net www.google-analytics.com cdn.ravenjs.com connect.facebook.net platform.twitter.com apis.google.com www.google.com www.gstatic.com maps.googleapis.com; connect-src 'self' googleads.g.doubleclick.net fonts.gstatic.com wss: securepubads.g.doubleclick.net d5nxst8fruw4z.cloudfront.net sentry.io maps.gstatic.com www.google-analytics.com certify.alexametrics.com; img-src 'self' data: certify.alexametrics.com maps.gstatic.com maps.googleapis.com d5nxst8fruw4z.cloudfront.net www.google-analytics.com stats.g.doubleclick.net ssl.gstatic.com csi.gstatic.com www.facebook.com syndication.twitter.com www.gravatar.com pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' data: cdn.awecode.com fonts.gstatic.com; frame-src googleads.g.doubleclick.net www.youtube.com accounts.google.com content.googleapis.com www.facebook.com staticxx.facebook.com platform.twitter.com; manifest-src 'self'; worker-src 'self' fonts.gstatic.com";
     }
     
     # Prevent hidden files (beginning with a period) from being served
@@ -329,11 +327,7 @@ server {
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
         class="language-bash normal"
-      ><code class="su">apt-get install software-properties-common</code>
-<code class="su">add-apt-repository ppa:certbot/certbot</code>
-<code class="su">apt-get update</code>
-<code class="su">apt-get install python-certbot-nginx</code>
-<code class="su">apt-get install python-certbot-nginx</code>
+      ><code class="su">apt install certbot python-certbot-nginx</code>
 <code class="su">certbot --nginx</code>
 </pre>
 
