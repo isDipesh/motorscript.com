@@ -79,7 +79,7 @@
 <code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
 <code class="prefix">echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql</code>
 <code class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</code>
-<code class="prefix">cd</code></pre>
+<code class="prefix">exit</code></pre>
 
       <h3>Setup pushing via Git</h3>
 
@@ -99,7 +99,7 @@
 <code>EOF</code>
 <code></code>
 <code class="prefix">chmod +x hooks/post-receive</code>
-<code class="prefix">exit</code></pre>
+<code class="prefix">cd</code></pre>
 
       Add this bare repo as a remote on local.
 
@@ -142,9 +142,9 @@
       <pre
         class="language-bash normal"
       ><code class="su">pip3 install circus</code>
-<code class="su"> mkdir -p /etc/circus/conf.d/</code>
-<code class="su"> vi /etc/systemd/system/circus.service</code></pre>
-<pre class="language-ini"><code>[circus]
+<code class="su"> mkdir -p /etc/circus/conf.d/</code></pre>
+<pre class="language-bash normal"><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+<pre class="language-ini code-content"><code>[circus]
 check_delay = 5
 include_dir = /etc/circus/conf.d
 ;debug = True
@@ -156,8 +156,8 @@ use = circus.plugins.flapping.Flapping
 retry_in = 3
 max_retry = 2</code></pre>
 
-<pre><code class="su"> vi /etc/systemd/system/circus.service</code></pre>
-      <pre class="language-ini"><code>[Unit]
+<pre class="language-bash normal"><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+      <pre class="language-ini code-content"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
 [Service]
@@ -180,7 +180,7 @@ WantedBy=default.target</code></pre>
       <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">vim conf/circus.ini</code></pre>
 
-      <pre class="language-ini"><code>[watcher:{{django_project}}]
+      <pre class="language-ini code-content"><code>[watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend gevent {{django_project}}.wsgi.application
 #cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend meinheld {{django_project}}.wsgi.application
@@ -259,7 +259,7 @@ PYTHONPATH=/home/{{user}}/app/
       <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">vim conf/nginx.conf</code></pre>
 
-      <pre class="language-nginx"><code>upstream {{django_project}} {
+      <pre class="language-nginx code-content"><code>upstream {{django_project}} {
     server 127.0.0.1:8000;
     # server unix:/tmp/{{django_project}};
 }

@@ -281,3 +281,10 @@ pre {
 pre.normal {
   white-space: normal !important;
 }
+
+pre.code-content,
+pre.code-content[class*="language-"] {
+  background: #ddd;
+  margin-top: -1em;
+  padding-left: 2em;
+}
