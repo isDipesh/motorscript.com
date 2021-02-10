@@ -79,7 +79,7 @@
 <code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
 <code class="prefix">echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql</code>
 <code class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</code>
-<code class="prefix">exit</code></pre>
+<code class="prefix">cd</code></pre>
 
       <h3>Setup pushing via Git</h3>
 
@@ -107,7 +107,7 @@
 <code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
                     class="prefix"
                     v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{ip}} -p {{ssh_port}}</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}</code>
 <code class="prefix">git push server --all</code></pre>
 
       <p>
@@ -131,7 +131,7 @@
 <code class="prefix">virtualenv env -p python3</code>
 <code class="prefix">source env/bin/activate</code>
 <code class="prefix">cd app</code>
-<code class="prefix">pip install -r requirements/production.txt</code>
+<code class="prefix">pip install -r requirements/prod.txt</code>
 <code class="prefix">pip install circus</code>
 <code class="prefix">./manage.py migrate</code>
 <code class="prefix">./manage.py collectstatic</code></pre>
@@ -141,9 +141,22 @@
       <h3>Install Circus</h3>
       <pre
         class="language-bash normal"
-      ><code class="su">apt install circus</code>
-                
-<code class="su"> cat &lt;&lt;EOT &gt;&gt; /etc/systemd/system/circus.service</code></pre>
+      ><code class="su">pip3 install circus</code>
+<code class="su"> mkdir -p /etc/circus/conf.d/</code>
+<code class="su"> vi /etc/systemd/system/circus.service</code></pre>
+<pre class="language-ini"><code>[circus]
+check_delay = 5
+include_dir = /etc/circus/conf.d
+;debug = True
+;; requires circus-web to be able to start the http dashboard
+;httpd = True
+
+[plugin:flapping]
+use = circus.plugins.flapping.Flapping
+retry_in = 3
+max_retry = 2</code></pre>
+
+<pre><code class="su"> vi /etc/systemd/system/circus.service</code></pre>
       <pre class="language-ini"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
@@ -154,8 +167,7 @@ ExecStart=/home/{{user}}/env/bin/circusd /etc/circus/circusd.ini
 Restart=always
 RestartSec=5
 [Install]
-WantedBy=default.target
-EOT</code></pre>
+WantedBy=default.target</code></pre>
 
       <pre
         class="language-bash normal"
