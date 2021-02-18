@@ -108,7 +108,7 @@
 <code>EOF</code>
 <code></code>
 <code class="prefix">chmod +x hooks/post-receive</code>
-<code class="prefix">exit</code></pre>
+<code class="prefix">cd</code></pre>
 
       Add this bare repo as a remote on local.
 
@@ -116,7 +116,7 @@
 <code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
                     class="prefix"
                     v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{ip}} -p {{ssh_port}}</code>
+<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}</code>
 <code class="prefix">git push server --all</code></pre>
 
 If using multiple node versions managed by nvm, you may want the post receive hook to switch node to the desired version before creating a build.
