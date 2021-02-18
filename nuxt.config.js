@@ -33,7 +33,7 @@ module.exports = {
     //   }
     // ]
   ],
-  plugins: [{ src: "~/plugins/prism.js", ssr: false }],
+  plugins: [{ src: "~/plugins/highlightjs.js", ssr: false }],
   generate: {
     routes: ["404"]
   },
