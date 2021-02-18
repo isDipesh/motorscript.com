@@ -10,7 +10,7 @@
       updated="03 Apr 2018"
     />
 
-    <div class="content" itemprop="articleBody">
+    <div class="content" itemprop="articleBody" v-highlight>
       <div class="block">
         <ul>
           <form id="django-form">
@@ -143,8 +143,10 @@
         class="language-bash normal"
       ><code class="su">pip3 install circus</code>
 <code class="su"> mkdir -p /etc/circus/conf.d/</code></pre>
-<pre class="language-bash normal"><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
-<pre class="language-ini code-content"><code>[circus]
+      <pre
+        class="language-bash normal"
+      ><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+      <pre class="language-ini code-content"><code>[circus]
 check_delay = 5
 include_dir = /etc/circus/conf.d
 ;debug = True
@@ -156,7 +158,9 @@ use = circus.plugins.flapping.Flapping
 retry_in = 3
 max_retry = 2</code></pre>
 
-<pre class="language-bash normal"><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+      <pre
+        class="language-bash normal"
+      ><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
       <pre class="language-ini code-content"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
@@ -259,7 +263,9 @@ PYTHONPATH=/home/{{user}}/app/
       <pre class="language-bash normal"><code class="prefix">cd</code>
 <code class="prefix">vim conf/nginx.conf</code></pre>
 
-      <pre class="language-nginx code-content"><code>upstream {{django_project}} {
+      <pre
+        class="language-nginx code-content"
+      ><code>upstream {{django_project}} {
     server 127.0.0.1:8000;
     # server unix:/tmp/{{django_project}};
 }
@@ -391,7 +397,7 @@ export default {
       db_password: db_password,
       remote: "awecode.com",
       ssh_port: "22",
-      django_project: "django_project",
+      django_project: "django_project"
     };
   },
   methods: {
@@ -420,7 +426,7 @@ export default {
       document.body.appendChild(element);
       element.click();
       document.body.removeChild(element);
-    },
-  },
+    }
+  }
 };
 </script>
