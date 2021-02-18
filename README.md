@@ -1,14 +1,8 @@
 # motorscript
 
-[![\../](https://travis-ci.org/xtranophilist/motorscript.com.svg?branch=nuxt)](https://travis-ci.org/xtranophilist/motorscript.com)
-
-
-> Dipesh Acharya's weblog of cheat-sheets. [![\\../](https://motorscript.com/favicon.ico "\\../")](https://motorscript.com)
-
-
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -23,6 +17,4 @@ $ yarn start
 $ yarn generate
 ```
 
-Powered by [Nuxt.js](https://github.com/nuxt/nuxt.js)   
-Built using [Travis CI](https://travis-ci.org)  
-Hosted on [Github](https://pages.github.com)  
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

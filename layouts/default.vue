@@ -1,39 +1,55 @@
 <template>
-  <div class="container">
-    <BlogHeader/>
-    <main itemscope itemtype="https://schema.org/Blog">
-      <nuxt/>
-      <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div>
-      <no-ssr>
-      <script>
-        var disqus_config = function() {};
-        (function() {
-          // DON'T EDIT BELOW THIS LINE
-          var d = document,
-            s = d.createElement("script");
-          s.src = "https://motorscript.disqus.com/embed.js";
-          s.setAttribute("data-timestamp", +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      </no-ssr>
-    </main>
-    <BlogFooter/>
+  <div>
+    <Nuxt />
   </div>
 </template>
 
+<style>
+html {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
 
-<script>
-import BlogHeader from "./BlogHeader.vue";
-import BlogFooter from "./BlogFooter.vue";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
 
-export default {
-  components: {
-    BlogHeader,
-    BlogFooter
-  },
-  // mounted(){
-    // Prism.highlightAll();
-  // }
-};
-</script>
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
+}
+</style>

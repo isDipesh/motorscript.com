@@ -1,34 +1,30 @@
 {
   "name": "motorscript",
   "version": "1.0.0",
-  "description": "Dipesh Acharya's technical blog",
-  "author": "Dipesh Acharya <dipesh@awecode.com>",
   "private": true,
-  "engines": {
-    "node": "=14.6.0"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@nuxtjs/sitemap": "0.0.3",
-    "babel-plugin-prismjs": "1.1.1",
-    "nuxt": "2.4.5",
-    "prism-es6": "^1.2.0",
-    "prismjs": "1.21.0"
+    "@nuxt/content": "^1.11.1",
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.8.3",
+    "nuxt": "^2.14.12"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.1",
-    "eslint": "4.18.2",
-    "eslint-friendly-formatter": "3.0.0",
-    "eslint-loader": "1.7.1",
-    "eslint-plugin-vue": "4.0.0",
-    "node-sass": "4.14.1",
-    "sass-loader": "9.0.2"
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.5.0",
+    "prettier": "^2.2.1"
   }
 }

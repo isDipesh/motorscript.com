@@ -1,126 +1,63 @@
 <template>
-  <div>
-    <ul class="posts pt-1">
-      <li>
-        <router-link to="share-this-component-for-vue-nuxt/"
-          >ShareThis component for Vue.js/Nuxt.js</router-link
+  <div class="container">
+    <div>
+      <Logo />
+      <h1 class="title">motorscript</h1>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
         >
-      </li>
-      <li>
-        <router-link to="automate-aws-elastic-transcoder-s3-files-using-lambda-functions/"
-          >Automatically Run AWS Elastic Transcoder Jobs using Lambda Functions</router-link
+          Documentation
+        </a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
         >
-      </li>
-      <li>
-        <router-link to="security-hardening-ubuntu-server/"
-          >Security: Hardening Ubuntu Server</router-link
-        >
-      </li>
-      <li>
-        <router-link to="security-hardening-ssh-linux-server/"
-          >Security: Hardening SSH on Linux Server</router-link
-        >
-      </li>
-
-      <li>
-        <router-link to="cleanup-ubuntu-server/"
-          >Cleaning Up Ubuntu Server</router-link
-        >
-      </li>
-      <li>
-        <router-link to="using-ckeditor5-with-nuxtjs/"
-          >Using CKEditor 5 with Nuxt.js</router-link
-        >
-      </li>
-      <li>
-        <router-link to="enabling-persisted-storage-for-chrome/"
-          >Enabling Persisted Storage for your web app on Chrome</router-link
-        >
-      </li>
-      <li>
-        <router-link to="install-tensorflow-arch-linux-cuda-cudnn/"
-          >Installing TensorFlow for Python on Arch Linux (with CUDA 9 and CUDNN
-          7)</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="using-google-cloud-vision-to-build-ml-training-dataset/"
-          >Using Google Cloud Vision to Build ML Training Dataset</router-link
-        >
-      </li>
-      <li>
-        <router-link to="lazy-loading-google-maps/"
-          >Lazy Loading Google Maps</router-link
-        >
-      </li>
-      <li>
-        <router-link to="install-selenium-arch-linux/"
-          >Installing Selenium Standalone Server on Arch Linux
-        </router-link>
-      </li>
-      <li>
-        <router-link to="automatic-continuous-postgres-backup-with-wale/"
-          >Automatic Continuous PostgreSQL Backup with Wal-e
-        </router-link>
-      </li>
-      <li>
-        <router-link to="https-for-zoho-mail-custom-domain/"
-          >HTTPS for Zoho Mail Custom Domain</router-link
-        >
-      </li>
-      <li>
-        <router-link to="django-deployment-cheatsheet/"
-          >Simple Django Deployment Cheat-sheet</router-link
-        >
-      </li>
-      <li>
-        <router-link to="selectize-js-binding-knockout-js/"
-          >Selectize.js binding for Knockout.js</router-link
-        >
-      </li>
-      <li>
-        <router-link to="setting-remote-git-repo-website-deployment/"
-          >Using git to deploy to server</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="hiding-header-and-footer-only-in-certain-pages-with-libreoffice-writer/"
-        >
-          Hiding header and footer only in certain pages with LibreOffice Writer
-        </router-link>
-      </li>
-      <li>
-        <router-link to="django-froala-editor/"
-          >Django package for Froala WYSIWYG Editor</router-link
-        >
-      </li>
-      <li>
-        <router-link to="dbf2sql/">dbf2sql – dbf to sql converter</router-link>
-      </li>
-      <li>
-        <router-link to="what-happened-to-ipv5/"
-          >What happened to IPv5?</router-link
-        >
-      </li>
-      <li>
-        <router-link to="gnome-shell-extension-sensors/"
-          >Gnome Shell Extension : Sensors</router-link
-        >
-      </li>
-    </ul>
-    <router-link to="archive" class="pl-2">
-      View Archived Posts
-    </router-link>
+          GitHub
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  layout: "index",
-  head: {
-    link: [{ rel: "canonical", href: "https://motorscript.com" }]
-  }
-};
+export default {}
 </script>
+
+<style>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+</style>
