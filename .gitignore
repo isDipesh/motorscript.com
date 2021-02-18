@@ -18,3 +18,5 @@ dist
 
 # Sitemap for build
 static/sitemap.xml
+
+static/sw.js
