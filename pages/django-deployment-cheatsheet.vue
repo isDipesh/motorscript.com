@@ -362,7 +362,7 @@ server {
 certbot --nginx</code></pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash  command-line" data-prompt="#"><code>nginx -t
+      <pre class="language-bash command-line" data-prompt="#"><code>nginx -t
 systemctl restart nginx</code></pre>
     </div>
   </article>
