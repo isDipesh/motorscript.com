@@ -19,7 +19,7 @@
       <p><strong>Installation Instructions:</strong></p>
       <p>
         Download:
-        <pre class="language-bash">
+        <pre class="language-bash command-line">
         <code class="prefix">cd ~/.local/share/gnome-shell/extensions</code>
           <code class="prefix">git clone https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles.git</code>
           <code class="prefix">mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist</code>

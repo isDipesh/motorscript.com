@@ -14,7 +14,7 @@
         Script to download and install Preeti font on your Fedora Linux system:
       </p>
 
-      <pre class="language-bash"><code>
+      <pre class="language-bash command-line"><code>
 #!/usr/bin/bash
 wget http://www.fontsaddict.com/font/download/preeti.TTF
 mkdir /usr/share/fonts/myfonts

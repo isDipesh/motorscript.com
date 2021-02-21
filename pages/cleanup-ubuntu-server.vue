@@ -14,7 +14,7 @@
       <h2>Cleanup unnecessary packages</h2>
 
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code class="su">sudo apt purge --auto-remove snapd squashfs-tools friendly-recovery apport at</code></pre>
 
       Very few server instances utilize these packages. Make sure you don't need
@@ -23,7 +23,7 @@
       <h2>Remove unattended upgrades [CAUTION]</h2>
 
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code>sudo apt purge --auto-remove unattended-upgrades</code>
 <code>sudo systemctl disable apt-daily-upgrade.timer</code>
 <code>sudo systemctl mask apt-daily-upgrade.service</code>
@@ -43,12 +43,12 @@
       <p>Enable only security updates by commenting other origins from <span class="hl">unattended-upgrades</span> apt configuration.
       Commented lines start with <span class="hl">//</span>.
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code>vi /etc/apt/apt.conf.d/50unattended-upgrades</code></pre>
 
       <h2>Other unwanted services</h2>
 
-      <pre class="language-bash normal"><code>service --status-all</code></pre>
+      <pre class="language-bash command-line"><code>service --status-all</code></pre>
 
       Use the above command to list all services running in your server. Disable
       the services you don't need.
@@ -56,7 +56,7 @@
       <h2>Remove orphan packages</h2>
 
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code>sudo apt autoremove --purge</code></pre>
 
       This removes packages required as dependencies of previously installed

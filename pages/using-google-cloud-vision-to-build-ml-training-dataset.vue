@@ -53,7 +53,7 @@
         <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.
       </p>
 
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
     <code>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</code>
     </pre>
 

@@ -16,11 +16,11 @@
             <ol>
                 <li><p>Install the package:</p>
 
-                    <pre class="language-bash"><code class="prefix">pip install django-froala-editor</code></pre>
+                    <pre class="language-bash command-line"><code class="prefix">pip install django-froala-editor</code></pre>
 
                     <p>if not updated in pypi use this</p>
 
-                    <pre class="language-bash"><code class="prefix">pip install https://github.com/froala/django-froala-editor/archive/master.zip</code>
+                    <pre class="language-bash command-line"><code class="prefix">pip install https://github.com/froala/django-froala-editor/archive/master.zip</code>
                     </pre></li>
             </ol>
 

@@ -73,7 +73,7 @@
           Install gnome-tweak-tool gnome-tweak-tool allows you to modify various
           gnome settings and behaviour.
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install gnome-tweak-tool</code></pre>
           Then, execute <code>gnome-tweak-tool</code>. Go through the options
           and tweak Gnome to your feel. [E.g. <code>Shell</code> =>
@@ -82,7 +82,7 @@
         <li>
           Adding Minimize and Maximize button to the title bar:
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout "menu:minimize,maximize,close"</code></pre>
           OR
           <div>
@@ -114,7 +114,7 @@
           Switch to fallback mode Fallback mode in gnome shell gives you a
           UI similar to that of Gnome 2. Execute this
           in terminal:
-          <pre class="language-bash"><code class="su">
+          <pre class="language-bash command-line"><code class="su">
           gsettings set org.gnome.desktop.session session-name gnome-fallback
           </code></pre>
           <div>
@@ -136,7 +136,7 @@
             <code>tint2</code> is a nice light application for this purpose.
           </div>
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install tint2</code></pre>
           See next step to set it to start automatically on every login.
         </li>
@@ -156,15 +156,15 @@
             delete menu entries in gnome3.
           </div>
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install alacarte</code></pre>
           Execute:
-          <pre class="language-bash"><code class="prefix">alacarte</code></pre>
+          <pre class="language-bash command-line"><code class="prefix">alacarte</code></pre>
         </li>
         <li>
           Make the massive title bar smaller:
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">sed -i "/title_vertical_pad/s/value="[0-9]{1,2}"/value="0"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code></pre>
           Restart Gnome (<code>Alt+F2</code> => <code>r</code>)
         </li>
@@ -174,7 +174,7 @@
             Adds, “Power Off”, “Hibernate”, etc. options to the User Menu.
           </div>
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install gnome-shell-extensions-alternative-status-menu</code></pre>
           OR: Download
           http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
@@ -191,7 +191,7 @@
             gnome-shell-extensions-dock.
           </div>
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install gnome-shell-extensions-dock</code></pre>
           Restart gnome and docks shall appear! I prefer the next extension
           instead of this one, this one just eats extra space.
@@ -215,14 +215,14 @@
             from the Gnome panel.
           </div>
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum install gnome-shell-extensions-places-menu</code></pre>
           Restart Gnome
         </li>
         <li>
           Add Removable Devices Menu on Gnome Panel [EXTENSION]
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum -y install gnome-shell-extensions-drive-menu</code></pre>
           Restart Gnome
         </li>
@@ -230,7 +230,7 @@
           Remove username from panel and IM status
           (Available/Busy) from user menu [EXTENSION]
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum -y install gnome-shell-extension-noim</code></pre>
           Restart Gnome
         </li>
@@ -280,7 +280,7 @@
             >EXTENSION</span
           >]
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum -y install gnome-shell-extension-remove-accessibility-icon</code></pre>
           Restart Gnome
         </li>
@@ -288,7 +288,7 @@
           Add Workspace indicator/selector to the status bar on panel
           [EXTENSION]
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum -y install gnome-shell-extension-workspacesmenu</code></pre>
           Restart Gnome
         </li>
@@ -318,7 +318,7 @@
             worth it. Run each of the following instructions on terminal, one
             after another.
           </div>
-          <pre class="language-bash"><code class="su">
+          <pre class="language-bash command-line"><code class="su">
             mkdir ~/git_projects cd ~/git_projects git clone
             git://github.com/paradoxxxzero/gnome-shell-system-monitor-applet.git
             scp -r
@@ -337,7 +337,7 @@
           </div>
           Install:
           <pre
-            class="language-bash"
+            class="language-bash command-line"
           ><code class="su">yum -y install gnome-shell-extension-cpu-temperature</code></pre>
           Restart Gnome
         </li>

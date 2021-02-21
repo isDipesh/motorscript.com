@@ -19,7 +19,7 @@
       <h2>System Tweaks:</h2>
       <h3>Install RPMFusion, free and non-free repository</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y localinstall --nogpgcheck
       http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
       http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
@@ -27,12 +27,12 @@
       <h3>Configure yum</h3>
 
       Enable caching, keep metadata for 9 days
-      <pre class="language-bash"><code class="su">vi /etc/yum.conf</code></pre>
+      <pre class="language-bash command-line"><code class="su">vi /etc/yum.conf</code></pre>
 
       <h3>Configure Firmware</h3>
       If your wireless device is a Broadcom (B43), install Broadcom (B43)
       wireless driver in Linux:
-      <pre class="language-bash"><code>
+      <pre class="language-bash command-line"><code>
 #!/bin/bash
 #http://wireless.kernel.org/en/users/Drivers/b43
 
@@ -48,11 +48,11 @@ chmod +x /etc/sysconfig/modules/b43.modules
 
       <h3>Install tweak tools</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install gnome-tweak-tool dconf-editor gconf-editor</code></pre>
       <h3>Install guake terminal</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install guake</code></pre>
       <p>
         Don’t forget to enable guake in startup applications:
@@ -67,7 +67,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
       <h2>Multimedia:</h2>
       <h3>Install multimedia codecs</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install gstreamer gstreamer-ffmpeg gstreamer-plugins-bad
           gstreamer-plugins-bad-free gstreamer-plugins-bad-nonfree
           gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly
@@ -75,45 +75,45 @@ chmod +x /etc/sysconfig/modules/b43.modules
 
       <h3>Clementine media player</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install clementine</code></pre>
       <h3>VLC media player</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install vlc</code></pre>
       <h3>SMPlayer</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install smplayer</code></pre>
       <h3>Image Editors</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install gimp inkscape</code></pre>
       <h2>Utilities:</h2>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install wget</code></pre>
       <h3>System monitoring tools</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install lm_sensors hddtemp</code></pre>
       <h3>Install Artha, the dictionary</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install artha</code></pre>
       <h3>Install English language pack for Libreoffice.</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install libreoffice-langpack-en</code></pre>
       <h3>
         Install 7zip and RAR plugins and executables
       </h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install p7zip p7zip-plugins unrar</code></pre>
       <h3>Install android-tools (provides adb and fastboot)</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install android-tools</code></pre>
       <h3>
         Install nemo (Nautilus fork/alternative) and enable it as the default
@@ -121,7 +121,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
       </h3>
 
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install nemo nemo-fileroller</code>
         <code class="su">xdg-mime default nemo.desktop inode/directory
           application/x-gnome-saved-search</code>
@@ -129,23 +129,23 @@ chmod +x /etc/sysconfig/modules/b43.modules
       <h2>Internet and Browsers:</h2>
       <h3>Update/Install Firefox</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install firefox</code></pre>
       <h3>Install flash plugin for browsers:</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install lpf-flash-plugin</code></pre>
       And then launch
-      <pre class="language-bash"><code class="su">lpf-flash-plugin</code></pre>
+      <pre class="language-bash command-line"><code class="su">lpf-flash-plugin</code></pre>
       <h3>Install Skype:</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install lpf-skype</code></pre>
       And then launch
-      <pre class="language-bash"><code class="su">lpf-skype</code></pre>
+      <pre class="language-bash command-line"><code class="su">lpf-skype</code></pre>
 
       <h2>For developers:</h2>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">yum -y install vim git gitg hg</code>
         <code class="su">yum -y install gcc zlib-devel libjpeg-devel</code>
       </pre>
@@ -158,14 +158,14 @@ chmod +x /etc/sysconfig/modules/b43.modules
       </h3>
       <h3>Install Filezilla</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install filezilla</code></pre>
       <h3>Install OpenJDK</h3>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum -y install java-*-openjdk java-*-openjdk-plugin</code></pre>
       <h3>Apache and PHP</h3>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">yum -y install httpd php php-xml</code>
         <code class="su">chkconfig httpd on</code>
         <code class="su">rm -rf /etc/httpd/conf.d/welcome.conf</code>
@@ -173,31 +173,31 @@ chmod +x /etc/sysconfig/modules/b43.modules
       </pre>
       <h4>Enable directives in .htaccess</h4>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">vi /etc/httpd/conf/httpd.conf</code></pre>
       Modify <code>AllowOverride None</code> to
       <code>AllowOverride All</code> inside
       <code>&lt;Directory "/var/www/html"&gt;</code>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">service httpd restart</code></pre>
 
       <h3>MySQL</h3>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">yum -y install mysql mysql-server phpmyadmin</code>
         <code class="su">chkconfig mysqld on</code>
         <code class="su">service mysqld restart</code>
         <code class="su">mysql_secure_installation</code>
       </pre>
       <h3>Python:</h3>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py</code>
         <code class="su">python get-pip.py</code>
         <code class="su">pip install virtualenv</code>
         <code class="su">yum -y install python-devel</code>
       </pre>
       <h3>Postgres:</h3>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">yum -y install postgresql-server</code>
         <code class="su">yum -y install python-psycopg2 postgresql-devel #for Python</code>
         <code class="su">yum -y install php-devel php-pgsql #for PHP support</code>
@@ -216,7 +216,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
 
       (set of shell scripts (for bash and zsh ) that enhance your interaction
       with git.)
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="su">yum -y install ruby</code>
         <code class="prefix">git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze</code>
         <code class="prefix">~/.scm_breeze/install.sh</code>
@@ -225,7 +225,7 @@ chmod +x /etc/sysconfig/modules/b43.modules
 
       Install gpaste extension for gnome:
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">yum install gnome-shell-extension-gpaste</code></pre>
     </div>
   </article>

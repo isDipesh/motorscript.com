@@ -17,7 +17,7 @@
       <p>
       Creating a user or upgrading an existing user to superuser:
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code class="prefix">sudo su edxapp -s /bin/bash</code>
 <code class="prefix">cd</code>
 <code class="prefix">/edx/bin/python.edxapp /edx/bin/manage.edxapp lms manage_user username user@domain.com --staff --superuser --settings=production</code></pre>
@@ -26,7 +26,7 @@
       <p>
       Updating user password
       <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code class="prefix">cd /edx/app/edxapp/edx-platform</code>
 <code class="prefix">sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings production changepassword username</code></pre>
       </p>
@@ -46,7 +46,7 @@
     <h3>Services</h3>
     <p>See running services
         <pre
-        class="language-bash normal"
+        class="language-bash command-line"
       ><code class="prefix">sudo /edx/bin/supervisorctl status</code></pre>
     </p>
 

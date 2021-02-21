@@ -31,7 +31,7 @@
         >
       </p>
       <p><strong>Or Manually:</strong></p>
-      <pre class="language-bash">
+      <pre class="language-bash command-line">
         <code class="prefix">cd ~/.local/share/gnome-shell/extensions</code>
         <code class="prefix">git clone https://github.com/xtranophilist/gnome-shell-extension-force-quit.git</code>
         <code class="prefix">mv gnome-shell-extension-force-quit/ force-quit@xtranophilist</code>

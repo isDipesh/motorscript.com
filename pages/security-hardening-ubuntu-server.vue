@@ -23,14 +23,14 @@
       <h2>Secure Shared Memory</h2>
       Since multiple processes can use the same memory space, making shared memory read only prevents exploitation of vulnerabilities in services running in the server.
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo vi /etc/fstab</code></pre>
       <pre
         class="language-ini"
       ><code>none /run/shm tmpfs defaults,ro 0 0</code></pre>
 
       <h2>Secure the networking layer</h2>
-      <pre class="language-bash"><code class="prefix">sudo vi /etc/sysctl.conf</code></pre>
+      <pre class="language-bash command-line"><code class="prefix">sudo vi /etc/sysctl.conf</code></pre>
       <pre class="language-conf"><code># Configuration from https://github.com/konstruktoid/hardening/blob/master/misc/sysctl.conf, with some added explainations
 fs.protected_hardlinks = 1
 fs.protected_symlinks = 1
@@ -95,7 +95,7 @@ net.netfilter.nf_conntrack_tcp_loose = 0</code></pre>
 
       <p>Install and enable UFW:
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo apt install ufw</code>
       <code class="prefix">sudo ufw enable</code></pre></p>
 
@@ -104,28 +104,28 @@ net.netfilter.nf_conntrack_tcp_loose = 0</code></pre>
 
       <!-- Allow all outgoing connections, deny all incoming connections.
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo ufw allow outgoing</code><code class="prefix">sudo ufw deny incoming</code></pre> -->
 
     <p>
       Allow SSH:
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo ufw allow 22 # Or sudo ufw allow 23456 if SSH is listening on another port</code></pre></p>
 
       Allow HTTP and HTTPS:
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo ufw allow http # OR sudo ufw allow 80</code>
       <code class="prefix">sudo ufw allow https # OR sudo ufw allow 443</code></pre>
 
       View status and configuration:
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">sudo ufw status verbose</code></pre>
 
       <h2>Keep your system up-to-date</h2>
-<pre class="language-bash"><code class="prefix">sudo apt update</code>
+<pre class="language-bash command-line"><code class="prefix">sudo apt update</code>
 <code class="prefix">sudo apt upgrade</code></pre>
 Enable automatic security updates (unattended-upgrades)
 
@@ -136,18 +136,18 @@ Enable automatic security updates (unattended-upgrades)
       remove them if they aren't used.
 
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">deluser --remove-home ubuntu</code></pre>
 
       <h2>Cleanup unncessary packages and services</h2>
       List all running services and disable the services you are certain you
       won't need.
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">service --status-all</code></pre>
       Also remove orphan packages.
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="su">apt autoremove --purge</code></pre>
 
       <h2>Other Security Measures</h2>

@@ -16,7 +16,7 @@
       
       <p>
         Open terminal and switch to the superuser (root):
-        <pre class="language-bash"><code class="prefix">su -</code></pre>
+        <pre class="language-bash command-line"><code class="prefix">su -</code></pre>
       </p>
       <p>
         Enter the root password and you are logged in as root in
@@ -24,10 +24,10 @@
       </p>
       <p>
         Edit the file /etc/pam.d/gdm with your favorite text editor:
-        <pre class="language-bash"><code class="su">vi /etc/pam.d/gdm</code></pre>
+        <pre class="language-bash command-line"><code class="su">vi /etc/pam.d/gdm</code></pre>
       </p>
       <p>OR
-      <pre class="language-bash"><code class="su">gedit /etc/pam.d/gdm</code></pre>
+      <pre class="language-bash command-line"><code class="su">gedit /etc/pam.d/gdm</code></pre>
       </p>
       <p>
         Find the following line:
@@ -60,12 +60,12 @@
       </p>
       <p>
         Let us open it with our favorite text editor.
-        <pre class="language-bash"><code class="su">vi /etc/grub.conf</code></pre>
+        <pre class="language-bash command-line"><code class="su">vi /etc/grub.conf</code></pre>
       </p>
       <p>
         OR if you are on
         GUI and if you are comfortable with gedit
-        <pre class="language-bash"><code class="su">gedit /etc/grub.conf</code></pre>
+        <pre class="language-bash command-line"><code class="su">gedit /etc/grub.conf</code></pre>
       </p>
       <p>Find the block item for your boot target with a kernel entry.</p>
       <p>

@@ -63,14 +63,14 @@ The build dependenciesare:</p>
 
 <p>To build the extension for gnome-shell 3.10 or newer please run the following commands:</p>
 
-<pre class="language-bash"><code>cd ~ &amp;&amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
+<pre class="language-bash command-line"><code>cd ~ &amp;&amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
 cd ~/gnome-shell-extension-sensors
 ./autogen.sh
 </code></pre>
 
 <p>To build the extension for gnome-shell 3.8 or older please run the following commands:</p>
 
-<pre class="language-bash"><code>cd ~ &amp;&amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
+<pre class="language-bash command-line"><code>cd ~ &amp;&amp; git clone https://github.com/xtranophilist/gnome-shell-extension-sensors.git
 cd ~/gnome-shell-extension-sensors
 git checkout gnome-3.8
 ./autogen.sh
@@ -78,12 +78,12 @@ git checkout gnome-3.8
 
 <p>You can install this extension for your user by executing:</p>
 
-<pre class="language-bash"><code>make local-install
+<pre class="language-bash command-line"><code>make local-install
 </code></pre>
 
 <p>or system wide by executing (this requires root permissions):</p>
 
-<pre class="language-bash"><code>make install
+<pre class="language-bash command-line"><code>make install
 </code></pre>
 
 <p>After installation you need to restart the GNOME shell:</p>
@@ -101,17 +101,17 @@ Open <code>gnome-tweak-tool</code> -> <code>Shell Extensions</code> -> <code>Sen
 
 <p>Installing lm-sensors for Fedora, CentOS and other distros with yum:</p>
 
-<pre class="language-bash"><code>yum install -y lm_sensors</code></pre>
+<pre class="language-bash command-line"><code>yum install -y lm_sensors</code></pre>
 
 <p>Ubuntu, Debian and other distros with apt-get:</p>
 
-<pre class="language-bash"><code>apt-get install lm-sensors</code></pre>
+<pre class="language-bash command-line"><code>apt-get install lm-sensors</code></pre>
 
 <p>Then run <code>sensors-detect</code> as root as one time detection process.</p>
 
 <p>Installing <code>hdd-temp</code>:</p>
 
-<pre class="language-bash"><code>yum -y install hddtemp</code></pre>
+<pre class="language-bash command-line"><code>yum -y install hddtemp</code></pre>
 
 <h3 id="configuration">Configuration</h3>
 

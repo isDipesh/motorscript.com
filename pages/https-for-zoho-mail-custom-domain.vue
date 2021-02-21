@@ -27,7 +27,7 @@ server {
 
                 <li>
                     <h3>Obtain SSL certificate with Certbot</h3>
-                    <pre class="language-bash"><code class="su">apt-get install software-properties-common</code>
+                    <pre class="language-bash command-line"><code class="su">apt-get install software-properties-common</code>
 <code class="su">add-apt-repository ppa:certbot/certbot</code>
 <code class="su">apt-get update</code>
 <code class="su">apt-get install python-certbot-nginx</code>

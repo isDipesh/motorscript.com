@@ -16,7 +16,7 @@
 
             <h3>SSH into the server</h3>
 
-            <pre class="language-bash">
+            <pre class="language-bash command-line">
 <code class="prefix">cd</code>
 <code class="prefix">mkdir repo.git {{project_dir}} conf logs media static</code>
 <code class="prefix">cd repo.git</code>
@@ -38,7 +38,7 @@ EOF</code>
 
             <h3>On the client</h3>
 
-            <pre class="language-bash">
+            <pre class="language-bash command-line">
 <code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</code><code class="prefix" v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
 <code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
 <code class="prefix">git push server --all</code>

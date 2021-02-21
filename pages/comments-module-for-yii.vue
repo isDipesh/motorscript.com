@@ -36,7 +36,7 @@
       <h3>Via Git:</h3>
       <p>From inside the modules directory in your application:</p>
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">git clone https://github.com/awecode/comments.git
 </code></pre>
       <p>
@@ -115,7 +115,7 @@ INSERT INTO `comment_setting` (`id`, `model`, `registeredOnly`, `useCaptcha`, `a
       <h2>Downloads</h2>
 
       <pre
-        class="language-bash"
+        class="language-bash command-line"
       ><code class="prefix">git clone https://github.com/awecode/comments.git</code></pre>
       or download
       <a
