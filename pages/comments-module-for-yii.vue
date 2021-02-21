@@ -36,9 +36,8 @@
       <h3>Via Git:</h3>
       <p>From inside the modules directory in your application:</p>
       <pre
-        class="language-bash command-line"
-      ><code class="prefix">git clone https://github.com/awecode/comments.git
-</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>git clone https://github.com/awecode/comments.git</code></pre>
       <p>
         OR Download :
         <a href="https://github.com/awecode/comments/zipball/master"
@@ -51,7 +50,7 @@
         Execute the following SQL queries to create table and insert default
         comment settings.
       </p>
-      <pre class="language-sql"><code>CREATE TABLE IF NOT EXISTS `comment` (
+      <pre class="language-bash"><code>CREATE TABLE IF NOT EXISTS `comment` (
 `id` int(12) NOT NULL AUTO_INCREMENT,
 `owner_id` int(11) NOT NULL,
 `owner_name` varchar(50) NOT NULL,
@@ -85,7 +84,7 @@ INSERT INTO `comment_setting` (`id`, `model`, `registeredOnly`, `useCaptcha`, `a
 (1, 'default', 0, 0, 1, 1, 'Yii::app()-&gt;getModule("user")-&gt;isAdmin()', 'ASC', 1);
 </code></pre>
       <p>Edit <code>config/main.php</code>:</p>
-      <pre class="language-php"><code>'import' =&gt; array(
+      <pre class="language-bash"><code>'import' =&gt; array(
         'application.modules.comments.widgets.*',
         'application.modules.comments.components.*',
         'application.modules.comments.models.*',
@@ -115,8 +114,8 @@ INSERT INTO `comment_setting` (`id`, `model`, `registeredOnly`, `useCaptcha`, `a
       <h2>Downloads</h2>
 
       <pre
-        class="language-bash command-line"
-      ><code class="prefix">git clone https://github.com/awecode/comments.git</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>git clone https://github.com/awecode/comments.git</code></pre>
       or download
       <a
         href="https://github.com/awecode/comments/zipball/master"

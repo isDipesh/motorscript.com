@@ -118,7 +118,7 @@ nvm use 12.8.0</code></pre>
       <pre
         class="language-bash command-line"
         data-prompt="$"
-        data-output="10-16"
+        data-output="9, 11-18"
       >
 <code>cd
 mkdir repo.git {{project_dir}} conf logs
@@ -128,6 +128,7 @@ git --bare update-server-info
 git config core.bare false
 git config receive.denycurrentbranch ignore
 git config core.worktree /home/{{user}}/{{project_dir}}
+
 cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/bash
 git checkout -f
@@ -136,6 +137,7 @@ yarn
 yarn build
 && pm2 restart pm2.json
 EOF
+
 chmod +x hooks/post-receive
 cd</code></pre>
 

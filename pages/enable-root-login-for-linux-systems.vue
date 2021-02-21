@@ -16,7 +16,7 @@
       
       <p>
         Open terminal and switch to the superuser (root):
-        <pre class="language-bash command-line"><code class="prefix">su -</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>su -</code></pre>
       </p>
       <p>
         Enter the root password and you are logged in as root in
@@ -24,10 +24,10 @@
       </p>
       <p>
         Edit the file /etc/pam.d/gdm with your favorite text editor:
-        <pre class="language-bash command-line"><code class="su">vi /etc/pam.d/gdm</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>vi /etc/pam.d/gdm</code></pre>
       </p>
       <p>OR
-      <pre class="language-bash command-line"><code class="su">gedit /etc/pam.d/gdm</code></pre>
+      <pre class="language-bash command-line" data-prompt="#"><code>gedit /etc/pam.d/gdm</code></pre>
       </p>
       <p>
         Find the following line:
@@ -60,26 +60,23 @@
       </p>
       <p>
         Let us open it with our favorite text editor.
-        <pre class="language-bash command-line"><code class="su">vi /etc/grub.conf</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>vi /etc/grub.conf</code></pre>
       </p>
       <p>
         OR if you are on
         GUI and if you are comfortable with gedit
-        <pre class="language-bash command-line"><code class="su">gedit /etc/grub.conf</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>gedit /etc/grub.conf</code></pre>
       </p>
       <p>Find the block item for your boot target with a kernel entry.</p>
       <p>
         Mine happens to be:
-        <pre class="language-grub"><code>
-          kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
-          root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM
-          rd_NO_MD rd_NO_DM</code></pre>
+        <pre class="language-ini"><code>kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
+root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM</code></pre>
       </p>
       <p>
         Append 3 as another parameter to the end to make it
-        <pre class="language-grub"><code>kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
-          root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM
-          rd_NO_MD rd_NO_DM 3</code></pre>
+        <pre class="language-ini"><code>kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
+root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM 3</code></pre>
                 </p>
       <p>Save and close the file.</p>
       <p>

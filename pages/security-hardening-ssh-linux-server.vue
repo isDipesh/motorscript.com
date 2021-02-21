@@ -25,11 +25,11 @@
       configuration file:
 
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="su">vi /etc/ssh/sshd_config</code></pre>
 
       <h3>Update the port for SSH service</h3>
-      <pre class="language-bash command-line"><code>Port 23456</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>Port 23456</code></pre>
       Use a port number in the range 1024-49151. Although networking tools can
       easily detect open ports, this may prevent bots and humans only trying to
       penetrate on the default port - <i class="hl">22</i>.
@@ -94,12 +94,12 @@ ClientAliveCountMax 0</code></pre>
       Use a passphrase you can retrieve later while adding this SSH key to your
       agent.
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="prefix">ssh-keygen -t rsa</code></pre>
 
       Add the new SSH private key to your SSH agent.
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="prefix">ssh-add ~/.ssh/id_rsa</code></pre>
       Use the path you generated the key pairs in.
 
@@ -115,7 +115,7 @@ ClientAliveCountMax 0</code></pre>
       <h3>Only allow certain sets of IP to SSH</h3>
       Edit <span class="hl">hosts.allow</span> to add allow-list.
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="su">vi /etc/hosts.allow</code></pre>
       <pre
         class="language-bash command-line code-content"
@@ -127,7 +127,7 @@ ClientAliveCountMax 0</code></pre>
       you can block all such incoming connections to your server.
       <p>Edit <span class="hl">hosts.deny</span> to add block-list.</p>
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="su">vi /etc/hosts.deny</code></pre>
       <pre
         class="language-bash command-line code-content"
@@ -140,7 +140,7 @@ ClientAliveCountMax 0</code></pre>
 
       <p>For displaying a message after a user logs in:
       <pre
-        class="language-bash command-line"
+        class="language-bash command-line" data-prompt="$"
       ><code class="prefix">vi /etc/motd</code></pre></p>
 
       <h3>Firewall and other tools</h3>

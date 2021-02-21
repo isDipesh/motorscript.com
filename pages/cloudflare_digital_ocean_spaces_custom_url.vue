@@ -30,7 +30,7 @@
       Edit CDN again to add custom subdomain. 
       <img 3 />
 
-      <pre class="language-bash command-line"><code>
+      <pre class="language-bash command-line" data-prompt="$"><code>
 #!/usr/bin/bash
 wget http://www.fontsaddict.com/font/download/preeti.TTF
 mkdir /usr/share/fonts/myfonts

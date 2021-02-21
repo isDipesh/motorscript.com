@@ -30,11 +30,11 @@
       <p>
         On Fedora, CentOS, RHEL and other rpm based
         distros:<br />
-        <pre class="language-bash command-line"><code class="prefix">sudo yum -y install mythtv</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>sudo yum -y install mythtv</code></pre>
       </p>
       <p>
         For Ubuntu:<br />
-        <pre class="language-bash command-line"><code class="prefix">sudo apt-get install mythtv</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>sudo apt-get install mythtv</code></pre>
       </p>
       <h2>Setup</h2>
       <p>Launch setup with <code>mythtv-setup</code>.</p>

@@ -117,13 +117,11 @@ reboot.c32</code></pre>
         See the file <code>menu.txt</code> for help and reference on ISOLINUX menu
         configuration inside the <code>doc</code> folder of syslinux archive.<br />
         The following lines have to be used.
-        <pre class="language-isolinux"><code>
-LABEL dsl
+        <pre class="language-js"><code>LABEL dsl
 MENU LABEL ^1. Damn Small Linux v4.4.10
 KERNEL vesamenu.c32
 APPEND /boot/dsl/isolinux.cfg
-TEXT HELP
-        </code></pre>
+TEXT HELP</code></pre>
         A 50 MB near complete Operating System for Personal Computers.
         Includes system utilities, multimedia, office and gaming and other
         goodies.<br />
@@ -189,16 +187,16 @@ TEXT HELP
       <p>
         Finally, we customize the boot menu looks.<br />
         We will look after each entry used.<br />
-        <pre class="language-isolinux"><code>MENU BACKGROUND /boot/isolinux/main.jpg</code></pre>
+        <pre class="language-js"><code>MENU BACKGROUND /boot/isolinux/main.jpg</code></pre>
         This makes ISOLINUX load main.jpg as the background. You can use any
         image, provided it is 640×480 JPG or PNG.
-        <pre class="language-isolinux"><code>MENU TITLE happyBoot v3.0b SFD10 Release</code></pre>
+        <pre class="language-js"><code>MENU TITLE happyBoot v3.0b SFD10 Release</code></pre>
         This sets the title.
-        <pre class="language-isolinux"><code>MENU COLOR title 1;36;44 #ffff0000 #00000000 std</code></pre>
+        <pre class="language-js"><code>MENU COLOR title 1;36;44 #ffff0000 #00000000 std</code></pre>
         Sets title foreground color to blue.
-        <pre class="language-isolinux"><code>MENU ROWS 14</code></pre>
+        <pre class="language-js"><code>MENU ROWS 14</code></pre>
         Uses 14 rows for menu options.<br />
-        <pre class="language-isolinux"><code>F1 /boot/docs/help.txt</code></pre>
+        <pre class="language-js"><code>F1 /boot/docs/help.txt</code></pre>
         Displays help file when F1 is hit.
       </p>
       <p>

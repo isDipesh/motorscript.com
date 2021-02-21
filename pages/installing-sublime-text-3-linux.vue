@@ -19,21 +19,16 @@
       </p>
 
       For Linux x64:
-      <pre class="language-bash command-line"><code>
-wget -O install-sublime.sh https://gist.github.com/xtranophilist/5932634/raw/sublime-text-3-x64.sh && sudo sh install-sublime.sh; rm -rf install-sublime.sh
-        </code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>wget -O install-sublime.sh https://gist.github.com/xtranophilist/5932634/raw/sublime-text-3-x64.sh && sudo sh install-sublime.sh; rm -rf install-sublime.sh</code></pre>
 
         For Linux x32:
-      <pre class="language-bash command-line"><code>
-wget -O install-sublime.sh https://gist.github.com/xtranophilist/5932634/raw/sublime-text-3-x32.sh && sudo sh install-sublime.sh; rm -rf install-sublime.sh
-        </code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>wget -O install-sublime.sh https://gist.github.com/xtranophilist/5932634/raw/sublime-text-3-x32.sh && sudo sh install-sublime.sh; rm -rf install-sublime.sh</code></pre>
 
         <h2>Content of the scripts:</h2>
 
         <h3>Linux x64</h3>
 
-        <pre class="language-bash command-line"><code>
-#!/bin/sh
+        <pre class="language-bash"><code>#!/bin/sh
  
 if [ ! -f sublime_text_3.tar.bz2 ]; then
     curl -L "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x64.tar.bz2" -o "sublime_text_3.tar.bz2"
@@ -51,8 +46,7 @@ echo "Finished!"
 
         <h3>Linux x32</h3>
 
-        <pre class="language-bash command-line"><code>
-#!/bin/sh
+        <pre class="language-bash"><code>#!/bin/sh
  
 if [ ! -f sublime_text_3.tar.bz2 ]; then
     curl -L "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x32.tar.bz2" -o "sublime_text_3.tar.bz2"

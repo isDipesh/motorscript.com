@@ -31,11 +31,9 @@
         >
       </p>
       <p><strong>Or Manually:</strong></p>
-      <pre class="language-bash command-line">
-        <code class="prefix">cd ~/.local/share/gnome-shell/extensions</code>
-        <code class="prefix">git clone https://github.com/xtranophilist/gnome-shell-extension-force-quit.git</code>
-        <code class="prefix">mv gnome-shell-extension-force-quit/ force-quit@xtranophilist</code>
-      </pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>cd ~/.local/share/gnome-shell/extensions
+git clone https://github.com/xtranophilist/gnome-shell-extension-force-quit.git
+mv gnome-shell-extension-force-quit/ force-quit@xtranophilist</code></pre>
       <p>
         Restart Gnome:<br />
         <code>Alt+F2</code> to open run command prompt<br />

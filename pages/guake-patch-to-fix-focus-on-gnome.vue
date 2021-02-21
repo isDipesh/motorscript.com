@@ -38,8 +38,7 @@
         class="language-python"
       ><code>self.window.hide() # Don't use hide_all here!</code></pre>
       <p>Replace it with:</p>
-      <pre class="language-python"><code>
-        self.window.set_keep_below(True)
+      <pre class="language-python"><code>self.window.set_keep_below(True)
 self.window.hide() # Don't use hide_all here!
 </code></pre>
       <p>Save the file and it should be fixed.</p>

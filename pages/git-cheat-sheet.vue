@@ -15,21 +15,21 @@
       </p>
       <p>
         First time set-up:
-        <pre class="language-bash command-line"><code class="prefix">git config --global user.name "Dipesh Acharya"</code></pre>
-        <pre class="language-bash command-line"><code class="prefix">git config --global user.email x@gmail.com</code></pre>
-        <pre class="language-bash command-line"><code class="prefix">ssh-keygen</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git config --global user.name "Dipesh Acharya"
+git config --global user.email x@gmail.com
+ssh-keygen</code></pre>
         
       </p>
       <p>
         Push a branch
-        <pre class="language-bash command-line"><code class="prefix">git push -u origin master</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git push -u origin master</code></pre>
         <code>-u</code> to set automatic tracking
       </p>
       <p>
         Pulling a new branch from a remote repository
-        <pre class="language-bash command-line"><code class="prefix">git fetch origin [remote-branch]:[new-local-branch]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git fetch origin [remote-branch]:[new-local-branch]</code></pre>
       </p>
-      <p>See all changes <pre class="language-bash command-line"><code class="prefix">git log --oneline</code></pre></p>
+      <p>See all changes <pre class="language-bash command-line" data-prompt="$"><code>git log --oneline</code></pre></p>
       <hr />
       <p>
         <strong
@@ -37,18 +37,18 @@
           ></strong
         >
       </p>
-      <p>Create new branch <pre class="language-bash command-line"><code class="prefix">git branch [new-branch-name]</code></pre></p>
-      <p>View branches <pre class="language-bash command-line"><code class="prefix">git branch</code></pre></p>
-      <p>Switch to a branch <pre class="language-bash command-line"><code class="prefix">git checkout [branch-name]</code></pre></p>
+      <p>Create new branch <pre class="language-bash command-line" data-prompt="$"><code>git branch [new-branch-name]</code></pre></p>
+      <p>View branches <pre class="language-bash command-line" data-prompt="$"><code>git branch</code></pre></p>
+      <p>Switch to a branch <pre class="language-bash command-line" data-prompt="$"><code>git checkout [branch-name]</code></pre></p>
       <p>
-        Merging from another branch <pre class="language-bash command-line"><code class="prefix">git merge [another-branch-name]</code></pre>
+        Merging from another branch <pre class="language-bash command-line" data-prompt="$"><code>git merge [another-branch-name]</code></pre>
       </p>
       <p>
         Merging from another branch creating a commit object for the merge and
         preventing fast-fowarding
-        <pre class="language-bash command-line"><code class="prefix">git merge --no-ff [another-branch-name]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git merge --no-ff [another-branch-name]</code></pre>
       </p>
-      <p>Delete a branch <pre class="language-bash command-line"><code class="prefix">git branch -d [branch-name]</code></pre></p>
+      <p>Delete a branch <pre class="language-bash command-line" data-prompt="$"><code>git branch -d [branch-name]</code></pre></p>
       <hr />
       <p>
         <strong
@@ -56,24 +56,24 @@
           >:</strong
         >
       </p>
-      <p>Undo everything since last commit <pre class="language-bash command-line"><code class="prefix">git reset --hard</code></pre></p>
+      <p>Undo everything since last commit <pre class="language-bash command-line" data-prompt="$"><code>git reset --hard</code></pre></p>
       <p>
         Undo all changes on [file] since last commit
-        <pre class="language-bash command-line"><code class="prefix">git checkout [file]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git checkout [file]</code></pre>
       </p>
-      <p>Edit last commit message <pre class="language-bash command-line"><code class="prefix">git commit --amend</code></pre></p>
+      <p>Edit last commit message <pre class="language-bash command-line" data-prompt="$"><code>git commit --amend</code></pre></p>
       <p>
         Restoring a deleted file from Git Repo:
-        <pre class="language-bash command-line"><code class="prefix">git rev-list -n 1 HEAD -- [file_path]</code></pre>
-        <pre class="language-bash command-line"><code class="prefix">git checkout [deleting_commit-id]^ -- [file_path]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git rev-list -n 1 HEAD -- [file_path]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git checkout [deleting_commit-id]^ -- [file_path]</code></pre>
       </p>
       <p>
         Ignore file permission/mode changes:
-        <pre class="language-bash command-line"><code class="prefix">git config core.filemode false</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git config core.filemode false</code></pre>
       </p>
       <p>
         Roll back to an older commit
-        <pre class="language-bash command-line"><code class="prefix">git reset --hard &lt;tag/branch/commit id&gt;</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git reset --hard &lt;tag/branch/commit id&gt;</code></pre>
       </p>
       <hr />
       <p>
@@ -81,34 +81,34 @@
       </p>
       <p>
         Tagging commits
-        <pre class="language-bash command-line"><code class="prefix">git tag v1.9b</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git tag v1.9b</code></pre>
         Tags can be used to refer to commits instead of commit id.
       </p>
       <p>
         Tagging commits with message
-        <pre class="language-bash command-line"><code class="prefix">git tag -a v1.4 -m 'message here'</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git tag -a v1.4 -m 'message here'</code></pre>
       </p>
-      <p>Pushing tags <pre class="language-bash command-line"><code class="prefix">git push --tags</code></pre></p>
+      <p>Pushing tags <pre class="language-bash command-line" data-prompt="$"><code>git push --tags</code></pre></p>
       <hr />
       <p>
         <strong><span>HACKS</span></strong>
       </p>
       <p>
         Creating git alias
-        <pre class="language-bash command-line"><code class="prefix">git config --global alias.ci 'commit -v'</code></pre>
-        <pre class="language-bash command-line"><code class="prefix">git ci</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git config --global alias.ci 'commit -v'</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git ci</code></pre>
       </p>
       <p>
         Find out which branch contains a change
-        <pre class="language-bash command-line"><code class="prefix">git branch --contains [commit-id]</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git branch --contains [commit-id]</code></pre>
       </p>
       <p>
         Configure git to rebase automatically after pulls
-        <pre class="language-bash command-line"><code class="prefix">git config branch.autosetuprebase always</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git config branch.autosetuprebase always</code></pre>
       </p>
       <p>
         Ignoring change in a file without deleting it from repo
-        <pre class="language-bash command-line"><code class="prefix">git update-index --assume-unchanged &lt;file&gt;</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>git update-index --assume-unchanged &lt;file&gt;</code></pre>
       </p>
       <hr />
       <p><strong>Useful Links:</strong></p>

@@ -26,26 +26,26 @@
       </p>
       <p>
         2 . Extract it:
-        <pre class="language-bash command-line"><code class="prefix">tar -xvf vlc-x.x.x.tar.bz2</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="prefix">tar -xvf vlc-x.x.x.tar.bz2</code></pre>
         <code>x.x.x</code> refers to the version you’ve downloaded.
       </p>
       <p>
         3. Change directory to the source code root
-        <pre class="language-bash command-line"><code class="prefix">cd vlc-x.x.x</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="prefix">cd vlc-x.x.x</code></pre>
       </p>
       <p>
         4. Install libraries required to build VLC<br />
         For Ubuntu and other debian systems with apt-get:<br />
-        <pre class="language-bash command-line"><code class="su">apt-get build-dep vlc</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="su">apt-get build-dep vlc</code></pre>
       </p>
       <p>
         On Fedora, RHEL, Cent OS and other RPM based systems with yum:<br />
-        <pre class="language-bash command-line"><code class="su">yum-builddep vlc</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="su">yum-builddep vlc</code></pre>
       </p>
       <p>
         5. Configure the building parameters and also check no errors exist and
         all dependencies are fulfilled:<br />
-        <pre class="language-bash command-line"><code class="su">./configure --enable-run-as-root --prefix=/opt/vlc</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="su">./configure --enable-run-as-root --prefix=/opt/vlc</code></pre>
       </p>
       
         <div>The <code>–enable-run-as-root</code> is the tweak that does the job</div>
@@ -53,19 +53,19 @@
       
       <p>
         6. COMPILE :
-        <pre class="language-bash command-line"><code class="su">make</code>
+        <pre class="language-bash command-line" data-prompt="$"><code class="su">make</code>
           <code class="su">make install</code>
           </pre>
       </p>
       <p>
         7. Optionally, clean the files created during compilation.<br />
-        <pre class="language-bash command-line"><code class="su">make clean</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="su">make clean</code></pre>
       </p>
       <p>Configuration and compiling requires some time and patience.</p>
       <p>
         After all steps are complete, vlc is installed in /opt/vlc.<br />
         You can run vlc by using ‘vlc’ command.<br />
-        <pre class="language-bash command-line"><code class="prefix">vlc</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code class="prefix">vlc</code></pre>
       </p>
       <p>Thank you!</p>
     </div>

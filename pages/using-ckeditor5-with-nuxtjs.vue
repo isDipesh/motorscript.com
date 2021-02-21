@@ -14,14 +14,14 @@
 
       <p>
         Importing CKEditor in components with Nuxt running in universal mode would give the following error:
-        <pre class="language-bash command-line"><code>ERROR  window is not defined
+        <pre class="language-js"><code>ERROR  window is not defined
   at Object.&lt;anonymous> (node_modules/@ckeditor/ckeditor5-build-decoupled-document/build/ckeditor.js:5:2287)</code></pre>
       </p>
 
       <p>
         In this example, we will be using Document editor build of CKEditor - DecoupledEditor. Other builds should also work in the same manner.
 
-        <pre class="language-bash command-line"><code class="prefix">yarn add @ckeditor/ckeditor5-build-decoupled-document</code></pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>yarn add @ckeditor/ckeditor5-build-decoupled-document</code></pre>
 
         View <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#document-editor" target="_blank" rel="noopener noreferrer">CKEditor documentation</a> for more details.
 
@@ -33,12 +33,10 @@
 export default DecoupledEditor</code></pre>
 
     In <span class="hl">nuxt.config.js</span>, add the newly created plugin only to be used for Client Side Rendering (CSR):
-<pre class="language-javascript"><code>
-  plugins: [
-    ...,
-    { src: '~plugins/ckeditor', ssr: false }
-  ],
-  </code></pre>
+<pre class="language-js"><code>plugins: [
+  ...,
+  { src: '~plugins/ckeditor', ssr: false }
+],</code></pre>
 
 Now <i class="hl">DecoupledEditor</i> can be used within Nuxt pages.
       </p>
@@ -56,9 +54,7 @@ Now <i class="hl">DecoupledEditor</i> can be used within Nuxt pages.
       This way we will import ckeditor only in the required pages, thus keeping our overall application light. A minimal page using this technique follows.
       </p>
 
-      <pre>
-        <code class="language-html">
-          &lt;template>
+      <pre><code class="language-html">&lt;template>
   &lt;div class="container">
     &lt;h1>CKEditor 5 Nuxt Demo&lt;/h1>
     &lt;div id="toolbar-container">&lt;/div>
@@ -85,10 +81,7 @@ export default {
       })
   }
 }
-&lt;/script>
-
-        </code>
-      </pre>
+&lt;/script></code></pre>
 
 <p>Not So Minimal Demo: <a href="https://edupatra.com/preeti-to-unicode/" target="_blank" rel="noopener">Preeti to Unicode converter</a></p>
 
