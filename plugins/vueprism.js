@@ -25,7 +25,9 @@ const directive = function(rootEl, directiveObj, node) {
     for (let el of preTags) {
       if (!el.classList.contains("clone")) {
         const clonedNode = el.cloneNode(true);
+        clonedNode.style["display"] = "block";
         el.classList.add("cloned");
+        el.style["display"] = "none";
         clonedNode.classList.add("clone");
         Prism.highlightAllUnder(clonedNode);
         el.parentNode.insertBefore(clonedNode, el.nextSibling);
