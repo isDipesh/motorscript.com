@@ -13,6 +13,7 @@ require("prismjs/components/prism-javascript.min.js");
 require("prismjs/components/prism-bash.min.js");
 require("prismjs/components/prism-python.min.js");
 require("prismjs/components/prism-nginx.min.js");
+require("prismjs/components/prism-ini.min.js");
 require("prismjs/plugins/toolbar/prism-toolbar.js");
 require("prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
 require("prismjs/plugins/toolbar/prism-toolbar.css");

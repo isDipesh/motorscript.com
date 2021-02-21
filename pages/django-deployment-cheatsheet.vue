@@ -7,7 +7,7 @@
     <BlogTitle
       title="Simple Django Deployment Cheat-sheet"
       published="23 Nov 2014"
-      updated="03 Apr 2018"
+      updated="21 Feb 2021"
     />
 
     <div class="content" itemprop="articleBody" v-highlight>
@@ -50,7 +50,7 @@
       <h3>Create a sudo user</h3>
 
       <pre
-        class="language-bash normal command-line"
+        class="language-bash command-line"
         data-prompt="$"
       ><code>useradd -m {{user}}
 echo {{user}}:{{user_password}}| chpasswd
@@ -65,51 +65,64 @@ su {{user}}</code></pre>
       <h3>Setup Database</h3>
       Install Postgresql:
       <pre
-        class="language-bash normal"
-      ><code class="su">apt-get install postgresql postgresql-contrib</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>apt-get install postgresql postgresql-contrib</code></pre>
       Enable and start Postgresql
       <pre
-        class="language-bash normal"
-      ><code class="su">systemctl enable postgresql</code>
-<code class="su">systemctl start postgresql</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>systemctl enable postgresql
+systemctl start postgresql</code></pre>
       Create database and role:
       <pre
-        class="language-bash normal"
-      ><code class="prefix">sudo su - postgres</code>
-<code class="prefix">createdb {{db_name}}</code>
-<code class="prefix">echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql</code>
-<code class="prefix">echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql</code>
-<code class="prefix">echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql</code>
-<code class="prefix">exit</code></pre>
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>sudo su - postgres
+createdb {{db_name}}
+echo "CREATE ROLE {{db_user}} WITH PASSWORD '{{db_password}}';" | psql
+echo "ALTER ROLE {{db_user}} WITH LOGIN;" | psql
+echo "GRANT ALL PRIVILEGES ON DATABASE "{{db_name}}" to {{db_user}};" | psql
+exit</code></pre>
 
       <h3>Setup pushing via Git</h3>
 
-      <pre class="language-bash normal">
-<code class="prefix">cd</code>
-<code class="prefix">mkdir repo.git {{project_dir}} conf logs media static</code>
-<code class="prefix">cd repo.git</code>
-<code class="prefix">git init --bare</code>
-<code class="prefix">git --bare update-server-info</code>
-<code class="prefix">git config core.bare false</code>
-<code class="prefix">git config receive.denycurrentbranch ignore</code>
-<code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
-<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF</code>
-<code>#!/bin/sh</code>
-<code>git checkout -f</code>
-<code>#../app/deploy.sh</code>
-<code>EOF</code>
-<code></code>
-<code class="prefix">chmod +x hooks/post-receive</code>
-<code class="prefix">cd</code></pre>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+        data-output="10-13"
+      >
+<code>cd
+mkdir repo.git {{project_dir}} conf logs media static
+cd repo.git
+git init --bare
+git --bare update-server-info
+git config core.bare false
+git config receive.denycurrentbranch ignore
+git config core.worktree /home/{{user}}/{{project_dir}}/
+cat &gt; hooks/post-receive &lt;&lt;EOF
+#!/bin/sh
+git checkout -f
+#../app/deploy.sh
+EOF
+chmod +x hooks/post-receive
+cd</code></pre>
 
       Add this bare repo as a remote on local.
 
-      <pre class="language-bash normal">
-<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
-                    class="prefix"
-                    v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}</code>
-<code class="prefix">git push server --all</code></pre>
+      <pre
+        v-if="ssh_port == '22'"
+        class="language-bash command-line"
+        data-prompt="$"
+      >
+<code>git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/
+ssh-copy-id {{user}}@{{ip}}
+git push server --all</code></pre>
+
+      <pre v-else class="language-bash command-line" data-prompt="$">
+<code>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/
+ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
+git push server --all</code></pre>
 
       <p>
         You may want to modify your <i class="hl">git post-receive</i>
@@ -123,30 +136,33 @@ su {{user}}</code></pre>
 
       <h3>Install Required Libraries and Packages</h3>
 
-      <pre class="language-bash normal">
-<code class="su">apt install python-dev build-essential links virtualenv python3-pip</code>
-<code class="su">pip3 install virtualenv</code></pre>
+      <pre class="language-bash command-line" data-prompt="#">
+<code>apt install python3-pip
+pip3 install virtualenv</code></pre>
 
       <h3>Setup the Project</h3>
-      <pre class="language-bash normal"><code class="prefix">cd</code>
-<code class="prefix">virtualenv env -p python3</code>
-<code class="prefix">source env/bin/activate</code>
-<code class="prefix">cd app</code>
-<code class="prefix">pip install -r requirements/prod.txt</code>
-<code class="prefix">pip install circus</code>
-<code class="prefix">./manage.py migrate</code>
-<code class="prefix">./manage.py collectstatic</code></pre>
+      <pre class="language-bash command-line" data-prompt="$">
+<code>cd
+virtualenv env -p python3
+source env/bin/activate
+cd app
+pip install -r requirements/prod.txt
+pip install circus
+./manage.py migrate
+./manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
       is all right.
 
       <h3>Install Circus</h3>
       <pre
-        class="language-bash normal"
-      ><code class="su">pip3 install circus</code>
-<code class="su"> mkdir -p /etc/circus/conf.d/</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>pip3 install circus
+mkdir -p /etc/circus/conf.d/</code></pre>
       <pre
-        class="language-bash normal"
-      ><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>vim /etc/circus/circusd.ini</code></pre>
       <pre class="language-ini code-content"><code>[circus]
 check_delay = 5
 include_dir = /etc/circus/conf.d
@@ -160,8 +176,9 @@ retry_in = 3
 max_retry = 2</code></pre>
 
       <pre
-        class="language-bash normal"
-      ><code class="su"> vim /etc/systemd/system/circus.service</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code> vim /etc/systemd/system/circus.service</code></pre>
       <pre class="language-ini code-content"><code>[Unit]
 Description=Circus process manager
 After=syslog.target network.target nss-lookup.target
@@ -175,15 +192,17 @@ RestartSec=5
 WantedBy=default.target</code></pre>
 
       <pre
-        class="language-bash normal"
-      ><code class="su">systemctl --system daemon-reload</code>
-<code class="su">systemctl enable circus</code>
-<code class="su">systemctl start circus</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>systemctl --system daemon-reload
+systemctl enable circus
+systemctl start circus</code></pre>
 
       <h4>Create circus configuration</h4>
 
-      <pre class="language-bash normal"><code class="prefix">cd</code>
-<code class="prefix">vim conf/circus.ini</code></pre>
+      <pre class="language-bash command-line" data-prompt="$">
+<code>cd
+vim conf/circus.ini</code></pre>
 
       <pre class="language-ini code-content"><code>[watcher:{{django_project}}]
 cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
@@ -241,28 +260,31 @@ PYTHONPATH=/home/{{user}}/app/
       </h4>
 
       <pre
-        class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/{{django_project}}.ini</code>
-<code class="prefix">circusctl reloadconfig</code></pre>
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/{{django_project}}.ini
+circusctl reloadconfig</code></pre>
 
       <h3>Install redis</h3>
       <pre
-        class="language-bash normal"
-      ><code class="su">apt install redis-server</code>
-<code class="su">systemctl enable redis-server</code>
-<code class="su">systemctl start redis-server</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>apt install redis-server
+systemctl enable redis-server
+systemctl start redis-server</code></pre>
 
       <h3>Install nginx</h3>
       <pre
-        class="language-bash normal"
-      ><code class="su">apt install nginx</code>
-<code class="su">systemctl enable nginx</code>
-<code class="su">rm /etc/nginx/sites-enabled/default</code></pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>apt install nginx
+systemctl enable nginx
+rm /etc/nginx/sites-enabled/default</code></pre>
 
       <h3>Configure nginx with security headers</h3>
 
-      <pre class="language-bash normal"><code class="prefix">cd</code>
-<code class="prefix">vim conf/nginx.conf</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>cd
+vim conf/nginx.conf</code></pre>
 
       <pre
         class="language-nginx code-content"
@@ -328,19 +350,20 @@ server {
       </h4>
 
       <pre
-        class="language-bash normal"
-      ><code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code></pre>
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/conf.d/{{django_project}}.conf</code></pre>
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
-        class="language-bash normal"
-      ><code class="su">apt install certbot python-certbot-nginx</code>
-<code class="su">certbot --nginx</code>
-</pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>apt install certbot python-certbot-nginx
+certbot --nginx</code></pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash normal"><code class="su">nginx -t</code>
-<code class="su">systemctl restart nginx</code></pre>
+      <pre class="language-bash  command-line" data-prompt="#"><code>nginx -t
+systemctl restart nginx</code></pre>
     </div>
   </article>
 </template>
