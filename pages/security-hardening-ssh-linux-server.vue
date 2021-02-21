@@ -25,8 +25,8 @@
       configuration file:
 
       <pre
-        class="language-bash command-line" data-prompt="$"
-      ><code class="su">vi /etc/ssh/sshd_config</code></pre>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/ssh/sshd_config</code></pre>
 
       <h3>Update the port for SSH service</h3>
       <pre class="language-bash command-line" data-prompt="$"><code>Port 23456</code></pre>
@@ -36,7 +36,7 @@
 
       <h3>Use the following HostKey configuration</h3>
       <pre
-        class="language-python"
+        class="language-js"
       ><code>HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key</code></pre>
@@ -95,12 +95,12 @@ ClientAliveCountMax 0</code></pre>
       agent.
       <pre
         class="language-bash command-line" data-prompt="$"
-      ><code class="prefix">ssh-keygen -t rsa</code></pre>
+      ><code>ssh-keygen -t rsa</code></pre>
 
       Add the new SSH private key to your SSH agent.
       <pre
         class="language-bash command-line" data-prompt="$"
-      ><code class="prefix">ssh-add ~/.ssh/id_rsa</code></pre>
+      ><code>ssh-add ~/.ssh/id_rsa</code></pre>
       Use the path you generated the key pairs in.
 
       <p>Copy the contents of <i class="hl">id_rsa.pub</i>.</p>
@@ -115,10 +115,10 @@ ClientAliveCountMax 0</code></pre>
       <h3>Only allow certain sets of IP to SSH</h3>
       Edit <span class="hl">hosts.allow</span> to add allow-list.
       <pre
-        class="language-bash command-line" data-prompt="$"
-      ><code class="su">vi /etc/hosts.allow</code></pre>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/hosts.allow</code></pre>
       <pre
-        class="language-bash command-line code-content"
+        class="language-js code-content"
       ><code>sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
       You can use single IP address or a range.
 
@@ -127,10 +127,10 @@ ClientAliveCountMax 0</code></pre>
       you can block all such incoming connections to your server.
       <p>Edit <span class="hl">hosts.deny</span> to add block-list.</p>
       <pre
-        class="language-bash command-line" data-prompt="$"
-      ><code class="su">vi /etc/hosts.deny</code></pre>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/hosts.deny</code></pre>
       <pre
-        class="language-bash command-line code-content"
+        class="language-js code-content"
       ><code>sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
 
       <h3>Login Banner</h3>
@@ -140,8 +140,8 @@ ClientAliveCountMax 0</code></pre>
 
       <p>For displaying a message after a user logs in:
       <pre
-        class="language-bash command-line" data-prompt="$"
-      ><code class="prefix">vi /etc/motd</code></pre></p>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/motd</code></pre></p>
 
       <h3>Firewall and other tools</h3>
       A firewall is also a good solution to filter connections for various

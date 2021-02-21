@@ -105,7 +105,8 @@ sudo ufw enable</code></pre></p>
       <!-- Allow all outgoing connections, deny all incoming connections.
       <pre
         class="language-bash command-line" data-prompt="$"
-      ><code class="prefix">sudo ufw allow outgoing</code><code class="prefix">sudo ufw deny incoming</code></pre> -->
+      ><code>sudo ufw allow outgoing
+        sudo ufw deny incoming</code></pre> -->
 
     <p>
       Allow SSH:

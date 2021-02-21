@@ -128,20 +128,6 @@ p {
   line-height: 1.4rem;
 }
 
-code.prefix[class*="language-"] {
-  color: #35495e;
-}
-
-.prefix:before {
-  content: "$ ";
-  opacity: 0.5;
-}
-
-.su:before {
-  content: "# ";
-  opacity: 0.5;
-}
-
 .t1 {
   padding-top: 1rem;
 }
