@@ -58,24 +58,24 @@
         Acknowledge Yii about this module by including it into list of modules
         in <code>config/main.php</code>
       </p>
-      <pre class="language-php"><code>        'modules' =&gt; array(
-                ...
-                'menu',
+      <pre class="language-bash"><code>'modules' =&gt; array(
+            ...
+            'menu',
             ),
 </code></pre>
       <p>Add the components and models required to your imports section</p>
-      <pre class="language-php"><code>        'import' =&gt; array(
+      <pre class="language-bash"><code>'import' =&gt; array(
             ...
             'application.modules.menu.models.*',
             'application.modules.menu.components.*',
             ),
 </code></pre>
       <p>Add Metadata class to components</p>
-      <pre class="language-php"><code>'components'=&gt;array(
-...
+      <pre class="language-bash"><code>'components'=&gt;array(
+        ...
         'metadata' =&gt; array('class' =&gt; 'Metadata'),
-...
-),
+        ...
+        ),
 </code></pre>
       <p>Import <code>menu.sql</code> to install the database schema.</p>
       <h2>Usage</h2>

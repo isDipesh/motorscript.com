@@ -33,9 +33,7 @@ module.exports = {
     //   }
     // ]
   ],
-  plugins: [
-    { src: "~/plugins/highlightjs.js", ssr: false }
-  ],
+  plugins: [{ src: "~/plugins/vueprism.js", ssr: false }],
   generate: {
     routes: ["404"]
   },

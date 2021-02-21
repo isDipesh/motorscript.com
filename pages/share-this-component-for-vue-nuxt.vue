@@ -17,7 +17,7 @@
 
       <h2>The Component: <span class="hl">ShareThis.vue</span></h2>
 
-      <pre class="language-js normal"><code>&lt;template&gt;
+      <pre class="language-js"><code>&lt;template&gt;
   &lt;div class=&quot;share-this&quot;&gt;
     &lt;!-- This is the placement code ShareThis provides. --&gt;
     &lt;div class=&quot;sharethis-inline-share-buttons&quot;&gt;&lt;/div&gt;
@@ -72,7 +72,7 @@ export default {
 
       <h2>Usage</h2>
 
-      <pre class="language-js normal"><code>&lt;template&gt;
+      <pre class="language-js"><code>&lt;template&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;ShareThis /&gt;
     &lt;div class=&quot;other-content&quot;&gt;&lt;/div&gt;

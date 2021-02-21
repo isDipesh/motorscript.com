@@ -115,7 +115,7 @@
         Add the path of awegen to generatorPaths section in gii module
         configuration in <code>config/main.php</code>:
       </p>
-      <pre class="language-php"><code>'modules' =&gt; array(
+      <pre class="language-bash"><code>'modules' =&gt; array(
     'gii' =&gt; array(
         'class' =&gt; 'system.gii.GiiModule',
         'password' =&gt; 'password',
@@ -127,7 +127,7 @@
 ),
 </code></pre>
       <p>Add the components required to your imports section:</p>
-      <pre class="language-php"><code>'import' =&gt; array(
+      <pre class="language-bash"><code>'import' =&gt; array(
     ...
     'application.extensions.awegen.components.*',
 ),

@@ -28,7 +28,7 @@
         the root directory of your forum.
       </p>
       <p><strong>.htacess</strong></p>
-      <pre class="language-apache"><code>RewriteEngine on
+      <pre class="language-nginx"><code>RewriteEngine on
 RewriteBase /
 
 #Redirect www.mysite.com to mysite.com

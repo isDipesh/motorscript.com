@@ -4,7 +4,11 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
   >
-    <BlogTitle title="Nuxt.js Deployment Cheat-sheet" published="01 Apr 2020" updated="08 Oct 2020" />
+    <BlogTitle
+      title="Nuxt.js Deployment Cheat-sheet"
+      published="01 Apr 2020"
+      updated="08 Oct 2020"
+    />
 
     <div class="content" itemprop="articleBody" v-highlight>
       <div class="block">
@@ -36,39 +40,61 @@
       <h3>Create a sudo user</h3>
 
       <pre
-        class="language-bash normal"
-      ><code class="su">useradd -m {{user}}</code>
-<code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
-<code class="su">usermod -aG sudo {{user}}</code>
-<code class="su">chsh --shell /bin/bash {{user}}</code>
-<code class="su">su {{user}}</code></pre>
-      
-      <p>Add <i class="hl">{{ user }}</i> to <i class="hl">/etc/ssh/sshd_config</i>
-      <i class="hl">AllowUsers</i> configuration line if
-      <i class="hl">AllowUsers</i> is used to allow specific user logins via
-      SSH.</p>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>useradd -m {{user}}
+echo {{user}}:{{user_password}}| chpasswd
+usermod -aG sudo {{user}}
+chsh --shell /bin/bash {{user}}
+su {{user}}</code></pre>
 
-      <p>Refer to <a href="https://motorscript.com/security-hardening-ssh-linux-server/" target="_blank">Security: Hardening SSH on Linux Server</a> for SSH Hardening cheatsheet.</p>
+      <p>
+        Add <i class="hl">{{ user }}</i> to
+        <i class="hl">/etc/ssh/sshd_config</i>
+        <i class="hl">AllowUsers</i> configuration line if
+        <i class="hl">AllowUsers</i> is used to allow specific user logins via
+        SSH.
+      </p>
+
+      <p>
+        Refer to
+        <a
+          href="https://motorscript.com/security-hardening-ssh-linux-server/"
+          target="_blank"
+          >Security: Hardening SSH on Linux Server</a
+        >
+        for SSH Hardening cheatsheet.
+      </p>
 
       <h3>Install node</h3>
-      <pre class="language-bash normal"><code class="prefix">curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -</code>
-<code class="prefix">sudo apt-get install -y nodejs</code></pre>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs</code></pre>
 
-<h3>Install yarn and pm2</h3>
-      <pre class="language-bash normal"><code class="prefix">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -</code>
-<code class="prefix">echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list</code>
-<code class="prefix">sudo apt update && sudo apt install yarn</code>
-<code class="prefix">sudo yarn global add pm2</code>
-</pre>
-      
-<h3>If using different node versions in same server, install <span class="hl">nvm</span></h3>
-        <pre class="language-bash normal"><code class="prefix">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash</code>
-<code class="prefix">nvm install 12.8.0</code>
-<code class="prefix">nvm use 12.8.0</code></pre>
+      <h3>Install yarn and pm2</h3>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
+sudo yarn global add pm2</code></pre>
 
-<h4>Create <span class="hl">pm2.json</span> file in project root.</h4>
-        <pre class="language-js normal"><code>
-       {
+      <h3>
+        If using different node versions in same server, install
+        <span class="hl">nvm</span>
+      </h3>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+nvm install 12.8.0
+nvm use 12.8.0</code></pre>
+
+      <h4>Create <span class="hl">pm2.json</span> file in project root.</h4>
+      <pre class="language-json"><code>{
   "apps": [
     {
       "name": "{{project_name}}",
@@ -87,106 +113,119 @@
 }
 </code></pre>
 
-<h3>Setup pushing via Git</h3>
+      <h3>Setup pushing via Git</h3>
 
-      <pre class="language-bash normal">
-<code class="prefix">cd</code>
-<code class="prefix">mkdir repo.git {{project_dir}} conf logs</code>
-<code class="prefix">cd repo.git</code>
-<code class="prefix">git init --bare</code>
-<code class="prefix">git --bare update-server-info</code>
-<code class="prefix">git config core.bare false</code>
-<code class="prefix">git config receive.denycurrentbranch ignore</code>
-<code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
-<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF</code>
-<code>#!/bin/bash</code>
-<code>git checkout -f</code>
-<code>cd /home/{{user}}/{{project_dir}}/</code>
-<code>yarn</code>
-<code>yarn build \</code>
-<code>&& pm2 restart pm2.json</code>
-<code>EOF</code>
-<code></code>
-<code class="prefix">chmod +x hooks/post-receive</code>
-<code class="prefix">cd</code></pre>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+        data-output="9, 11-18"
+      >
+<code>cd
+mkdir repo.git {{project_dir}} conf logs
+cd repo.git
+git init --bare
+git --bare update-server-info
+git config core.bare false
+git config receive.denycurrentbranch ignore
+git config core.worktree /home/{{user}}/{{project_dir}}
+
+cat &gt; hooks/post-receive &lt;&lt;EOF
+#!/bin/bash
+git checkout -f
+cd /home/{{user}}/{{project_dir}}
+yarn
+yarn build
+&& pm2 restart pm2.json
+EOF
+
+chmod +x hooks/post-receive
+cd</code></pre>
 
       Add this bare repo as a remote on local.
 
-      <pre class="language-bash normal">
-<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/</code><code
-                    class="prefix"
-                    v-else>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{ip}}</code><code class="prefix" v-else>ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}</code>
-<code class="prefix">git push server --all</code></pre>
+      <pre
+        v-if="ssh_port == '22'"
+        class="language-bash command-line"
+        data-prompt="$"
+      >
+<code>git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/
+ssh-copy-id {{user}}@{{ip}}
+git push server --all</code></pre>
 
-If using multiple node versions managed by nvm, you may want the post receive hook to switch node to the desired version before creating a build.
-Add the following lines before the <span class="hl">yarn</span> line in <span class="hl">vi /home/{{user}}/repo.git/hooks/post-receive</span>.
-      <pre class="language-bash normal">
-<code>~/.nvm/nvm.sh</code>
-<code>nvm use 12.8.0</code></pre>
-      
+      <pre v-else class="language-bash command-line" data-prompt="$">
+<code>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/
+ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
+git push server --all</code></pre>
+
+      If using multiple node versions managed by nvm, you may want the post
+      receive hook to switch node to the desired version before creating a
+      build. Add the following lines before the
+      <span class="hl">yarn</span> line in
+      <span class="hl">vi /home/{{ user }}/repo.git/hooks/post-receive</span>.
+      <pre class="language-bash">
+<code>~/.nvm/nvm.sh
+nvm use 12.8.0</code></pre>
+
       <h3>Install and configure nginx</h3>
-      <pre class="language-bash normal">
-        <code class="prefix">sudo apt-get install nginx</code>
-        <code class="prefix">cd</code>
-        <code class="prefix">cd conf</code>
-        <code class="prefix">vi nginx.conf</code>
-      </pre>
-      <pre class="language-nginx normal"><code>
-        #Redirect www to non-www
-        server {
-            server_name www.{{remote}};
-            return 301 $scheme://{{remote}}$request_uri;
-        }
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>sudo apt-get install nginx
+cd
+cd conf
+vi nginx.conf</code></pre>
+      <pre class="language-nginx code-content">
+<code>#Redirect www to non-www
+server {
+    server_name www.{{remote}};
+    return 301 $scheme://{{remote}}$request_uri;
+}
 
-        server {
-          listen 80;
-          listen [::]:80;
-          index index.html;
-          server_name {{remote}};
+server {
+    listen 80;
+    listen [::]:80;
+    index index.html;
+    server_name {{remote}};
 
-          #access_log /home/{{user}}/logs/nginx.access.log;
-          #error_log /home/{{user}}/logs/nginx.error.log;
+    #access_log /home/{{user}}/logs/nginx.access.log;
+    #error_log /home/{{user}}/logs/nginx.error.log;
 
-          location /sitemap.xml {
-            alias /home/{{user}}/sitemap.xml;
-          }
+    location /sitemap.xml {
+      alias /home/{{user}}/sitemap.xml;
+    }
 
-          location / {
-            proxy_pass http://localhost:3000;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
-            proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-            proxy_redirect off;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          }
-        }
+    location / {
+      proxy_pass http://localhost:3000;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection 'upgrade';
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
+      proxy_redirect off;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
 </code></pre>
-      
+
       <h4>
         Soft-link our configuration to nginx conf directory
       </h4>
-      <pre class="language-bash normal">
-        <code class="prefix">sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/sites-enabled/{{project_name}}.conf</code>
-      </pre>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>sudo ln -s /home/{{user}}/conf/nginx.conf /etc/nginx/sites-enabled/{{project_name}}.conf</code></pre>
 
       <h3>Obtain SSL certificate with Certbot</h3>
       <pre
-        class="language-bash normal"
-      ><code class="su">apt-get install software-properties-common</code>
-<code class="su">add-apt-repository ppa:certbot/certbot</code>
-<code class="su">apt-get update</code>
-<code class="su">apt-get install python-certbot-nginx</code>
-<code class="su">apt-get install python-certbot-nginx</code>
-<code class="su">certbot --nginx</code>
-</pre>
+        class="language-bash command-line"
+        data-prompt="#"
+      ><code>apt install certbot python-certbot-nginx
+certbot --nginx</code></pre>
 
       <h4>Check configuration and restart nginx</h4>
-      <pre class="language-bash normal"><code class="su">nginx -t</code>
-<code class="su">systemctl restart nginx</code></pre>
+      <pre class="language-bash command-line" data-prompt="#"><code>nginx -t
+systemctl restart nginx</code></pre>
     </div>
 
     Happy Nuxting!
@@ -241,7 +280,7 @@ export default {
       user: "user",
       ip: "143.666.7.343",
       user_password: user_password,
-      project_name: 'awecode',
+      project_name: "awecode",
       remote: "awecode.com",
       ssh_port: "22"
     };

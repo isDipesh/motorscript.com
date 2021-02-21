@@ -53,12 +53,12 @@
         <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.
       </p>
 
-      <pre class="language-bash">
-    <code>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</code>
-    </pre>
+      <pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/creditials_file_name.json"</code></pre>
 
-      <pre class="language-python"><code>
-import argparse
+      <pre class="language-python"><code>import argparse
 from enum import Enum
 import io
 

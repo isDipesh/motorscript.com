@@ -128,20 +128,6 @@ p {
   line-height: 1.4rem;
 }
 
-code.prefix[class*="language-"] {
-  color: #35495e;
-}
-
-.prefix:before {
-  content: "$ ";
-  opacity: 0.5;
-}
-
-.su:before {
-  content: "# ";
-  opacity: 0.5;
-}
-
 .t1 {
   padding-top: 1rem;
 }
@@ -287,4 +273,9 @@ pre.code-content[class*="language-"] {
   background: #ddd;
   margin-top: -1em;
   padding-left: 2em;
+}
+
+pre .command-line-prompt {
+  border-right: none;
+  margin-right: 0;
 }

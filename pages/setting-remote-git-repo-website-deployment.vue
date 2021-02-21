@@ -16,33 +16,40 @@
 
             <h3>SSH into the server</h3>
 
-            <pre class="language-bash">
-<code class="prefix">cd</code>
-<code class="prefix">mkdir repo.git {{project_dir}} conf logs media static</code>
-<code class="prefix">cd repo.git</code>
-<code class="prefix">git init --bare</code>
-<code class="prefix">git --bare update-server-info</code>
-<code class="prefix">git config core.bare false</code>
-<code class="prefix">git config receive.denycurrentbranch ignore</code>
-<code class="prefix">git config core.worktree /home/{{user}}/{{project_dir}}/</code>
+            <pre class="language-bash command-line" data-prompt="$" data-output="9,11-14,16">
+<code>cd
+mkdir repo.git {{project_dir}} conf logs media static
+cd repo.git
+git init --bare
+git --bare update-server-info
+git config core.bare false
+git config receive.denycurrentbranch ignore
+git config core.worktree /home/{{user}}/{{project_dir}}/
 
-<code class="prefix">cat &gt; hooks/post-receive &lt;&lt;EOF
+cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/sh
 git checkout -f
-EOF</code>
+EOF
 
-<code class="prefix">chmod +x hooks/post-receive</code>
+chmod +x hooks/post-receive
 
-<code class="prefix">exit</code>
-</pre>
+exit</code></pre>
 
             <h3>On the client</h3>
 
-            <pre class="language-bash">
-<code class="prefix" v-if="ssh_port=='22'">git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/</code><code class="prefix" v-else>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/</code>
-<code class="prefix" v-if="ssh_port=='22'">ssh-copy-id {{user}}@{{remote}}</code><code class="prefix" v-else>ssh-copy-id {{user}}@{{remote}} -p {{ssh_port}}</code>
-<code class="prefix">git push server --all</code>
-</pre>
+            <pre
+        v-if="ssh_port == '22'"
+        class="language-bash command-line"
+        data-prompt="$"
+      >
+<code>git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/
+ssh-copy-id {{user}}@{{ip}}
+git push server --all</code></pre>
+
+      <pre v-else class="language-bash command-line" data-prompt="$">
+<code>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/
+ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
+git push server --all</code></pre>
             
             <p>
                 You may want to modify your <i class="hl">git post-receive</i> hook to run custom commands on the server, like running database migrations, notifying services of new deployments, pushing static files to CDN, etc. 

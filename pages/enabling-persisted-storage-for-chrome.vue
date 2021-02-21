@@ -31,7 +31,7 @@
               -
               <code>manifest.json</code>
               to the root.
-              <pre><code class="language-js">{
+              <pre><code class="language-json">{
     "short_name": "OCR GT",
     "name": "OCR GT",
     "icons": [

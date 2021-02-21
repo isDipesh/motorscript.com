@@ -17,17 +17,17 @@
       <p>First install the package – “<em>nautilus-actions</em>“.</p>
       <p>
         For Fedora, RHEL, Cent OS and other RPM based distributions<br />
-        <code>yum install nautilus-actions</code>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum install nautilus-actions</code></pre>
       </p>
       <p>
         For debian based distributions<br />
-        <code>apt-get install nautilus-actions</code>
+        <pre class="language-bash command-line" data-prompt="#"><code>apt-get install nautilus-actions</code></pre>
       </p>
       <p>
         Fire “<em>Nautilus Action Editor GUI</em>” either from
         <em>System -&gt; Preferences -&gt; Nautilus Actions Configuration</em>
         or from command line:<br />
-        <code>open nautilus-actions-config-tool</code>
+        <pre class="language-bash command-line" data-prompt="$"><code>open nautilus-actions-config-tool</code></pre>
       </p>
       <p>
         From the tool-bar (below menubar), use the first button to ‘<em

@@ -82,51 +82,51 @@
 
       Install <code>pip</code> if necessary.
       <pre
-        class="language-bash"
-      ><code class="prefix">wget https://bootstrap.pypa.io/get-pip.py</code>
-<code class="prefix">sudo python3 get-pip.py</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py</code></pre>
 
       Install wal-e
       <pre
-        class="language-bash"
-      ><code class="prefix">sudo apt install daemontools lzop pv</code>
-<code class="prefix">sudo pip3 install 'wal-e[aws]'</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>sudo apt install daemontools lzop pv
+sudo pip3 install 'wal-e[aws]'</code></pre>
 
       <h3>Configure backing up of WAL segments</h3>
-      <pre class="language-bash"><code class="prefix">sudo mkdir -p /etc/wal-e.d/env</code>
-<code class="prefix">echo 's3://{{bucket_name}}/' | sudo tee /etc/wal-e.d/env/WALE_S3_PREFIX</code>
-<code class="prefix">echo '{{region}}' | sudo tee /etc/wal-e.d/env/AWS_REGION</code>
-<code class="prefix">echo '{{access_id}}' | sudo tee /etc/wal-e.d/env/AWS_ACCESS_KEY_ID</code>
-<code class="prefix">echo '{{access_key}}' | sudo tee /etc/wal-e.d/env/AWS_SECRET_ACCESS_KEY</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>sudo mkdir -p /etc/wal-e.d/env
+echo 's3://{{bucket_name}}/' | sudo tee /etc/wal-e.d/env/WALE_S3_PREFIX
+echo '{{region}}' | sudo tee /etc/wal-e.d/env/AWS_REGION
+echo '{{access_id}}' | sudo tee /etc/wal-e.d/env/AWS_ACCESS_KEY_ID
+echo '{{access_key}}' | sudo tee /etc/wal-e.d/env/AWS_SECRET_ACCESS_KEY</code></pre>
 
       <h3>Configure base backup</h3>
-      <pre class="language-bash"><code class="prefix">POSTGRES_VERSION={{version}}</code>
-<code class="prefix">echo -e "\n# Backup settings for WAL-E" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code>
-<code class="prefix">echo -e "wal_level = replica" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code>
-<code class="prefix">echo -e "archive_mode = on" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code>
-<code class="prefix">echo -e "archive_command = 'envdir /etc/wal-e.d/env /usr/local/bin/wal-e wal-push %p'" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code>
-<code class="prefix">echo -e "archive_timeout = 60" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>POSTGRES_VERSION={{version}}
+echo -e "\n# Backup settings for WAL-E" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf
+echo -e "wal_level = replica" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf
+echo -e "archive_mode = on" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf
+echo -e "archive_command = 'envdir /etc/wal-e.d/env /usr/local/bin/wal-e wal-push %p'" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf
+echo -e "archive_timeout = 60" | sudo tee -a /etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf</code></pre>
 
       Add cronjob for nightly base backup
-      <pre class="language-bash"><code class="prefix">crontab -l | { cat; echo "0 0 * * * /usr/bin/envdir /etc/wal-e.d/env /usr/local/bin/wal-e backup-push /var/lib/postgresql/{{version}}/main"; } | crontab -</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>crontab -l | { cat; echo "0 0 * * * /usr/bin/envdir /etc/wal-e.d/env /usr/local/bin/wal-e backup-push /var/lib/postgresql/{{version}}/main"; } | crontab -</code></pre>
 
       <h3>Restoring from backup</h3>
-      <pre class="language-bash"><code class="prefix">POSTGRES_VERSION={{version}}</code>
-<code class="prefix">sudo systemctl stop postgresql</code>
-<code class="prefix">sudo mv /var/lib/postgresql/${POSTGRES_VERSION}/main /var/lib/postgresql/${POSTGRES_VERSION}/main_old</code>
+      <pre class="language-bash command-line" data-prompt="$" data-output="4,8,13,15"><code>POSTGRES_VERSION={{version}}
+sudo systemctl stop postgresql
+sudo mv /var/lib/postgresql/${POSTGRES_VERSION}/main /var/lib/postgresql/${POSTGRES_VERSION}/main_old
 
-<code class="prefix">su postgres</code>
-<code class="prefix">POSTGRES_VERSION={{version}}</code>
-<code class="prefix">envdir /etc/wal-e.d/env /usr/local/bin/wal-e backup-fetch /var/lib/postgresql/${POSTGRES_VERSION}/main LATEST</code>
+su postgres
+POSTGRES_VERSION={{version}}
+envdir /etc/wal-e.d/env /usr/local/bin/wal-e backup-fetch /var/lib/postgresql/${POSTGRES_VERSION}/main LATEST
 
-<code class="prefix">vi /var/lib/postgresql/${POSTGRES_VERSION}/main/recovery.conf</code>
-<code class="prefix">restore_command = 'envdir /etc/wal-e.d/env /usr/local/bin/wal-e wal-fetch "%f" "%p"'</code>
-<code class="prefix">#Optionally add recovery point in time</code>
-<code class="prefix">#recovery_target_time = '2017-04-01 03:07:00'</code>
+vi /var/lib/postgresql/${POSTGRES_VERSION}/main/recovery.conf
+restore_command = 'envdir /etc/wal-e.d/env /usr/local/bin/wal-e wal-fetch "%f" "%p"'
+#Optionally add recovery point in time
+#recovery_target_time = '2017-04-01 03:07:00'
 
-<code class="prefix">exit</code>
+exit
 
-<code class="prefix">sudo systemctl start potgresql</code></pre>
+sudo systemctl start potgresql</code></pre>
     </div>
   </article>
 </template>

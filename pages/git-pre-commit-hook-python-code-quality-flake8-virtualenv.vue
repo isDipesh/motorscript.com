@@ -15,15 +15,12 @@
       </p>
       <p>Install this hook directly using the following commands, from your git repo:</p>
 
-      <pre class="language-bash"><code>
-pip install flake8
+      <pre class="language-bash command-line" data-prompt="$"><code>pip install flake8
 wget https://gist.github.com/xtranophilist/eca5acae1a33b0baad33/raw/pre-commit.py -O .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
-</code></pre>
+chmod +x .git/hooks/pre-commit</code></pre>
       
       Content of the hook:
-<pre class="language-python"><code>
-  #!/usr/bin/env python
+<pre class="language-python"><code>#!/usr/bin/env python
 
 import glob
 import os

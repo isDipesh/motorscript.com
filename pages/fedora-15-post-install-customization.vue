@@ -73,24 +73,20 @@
       </p>
       <p>
         Install free and non-free repository from with:
-        <pre class="language-bash"><code class="su">yum localinstall --nogpgcheck
-          http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
-          http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</code></pre>
       </p>
       <p>
         Install fastestmirror plugin for yum. Makes yum install packages from
         the fastest mirror. 
-        <pre class="language-bash"><code class="su">yum install yum-fastestmirror</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum install yum-fastestmirror</code></pre>
       </p>
       <p>
         Install mp3 and other codecs: Multimedia:
-        <pre class="language-bash"><code class="su">yum -y install gstreamer-plugins-bad gstreamer-plugins-ugly
-          xine-lib-extras-nonfree gstreamer-ffmpeg xmms xmms-mp3 xine xine-lib
-          libdvdcss</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum -y install gstreamer-plugins-bad gstreamer-plugins-ugly xine-lib-extras-nonfree gstreamer-ffmpeg xmms xmms-mp3 xine xine-lib libdvdcss</code></pre>
       </p>
       <p>
         Install VLC:
-        <pre class="language-bash"><code class="su">yum -y install vlc</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum -y install vlc</code></pre>
           If you want VLC to run as root (not recommended), see this post:
         <a
           href="https://motorscript.com/compiling-vlc-for-root-users/"
@@ -99,32 +95,31 @@
       </p>
       <p>
         Install flash player and plugin for browsers:
-        <pre class="language-bash"><code class="su">yum -y install gnash gnash-plugin</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum -y install gnash gnash-plugin</code></pre>
         OR if the non-free/properietary Adobe Flash
         player is to be installed:
-        <pre class="language-bash">
-          <code class="su">yum localinstall --nogpgcheckhttp://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm</code>
-          <code class="su">yum -y install flash-plugin</code></pre>
+        <pre class="language-bash command-line" data-prompt="#">
+          <code>yum localinstall --nogpgcheckhttp://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+yum -y install flash-plugin</code></pre>
       </p>
       <p>
         Install 7zip and RAR plugins and executables
-        <pre class="language-bash"><code>yum -y install p7zip p7zip-plugins unrar</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum -y install p7zip p7zip-plugins unrar</code></pre>
       </p>
       <p>
         Most probably your wireless device is supported out of the box. If it
         isn’t and if yours is a Broadcom WLAN device,
         follow this:
-        <pre class="language-bash"><code class="su">yum install kmod-wl</code>
-        <code class="su">service NetworkManager restart </code>
-          <code class="su">service networkrestart</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum install kmod-wl
+service NetworkManager restart
+service networkrestart</code></pre>
       </p>
       <p>
         MySQL and phpmyadmin:
-        <pre class="language-bash">
-        <code class="su">yum install -y mysql phpmyadmin</code>
-        <code class="su">chkconfig mysqld on</code>
-        <code class="su">mysql_secure_installation</code>
-        <code class="su">service mysqld restart</code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum install -y mysql phpmyadmin
+chkconfig mysqld on
+mysql_secure_installation
+service mysqld restart</code></pre>
       </p>
     </div>
   </article>

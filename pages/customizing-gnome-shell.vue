@@ -73,8 +73,8 @@
           Install gnome-tweak-tool gnome-tweak-tool allows you to modify various
           gnome settings and behaviour.
           <pre
-            class="language-bash"
-          ><code class="su">yum install gnome-tweak-tool</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install gnome-tweak-tool</code></pre>
           Then, execute <code>gnome-tweak-tool</code>. Go through the options
           and tweak Gnome to your feel. [E.g. <code>Shell</code> =>
           <code>Show Date in Clock</code> : ON]
@@ -82,8 +82,8 @@
         <li>
           Adding Minimize and Maximize button to the title bar:
           <pre
-            class="language-bash"
-          ><code class="su">gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout "menu:minimize,maximize,close"</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>gconftool-2 -s -t string /desktop/gnome/shell/windows/button_layout "menu:minimize,maximize,close"</code></pre>
           OR
           <div>
             <code>Alt+F2</code> to open run command prompt
@@ -114,9 +114,7 @@
           Switch to fallback mode Fallback mode in gnome shell gives you a
           UI similar to that of Gnome 2. Execute this
           in terminal:
-          <pre class="language-bash"><code class="su">
-          gsettings set org.gnome.desktop.session session-name gnome-fallback
-          </code></pre>
+          <pre class="language-bash command-line" data-prompt="#"><code>gsettings set org.gnome.desktop.session session-name gnome-fallback</code></pre>
           <div>
             OR <code>System Settings</code> =>
             <code>System Info</code> => <code>Graphics</code> =>
@@ -136,8 +134,8 @@
             <code>tint2</code> is a nice light application for this purpose.
           </div>
           <pre
-            class="language-bash"
-          ><code class="su">yum install tint2</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install tint2</code></pre>
           See next step to set it to start automatically on every login.
         </li>
         <li>
@@ -156,16 +154,16 @@
             delete menu entries in gnome3.
           </div>
           <pre
-            class="language-bash"
-          ><code class="su">yum install alacarte</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install alacarte</code></pre>
           Execute:
-          <pre class="language-bash"><code class="prefix">alacarte</code></pre>
+          <pre class="language-bash command-line" data-prompt="$"><code>alacarte</code></pre>
         </li>
         <li>
           Make the massive title bar smaller:
           <pre
-            class="language-bash"
-          ><code class="su">sed -i "/title_vertical_pad/s/value="[0-9]{1,2}"/value="0"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>sed -i "/title_vertical_pad/s/value="[0-9]{1,2}"/value="0"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code></pre>
           Restart Gnome (<code>Alt+F2</code> => <code>r</code>)
         </li>
         <li>
@@ -174,8 +172,8 @@
             Adds, “Power Off”, “Hibernate”, etc. options to the User Menu.
           </div>
           <pre
-            class="language-bash"
-          ><code class="su">yum install gnome-shell-extensions-alternative-status-menu</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install gnome-shell-extensions-alternative-status-menu</code></pre>
           OR: Download
           http://www.fpmurphy.com/gnome-shell-extensions/poweroptions-2.0.tar.gz
           <div>
@@ -191,8 +189,8 @@
             gnome-shell-extensions-dock.
           </div>
           <pre
-            class="language-bash"
-          ><code class="su">yum install gnome-shell-extensions-dock</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install gnome-shell-extensions-dock</code></pre>
           Restart gnome and docks shall appear! I prefer the next extension
           instead of this one, this one just eats extra space.
         </li>
@@ -215,23 +213,23 @@
             from the Gnome panel.
           </div>
           <pre
-            class="language-bash"
-          ><code class="su">yum install gnome-shell-extensions-places-menu</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum install gnome-shell-extensions-places-menu</code></pre>
           Restart Gnome
         </li>
         <li>
           Add Removable Devices Menu on Gnome Panel [EXTENSION]
           <pre
-            class="language-bash"
-          ><code class="su">yum -y install gnome-shell-extensions-drive-menu</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum -y install gnome-shell-extensions-drive-menu</code></pre>
           Restart Gnome
         </li>
         <li>
           Remove username from panel and IM status
           (Available/Busy) from user menu [EXTENSION]
           <pre
-            class="language-bash"
-          ><code class="su">yum -y install gnome-shell-extension-noim</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum -y install gnome-shell-extension-noim</code></pre>
           Restart Gnome
         </li>
         <li>
@@ -280,16 +278,16 @@
             >EXTENSION</span
           >]
           <pre
-            class="language-bash"
-          ><code class="su">yum -y install gnome-shell-extension-remove-accessibility-icon</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum -y install gnome-shell-extension-remove-accessibility-icon</code></pre>
           Restart Gnome
         </li>
         <li>
           Add Workspace indicator/selector to the status bar on panel
           [EXTENSION]
           <pre
-            class="language-bash"
-          ><code class="su">yum -y install gnome-shell-extension-workspacesmenu</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum -y install gnome-shell-extension-workspacesmenu</code></pre>
           Restart Gnome
         </li>
         <li>
@@ -318,15 +316,13 @@
             worth it. Run each of the following instructions on terminal, one
             after another.
           </div>
-          <pre class="language-bash"><code class="su">
-            mkdir ~/git_projects cd ~/git_projects git clone
-            git://github.com/paradoxxxzero/gnome-shell-system-monitor-applet.git
-            scp -r
-            ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx.zero.gmail.com
-            ~/.local/share/gnome-shell/extensions sudo cp
-            ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml
-            /usr/share/glib-2.0/schemas cd /usr/share/glib-2.0/schemas sudo
-            glib-compile-schemas .</code></pre>
+          <pre class="language-bash command-line" data-prompt="$"><code>mkdir ~/git_projects
+cd ~/git_projects
+git clone git://github.com/paradoxxxzero/gnome-shell-system-monitor-applet.git
+scp -r ~/git_projects/gnome-shell-system-monitor-applet/system-monitor@paradoxxx.zero.gmail.com ~/.local/share/gnome-shell/extensions
+sudo cp ~/git_projects/gnome-shell-system-monitor-applet/org.gnome.shell.extensions.system-monitor.gschema.xml /usr/share/glib-2.0/schemas
+cd /usr/share/glib-2.0/schemas
+sudo glib-compile-schemas .</code></pre>
           Dont forget the dot (.) in the last command. Restart Gnome
         </li>
         <li>
@@ -337,8 +333,8 @@
           </div>
           Install:
           <pre
-            class="language-bash"
-          ><code class="su">yum -y install gnome-shell-extension-cpu-temperature</code></pre>
+            class="language-bash command-line" data-prompt="#"
+          ><code>yum -y install gnome-shell-extension-cpu-temperature</code></pre>
           Restart Gnome
         </li>
       </ol>

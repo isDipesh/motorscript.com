@@ -75,8 +75,7 @@
         1. Using selectize with plain select tag, with values built in view.
       </h3>
 
-      <pre class="language-html"><code>
-&lt;select data-bind="selectize: {}"&gt;
+      <pre class="language-html"><code>&lt;select data-bind="selectize: {}"&gt;
     &lt;option value="1"&gt;Val 1&lt;/option&gt;
     &lt;option value="2"&gt;Val 2&lt;/option&gt;
 &lt;/select&gt;
@@ -90,8 +89,7 @@
         attribute set in <code>optionsValue</code> binding is set to
         <code>item_id</code>.
       </p>
-      <pre class="language-html"><code>
-&lt;select data-bind="selectize: items, value: item_id"&gt;&lt;/select&gt;</code></pre>
+      <pre class="language-html"><code>&lt;select data-bind="selectize: items, value: item_id"&gt;&lt;/select&gt;</code></pre>
 
       <h3>3. Getting selected item as an object</h3>
 
@@ -104,13 +102,11 @@
         <code>object</code> parameter holds the whole item itself.
       </p>
 
-      <pre class="language-html"><code>
-&lt;select data-bind="selectize: items, value: my_item_id, object: my_item"&gt;&lt;/select&gt;</code></pre>
+      <pre class="language-html"><code>&lt;select data-bind="selectize: items, value: my_item_id, object: my_item"&gt;&lt;/select&gt;</code></pre>
 
       <h3>4. Using with multiselect</h3>
 
-      <pre class="language-html"><code>
-&lt;select data-bind="selectize: items, value: selected_items" multiple&gt;&lt;/select&gt;</code></pre>
+      <pre class="language-html"><code>&lt;select data-bind="selectize: items, value: selected_items" multiple&gt;&lt;/select&gt;</code></pre>
 
       <h3>5. Passing additional options</h3>
 
@@ -125,8 +121,7 @@
         for all available options.
       </p>
 
-      <pre class="language-html"><code>
-&lt;select data-bind="selectize: items, value: selected_items2, options: {plugins: ['remove_button']}"
+      <pre class="language-html"><code>&lt;select data-bind="selectize: items, value: selected_items2, options: {plugins: ['remove_button']}"
         multiple&gt;&lt;/select&gt;</code></pre>
     </div>
   </article>

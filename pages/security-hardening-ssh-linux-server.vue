@@ -25,52 +25,52 @@
       configuration file:
 
       <pre
-        class="language-bash"
-      ><code class="su">vi /etc/ssh/sshd_config</code></pre>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/ssh/sshd_config</code></pre>
 
       <h3>Update the port for SSH service</h3>
-      <pre class="language-ini"><code>Port 23456</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>Port 23456</code></pre>
       Use a port number in the range 1024-49151. Although networking tools can
       easily detect open ports, this may prevent bots and humans only trying to
       penetrate on the default port - <i class="hl">22</i>.
 
       <h3>Use the following HostKey configuration</h3>
       <pre
-        class="language-ini"
-      ><code>HostKey /etc/ssh/ssh_host_ed25519_key</code>
-<code>HostKey /etc/ssh/ssh_host_rsa_key</code>
-<code>HostKey /etc/ssh/ssh_host_ecdsa_key</code></pre>
+        class="language-js"
+      ><code>HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key</code></pre>
 
       <h3>Change default Key Exchange algorithms and Ciphers</h3>
       <pre
-        class="language-ini"
-      ><code>KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256</code>
-<code>Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr</code>
-<code>MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com</code></pre>
+        class="language-js"
+      ><code>KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com</code></pre>
       (Recommended by Mozilla)
 
       <h3>Enable Verbose Logging</h3>
-      <pre class="language-ini"><code>LogLevel VERBOSE</code></pre>
+      <pre class="language-js"><code>LogLevel VERBOSE</code></pre>
 
       <h3>Disable Remote Root Login</h3>
-      <pre class="language-ini"><code>PermitRootLogin no</code></pre>
+      <pre class="language-js"><code>PermitRootLogin no</code></pre>
 
       <h3>Only Allow Specific Users to SSH</h3>
       <pre
-        class="language-ini"
+        class="language-js"
       ><code>AllowUsers <i>username1</i> <i>username2</i></code></pre>
 
       <h3>Disable X11Forwarding</h3>
-      <pre class="language-ini"><code>X11Forwarding no</code></pre>
+      <pre class="language-js"><code>X11Forwarding no</code></pre>
       Because you probably don't need GUIs on server.
 
       <h3>Automatically Disconnect Idle Sessions</h3>
-      <pre class="language-ini"><code>ClientAliveInterval 300</code>
-<code>ClientAliveCountMax 0</code></pre>
+      <pre class="language-js"><code>ClientAliveInterval 300
+ClientAliveCountMax 0</code></pre>
       SSH sessions will disconnect when no data is received for 5 minutes.
 
       <h3>Disable Password Authentication</h3>
-      <pre class="language-ini"><code>PasswordAuthentication no</code></pre>
+      <pre class="language-js"><code>PasswordAuthentication no</code></pre>
       This prevents brute-force login attacks. You will have to use key pair to
       authenticate.
 
@@ -94,13 +94,13 @@
       Use a passphrase you can retrieve later while adding this SSH key to your
       agent.
       <pre
-        class="language-bash"
-      ><code class="prefix">ssh-keygen -t rsa</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>ssh-keygen -t rsa</code></pre>
 
       Add the new SSH private key to your SSH agent.
       <pre
-        class="language-bash"
-      ><code class="prefix">ssh-add ~/.ssh/id_rsa</code></pre>
+        class="language-bash command-line" data-prompt="$"
+      ><code>ssh-add ~/.ssh/id_rsa</code></pre>
       Use the path you generated the key pairs in.
 
       <p>Copy the contents of <i class="hl">id_rsa.pub</i>.</p>
@@ -113,25 +113,25 @@
       <h2>Other Security Measures</h2>
 
       <h3>Only allow certain sets of IP to SSH</h3>
+      Edit <span class="hl">hosts.allow</span> to add allow-list.
       <pre
-        class="language-bash"
-      ><code class="su">vi /etc/hosts.allow</code></pre>
-      Add a line similar to the following.
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/hosts.allow</code></pre>
       <pre
-        class="language-bash"
-      ><code class="su">sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
+        class="language-js code-content"
+      ><code>sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
       You can use single IP address or a range.
 
       <h3>Block certain IP or range of IPs</h3>
       If brute-force attacks are coming regularly from a certain IP or range,
       you can block all such incoming connections to your server.
+      <p>Edit <span class="hl">hosts.deny</span> to add block-list.</p>
       <pre
-        class="language-bash"
-      ><code class="su">vi /etc/hosts.deny</code></pre>
-      Add a line similar to the following.
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/hosts.deny</code></pre>
       <pre
-        class="language-bash"
-      ><code class="su">sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
+        class="language-js code-content"
+      ><code>sshd: 192.168.1.5, 94.1.1.1/12, 10.65.140.23/32</code></pre>
 
       <h3>Login Banner</h3>
       A login banner can be used to warn intruders of legal consequences. It can
@@ -140,8 +140,8 @@
 
       <p>For displaying a message after a user logs in:
       <pre
-        class="language-bash"
-      ><code class="prefix">vi /etc/motd</code></pre></p>
+        class="language-bash command-line" data-prompt="#"
+      ><code>vi /etc/motd</code></pre></p>
 
       <h3>Firewall and other tools</h3>
       A firewall is also a good solution to filter connections for various

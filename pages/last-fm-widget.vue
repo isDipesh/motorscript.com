@@ -32,8 +32,7 @@
       <pre class="language-html"><code>&lt;script type="text/javascript" src="last_widget.js"&gt;&lt;/script&gt;  
 &lt;script type="text/javascript"&gt;  
 loadLastFMTracks('xtranophilist');  
-&lt;/script&gt;
-</code></pre>
+&lt;/script&gt;</code></pre>
       <p>
         just before the end of the body tag <code>&lt;/body&gt;</code> Don’t
         forget to replace <code>xtranophilist</code> with your username. If you

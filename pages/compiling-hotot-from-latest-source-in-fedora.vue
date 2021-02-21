@@ -25,21 +25,17 @@
       </p>
       <h2>Install development libraries:</h2>
       <p>
-        <pre class="language-bash"><code class="su">
-          yum install gcc-c++ qt-devel qtwebkit-devel cmake intltool python-keybinder pywebkitgtk
-          </code></pre>
+        <pre class="language-bash command-line" data-prompt="#"><code>yum install gcc-c++ qt-devel qtwebkit-devel cmake intltool python-keybinder pywebkitgtk</code></pre>
           </p>
       <h2>Clone Hotot:</h2>
-      <pre class="language-bash"><code class="prefix">git clone git://github.com/lyricat/Hotot.git</code></pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>git clone git://github.com/lyricat/Hotot.git</code></pre>
       <h2>Build Hotot:</h2>
-      <pre class="language-bash">
-        <code class="prefix">cd Hotot</code>
-        <code class="prefix">mkdir build</code>
-        <code class="prefix">cd build</code>
-        <code class="prefix">cmake ..</code>
-        <code class="prefix">make</code>
-        <code class="prefix">sudo make install</code>
-</pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>cd Hotot
+mkdir build
+cd build
+cmake ..
+make
+sudo make install</code></pre>
     </div>
   </article>
 </template>

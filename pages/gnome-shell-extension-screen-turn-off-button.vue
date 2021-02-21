@@ -23,7 +23,7 @@
       <p>
         This is an extension that adds a button to gnome panel that when clicked
         instantly turns off the monitor.<br />
-        <code class="language-bash">xset dpms force off</code> is executed in
+        <code class="language-bash command-line" data-prompt="$">xset dpms force off</code> is executed in
         the backend.
       </p>
 
@@ -38,11 +38,9 @@
       </p>
       <p><strong>Installation Instructions:</strong></p>
       Download:
-      <pre class="language-bash">
-        <code class="prefix">cd ~/.local/share/gnome-shell/extensions</code>
-          <code class="prefix">git clone https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off.git</code>
-          <code class="prefix">mv gnome-shell-extension-screen-off/ screen-off@xtranophilist</code>
-      </pre>
+      <pre class="language-bash command-line" data-prompt="$"><code>cd ~/.local/share/gnome-shell/extensions
+git clone https://bitbucket.org/xtranophilist/gnome-shell-extension-screen-off.git
+mv gnome-shell-extension-screen-off/ screen-off@xtranophilist</code></pre>
 
       <p>
         Restart Gnome:<br />

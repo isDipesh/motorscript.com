@@ -54,8 +54,7 @@
         In the same file,<br />
         Find:
         <pre class="language-javascript"><code>return a.decklyID?a.decklyURL:"http://twitter.com/"+a.user.screenName+"/status/"+a.id};</code></pre>
-        Add after it:<pre class="language-javascript"><code>
-TD.services.TwitterStatus.prototype.getChirpSource=function(){
+        Add after it:<pre class="language-javascript"><code>TD.services.TwitterStatus.prototype.getChirpSource=function(){
   var p=this.getMainTweet().source.replace('nofollow','url').split('&gt;');
   if (p.length==1) return p;
   var c=p[1].split('&lt;')[0];

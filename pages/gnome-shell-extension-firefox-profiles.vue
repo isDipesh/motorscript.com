@@ -19,11 +19,9 @@
       <p><strong>Installation Instructions:</strong></p>
       <p>
         Download:
-        <pre class="language-bash">
-        <code class="prefix">cd ~/.local/share/gnome-shell/extensions</code>
-          <code class="prefix">git clone https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles.git</code>
-          <code class="prefix">mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist</code>
-          </pre>
+        <pre class="language-bash command-line" data-prompt="$"><code>cd ~/.local/share/gnome-shell/extensions
+git clone https://github.com/xtranophilist/gnome-shell-extension-firefox-profiles.git
+mv gnome-shell-extension-firefox-profiles/ firefox-profiles@xtranophilist</code></pre>
       </p>
       <p>
         Restart Gnome: <code>Alt+F2</code> to open run command prompt<br />
