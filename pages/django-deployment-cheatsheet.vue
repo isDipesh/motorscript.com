@@ -50,12 +50,13 @@
       <h3>Create a sudo user</h3>
 
       <pre
-        class="language-bash normal"
-      ><code class="su">useradd -m {{user}}</code>
-<code class="su">echo {{user}}:{{user_password}}| chpasswd</code>
-<code class="su">usermod -aG sudo {{user}}</code>
-<code class="su">chsh --shell /bin/bash {{user}}</code>
-<code class="su">su {{user}}</code></pre>
+        class="language-bash normal command-line"
+        data-prompt="$"
+      ><code>useradd -m {{user}}
+echo {{user}}:{{user_password}}| chpasswd
+usermod -aG sudo {{user}}
+chsh --shell /bin/bash {{user}}
+su {{user}}</code></pre>
       Add <i class="hl">{{ user }}</i> to <i class="hl">sshd_config</i>
       <i class="hl">AllowUsers</i> configuration if
       <i class="hl">AllowUsers</i> is used to allow specific user logins via

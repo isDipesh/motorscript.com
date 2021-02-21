@@ -13,9 +13,12 @@ require("prismjs/components/prism-javascript.min.js");
 require("prismjs/components/prism-bash.min.js");
 require("prismjs/components/prism-python.min.js");
 require("prismjs/components/prism-nginx.min.js");
-require("prismjs/plugins/toolbar/prism-toolbar.min.js");
+require("prismjs/plugins/toolbar/prism-toolbar.js");
 require("prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
 require("prismjs/plugins/toolbar/prism-toolbar.css");
+require("prismjs/plugins/command-line/prism-command-line.min.js");
+require("prismjs/plugins/command-line/prism-command-line.css");
+
 
 const directive = function(rootEl, directiveObj, node) {
   node.context.$nextTick(() => {
@@ -35,10 +38,10 @@ const directive = function(rootEl, directiveObj, node) {
         el.style["display"] = "none";
         clonedNode.style["display"] = "block";
         clonedNode.classList.add("clone");
-        // Hightlight the cloned node
-        Prism.highlightAllUnder(clonedNode);
         // Add cloned node to DOM
         el.parentNode.insertBefore(clonedNode, el.nextSibling);
+        // Hightlight the cloned node
+        Prism.highlightAllUnder(clonedNode);
       }
     }
   });

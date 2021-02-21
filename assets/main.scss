@@ -288,3 +288,8 @@ pre.code-content[class*="language-"] {
   margin-top: -1em;
   padding-left: 2em;
 }
+
+pre .command-line-prompt {
+  border-right: none;
+  margin-right: 0;
+}
