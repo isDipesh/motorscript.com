@@ -14,26 +14,24 @@ require("prismjs/components/prism-bash.min.js");
 require("prismjs/components/prism-python.min.js");
 require("prismjs/components/prism-nginx.min.js");
 
-const directive = function(rootEl) {
-  let preTags = rootEl.getElementsByTagName("pre");
-  console.log(preTags.length);
-  const clonePres = document.querySelectorAll("pre.clone");
-  for (var i = 0; i < clonePres.length; ++i) {
-    clonePres[i].remove();
-  }
-  preTags = rootEl.getElementsByTagName("pre");
-  console.log(preTags.length);
-  for (let el of preTags) {
-    if (!el.classList.contains("clone")) {
-      const clonedNode = el.cloneNode(true);
-      el.classList.add("cloned");
-      clonedNode.classList.add("clone");
-      console.log(typeof clonedNode);
-      Prism.highlightAllUnder(clonedNode);
-      el.parentNode.insertBefore(clonedNode, el.nextSibling);
+const directive = function(rootEl, directiveObj, node) {
+  node.context.$nextTick(() => {
+    let preTags = rootEl.getElementsByTagName("pre");
+    const clonePres = document.querySelectorAll("pre.clone");
+    for (var i = 0; i < clonePres.length; ++i) {
+      clonePres[i].remove();
     }
-  }
-  //   Prism.highlightAllUnder(el);
+    preTags = rootEl.getElementsByTagName("pre");
+    for (let el of preTags) {
+      if (!el.classList.contains("clone")) {
+        const clonedNode = el.cloneNode(true);
+        el.classList.add("cloned");
+        clonedNode.classList.add("clone");
+        Prism.highlightAllUnder(clonedNode);
+        el.parentNode.insertBefore(clonedNode, el.nextSibling);
+      }
+    }
+  });
 };
 
 Vue.directive("highlight", directive);
