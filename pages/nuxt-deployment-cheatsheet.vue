@@ -37,6 +37,14 @@
               Use Firebase as CDN?
               <input name="firebase" type="checkbox" v-model="firebase" />
             </li>
+            <li>
+              Manage multiple node versions on server with NVM?
+              <input name="nvm" type="checkbox" v-model="nvm" />
+            </li>
+            <li v-if="nvm">
+              Node version for the app?
+              <input name="node_ver" v-model="node_ver" />
+            </li>
           </form>
         </ul>
       </div>
@@ -86,16 +94,18 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update && sudo apt install yarn
 sudo yarn global add pm2</code></pre>
 
-      <h3>
-        If using different node versions in same server, install
-        <span class="hl">nvm</span>
-      </h3>
-      <pre
-        class="language-bash command-line"
-        data-prompt="$"
-      ><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
-nvm install 12.8.0
-nvm use 12.8.0</code></pre>
+      <div v-if="nvm">
+        <h3>
+          If using different node versions in same server, install
+          <span class="hl">nvm</span>
+        </h3>
+        <pre
+          class="language-bash command-line"
+          data-prompt="$"
+        ><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+nvm install {{ node_ver }}
+nvm use {{ node_ver }}</code></pre>
+      </div>
 
       <h4>Create <span class="hl">pm2.json</span> file in project root.</h4>
       <pre class="language-json"><code>{
@@ -137,7 +147,9 @@ cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/bash
 git checkout -f
 cd /home/{{user}}/{{project_dir}}
-yarn
+<template v-if="nvm">~/.nvm/nvm.sh
+nvm use {{ node_ver }}
+</template>yarn
 yarn build <template v-if="firebase">
 firebase deploy \
 </template><template v-else>\
@@ -163,14 +175,10 @@ git push server --all</code></pre>
 ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
 git push server --all</code></pre>
 
-      If using multiple node versions managed by nvm, you may want the post
-      receive hook to switch node to the desired version before creating a
-      build. Add the following lines before the
-      <span class="hl">yarn</span> line in
-      <span class="hl">vi /home/{{ user }}/repo.git/hooks/post-receive</span>.
-      <pre class="language-bash">
-<code>~/.nvm/nvm.sh
-nvm use 12.8.0</code></pre>
+      <div v-if="nvm">
+        If using multiple node versions managed by nvm, the post receive hook
+        switches node to the desired version before creating a build.
+      </div>
 
       <h3>Install and configure nginx</h3>
       <pre
@@ -329,7 +337,9 @@ export default {
       project_name: "awecode",
       remote: "awecode.com",
       ssh_port: "22",
-      firebase: false
+      firebase: false,
+      nvm: false,
+      node_ver: "14.6.0"
     };
   },
   methods: {
