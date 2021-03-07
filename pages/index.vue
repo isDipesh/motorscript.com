@@ -3,7 +3,7 @@
     <ul class="posts pt-1">
       <li>
         <router-link to="nuxt-deployment-cheatsheet/"
-          >Nuxt.js Deployment Cheatsheet</router-link
+          >Cheat-sheet: Nuxt.js Deployment with Git</router-link
         >
       </li>
       <li>

@@ -5,9 +5,8 @@
     itemtype="https://schema.org/BlogPosting"
   >
     <BlogTitle
-      title="Nuxt.js Deployment Cheat-sheet"
-      published="01 Apr 2020"
-      updated="08 Oct 2020"
+      title="Cheat-sheet: Nuxt.js Deployment with Git"
+      published="07 Mar 2020"
     />
 
     <div class="content" itemprop="articleBody" v-highlight>
