@@ -33,6 +33,10 @@
               Project Name :
               <input name="project_name" v-model="project_name" />
             </li>
+            <li>
+              Use Firebase as CDN?
+              <input name="firebase" type="checkbox" v-model="firebase" />
+            </li>
           </form>
         </ul>
       </div>
@@ -134,8 +138,10 @@ cat &gt; hooks/post-receive &lt;&lt;EOF
 git checkout -f
 cd /home/{{user}}/{{project_dir}}
 yarn
-yarn build
-&& pm2 restart pm2.json
+yarn build <template v-if="firebase">
+firebase deploy \
+</template><template v-else>\
+</template>&& pm2 restart pm2.json
 EOF
 
 chmod +x hooks/post-receive
@@ -226,9 +232,49 @@ certbot --nginx</code></pre>
       <h4>Check configuration and restart nginx</h4>
       <pre class="language-bash command-line" data-prompt="#"><code>nginx -t
 systemctl restart nginx</code></pre>
-    </div>
 
-    Happy Nuxting!
+      <div v-if="firebase">
+        <h3>Use Firebase as CDN</h3>
+
+        <p>
+          Create a new site for <span class="hl">Hosting</span> on a Firebase
+          project. You can create and manage Firebase projects from
+          <a href="https://console.firebase.google.com/" target="_blank"
+            >the Firebase console</a
+          >
+        </p>
+
+        On the server,
+        <pre
+          class="language-bash command-line"
+          data-prompt="$"
+        ><code>curl -sL https://firebase.tools | sudo bash
+firebase login --no-localhost
+firebase init</code></pre>
+        Firebase will ask a few questions.
+        <pre
+          class="language-bash command-line"
+          data-prompt="?"
+        ><code>What do you want to use as your public directory?</code></pre>
+        <pre class="language-text code-content mini">
+<code>.nuxt/dist/client</code></pre>
+
+        <pre
+          class="language-bash command-line"
+          data-prompt="?"
+        ><code>Configure as a single-page app (rewrite all urls to /index.html)? (y/N)</code></pre>
+        <pre class="language-text code-content mini">
+<code>N</code></pre>
+        You can now manually deploy to test the Firebase configuration. The
+        deploy command is also be added to the
+        <span class="hl">post-receive git hook</span> so that on every push, the
+        built files are deployed to Firebase.
+        <pre
+          class="language-bash command-line"
+          data-prompt="$"
+        ><code>firebase deploy</code></pre>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -282,7 +328,8 @@ export default {
       user_password: user_password,
       project_name: "awecode",
       remote: "awecode.com",
-      ssh_port: "22"
+      ssh_port: "22",
+      firebase: false
     };
   },
   methods: {

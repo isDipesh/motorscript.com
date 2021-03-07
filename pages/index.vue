@@ -2,6 +2,11 @@
   <div>
     <ul class="posts pt-1">
       <li>
+        <router-link to="nuxt-deployment-cheatsheet/"
+          >Nuxt.js Deployment Cheatsheet</router-link
+        >
+      </li>
+      <li>
         <router-link to="share-this-component-for-vue-nuxt/"
           >ShareThis component for Vue.js/Nuxt.js</router-link
         >
