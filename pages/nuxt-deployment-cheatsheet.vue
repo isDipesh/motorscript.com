@@ -132,7 +132,7 @@ nvm use {{ node_ver }}</code></pre>
       <pre
         class="language-bash command-line"
         data-prompt="$"
-        data-output="9, 11-18"
+        :data-output="gitOutputLines"
       >
 <code>cd
 mkdir repo.git {{project_dir}} conf logs
@@ -341,6 +341,18 @@ export default {
       nvm: false,
       node_ver: "14.6.0"
     };
+  },
+  computed: {
+    gitOutputLines() {
+      let endingLine = 18;
+      if (this.firebase) {
+        endingLine += 1;
+      }
+      if (this.nvm) {
+        endingLine += 2;
+      }
+      return "9, 11-" + endingLine.toString();
+    }
   },
   methods: {
     regenerate_user() {
