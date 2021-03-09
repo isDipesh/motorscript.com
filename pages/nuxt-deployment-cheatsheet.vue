@@ -57,7 +57,7 @@
 echo {{user}}:{{user_password}}| chpasswd
 usermod -aG sudo {{user}}
 chsh --shell /bin/bash {{user}}
-su {{user}}</code></pre>
+su - {{user}}</code></pre>
 
       <p>
         Add <i class="hl">{{ user }}</i> to
@@ -101,7 +101,7 @@ sudo yarn global add pm2</code></pre>
         <pre
           class="language-bash command-line"
           data-prompt="$"
-        ><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+        ><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 nvm install {{ node_ver }}
 nvm use {{ node_ver }}</code></pre>
       </div>
@@ -146,7 +146,7 @@ cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/bash
 git checkout -f
 cd /home/{{user}}/{{project_dir}}
-<template v-if="nvm">~/.nvm/nvm.sh
+<template v-if="nvm">source ~/.nvm/nvm.sh
 nvm use {{ node_ver }}
 </template>yarn
 yarn build <template v-if="firebase">
@@ -183,8 +183,11 @@ git push server --all</code></pre>
       <pre
         class="language-bash command-line"
         data-prompt="$"
-      ><code>sudo apt-get install nginx
-cd
+      ><code>sudo apt-get install nginx</code></pre>
+<pre
+        class="language-bash command-line"
+        data-prompt="$"
+      ><code>cd
 cd conf
 vi nginx.conf</code></pre>
       <pre class="language-nginx code-content">

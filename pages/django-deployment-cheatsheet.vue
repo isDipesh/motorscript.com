@@ -56,8 +56,9 @@
 echo {{user}}:{{user_password}}| chpasswd
 usermod -aG sudo {{user}}
 chsh --shell /bin/bash {{user}}
-su {{user}}</code></pre>
-      Add <i class="hl">{{ user }}</i> to <i class="hl">sshd_config</i>
+su - {{user}}</code></pre>
+      Add <i class="hl">{{ user }}</i> to
+      <i class="hl">/etc/ssh/sshd_config</i>
       <i class="hl">AllowUsers</i> configuration if
       <i class="hl">AllowUsers</i> is used to allow specific user logins via
       SSH.
@@ -104,7 +105,8 @@ git config core.worktree /home/{{user}}/{{project_dir}}/
 cat &gt; hooks/post-receive &lt;&lt;EOF
 #!/bin/sh
 git checkout -f
-#../app/deploy.sh
+cd ../app/
+./deploy.sh
 EOF
 
 chmod +x hooks/post-receive
@@ -127,10 +129,11 @@ ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
 git push server --all</code></pre>
 
       <p>
-        You may want to modify your <i class="hl">git post-receive</i>
-        hook to run custom commands on the server, like running database
-        migrations, notifying services of new deployments, pushing static files
-        to CDN, etc.
+        You may want to modify your <i class="hl">git post-receive</i> hook to
+        run custom commands on the server, like running database migrations,
+        notifying services of new deployments, pushing static files to CDN, etc.
+        A <span class="hl">deploy.sh</span> file with executable permission is
+        expected in the project root in this example post-receive hook.
       </p>
 
       <!--<code data-gist-id="8001624" data-gist-hide-footer="true" data-gist-caption="this/is/a/sample/path/to/file.extension"-->
@@ -149,7 +152,6 @@ virtualenv env -p python3
 source env/bin/activate
 cd app
 pip install -r requirements/prod.txt
-pip install circus
 ./manage.py migrate
 ./manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
@@ -214,7 +216,7 @@ uid = {{user}}
 endpoint_owner = {{user}}
 use_sockets = True
 virtualenv_py_ver = 3.8
-numprocesses = 2 
+numprocesses = 2
 virtualenv = /home/{{user}}/env/
 copy_env = True
 copy_path = True
@@ -323,11 +325,6 @@ server {
     location ~ ^/(media|static)/  {
         root    /home/{{user}}/;
         expires 30d;
-    }
-
-    ## Deny illegal host names
-    if ($host !~* ^({{remote}})$ ) {
-        return 444;
     }
 
     location / {
