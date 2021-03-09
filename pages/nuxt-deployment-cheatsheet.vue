@@ -250,7 +250,7 @@ systemctl restart nginx</code></pre>
           Create a new site for <span class="hl">Hosting</span> on a Firebase
           project. You can create and manage Firebase projects from
           <a href="https://console.firebase.google.com/" target="_blank"
-            >the Firebase console</a
+            >the Firebase console.</a
           >
         </p>
 
