@@ -91,7 +91,8 @@ sudo apt-get install -y nodejs</code></pre>
       ><code>curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install yarn
-sudo yarn global add pm2</code></pre>
+sudo yarn global add pm2
+pm2 startup</code></pre>
 
       <div v-if="nvm">
         <h3>

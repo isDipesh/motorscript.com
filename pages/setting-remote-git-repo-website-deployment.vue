@@ -10,6 +10,7 @@
                 <ul>
                     <li>Remote/Server (domain name or IP): <input v-model="remote"></li>
                     <li>User on Server : <input v-model="user"></li>
+                    <li>Project Dir : <input v-model="project_dir"></li>
                     <li>SSH Port : <input v-model="ssh_port"></li>
                 </ul>
             </div>
@@ -18,7 +19,7 @@
 
             <pre class="language-bash command-line" data-prompt="$" data-output="9,11-14,16">
 <code>cd
-mkdir repo.git {{project_dir}} conf logs media static
+mkdir repo.git {{project_dir}}
 cd repo.git
 git init --bare
 git --bare update-server-info
