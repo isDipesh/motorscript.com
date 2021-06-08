@@ -43,13 +43,13 @@ exit</code></pre>
         class="language-bash command-line"
         data-prompt="$"
       >
-<code>git remote add server {{user}}@{{ip}}:/home/{{user}}/repo.git/
-ssh-copy-id {{user}}@{{ip}}
+<code>git remote add server {{user}}@{{remote}}:/home/{{user}}/repo.git/
+ssh-copy-id {{user}}@{{remote}}
 git push server --all</code></pre>
 
       <pre v-else class="language-bash command-line" data-prompt="$">
-<code>git remote add server ssh://{{user}}@{{ip}}:{{ssh_port}}/home/{{user}}/repo.git/
-ssh-copy-id -p {{ssh_port}} {{user}}@{{ip}}
+<code>git remote add server ssh://{{user}}@{{remote}}:{{ssh_port}}/home/{{user}}/repo.git/
+ssh-copy-id -p {{ssh_port}} {{user}}@{{remote}}
 git push server --all</code></pre>
             
             <p>

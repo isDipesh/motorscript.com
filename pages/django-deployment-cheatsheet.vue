@@ -51,7 +51,7 @@
 
       <pre
         class="language-bash command-line"
-        data-prompt="$"
+        data-prompt="#"
       ><code>useradd -m {{user}}
 echo {{user}}:{{user_password}}| chpasswd
 usermod -aG sudo {{user}}
@@ -152,8 +152,8 @@ virtualenv env -p python3
 source env/bin/activate
 cd app
 pip install -r requirements/prod.txt
-./manage.py migrate
-./manage.py collectstatic</code></pre>
+python manage.py migrate
+python manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
       is all right.
 

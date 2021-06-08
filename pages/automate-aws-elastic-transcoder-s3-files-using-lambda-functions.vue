@@ -173,18 +173,27 @@ def lambda_handler(event, context):
           and open the first bucket, the one where media is to be uploaded.
         </li>
         <li>
-          Under <span class="hl">Properties</span>, open
-          <span class="hl">Events</span>.
+          Under <span class="hl">Properties</span>, scroll down to
+          <span class="hl">Event Notifications</span>.
         </li>
-        <li>Click <span class="hl">Add notification</span>.</li>
+        <li>Click <span class="hl">Create event notificaton</span>.</li>
         <li>
           Give the notification a name, select
-          <span class="hl">PUT</span> event. If the lambda is to be triggered
-          only for particular folders/prefixes or file extension, specify using
+          <span class="hl">PUT</span>, and
+          <span class="hl">Multipart upload completed</span> events.
+          <span class="hl">Multipart upload completed</span> event is trigger
+          when large files are uploaded.
+        </li>
+        <li>
+          If the lambda is to be triggered only for particular folders/prefixes
+          or file extension, specify using
           <span class="hl">Prefix</span> and/or
-          <span class="hl">Suffix</span> fields. Select
-          <span class="hl">Lambda Function</span> for notification destination.
-          Then, pick the lambda function created earlier and save the form.
+          <span class="hl">Suffix</span> fields.
+        </li>
+        <li>
+          Select <span class="hl">Lambda Function</span> for notification
+          destination. Then, pick the lambda function created earlier and save
+          the form.
         </li>
       </ul>
     </div>
