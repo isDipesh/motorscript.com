@@ -152,122 +152,43 @@ virtualenv env -p python3
 source env/bin/activate
 cd app
 pip install -r requirements/prod.txt
+pip install gunicorn
 python manage.py migrate
 python manage.py collectstatic</code></pre>
       Also, try running <code>./manage.py runserver</code> to see if everything
       is all right.
 
-      <h3>Install Circus</h3>
+      <h3>Install Supervisor</h3>
       <pre
         class="language-bash command-line"
         data-prompt="#"
-      ><code>pip3 install circus
-mkdir -p /etc/circus/conf.d/</code></pre>
-      <pre
-        class="language-bash command-line"
-        data-prompt="#"
-      ><code>vim /etc/circus/circusd.ini</code></pre>
-      <pre class="language-ini code-content"><code>[circus]
-check_delay = 5
-include_dir = /etc/circus/conf.d
-;debug = True
-;; requires circus-web to be able to start the http dashboard
-;httpd = True
+      ><code>apt install supervisor
+systemctl enable supervisor
+systemctl start supervisor</code></pre>
 
-[plugin:flapping]
-use = circus.plugins.flapping.Flapping
-retry_in = 3
-max_retry = 2</code></pre>
-
-      <pre
-        class="language-bash command-line"
-        data-prompt="#"
-      ><code> vim /etc/systemd/system/circus.service</code></pre>
-      <pre class="language-ini code-content"><code>[Unit]
-Description=Circus process manager
-After=syslog.target network.target nss-lookup.target
-[Service]
-Type=simple
-ExecReload=/home/{{user}}/env/bin/circusctl reload
-ExecStart=/home/{{user}}/env/bin/circusd /etc/circus/circusd.ini
-Restart=always
-RestartSec=5
-[Install]
-WantedBy=default.target</code></pre>
-
-      <pre
-        class="language-bash command-line"
-        data-prompt="#"
-      ><code>systemctl --system daemon-reload
-systemctl enable circus
-systemctl start circus</code></pre>
-
-      <h4>Create circus configuration</h4>
+      <h4>Create supervisor configuration</h4>
 
       <pre class="language-bash command-line" data-prompt="$">
 <code>cd
-vim conf/circus.ini</code></pre>
+vim conf/supervisor.conf</code></pre>
 
-      <pre class="language-ini code-content"><code>[watcher:{{django_project}}]
-cmd=chaussette --fd $(circus.sockets.{{django_project}}) {{django_project}}.wsgi.application
-#cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend gevent {{django_project}}.wsgi.application
-#cmd=chaussette --fd $(circus.sockets.{{django_project}}) --backend meinheld {{django_project}}.wsgi.application
-uid = {{user}}
-endpoint_owner = {{user}}
-use_sockets = True
-virtualenv_py_ver = 3.8
-numprocesses = 2
-virtualenv = /home/{{user}}/env/
-copy_env = True
-copy_path = True
-stdout_stream.class = FileStream
-stdout_stream.filename = /home/{{user}}/logs/django.log
-stderr_stream.class = FileStream
-stderr_stream.filename = /home/{{user}}/logs/django_err.log
-stdout_stream.max_bytes = 1073741824
-stdout_stream.backup_count = 3
-stderr_stream.max_bytes = 1073741824
-stderr_stream.backup_count = 3
-working_dir = /home/{{user}}/app/
-
-[socket:{{django_project}}]
-host=127.0.0.1
-port=8000
-#path = /tmp/{{django_project}}.sock
-#family = AF_UNIX
-
-[env:{{django_project}}]
-PYTHONPATH=/home/{{user}}/app/
-
-# For django-q
-[watcher:{{django_project}}_q]
-cmd = python manage.py qcluster
-numprocesses = 1
-working_dir = /home/{{user}}/app/
-virtualenv = /home/{{user}}/env/
-copy_env = True
-copy_path = True
-stdout_stream.class = FileStream
-stdout_stream.filename = /home/{{user}}/logs/webapp_q.log
-stdout_stream.max_bytes = 1073741824
-stdout_stream.backup_count = 3
-stderr_stream.class = FileStream
-stderr_stream.filename = /home/{{user}}/logs/webapp_q_err.log
-stderr_stream.max_bytes = 1073741824
-stderr_stream.backup_count = 3
-
-[env:{{django_project}}_q]
-PYTHONPATH=/home/{{user}}/app/
+      <pre class="language-ini code-content"><code>[program:{{django_project}}]
+command=/home/{{user}}/env/bin/gunicorn {{django_project}}.wsgi:application --workers 3 --bind 127.0.0.1:8000
+#command=/home/{{user}}/env/bin/gunicorn {{django_project}}.wsgi:application -c /home/{{user}}/app/gunicorn.conf.py
+user={{user}}
+directory=/home/{{user}}/app/
+stdout_logfile=/home/{{user}}/logs/django.log
+stderr_logfile=/home/{{user}}/logs/django_err.log
 </code></pre>
       <h4>
-        Soft-link our configuration to circus <code>conf.d</code> directory
+        Soft-link our configuration to supervisor <code>conf.d</code> directory
       </h4>
 
       <pre
         class="language-bash command-line"
         data-prompt="$"
-      ><code>sudo ln -s /home/{{user}}/conf/circus.ini /etc/circus/conf.d/{{django_project}}.ini
-circusctl reloadconfig</code></pre>
+      ><code>sudo ln -s /home/{{user}}/conf/supervisor.conf /etc/supervisor/conf.d/{{django_project}}.conf
+sudo supervisorctl reload</code></pre>
 
       <h3>Install redis</h3>
       <pre
