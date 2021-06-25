@@ -120,6 +120,7 @@ sudo ufw enable</code></pre></p>
       ><code>sudo ufw allow http # OR sudo ufw allow 80
 sudo ufw allow https # OR sudo ufw allow 443
 sudo ufw allow 5432 # To allow postgres
+sudo ufw allow 6379 # To allow redis
 </code></pre>
 
       View status and configuration:
@@ -159,7 +160,7 @@ Enable automatic security updates (unattended-upgrades)
         <li>Try using single network service per VM instance.</li>
         <li>Make use of security extensions like AppArmor and SELinux.</li>
         <li>Implement service specific security measures like securing Nginx, Apache, PostgreSQL, MySQL.</li>
-        <li>Use firewall provided by our cloud service provider.</li>
+        <li>Use firewall provided by your cloud service provider.</li>
         <li>Access your system with security audit tools like Lynis.</li>
         <li>Watch your logs. Use tools like LogWatch.</li>
         <li>Try things you'd do if you lost access to your system but you need to get in. You may find some security holes. Fix them.</li>
