@@ -114,13 +114,13 @@ sudo ufw enable</code></pre></p>
         class="language-bash command-line" data-prompt="$"
       ><code>sudo ufw allow 22 # Or sudo ufw allow 23456 if SSH is listening on another port</code></pre></p>
 
-      Allow HTTP and HTTPS:
+       Allow HTTP, HTTPS, and other popular services:
       <pre
         class="language-bash command-line" data-prompt="$"
       ><code>sudo ufw allow http # OR sudo ufw allow 80
 sudo ufw allow https # OR sudo ufw allow 443
 sudo ufw allow 5432 # To allow postgres
-sudo ufw allow 6379 # To allow redis
+sudo ufw allow from 10.xxx.xx.xx to any port 6379 # Allow redis connections only from particular machine
 </code></pre>
 
       View status and configuration:
