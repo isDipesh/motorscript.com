@@ -180,15 +180,27 @@ directory=/home/{{user}}/app/
 stdout_logfile=/home/{{user}}/logs/django.log
 stderr_logfile=/home/{{user}}/logs/django_err.log
 </code></pre>
+
       <h4>
         Soft-link our configuration to supervisor <code>conf.d</code> directory
       </h4>
-
       <pre
         class="language-bash command-line"
         data-prompt="$"
       ><code>sudo ln -s /home/{{user}}/conf/supervisor.conf /etc/supervisor/conf.d/{{django_project}}.conf
 sudo supervisorctl reload</code></pre>
+
+      <h4>
+        Allow user to restart supervisor process without having to use the
+        password
+      </h4>
+
+      <pre class="language-bash command-line" data-prompt="$">
+<code>vi /etc/sudoers.d/supervisor_edusanjal</code></pre>
+
+      <pre
+        class="language-bash code-content"
+      ><code>esdj1x ALL = (root) NOPASSWD:/usr/bin/supervisorctl restart edusanjal</code></pre>
 
       <h3>Install redis</h3>
       <pre
