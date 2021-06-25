@@ -87,6 +87,29 @@ ClientAliveCountMax 0</code></pre>
         >
       </p>
 
+       <h2>Create an included SSH config file</h2>
+       You can also create a separate <span class="hl">conf</span> file and include it in your base sshd configuration file <span class="hl">/etc/ssh/sshd_config</span>. Recent installations are already configured to include all configurations from the directory <span class="hl">/etc/ssh/sshd_config.d/</span>.
+      <pre class="language-bash command-line" data-prompt="$"><code>vi /etc/ssh/sshd_config.d/add.conf</code></pre>
+      <pre class="language-ini code-content"><code>#AllowUsers username1 username2
+#Port 23456
+PermitRootLogin no
+X11Forwarding no
+
+HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+
+LogLevel VERBOSE
+
+ClientAliveInterval 300
+ClientAliveCountMax 0
+
+PasswordAuthentication no</code></pre>
+
       <h2>Generate Private/Public Key Pair</h2>
 
       On your local computer, generate new SSH key pair. You may want to backup
