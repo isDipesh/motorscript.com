@@ -118,7 +118,9 @@ sudo ufw enable</code></pre></p>
       <pre
         class="language-bash command-line" data-prompt="$"
       ><code>sudo ufw allow http # OR sudo ufw allow 80
-sudo ufw allow https # OR sudo ufw allow 443</code></pre>
+sudo ufw allow https # OR sudo ufw allow 443
+sudo ufw allow 5432 # To allow postgres
+</code></pre>
 
       View status and configuration:
       <pre
