@@ -1,0 +1,54 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Nautilus: 'E-mail this file' option in right-click/context menu - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/33b1b97.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Nautilus: 'E-mail this file' option in right-click/context menu</h1> <div class="time">Published: <time itemprop="datePublished">02 Oct 2011</time></div> <!----> <div class="block">Note: This is an archived post. Information may not be relevant now.</div></div> <div itemprop="articleBody" class="content"><p>
+      This should work for all Linux users with <strong>Nautilus</strong> file
+      manager.
+    </p> <p>First install the package – “<em>nautilus-actions</em>“.</p> <p>
+      For Fedora, RHEL, Cent OS and other RPM based distributions<br> <pre data-prompt="#" class="language-bash command-line"><code>yum install nautilus-actions</code></pre></p> <p>
+      For debian based distributions<br> <pre data-prompt="#" class="language-bash command-line"><code>apt-get install nautilus-actions</code></pre></p> <p>
+      Fire “<em>Nautilus Action Editor GUI</em>” either from
+      <em>System -> Preferences -> Nautilus Actions Configuration</em>
+      or from command line:<br> <pre data-prompt="$" class="language-bash command-line"><code>open nautilus-actions-config-tool</code></pre></p> <p>
+      From the tool-bar (below menubar), use the first button to ‘<em>Define a new action</em>‘. In the ‘Context Label’ field seen on the ‘Action’ tab, use something
+      like ‘<strong>E-mail this file</strong>‘. And then switch to the
+      ‘<em>Command</em>‘ tab and follow the following steps for your choice of
+      e-mail client:
+    </p> <p>
+      For using <strong>Evolution</strong> as the e-mail client:<br>
+      In the ‘<em>Command</em>‘ tab, use ‘evolution’ in the
+      <em>Path</em> field. And in the next Parameters field:<br> <code>mailto:?attach="%u"</code><br>
+      %u gives the file path in runtime.
+    </p> <p>
+      For using <strong>Thunderbird</strong> as the e-mail client:<br>
+      Now, navigate to the ‘<em>Command</em>‘ tab, and in the path filed, use
+      ‘thunderbird’. The next one is ‘<em>Parameters</em>‘ field where we
+      use<br> <code>'-compose 'attachment=%u'</code> .<br>
+      %u gives the file path in runtime.
+    </p> <p>
+      We save the changes by clicking on the second button on the tool-bar.
+    </p> <p>
+      And, optionally, make it cleaner:
+      <em>Tools -> Preferences -> Runtime Preferences -> Nautilus Menu
+        Layout</em></p> <p>
+      Deselect <em>“Create a root ‘Nautilus-Actions’ menu”</em> and
+      <em>“Add an About Nautilus-Actions’ item…”</em></p> <p><em>OK</em> and close the window.</p> <p>
+      Probably, we are done. Just in case the item isn’t visible, please find
+      a way to restart Nautilus.
+    </p></div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(t){return{layout:"default",data:[{}],fetch:{},error:t,serverRendered:!0,routePath:"/e-mail-this-file-option-in-right-clickcontext-menu",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:t}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/33b1b97.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>

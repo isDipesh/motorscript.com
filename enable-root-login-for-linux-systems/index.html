@@ -1,0 +1,62 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Enable graphical root login for Linux systems - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/499cf0d.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Enable graphical root login for Linux systems</h1> <div class="time">Published: <time itemprop="datePublished">07 Aug 2011</time></div> <!----> <div class="block">Note: This is an archived post. Information may not be relevant now.</div></div> <div itemprop="articleBody" class="content"><p><strong>Enabling root login with Graphical Desktop isn't recommended for regular use. Use with caution and only on special ocassions.</strong></p> <p>
+        Open terminal and switch to the superuser (root):
+        <pre data-prompt="$" class="language-bash command-line"><code>su -</code></pre></p> <p>
+        Enter the root password and you are logged in as root in
+        the terminal.
+      </p> <p>
+        Edit the file /etc/pam.d/gdm with your favorite text editor:
+        <pre data-prompt="#" class="language-bash command-line"><code>vi /etc/pam.d/gdm</code></pre></p> <p>OR
+      <pre data-prompt="#" class="language-bash command-line"><code>gedit /etc/pam.d/gdm</code></pre></p> <p>
+        Find the following line:
+        <code>auth required pam_succeed_if.so user != root quiet</code></p> <p>
+        Comment it to
+        <code>#auth required pam_succeed_if.so user != root quiet</code></p> <p>Do the same with the file <em>/etc/pam.d/gdm-password</em></p> <p>
+        You can login to GDM as root from the
+        next time.
+      </p> <p><strong>Alternative Technique :</strong> Since it is the
+        GUI that prevents you to login as root, you
+        can login in run level 3 then start the X Windows system to get root up
+        on Gnome or any other desktop environment.
+      </p> <p>Do this :</p> <p>
+        Modify your bootloader configuration to set system boot into
+        runlevel 3.
+      </p> <p>
+        Grub is the default bootloader for most systems. /etc/grub.conf is a
+        soft link to its configuration file which resides on
+        /boot actually.
+      </p> <p>
+        Let us open it with our favorite text editor.
+        <pre data-prompt="#" class="language-bash command-line"><code>vi /etc/grub.conf</code></pre></p> <p>
+        OR if you are on
+        GUI and if you are comfortable with gedit
+        <pre data-prompt="#" class="language-bash command-line"><code>gedit /etc/grub.conf</code></pre></p> <p>Find the block item for your boot target with a kernel entry.</p> <p>
+        Mine happens to be:
+        <pre class="language-ini"><code>kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
+root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM</code></pre></p> <p>
+        Append 3 as another parameter to the end to make it
+        <pre class="language-ini"><code>kernel /vmlinuz-2.6.38.6-27.fc15.i686 ro
+root=UUID=3a141363-91f4-4cf0-9b11-968251eec075 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM 3</code></pre></p> <p>Save and close the file.</p> <p>
+        The next time you login, you will be presented with login on terminal
+        instead of GUI. Use ‘root’ for login and the
+        root password you set during the system installation for password. After
+        you’ve successfully logged in, enter <code>startx</code>.
+      </p> <p>This will start the default Graphical Desktop Manager.</p></div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(e){return{layout:"default",data:[{}],fetch:{},error:e,serverRendered:!0,routePath:"/enable-root-login-for-linux-systems",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:e}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/499cf0d.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Simple Django Deployment Cheat-sheet - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/6cb369e.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Simple Django Deployment Cheat-sheet</h1> <div class="time">Published: <time itemprop="datePublished">23 Nov 2014</time></div> <div class="time">Updated: <time itemprop="dateModified">21 Feb 2021</time></div> <!----></div> <div itemprop="articleBody" class="content"><div class="block"><ul><form id="django-form"><div class="right btn small">
+              Download form data
+            </div> <li>Domain Name: <input name="remote" value="awecode.com"></li> <li>IP Address: <input name="ip" value="143.666.7.343"></li> <li>User on Server : <input name="user" value="user"></li> <li>
+              User Password :
+              <input name="user_password" value="d5TFrZfvfW5Ssny"> <a href="#" class="l1 small">Regenerate</a> <a href="#" class="l1 small">Copy</a></li> <li>SSH Port : <input name="ssh_port" value="22"></li> <li>
+              Django Project Name :
+              <input name="django_project" value="django_project"></li> <li>Database Name : <input name="db_name" value="db_name"></li> <li>Database User : <input name="db_user" value="db_user"></li> <li>
+              Database Password :
+              <input name="db_password" value="UgQBq8svKPCEyqT"> <a href="#" class="l1 small">Regenerate</a> <a href="#" class="l1 small">Copy</a></li></form></ul></div> <h3>Create a sudo user</h3> <pre data-prompt="#" class="language-bash command-line"><code>useradd -m user
+echo user:d5TFrZfvfW5Ssny| chpasswd
+usermod -aG sudo user
+chsh --shell /bin/bash user
+su - user</code></pre>
+      Add <i class="hl">user</i> to
+      <i class="hl">/etc/ssh/sshd_config</i> <i class="hl">AllowUsers</i> configuration if
+      <i class="hl">AllowUsers</i> is used to allow specific user logins via
+      SSH.
+
+      <h3>Setup Database</h3>
+      Install Postgresql:
+      <pre data-prompt="#" class="language-bash command-line"><code>apt-get install postgresql postgresql-contrib</code></pre>
+      Enable and start Postgresql
+      <pre data-prompt="#" class="language-bash command-line"><code>systemctl enable postgresql
+systemctl start postgresql</code></pre>
+      Create database and role:
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo su - postgres
+createdb db_name
+echo "CREATE ROLE db_user WITH PASSWORD 'UgQBq8svKPCEyqT';" | psql
+echo "ALTER ROLE db_user WITH LOGIN;" | psql
+echo "GRANT ALL PRIVILEGES ON DATABASE "db_name" to db_user;" | psql
+exit</code></pre> <h3>Setup pushing via Git</h3> <pre data-prompt="$" data-output="9, 11-15" class="language-bash command-line"><code>cd
+mkdir repo.git app conf logs media static
+cd repo.git
+git init --bare
+git --bare update-server-info
+git config core.bare false
+git config receive.denycurrentbranch ignore
+git config core.worktree /home/user/app/
+
+cat > hooks/post-receive &lt;&lt;EOF
+#!/bin/sh
+git checkout -f
+cd ../app/
+./deploy.sh
+EOF
+
+chmod +x hooks/post-receive
+cd</code></pre>
+
+      Add this bare repo as a remote on local.
+
+      <pre data-prompt="$" class="language-bash command-line"><code>git remote add server user@143.666.7.343:/home/user/repo.git/
+ssh-copy-id user@143.666.7.343
+git push server --all</code></pre> <p>
+        You may want to modify your <i class="hl">git post-receive</i> hook to
+        run custom commands on the server, like running database migrations,
+        notifying services of new deployments, pushing static files to CDN, etc.
+        A <span class="hl">deploy.sh</span> file with executable permission is
+        expected in the project root in this example post-receive hook.
+      </p> <h3>Install Required Libraries and Packages</h3> <pre data-prompt="#" class="language-bash command-line"><code>apt install python3-pip
+pip3 install virtualenv</code></pre> <h3>Setup the Project</h3> <pre data-prompt="$" class="language-bash command-line"><code>cd
+virtualenv env -p python3
+source env/bin/activate
+cd app
+pip install -r requirements/prod.txt
+pip install gunicorn
+python manage.py migrate
+python manage.py collectstatic</code></pre>
+      Also, try running <code>./manage.py runserver</code> to see if everything
+      is all right.
+
+      <h3>Install Supervisor</h3> <pre data-prompt="#" class="language-bash command-line"><code>apt install supervisor
+systemctl enable supervisor
+systemctl start supervisor</code></pre> <h4>Create supervisor configuration</h4> <pre data-prompt="$" class="language-bash command-line"><code>cd
+vim conf/supervisor.conf</code></pre> <pre class="language-ini code-content"><code>[program:django_project]
+command=/home/user/env/bin/gunicorn django_project.wsgi:application --workers 3 --bind 127.0.0.1:8000
+#command=/home/user/env/bin/gunicorn django_project.wsgi:application -c /home/user/app/gunicorn.conf.py
+user=user
+directory=/home/user/app/
+stdout_logfile=/home/user/logs/django.log
+stderr_logfile=/home/user/logs/django_err.log
+</code></pre> <h4>
+        Soft-link our configuration to supervisor <code>conf.d</code> directory
+      </h4> <pre data-prompt="$" class="language-bash command-line"><code>sudo ln -s /home/user/conf/supervisor.conf /etc/supervisor/conf.d/django_project.conf
+sudo supervisorctl reload</code></pre> <h4>
+        Allow user to restart supervisor process without having to use the
+        password
+      </h4> <pre data-prompt="$" class="language-bash command-line"><code>vi /etc/sudoers.d/supervisor_edusanjal</code></pre> <pre class="language-bash code-content"><code>esdj1x ALL = (root) NOPASSWD:/usr/bin/supervisorctl restart edusanjal</code></pre> <h3>Install redis</h3> <pre data-prompt="#" class="language-bash command-line"><code>apt install redis-server
+systemctl enable redis-server
+systemctl start redis-server</code></pre> <h3>Install nginx</h3> <pre data-prompt="#" class="language-bash command-line"><code>apt install nginx
+systemctl enable nginx
+rm /etc/nginx/sites-enabled/default</code></pre> <h3>Configure nginx with security headers</h3> <pre data-prompt="$" class="language-bash command-line"><code>cd
+vim conf/nginx.conf</code></pre> <pre class="language-nginx code-content"><code>upstream django_project {
+    server 127.0.0.1:8000;
+    # server unix:/tmp/django_project;
+}
+
+# Redirect www.awecode.com to awecode.com
+server {
+    listen 80;
+    server_name  www.awecode.com;
+    return       301 https://awecode.com$request_uri;
+}
+
+server {
+    listen 80;
+    server_name awecode.com;
+
+    #access_log /home/user/logs/nginx.access.log;
+    error_log /home/user/logs/nginx.error.log;
+
+    #limit_conn conn_limit_per_ip 100;
+    #limit_req zone=req_limit_per_ip burst=100 nodelay;
+
+    location /robots.txt {
+        alias /home/user/static/robots.txt;
+    }
+    
+    location /favicon.ico {
+        alias /home/user/static/img/favicon.ico;
+    }
+    
+    location ~ ^/(media|static)/  {
+        root    /home/user/;
+        expires 30d;
+    }
+
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+        proxy_pass http://django_project;
+        client_max_body_size 50m;
+        add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options nosniff;
+        add_header X-XSS-Protection "1; mode=block";
+        add_header X-Frame-Options SAMEORIGIN;
+    }
+    
+    # Prevent hidden files (beginning with a period) from being served
+    location ~ /\. { access_log off; log_not_found off; deny all; }
+}</code></pre> <h4>
+        Soft-link our configuration to nginx <code>conf.d</code> directory
+      </h4> <pre data-prompt="$" class="language-bash command-line"><code>sudo ln -s /home/user/conf/nginx.conf /etc/nginx/conf.d/django_project.conf</code></pre> <h3>Obtain SSL certificate with Certbot</h3> <pre data-prompt="#" class="language-bash command-line"><code>apt install certbot python-certbot-nginx
+certbot --nginx</code></pre> <h4>Check configuration and restart nginx</h4> <pre data-prompt="#" class="language-bash command-line"><code>nginx -t
+systemctl restart nginx</code></pre></div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(e){return{layout:"default",data:[{}],fetch:{},error:e,serverRendered:!0,routePath:"/django-deployment-cheatsheet",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:e}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/6cb369e.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>

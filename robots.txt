@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_nuxt/
+
+Sitemap: https://motorscript.com/sitemap.xml

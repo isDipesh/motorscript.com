@@ -1,0 +1,141 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Enabling Persisted Storage for your web app on Chrome - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/e894a66.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Enabling Persisted Storage for your web app on Chrome</h1> <div class="time">Published: <time itemprop="datePublished">23 Dec 2018</time></div> <!----> <!----></div> <div itemprop="articleBody" class="content">
+      According to Google Developer Docs, Chrome grants persistent storage
+      permissions if any of these are satisfied:
+      <ul><li>
+          The site has been bookmarked in the browser and there are less than 5
+          bookmarks.
+        </li> <li>The site has high engagement in the browser.</li> <li>The site is added to home screen.</li> <li>Push notifications are enabled for the site.</li></ul>
+      We will use the last two options to get the permission.
+      <ol><li><h2>Adding our app to home screen.</h2> <ul><li>
+              To enable adding our site to homescreen, first add a manifest file
+              -
+              <code>manifest.json</code>
+              to the root.
+              <pre><code class="language-json">{
+    "short_name": "OCR GT",
+    "name": "OCR GT",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "awecode-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6"
+}</code></pre> <div>
+                Change the values as per your requirement. Link the manifest
+                file from your index.html. Add the following within the
+                <code>head</code> tag.
+              </div> <pre><code class="language-html">&lt;link rel="manifest" href="manifest.json"></code></pre></li> <li><p><strong>Note</strong>: Do <em>not</em> use
+                <code class="language-javascript">loadLanguages()</code> with
+                Webpack or another bundler, as this will cause Webpack to
+                include all languages and plugins. Use the babel plugin
+                described above.
+              </p>
+              Add a service worker with the file <code>sw.js</code> (following
+              sample from
+              <a href="https://googlechrome.github.io/samples/service-worker/basic/" target="_blank" rel="noreferer noopener nofollow">Google Chrome's Github</a>)
+              <pre><code class="language-js">const PRECACHE = 'precache-v1';
+const RUNTIME = 'runtime';
+
+const PRECACHE_URLS = [
+  'index.html',
+  './', // Alias for index.html
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(PRECACHE)
+      .then(cache => cache.addAll(PRECACHE_URLS))
+      .then(self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', event => {
+  const currentCaches = [PRECACHE, RUNTIME];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
+    }).then(cachesToDelete => {
+      return Promise.all(cachesToDelete.map(cacheToDelete => {
+        return caches.delete(cacheToDelete);
+      }));
+    }).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', event => {
+  // Skip cross-origin requests, like those for Google Analytics.
+  if (event.request.url.startsWith(self.location.origin)) {
+    event.respondWith(
+      caches.match(event.request).then(cachedResponse => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+
+        return caches.open(RUNTIME).then(cache => {
+          return fetch(event.request).then(response => {
+            // Put a copy of the response in the runtime cache.
+            return cache.put(event.request, response.clone()).then(() => {
+              return response;
+            });
+          });
+        });
+      })
+    );
+  }
+});
+                            </code></pre>
+              Register the service worker from your app:
+              <pre class="language-js"><code>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}</code></pre></li> <li>
+              Now, open your app in Chrome, open
+              <span class="hl">Dev Tools</span> ->
+              <span class="hl">Application</span> tab ->
+              <span class="hl">Manifest</span>, click on
+              <span class="hl">Add to homescreen</span>.
+              <img src="https://developers.google.com/web/tools/chrome-devtools/images/manifest.png" alt="DevTools Add to Homescreen"> <div><small><em>Image Courtesy: Google</em></small></div></li></ul></li> <li><h2>Enable push notifications</h2> <ul><li>
+              Click on the info icon or the Secure lock icon before the URL in
+              the address bar. Then click on the
+              <span class="hl">Site Settings</span>.
+              <img src="https://i.imgur.com/xZayWdc.png" alt="Chrome Site Settings" title="Chrome Site Settings"></li> <li>
+              And allow push notifications.
+              <div><img src="https://i.imgur.com/71ld1Yl.png" alt="Chrome Allow Push Notifications" title="Chrome Allow Push Notifications"></div></li></ul></li> <li><h2>Ask Chrome for the persisted storage permissions.</h2> <pre class="language-js"><code>if (navigator.storage && navigator.storage.persist)
+  navigator.storage.persist().then(granted => {
+    if (granted)
+      console.log("Storage will not be cleared except by explicit user action");
+    else
+      console.log("Storage may be cleared by the UA under storage pressure.");
+  });</code></pre></li></ol>
+      Now, your web app should print "Storage will not be cleared except by
+      explicit user action" on the console.
+    </div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(e){return{layout:"default",data:[{}],fetch:{},error:e,serverRendered:!0,routePath:"/enabling-persisted-storage-for-chrome",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:e}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/e894a66.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>

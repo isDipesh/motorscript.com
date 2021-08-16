@@ -1,0 +1,167 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Django package for Froala WYSIWYG Editor - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/c31fe2b.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Django package for Froala WYSIWYG Editor</h1> <div class="time">Published: <time itemprop="datePublished">14 Jul 2014</time></div> <!----> <!----></div> <div itemprop="articleBody" class="content"><div><span class="hl">django-froala-editor</span> package helps integrate
+        <a target="_blank" rel="noopener noreferrer" href="https://froala.com/wysiwyg-editor/">Froala WYSIWYG HTML editor</a>
+        with Django.
+      </div> <h2 id="gettingstarted">Getting started</h2> <ol><li><p>Install the package:</p> <pre data-prompt="$" class="language-bash command-line"><code>pip install django-froala-editor</code></pre> <p>if not updated in pypi use this</p> <pre data-prompt="$" class="language-bash command-line"><code>pip install https://github.com/froala/django-froala-editor/archive/master.zip</code></pre></li></ol> <p>OR</p> <p>
+        Add the directory <code>froala_editor</code> from this repo to your
+        Python path.
+      </p> <ol><li><p>
+            Add <code>froala_editor</code> to INSTALLED_APPS in
+            <code>settings.py</code>.
+          </p></li> <li><p>
+            Add the following line to <code>urlpatterns</code> in your
+            application's <code>urls.py</code>.
+          </p></li></ol> <pre><code class="language-python">url(r'^froala_editor/', include('froala_editor.urls')),
+</code></pre> <p>
+        Skip this url inclusion if you don't want image and file upload inside
+        WYSIWYG editor. Images from URLs can still be embedded.
+      </p> <h2>Usage</h2> <pre><code class="language-python">from django.db import models
+from froala_editor.fields import FroalaField
+
+class Page(models.Model):
+  content = FroalaField()
+</code></pre> <p><code>FroalaField</code> uses
+        <code>froala_editor.widgets.FroalaEditor</code> as its widget. You may
+        directly use this widget with any of your forms.py:
+      </p> <pre><code class="language-python">from django import forms
+from froala_editor.widgets import FroalaEditor
+
+class PageForm(forms.ModelForm):
+  content = forms.CharField(widget=FroalaEditor)
+</code></pre> <h3>Usage outside admin</h3> <p>
+        When used outside the Django admin, the media files are to be manually
+        included in the template. Inside the <code>&lt;head></code> section
+        or before the form is rendered, include:
+      </p> <pre><code class="language-python">{<i></i>{form.media}}
+</code></pre> <p>
+        In case of jQuery conflict (when your project template already has
+        jQuery), you need to include the following files instead of
+        <code>{<i></i>{ form.media}}</code> plus the static files for theme (if
+        not default) and required plugins.
+      </p> <pre><code class="language-html">&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all" rel="stylesheet" />
+&lt;link href="{<i></i>{STATIC_URL}}froala_editor/css/froala_editor.min.css" type="text/css" media="all" rel="stylesheet" />
+&lt;link href="{<i></i>{STATIC_URL}}froala_editor/css/froala_style.min.css" type="text/css" media="all" rel="stylesheet" />
+&lt;script type="text/javascript" src="{<i></i>{STATIC_URL}}froala_editor/js/froala_editor.min.js">&lt;/script>
+</code></pre> <p>
+        Or simply, you may use the following in your <code>settings.py</code> if
+        you don't want Froala to include jQuery by itself, thus preventing any
+        conflicts:
+      </p> <pre><code class="language-python">FROALA_INCLUDE_JQUERY = False
+</code></pre> <h3>Options</h3> <p>
+        Froala Editor provides several options for customizing the editor. See
+        <a href="https://froala.com/wysiwyg-editor/docs">https://froala.com/wysiwyg-editor/docs</a>
+        for all available options. You can provide a dictionary of these options
+        as <code>FROALA_EDITOR_OPTIONS</code> setting in
+        <code>settings.py</code>. These options would then be used for all
+        instances of the WYSIWYG editor in the project.
+      </p> <p>
+        Options for individual field can also be provided via
+        <code>FroalaField</code> or <code>FroalaEditor</code> class. This
+        overrides any options set via <code>FROALA_EDITOR_OPTIONS</code>:
+      </p> <pre><code class="language-python">from django.db import models
+from froala_editor.fields import FroalaField
+
+class Page(models.Model):
+  content = FroalaField(options={
+    'toolbarInline': True,
+  })
+</code></pre> <pre><code class="language-python">from django import forms
+from froala_editor.widgets import FroalaEditor
+
+class PageForm(forms.ModelForm):
+  content = forms.TextField(widget=FroalaEditor(options={
+    'toolbarInline': True,
+  }))
+</code></pre> <h3>Theme</h3> <p>
+        You may provide the name of the theme to be used as
+        <code>theme</code> argument to <code>FroalaField</code> or
+        <code>FroalaEditor</code>.
+      </p> <pre><code class="language-python">from django.db import models
+from froala_editor.fields import FroalaField
+
+class Page(models.Model):
+  content = FroalaField(theme='dark')
+</code></pre> <p><code>FROALA_EDITOR_THEME</code> can be set in
+        <code>settings.py</code> making all instances of the editor to use a
+        theme. However, <code>theme</code> argument in
+        <code>FroalaField</code> and <code>FroalaEditor</code> overrides
+        <code>FROALA_EDITOR_THEME</code>. Using a theme named 'dark' would
+        require the existence of the file
+        <code>froala_editor/static/froala_editor/css/themes/dark.min.css</code>.
+        Available themes are: 'dark', 'gray' and 'red'.
+      </p> <h3>Plugins</h3> <p>
+        Froala Editor comes with the plugins: block style, text & background
+        colors, font size, font family, insert video, insert table, media
+        manager, lists and file upload. By default, all plugins are enabled by
+        default in this package. See
+        <a href="https://froala.com/wysiwyg-editor/docs/plugins">https://froala.com/wysiwyg-editor/docs/plugins</a>
+        for all available plugins.
+      </p> <p><code>FROALA_EDITOR_PLUGINS</code> can be set in
+        <code>settings.py</code> to tell which plugins should all instances of
+        Froala Editor be using. By default, it is
+      </p> <pre><code class="language-python">FROALA_EDITOR_PLUGINS = ('align', 'char_counter', 'code_beautifier' ,'code_view', 'colors', 'draggable', 'emoticons',
+        'entities', 'file', 'font_family', 'font_size', 'fullscreen', 'image_manager', 'image', 'inline_style',
+        'line_breaker', 'link', 'lists', 'paragraph_format', 'paragraph_style', 'quick_insert', 'quote', 'save', 'table',
+        'url', 'video')
+</code></pre> <p>
+        The usage of <code>plugins</code> argument with
+        <code>FroalaEditor</code> or <code>FroalaField</code> overrides this for
+        that particular instance.
+      </p> <pre><code class="language-python">from django.db import models
+from froala_editor.fields import FroalaField
+
+class Page(models.Model):
+  content = FroalaField(plugins=('font_size', 'font_family'))
+</code></pre> <h3>Image upload</h3> <p><code>FroalaEditor</code> and <code>FroalaField</code> optionally take
+        in a boolean value for <code>image_upload</code>
+        argument to enable or disable image uploads. Image uploads are enabled
+        by default if the urls of this package are included in your urls.py.
+      </p> <p>
+        You can use <code>FROALA_UPLOAD_PATH</code> setting in
+        <code>settings.py</code> to change the path where uploaded files are
+        stored within the <code>MEDIA_ROOT</code>. By default,
+        <code>uploads/froala_editor/images</code> is used for storing uploaded
+        images.
+      </p> <h3>Include jQuery</h3> <p>
+        jQuery is included by default in form media. If you don't want to
+        include jQuery, you may pass <code>include_jquery=False</code> to
+        <code>FroalaEditor</code> or <code>FroalaField</code>.
+        <code>FROALA_INCLUDE_JQUERY</code> can be also set in
+        <code>settings.py</code> for project wide effects.
+      </p> <h3>Other Settings</h3> <p>
+        Using <code>USE_FROALA_EDITOR = False</code> in your Django settings
+        disables Froala editor and uses a TextArea instead.
+      </p> <h2>License</h2> <p>
+        This package is available under BSD License. However, in order to use
+        Froala WYSIWYG HTML Editor plugin you should purchase a license for it.
+      </p> <p>
+        See
+        <a target="_blank" rel="noopener noreferrer" href="https://froala.com/wysiwyg-editor/pricing">https://froala.com/wysiwyg-editor/pricing</a>
+        for licensing the Froala Editor.
+      </p> <p>
+        If you bought a license and got your key, the easiest way to implement
+        it is to put it into the <code>FROALA_EDITOR_OPTIONS</code> setting in
+        <code>settings.py</code>:
+      </p> <pre class="language-python"><code>FROALAEDITOROPTIONS = {
+  'key': 'our key goes here',
+  # other options
+  # ...
+}</code></pre></div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(a){return{layout:"default",data:[{}],fetch:{},error:a,serverRendered:!0,routePath:"/django-froala-editor",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:a}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/c31fe2b.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Security: Hardening Ubuntu Server - motorscript</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" name="author" content="Dipesh Acharya"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/b8a9e6d.js" as="script"><link rel="preload" href="/_nuxt/012922b.js" as="script"><link rel="preload" href="/_nuxt/9d30018.js" as="script"><link rel="preload" href="/_nuxt/db4041f.js" as="script"><link rel="preload" href="/_nuxt/cdfdc56.js" as="script"><style data-vue-ssr-id="5c670272:0 5c670272:1 3191d5ad:0">@import url(https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap);html{font-family:"Zilla Slab",serif;font-size:137.5%;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#3a4149}body{max-width:1280px;margin:0 auto;word-wrap:break-word}*,:after,:before{box-sizing:border-box}img{max-width:100%}main{padding:0 1rem}a{text-decoration:none;color:#215182}footer,header{font-size:16px}footer a,header a{color:inherit}header a{font-size:2em;font-weight:400;margin:.2em 0;display:block}header{border-bottom:1px solid #dbdfe1;padding:0 1rem}h1.title{margin-bottom:1rem;font-size:1.5em}h3{font-size:1.2em}h2,h3,h4{font-weight:400}h2,h3,h4{margin-bottom:.25em}h2{font-size:1.3em;font-weight:700}footer{margin-top:1rem;border-top:1px solid #dbdfe1;padding:1rem}footer div{padding:.25rem}.center{text-align:center}p{line-height:1.5rem;margin-top:0;margin-bottom:1rem}.time{font-size:.9rem;color:#777}.posts a{color:inherit}.posts li{padding:.25rem 0}.hl{background:#eee;overflow:auto;padding:0 .3rem;border-radius:5%;font-size:.85em}.content{margin-top:1rem;line-height:1.4rem}.t1{padding-top:1rem}.l1{padding-left:1rem}.small{font-size:65%}.right{float:right}.btn{background:#ccc;padding:.5rem;cursor:pointer;border-radius:5%;font-weight:300}.btn:hover{background:#bbb;box-shadow:0 0 0 #666;top:5px;left:5px}ul{margin-top:0}.block{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px}.block ul{margin-top:.3rem;list-style:square outside none}.block ul li{padding:.2rem 0}input{outline:0;border:1px solid #ddd;color:inherit}input,input:focus{padding:3px 0 3px 3px}input:focus{box-shadow:0 0 5px #000;border:1px solid #000}pre.ascii{line-height:1rem}article{margin-bottom:2em}:not(pre)>code{padding:.3em;white-space:normal;background:#f5f2f0;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal}pre>code{font-family:monospace!important;display:block}code,pre{max-width:100%;overflow:auto}ol.pad li{padding:1em 0}.pl-1{padding-left:1em}.pl-2{padding-left:2em}.pt-1{padding-top:1em}.company{padding:1em;margin:1em;border:1px solid #ccc;display:flex}.company a{min-width:180px;display:flex;align-items:center;justify-content:center}.company img{height:30px;display:block}.company img.larger{height:40px}pre{line-height:1em!important}pre.normal{white-space:normal!important}pre.code-content,pre.code-content[class*=language-]{background:#ddd;margin-top:-1em;padding-left:2em}pre .command-line-prompt{border-right:none;margin-right:0}pre.code-content.mini{padding:0 0 0 1em}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}</style>
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage" data-n-head="%7B%22itemscope%22:%7B%22ssr%22:%22%22%7D,%22itemtype%22:%7B%22ssr%22:%22https://schema.org/WebPage%22%7D%7D">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="container"><header><a href="/" class="nuxt-link-active">motorscript.com</a></header> <main itemscope itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"><div><h1 itemprop="name headline" class="title">Security: Hardening Ubuntu Server</h1> <div class="time">Published: <time itemprop="datePublished">22 Mar 2020</time></div> <!----> <!----></div> <div itemprop="articleBody" class="content">
+      A default installation of Ubuntu server is fairly secure. However, one can follow the following instructions to harden the security further.
+
+      <h2>Improve SSH Security</h2>
+
+      Hardening SSH is vital in keeping your server secure.
+      <a href="/security-hardening-ssh-linux-server/">Refer to this article for in-depth instructions for SSH
+        hardening.</a> <h2>Secure Shared Memory</h2>
+      Since multiple processes can use the same memory space, making shared memory read only prevents exploitation of vulnerabilities in services running in the server.
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo vi /etc/fstab</code></pre> <pre class="language-js code-content"><code>none /run/shm tmpfs defaults,ro 0 0</code></pre> <h2>Secure the networking layer</h2> <pre data-prompt="$" class="language-bash command-line"><code>sudo vi /etc/sysctl.conf</code></pre> <pre class="language-ini code-content"><code># Configuration from https://github.com/konstruktoid/hardening/blob/master/misc/sysctl.conf, with some added explainations
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+fs.suid_dumpable = 0
+kernel.core_uses_pid = 1
+kernel.dmesg_restrict = 1
+kernel.kptr_restrict = 2
+kernel.panic = 60
+kernel.panic_on_oops = 60
+kernel.perf_event_paranoid = 2
+kernel.randomize_va_space = 2
+kernel.sysrq = 0
+kernel.unprivileged_bpf_disabled = 1
+kernel.yama.ptrace_scope = 2
+net.core.bpf_jit_harden = 2
+net.ipv4.conf.all.accept_redirects = 0 # Discard ICMP redirects
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.log_martians = 1
+net.ipv4.conf.all.rp_filter = 1 # Enable source validation by reverse path for IP Spoofing Protection
+net.ipv4.conf.all.secure_redirects = 0
+net.ipv4.conf.all.send_redirects = 0 # Disable send redirects
+net.ipv4.conf.all.shared_media = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.default.log_martians = 1
+net.ipv4.conf.default.rp_filter= 1 # Enable source validation by reverse path for IP Spoofing Protection
+net.ipv4.conf.default.secure_redirects = 0
+net.ipv4.conf.default.send_redirects = 0 # Disable send redirects
+net.ipv4.conf.default.shared_media = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.ip_forward = 0 # Disable packet forwarding for IPv4
+net.ipv4.tcp_challenge_ack_limit = 1000000
+net.ipv4.tcp_invalid_ratelimit = 500
+net.ipv4.tcp_max_syn_backlog = 20480
+net.ipv4.tcp_rfc1337 = 1
+net.ipv4.tcp_syn_retries = 5
+net.ipv4.tcp_synack_retries = 2
+net.ipv4.tcp_syncookies = 1 # Enable TCP/IP SYN cookies: blocks SYN attacks
+net.ipv4.tcp_timestamps = 0
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.all.forwarding = 0
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.accept_ra = 0
+net.ipv6.conf.default.accept_ra_defrtr = 0
+net.ipv6.conf.default.accept_ra_pinfo = 0
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.default.accept_source_route = 0
+net.ipv6.conf.default.autoconf = 0
+net.ipv6.conf.default.dad_transmits = 0
+net.ipv6.conf.default.max_addresses = 1
+net.ipv6.conf.default.router_solicitations = 0
+net.ipv6.conf.default.use_tempaddr = 2
+net.ipv6.conf.eth0.accept_ra_rtr_pref = 0
+net.netfilter.nf_conntrack_max = 2000000
+net.netfilter.nf_conntrack_tcp_loose = 0</code></pre> <h2>Use a Firewall</h2>
+      Ubuntu comes with UFW, Uncomplicated Firewall. It is a simple alternative
+      to <i class="hl">iptables</i>.
+
+      <p>Install and enable UFW:
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo apt install ufw
+sudo ufw enable</code></pre></p>
+
+      UFW by default denies all incoming connection and allows all outgoing
+      connections.
+
+       <p>
+      Allow SSH:
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo ufw allow 22 # Or sudo ufw allow 23456 if SSH is listening on another port</code></pre></p>
+
+       Allow HTTP, HTTPS, and other popular services:
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo ufw allow http # OR sudo ufw allow 80
+sudo ufw allow https # OR sudo ufw allow 443
+sudo ufw allow 5432 # To allow postgres
+sudo ufw allow from 10.xxx.xx.xx to any port 6379 # Allow redis connections only from particular machine
+</code></pre>
+
+      View status and configuration:
+      <pre data-prompt="$" class="language-bash command-line"><code>sudo ufw status verbose</code></pre> <h2>Keep your system up-to-date</h2> <pre data-prompt="$" class="language-bash command-line"><code>sudo apt update
+sudo apt upgrade</code></pre>
+Enable automatic security updates (unattended-upgrades)
+
+      <h2>Remove unwanted user accounts</h2>
+
+      If there are users not in use, remove them. Cloud providers create a
+      default user like <i class="hl">ubuntu</i> in fresh instances. You can
+      remove them if they aren't used.
+
+      <pre data-prompt="#" class="language-bash command-line"><code>deluser --remove-home ubuntu</code></pre> <h2>Cleanup unncessary packages and services</h2>
+      List all running services and disable the services you are certain you
+      won't need.
+      <pre data-prompt="#" class="language-bash command-line"><code>service --status-all</code></pre>
+      Also remove orphan packages.
+      <pre data-prompt="#" class="language-bash command-line"><code>apt autoremove --purge</code></pre> <h2>Other Security Measures</h2> <ul><li>Use fail2ban.</li> <li>Try using single network service per VM instance.</li> <li>Make use of security extensions like AppArmor and SELinux.</li> <li>Implement service specific security measures like securing Nginx, Apache, PostgreSQL, MySQL.</li> <li>Use firewall provided by your cloud service provider.</li> <li>Access your system with security audit tools like Lynis.</li> <li>Watch your logs. Use tools like LogWatch.</li> <li>Try things you'd do if you lost access to your system but you need to get in. You may find some security holes. Fix them.</li> <li>Get consultancy from a security expert.</li></ul></div></article> <div id="disqus_thread" itemscope itemtype="https://schema.org/UserComments"></div> <!----></main> <footer><div class="center">
+    My Weblog of Cheat-sheets 
+    [<a href="/about-me/">
+        About Me
+    </a>]
+  </div> <div class="center">
+    Powered by
+    <a target="_blank" href="https://nuxtjs.org" rel="noreferrer noopener">Nuxt.js</a>
+    | Hosted on
+    <a target="_blank" href="https://github.com/xtranophilist/motorscript.com" rel="noreferrer noopener">Github</a>
+    | Built using
+    <a target="_blank" href="https://travis-ci.org" rel="noreferrer noopener">Travis CI</a></div></footer></div></div></div><script>window.__NUXT__=function(e){return{layout:"default",data:[{}],fetch:{},error:e,serverRendered:!0,routePath:"/security-hardening-ubuntu-server",config:{app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:e}}}}(null)</script><script src="/_nuxt/b8a9e6d.js" defer></script><script src="/_nuxt/cdfdc56.js" defer></script><script src="/_nuxt/012922b.js" defer></script><script src="/_nuxt/9d30018.js" defer></script><script src="/_nuxt/db4041f.js" defer></script>
+  </body>
+</html>
