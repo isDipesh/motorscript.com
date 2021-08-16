@@ -188,9 +188,7 @@ git push server --all</code></pre>
 <pre
         class="language-bash command-line"
         data-prompt="$"
-      ><code>cd
-cd conf
-vim nginx.conf</code></pre>
+      ><code>vim ~/conf/nginx.conf</code></pre>
       <pre class="language-nginx code-content">
 <code>#Redirect www to non-www
 server {

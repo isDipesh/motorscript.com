@@ -89,7 +89,7 @@ ClientAliveCountMax 0</code></pre>
 
        <h2>Create an included SSH config file</h2>
        You can also create a separate <span class="hl">conf</span> file and include it in your base sshd configuration file <span class="hl">/etc/ssh/sshd_config</span>. Recent installations are already configured to include all configurations from the directory <span class="hl">/etc/ssh/sshd_config.d/</span>.
-      <pre class="language-bash command-line" data-prompt="$"><code>vi /etc/ssh/sshd_config.d/add.conf</code></pre>
+      <pre class="language-bash command-line" data-prompt="#"><code>vi /etc/ssh/sshd_config.d/add.conf</code></pre>
       <pre class="language-ini code-content"><code>#AllowUsers username1 username2
 #Port 23456
 PermitRootLogin no

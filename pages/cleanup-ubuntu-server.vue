@@ -44,7 +44,7 @@ sudo systemctl mask apt-daily.service</code></pre>
       Commented lines start with <span class="hl">//</span>.
       <pre
         class="language-bash command-line" data-prompt="$"
-      ><code>vi /etc/apt/apt.conf.d/50unattended-upgrades</code></pre>
+      ><code>sudo vim /etc/apt/apt.conf.d/50unattended-upgrades</code></pre>
 
       <h2>Other unwanted services</h2>
 
