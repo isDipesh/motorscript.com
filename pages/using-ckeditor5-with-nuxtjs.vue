@@ -83,7 +83,7 @@ export default {
 }
 &lt;/script></code></pre>
 
-<p>Not So Minimal Demo: <a href="https://edupatra.com/preeti-to-unicode/" target="_blank" rel="noopener">Preeti to Unicode converter</a></p>
+<p>Not So Minimal Demo: <a href="https://edusanjal.com/preeti-to-unicode/" target="_blank" rel="noopener">Preeti to Unicode converter</a></p>
 
 Happy Nuxting!
 
