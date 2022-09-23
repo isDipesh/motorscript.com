@@ -196,11 +196,11 @@ sudo supervisorctl reload</code></pre>
       </h4>
 
       <pre class="language-bash command-line" data-prompt="$">
-<code>vi /etc/sudoers.d/supervisor_edusanjal</code></pre>
+<code>vi /etc/sudoers.d/supervisor_{{django_project}}</code></pre>
 
       <pre
         class="language-bash code-content"
-      ><code>esdj1x ALL = (root) NOPASSWD:/usr/bin/supervisorctl restart edusanjal</code></pre>
+      ><code>{{user}} ALL = (root) NOPASSWD:/usr/bin/supervisorctl restart {{django_project}}</code></pre>
 
       <h3>Install redis</h3>
       <pre
